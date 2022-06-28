@@ -4,8 +4,9 @@
 /lib/
 /dist/
 /docs/
-.idea/*
+.idea/
 /upload/
+/mocks/*.tsv
 
 .DS_Store
 coverage

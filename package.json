@@ -33,10 +33,16 @@
     "@typescript-eslint/eslint-plugin": "5.30.0",
     "@typescript-eslint/parser": "5.30.0",
     "eslint": "8.18.0",
-    "json-server": "0.4.2",
+    "json-server": "0.17.0",
     "nodemon": "1.19.4",
     "pino-pretty": "8.1.0",
     "ts-node": "10.8.1",
     "typescript": "4.7.4"
+  },
+  "dependencies": {
+    "got": "12.1.0",
+    "pino": "8.1.0",
+    "reflect-metadata": "0.1.13",
+    "inversify": "6.0.1"
   }
 }
