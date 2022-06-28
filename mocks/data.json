@@ -1,0 +1,26 @@
+{
+  "api": {
+    "products": [
+      "Клиентский доступ на 20 рабочих мест к MS SQL Server 2016 Runtime для 1С:Предприятие 8 для Казахстан",
+      "Dr.Web Security Space (2 пк +2 моб. устройства , 12 +1 мес. в подарок)",
+      "Dr.Web Gateway Security Suite",
+      "Kaspersky Small Office Security 5 for Desktop, Mobiles and File Servers (fixed-date) Renewal",
+      "ESET NOD32 Antivirus Business Edition newsale for 300 user",
+      "1С:Бухгалтерия для Казахстана. Комплект из 5 пользователей",
+      "1С-Рейтинг: Бухгалтерия гос. предприятия. Организация здравоохранения. Комплект на 5 пользователей",
+      "Клиентский доступ на 50 рабочих мест к MS SQL Server 2008R2 Runtime для 1С:Предприятие 8",
+      "Серверы Lenovo",
+      "Серверы ProLiant"
+    ],
+    "product_categories": [
+      "Антивирусное программное обеспечение",
+      "1С",
+      "Серверы"
+    ],
+    "product_types": [
+      "Программное обеспечение",
+      "Аппаратное обеспечение",
+      "Услуга"
+    ]
+  }
+}
