@@ -1,0 +1,495 @@
+@@include('layouts/menu/mobile-menu.html')
+
+<!-- Begin header -->
+<header class="header">
+    <!-- Begin header top -->
+    <nav class="header-top">
+        <div class="container">
+            <div class="row align-items-center justify-content-between">
+                <div class="col-auto">
+                    <!-- Begin header top info -->
+                    <ul class="header-top-info">
+                        <li>
+                            <a href="mailto:mail@example.com">
+                                <i class="material-icons md-18">mail_outline</i>
+                                <span>mail@example.com</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="mailto:mail@example.com" class="formingHrefTel">
+                                <i class="material-icons md-18">phone_in_talk</i>
+                                <span>+1-888-777-1234</span>
+                            </a>
+                        </li>
+                        <li>
+                            <b>Free shipping:</b>
+                            <span>On orders over $150</span>
+                        </li>
+                    </ul><!-- Ennd header top info -->
+                </div>
+                <div class="col-auto">
+                    <div class="header-top-links">
+                        <!-- Begin social links -->
+                        <ul class="social-links">
+                            <li>
+                                <a href="#!" title="Facebook">
+                                    <svg viewBox="0 0 320 512"><use xlink:href="assets/img/sprite.svg#facebook-icon"></use></svg>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#!" title="Instagram">
+                                    <svg viewBox="0 0 448 512"><use xlink:href="assets/img/sprite.svg#instagram-icon"></use></svg>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#!" title="LinkedIn">
+                                    <svg viewBox="0 0 448 512"><use xlink:href="assets/img/sprite.svg#linkedin-icon"></use></svg>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#!" title="Twitter">
+                                    <svg viewBox="0 0 512 512"><use xlink:href="assets/img/sprite.svg#twitter-icon"></use></svg>
+                                </a>
+                            </li>
+                        </ul><!-- End social links -->
+                        <div class="header-top-btn">
+                            <a href="#сallback_popup" class="header-call-back-link сallback_popup_open">
+                                <i class="material-icons">ring_volume</i>
+                                <span>Callback</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav><!-- End header top -->
+    <!-- Begin header fixed -->
+    <nav class="header-fixed">
+        <div class="container">
+            <div class="row flex-nowrap align-items-center justify-content-between">
+                <div class="col-auto d-block d-lg-none header-fixed-col">
+                    <div class="main-mnu-btn">
+                        <span class="bar bar-1"></span>
+                        <span class="bar bar-2"></span>
+                        <span class="bar bar-3"></span>
+                        <span class="bar bar-4"></span>
+                    </div>
+                </div>
+                <div class="col-auto header-fixed-col">
+                    <!-- Begin logo -->
+                    <a href="/" class="logo" title="PathSoft">
+                        <img src="assets/img/logo.svg" width="133" height="36" alt="PathSoft">
+                    </a><!-- End logo -->
+                </div>
+                <div class="col-lg col-auto col-static header-fixed-col">
+                    <div class="row flex-nowrap align-items-center justify-content-end">
+                        <div class="col-auto header-fixed-col d-none d-lg-block col-static">
+                            @@include('layouts/menu/main-menu-shop.html')
+                        </div>
+                        <div class="col-auto header-fixed-col col-static">
+                            <!-- Begin header actions -->
+                            <ul class="header-actions">
+                                <!-- Begin header account -->
+                                <li class="d-none d-sm-block">
+                                    <div class="header-action-icon side-open header-account" data-side=".side-account">
+                                        <i class="material-icons md-24">login</i>
+                                    </div>
+                                </li><!-- End header account -->
+                                <!-- Begin header wishlist -->
+                                <li class="d-none d-sm-block">
+                                    <div class="header-action-icon header-wishlist wishlist_popup_open">
+                                        <i class="material-icons md-24">favorite_border</i>
+                                        <span class="ha-count">3</span>
+                                    </div>
+                                </li><!-- End header wishlist -->
+                                <!-- Begin header cart -->
+                                <li>
+                                    <div class="header-action-icon side-open header-cart" data-side=".side-cart">
+                                        <i class="material-icons material-icons-outlined md-22">shopping_cart</i>
+                                        <span class="ha-count">3</span>
+                                    </div>
+                                </li><!-- End header cart -->
+                                <!-- Begin header languarge -->
+                                <li class="d-none d-lg-block">
+                                    <div class="header-lang">
+                                        <div class="header-lang-current"><i class="material-icons md-22">language</i></div>
+                                        <ul class="header-lang-list">
+                                            <li class="active"><a href="#!" class="hover-link" data-lang="En" data-title="English"><span>English</span></a></li>
+                                            <li><a href="#!" class="hover-link" data-lang="Sp" data-title="Spanish"><span>Spanish</span></a></li>
+                                            <li><a href="#!" class="hover-link" data-lang="It" data-title="Italian"><span>Italian</span></a></li>
+                                            <li><a href="#!" class="hover-link" data-lang="Uk" data-title="Ukraine"><span>Ukraine</span></a></li>
+                                            <li><a href="#!" class="hover-link" data-lang="Ru" data-title="Russian"><span>Russian</span></a></li>
+                                        </ul>
+                                    </div>
+                                </li><!-- End header languarge -->
+                                <!-- Begin header search -->
+                                <li>
+                                    <div class="header-search">
+                                        <div class="header-action-icon header-search-ico">
+                                            <i class="material-icons md-22 header-search-ico-search">search</i>
+                                            <i class="material-icons md-22 header-search-ico-close">close</i>
+                                        </div>
+                                        <form action="#!" method="post" class="header-search-form">
+                                            <div class="container">
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <div class="form-field">
+                                                            <label for="field-search" class="form-field-label">Search...</label>
+                                                            <input type="search" class="form-field-input" name="Search" value="" autocomplete="off" required="required" id="field-search">
+                                                            <button type="submit" class="header-search-btn"><i class="material-icons md-22">search</i></button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </li><!-- End header search -->
+                                <!-- Begin header navbar -->
+                                <li class="d-block d-lg-none">
+                                    <div class="header-navbar">
+                                        <div class="header-navbar-btn">
+                                            <i class="material-icons md-24">more_vert</i>
+                                        </div>
+                                        <ul class="header-navbar-content">
+                                            <li>
+                                                <ul class="header-actions">
+                                                    <!-- Begin header account -->
+                                                    <li class="d-block d-sm-none">
+                                                        <div class="header-action-icon side-open header-account" data-side=".side-account">
+                                                            <i class="material-icons md-24">login</i>
+                                                        </div>
+                                                    </li><!-- End header account -->
+                                                    <!-- Begin header wishlist -->
+                                                    <li class="d-block d-sm-none">
+                                                        <div class="header-action-icon header-wishlist wishlist_popup_open">
+                                                            <i class="material-icons md-24">favorite_border</i>
+                                                            <span class="ha-count">3</span>
+                                                        </div>
+                                                    </li><!-- End header wishlist -->
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <a href="mailto:mail@example.com">
+                                                    <i class="material-icons md-20">mail_outline</i>
+                                                    <span>mail@example.com</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="mailto:mail@example.com" class="formingHrefTel">
+                                                    <i class="material-icons md-20">support_agent</i>
+                                                    <span>1-888-777-1234</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <b>Free shipping:</b>
+                                                <span>On orders over $150</span>
+                                            </li>
+                                            <li>
+                                                <a href="#сallback_popup" class="header-call-back-link сallback_popup_open">
+                                                    <i class="material-icons">ring_volume</i>
+                                                    <span>Callback</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <!-- Begin social links -->
+                                                <ul class="social-links">
+                                                    <li>
+                                                        <a href="#!" title="Facebook">
+                                                            <svg viewBox="0 0 320 512"><use xlink:href="assets/img/sprite.svg#facebook-icon"></use></svg>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#!" title="Instagram">
+                                                            <svg viewBox="0 0 448 512"><use xlink:href="assets/img/sprite.svg#instagram-icon"></use></svg>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#!" title="LinkedIn">
+                                                            <svg viewBox="0 0 448 512"><use xlink:href="assets/img/sprite.svg#linkedin-icon"></use></svg>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#!" title="Twitter">
+                                                            <svg viewBox="0 0 512 512"><use xlink:href="assets/img/sprite.svg#twitter-icon"></use></svg>
+                                                        </a>
+                                                    </li>
+                                                </ul><!-- End social links -->
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li><!-- End header navbar -->
+                            </ul><!-- End header actions -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav><!-- End header fixed -->
+</header><!-- End header -->
+
+<!-- Begin side account -->
+<div class="side side-right side-account">
+    <div class="side-scroll">
+        <div class="side-login">
+            <form action="#!" method="post" class="side-form">
+                <div class="side-form-title item-heading">Sign in</div>
+                <div class="form-field">
+                    <label class="input-states-labelled" for="login-username">Username or email <span class="required">*</span></label>
+                    <div class="form-field-group">
+                        <label for="login-username" class="form-field-label">Username</label>
+                        <input type="text" class="form-field-input" name="SignInUsernameOrEmail" value="" autocomplete="off" id="login-username" required="required">
+                    </div>
+                </div>
+                <div class="form-field">
+                    <label class="input-states-labelled" for="login-password">Password <span class="required">*</span></label>
+                    <div class="form-field-group">
+                        <label for="login-password" class="form-field-label">Password</label>
+                        <input type="password" class="form-field-input" name="SignInPassword" value="" autocomplete="off" id="login-password" required="required">
+                    </div>
+                </div>
+                <div class="form-field">
+                    <div class="checkbox">
+                        <input type="checkbox" class="checkbox-input" name="SignInCheckbox" id="login-checkbox">
+                        <label for="login-checkbox" class="checkbox-label">Remember me</label>
+                    </div>
+                </div>
+                <div class="form-btn">
+                    <button type="submit" class="btn btn-wide ripple"><span>Login</span></button>
+                </div>
+                <nav class="side-form-nav">
+                    <div class="sfn-row">
+                        <a href="#!">Lost your password?</a>
+                    </div>
+                    <div class="sfn-row">
+                        Don't have an account? <a href="#!">Create it</a>
+                    </div>
+                </nav>
+            </form>
+            <div class="form-or-text"><span>or</span></div>
+            <ul class="social-login social-login-wide">
+                <li>
+                    <a href="#!" class="link-facebook">
+                        <svg viewBox="0 0 320 512"><use xlink:href="assets/img/sprite.svg#facebook-icon"></use></svg>
+                        <span>Facebook</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#!" class="link-google-plus">
+                        <svg viewBox="0 0 640 512"><use xlink:href="assets/img/sprite.svg#google-plus-icon"></use></svg>
+                        <span>Google+</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="side-close"><i class="material-icons md-24">close</i></div>
+</div><!-- End side account -->
+
+<!-- Begin side cart -->
+<div class="side side-right side-cart">
+    <div class="side-scroll side-cart-scroll">
+        <header class="mini-cart-header">
+            <div class="side-title item-heading">Shopping cart</div>
+        </header>
+        <div class="mini-cart-container">
+            <div class="mini-cart-scroll">
+                <ul class="list-style-none mini-cart-list">
+                    <li class="mini-cart-item">
+                        <a href="product-single.html" class="card-image img-style img-style-min">
+                            <img data-src="assets/img/shop/s-img1-d.jpg" class="lazy" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" alt="">
+                        </a>
+                        <div class="mini-cart-info">
+                            <h3 class="item-heading card-heading">
+                                <a href="product-single.html" title="Green seedless grapes">Green seedless grapes</a>
+                            </h3>
+                            <div class="mini-cart-price">
+                                1 x <b>$16.50</b>
+                            </div>
+                            <a href="#!" class="mini-cart-del">Delete</a>
+                        </div>
+                    </li>
+                    <li class="mini-cart-item">
+                        <a href="product-single.html" class="card-image img-style img-style-min">
+                            <img data-src="assets/img/shop/s-img1-e.jpg" class="lazy" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" alt="">
+                        </a>
+                        <div class="mini-cart-info">
+                            <h3 class="item-heading card-heading">
+                                <a href="product-single.html" title="Nikon AF-P DX Nikkor">Nikon AF-P DX Nikkor</a>
+                            </h3>
+                            <div class="mini-cart-price">
+                                1 x <b>$187.26</b>
+                            </div>
+                            <a href="#!" class="mini-cart-del">Delete</a>
+                        </div>
+                    </li>
+                    <li class="mini-cart-item">
+                        <a href="product-single.html" class="card-image img-style img-style-min">
+                            <img data-src="assets/img/shop/s-img1-b.jpg" class="lazy" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" alt="">
+                        </a>
+                        <div class="mini-cart-info">
+                            <h3 class="item-heading card-heading">
+                                <a href="product-single.html" title="8th Muse">8th Muse</a>
+                            </h3>
+                            <div class="mini-cart-price">
+                                1 x <b>$246.76</b>
+                            </div>
+                            <a href="#!" class="mini-cart-del">Delete</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <footer class="mini-cart-footer">
+                <div class="mini-cart-total">
+                    <span>Subtotal</span>
+                    <div class="card-price">$29.00</div>
+                </div>
+                <div class="mini-cart-btns">
+                    <a href="checkout.html" class="btn btn-wide btn-with-icon ripple">
+                        <span>Checkout</span>
+                        <svg class="btn-icon-right" viewBox="0 0 13 9" width="13" height="9"><use xlink:href="assets/img/sprite.svg#arrow-right"></use></svg>
+                    </a>
+                    <a href="cart.html" class="btn btn-wide btn-with-icon btn-border ripple">
+                        <span>View cart</span>
+                        <svg class="btn-icon-right" viewBox="0 0 13 9" width="13" height="9"><use xlink:href="assets/img/sprite.svg#arrow-right"></use></svg>
+                    </a>
+                </div>
+            </footer>
+            <div class="products-empty mini-cart-empty" style="display: none;">
+                <div class="products-empty-icon">
+                    <i class="material-icons material-icons-outlined md-36">remove_shopping_cart</i>
+                </div>
+                <div class="products-empty-message">No products in the cart.</div>
+            </div>
+        </div>
+    </div>
+    <div class="side-close"><i class="material-icons md-24">close</i></div>
+</div><!-- End side cart -->
+
+<!-- Begin wishlist pop up -->
+<div id="wishlist_popup" class="popup_style wishlist_popup popup_style_sally open_popup" style="display:none;">
+    <div class="popup">
+        <div class="popup_content">
+            <h4 class="popup_title">Wishlist (3)</h4>
+            <table class="table-secondary cart-table">
+                <tbody>
+                    <tr>
+                        <td class="cart-product">
+                            <a href="product-single.html" class="card-image img-style img-style-min">
+                                <img data-src="assets/img/shop/s-img1-d.jpg" class="lazy" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" alt="">
+                            </a>
+                            <div class="cart-product-info">
+                                <h3 class="item-heading card-heading">
+                                    <a href="product-single.html" title="Green seedless grapes">Green seedless grapes</a>
+                                </h3>
+                                <div class="card-prices">
+                                    <div class="card-price">$16.50</div>
+                                </div>
+                                <span class="inventory-status product-info-is">In stock</span>
+                            </div>
+                        </td>
+                        <td class="cart-btn">
+                            <div class="d-md-none">
+                                <a href="#!" class="btn btn-wide btn-with-icon">
+                                    <i class="material-icons material-icons-outlined btn-icon-left md-22">shopping_cart</i>
+                                    <span>Add to cart</span>
+                                </a>
+                            </div>
+                            <div class="d-none d-md-block">
+                                <a href="#!" class="card-btn-icon el-ripple" aria-label="Add 'Current title' to your cart" rel="nofollow">
+                                    <i class="material-icons material-icons-outlined md-24">shopping_cart</i>
+                                </a>
+                            </div>
+                        </td>
+                        <td class="cart-remove" data-title="Remove">
+                            <a href="#!" aria-label="Remove this item" title="Remove"><i class="material-icons md-24">close</i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="cart-product">
+                            <a href="product-single.html" class="card-image img-style img-style-min">
+                                <img data-src="assets/img/shop/s-img1-e.jpg" class="lazy" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" alt="">
+                            </a>
+                            <div class="cart-product-info">
+                                <h3 class="item-heading card-heading">
+                                    <a href="product-single.html" title="Nikon AF-P DX Nikkor">Nikon AF-P DX Nikkor</a>
+                                </h3>
+                                <div class="card-prices">
+                                    <div class="card-price">$187.26</div>
+                                </div>
+                                <span class="inventory-status product-info-is">In stock</span>
+                            </div>
+                        </td>
+                        <td class="cart-btn">
+                            <div class="d-md-none">
+                                <a href="#!" class="btn btn-wide btn-with-icon">
+                                    <i class="material-icons material-icons-outlined btn-icon-left md-22">shopping_cart</i>
+                                    <span>Add to cart</span>
+                                </a>
+                            </div>
+                            <div class="d-none d-md-block">
+                                <a href="#!" class="card-btn-icon el-ripple" aria-label="Add 'Current title' to your cart" rel="nofollow">
+                                    <i class="material-icons material-icons-outlined md-24">shopping_cart</i>
+                                </a>
+                            </div>
+                        </td>
+                        <td class="cart-remove" data-title="Remove">
+                            <a href="#!" aria-label="Remove this item" title="Remove"><i class="material-icons md-24">close</i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="cart-product">
+                            <a href="product-single.html" class="card-image img-style img-style-min">
+                                <img data-src="assets/img/shop/s-img1-b.jpg" class="lazy" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" alt="">
+                            </a>
+                            <div class="cart-product-info">
+                                <h3 class="item-heading card-heading">
+                                    <a href="product-single.html" title="8th Muse">8th Muse</a>
+                                </h3>
+                                <div class="card-prices">
+                                    <div class="card-price">$43.00</div>
+                                </div>
+                                <span class="inventory-status product-info-is">In stock</span>
+                            </div>
+                        </td>
+                        <td class="cart-btn">
+                            <div class="d-md-none">
+                                <a href="#!" class="btn btn-wide btn-with-icon">
+                                    <i class="material-icons material-icons-outlined btn-icon-left md-22">shopping_cart</i>
+                                    <span>Add to cart</span>
+                                </a>
+                            </div>
+                            <div class="d-none d-md-block">
+                                <a href="#!" class="card-btn-icon el-ripple" aria-label="Add 'Current title' to your cart" rel="nofollow">
+                                    <i class="material-icons material-icons-outlined md-24">shopping_cart</i>
+                                </a>
+                            </div>
+                        </td>
+                        <td class="cart-remove" data-title="Remove">
+                            <a href="#!" aria-label="Remove this item" title="Remove"><i class="material-icons md-24">close</i></a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <footer class="wishlist-footer-links justify-content-between">
+                <a href="wishlist.html" class="btn btn-with-icon btn-small ripple">
+                    <span>Open wishlist</span>
+                    <svg class="btn-icon-right" viewBox="0 0 13 9" width="13" height="9"><use xlink:href="assets/img/sprite.svg#arrow-right"></use></svg>
+                </a>
+                <a href="#!" class="btn btn-border btn-with-icon btn-small ripple wishlist_popup_close">
+                    <span>Continue shopping</span>
+                    <svg class="btn-icon-right" viewBox="0 0 13 9" width="13" height="9"><use xlink:href="assets/img/sprite.svg#arrow-right"></use></svg>
+                </a>
+            </footer>
+            <div class="products-empty wishlist-empty" style="display: none;">
+                <div class="products-empty-icon">
+                    <i class="material-icons material-icons-outlined md-36">favorite_border</i>
+                </div>
+                <div class="products-empty-message">No products in the wishlist</div>
+            </div>
+            <footer class="wishlist-footer-links justify-content-center" style="display: none;">
+                <a href="#!" class="wishlist_popup_close">Continue shopping</a>
+            </footer>
+        </div>
+        <div class="wishlist_popup_close popup_close"><i class="material-icons md-24">close</i></div>
+    </div>
+</div><!-- End wishlist pop up -->

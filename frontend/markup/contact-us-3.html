@@ -1,0 +1,142 @@
+<!DOCTYPE html><html lang="en">
+
+@@include('layouts/head.html')
+
+<body>
+
+	<main class="main">
+		
+		<div class="main-inner">
+
+			@@include('layouts/header.html')
+
+			<!-- Begin bread crumbs -->
+			<nav class="bread-crumbs">
+				<div class="container">
+					<div class="row">
+						<div class="col-12">
+							<ul class="bread-crumbs-list">
+								<li>
+									<a href="index.html">Home</a>
+									<i class="material-icons md-18">chevron_right</i>
+								</li>
+								<li><a href="#!">Contact Us</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</nav><!-- End bread crumbs -->
+
+			<div class="section">
+				<div class="container">
+					<div class="col-12">
+						<div class="section-heading heading-center">
+							<div class="section-subheading">we are always in touch</div>
+							<h1>Contact Us</h1>
+						</div>
+					</div>
+				</div>
+				<div class="map map-top">
+					<iframe class="lazy" data-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3302.1020346961877!2d-118.2916255847825!3d34.14373158058114!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2c0623fe71971%3A0xc829e89a5dcc767e!2zNDczMCBDcnlzdGFsIFNwcmluZ3MgRHIsIExvcyBBbmdlbGVzLCBDQSA5MDAyNywg0KHQv9C-0LvRg9GH0LXQvdGWINCo0YLQsNGC0Lgg0JDQvNC10YDQuNC60Lg!5e0!3m2!1suk!2sua!4v1621932036298!5m2!1suk!2sua"></iframe>
+				</div>
+				<div class="container form-heading-center">
+					<div class="row content-items">
+						<div class="col-md-4 col-12 content-item">
+							<div class="contacts-info-item item-style">
+								<div class="contacts-info-item-ico">
+									<i class="material-icons md-60">location_on</i>
+								</div>
+								<div class="contacts-info-item-content">
+									<a href="https://www.google.com/maps/place/4730+Crystal+Springs+Dr,+Los+Angeles,+CA+90027,+%D0%A1%D0%A8%D0%90/data=!4m2!3m1!1s0x80c2c08ea296b841:0x5030fc6064b8e8d1?sa=X&ved=2ahUKEwijmtvUqZvjAhXjkIsKHYNsDswQ8gEwAHoECAkQAQ">
+										4730 Crystal Springs Dr, <br> Los Angeles, CA
+									</a>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4 col-12 content-item">
+							<div class="contacts-info-item item-style">
+								<div class="contacts-info-item-ico">
+									<i class="material-icons md-60 footer-contact-tel">smartphone</i>
+								</div>
+								<div class="contacts-info-item-content">
+									<div>
+										<a href="tel:+13239134688" class="formingHrefTel">+1 323-913-4688</a>
+									</div>
+									<div>
+										<a href="tel:+13238884554" class="formingHrefTel">+1 323-888-4554</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4 col-12 content-item">
+							<div class="contacts-info-item item-style">
+								<div class="contacts-info-item-ico">
+									<i class="material-icons md-60 footer-contact-email">email</i>
+								</div>
+								<div class="contacts-info-item-content">
+									<div>
+										<a href="mailto:mail@example.com">mail@example.com</a>
+									</div>
+									<div>
+										<a href="mailto:info@example.com">info@example.com</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-12 content-item">
+							<h3>Get in touch</h3>
+							<form action="#!" method="post" class="contact-form">
+								<!-- Begin hidden Field for send form -->
+								<input type="hidden" name="form_subject" value="Contact form">
+								<!-- End hidden Field for send form -->
+								<div class="row gutters-default">
+									<div class="col-sm-6 col-12">
+										<div class="form-field">
+											<label for="contact-name" class="form-field-label">Your Name</label>
+											<input type="text" class="form-field-input" name="Name" value="" autocomplete="off" required="required" id="contact-name">
+										</div>
+									</div>
+									<div class="col-sm-6 col-12">
+										<div class="form-field">
+											<label for="contact-phone" class="form-field-label">Your Phone</label>
+											<input type="tel" class="form-field-input mask-phone" name="Phone" value="" autocomplete="off" required="required" id="contact-phone">
+										</div>
+									</div>
+									<div class="col-12">
+										<div class="form-field">
+											<label for="contact-email" class="form-field-label">Your Email</label>
+											<input type="email" class="form-field-input" name="Email" value="" autocomplete="off" required="required" id="contact-email">
+										</div>
+									</div>
+									<div class="col-12">
+										<div class="form-field">
+											<label for="contact-message" class="form-field-label">Your Message</label>
+											<textarea name="Message" class="form-field-input" id="contact-message" cols="30" rows="5"></textarea>
+										</div>
+										<div class="form-field form-field-checkbox">
+											<div class="checkbox">
+												<input type="checkbox" class="checkbox-input" name="PrivacyPolicy" id="checkbox-popup">
+												<label for="checkbox-popup" class="checkbox-label">I agree to the transfer of personal data in accordance with the <a href="privacy-policy.html">Privacy Policy</a></label>
+											</div>
+										</div>
+										<div class="form-btn">
+											<button type="submit" class="btn btn-w240 ripple"><span>Send Message</span></button>
+										</div>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+		@@include('layouts/footer.html')
+
+	</main><!-- End main -->
+
+	@@include('includes/scripts.html')
+
+</body>
+</html>
