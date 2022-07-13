@@ -1,0 +1,18 @@
+@mixin font($fname, $fstyle, $fweight, $furl) {
+	@font-face {
+		font-family: $fname;
+		font-style: $fstyle;
+		font-weight: $fweight;
+		font-display: swap;
+		src: local($fname), url($furl) format('woff2');
+	}
+}
+
+@include font("Istok Web", normal, 400, "../fonts/istok-web-v15-latin/istok-web-v15-latin-regular.woff2");
+@include font("Istok Web", normal, 700, "../fonts/istok-web-v15-latin/istok-web-v15-latin-700.woff2");
+
+@include font("Montserrat", normal, 600, "../fonts/montserrat-v15-latin/montserrat-v15-latin-600.woff2");
+@include font("Montserrat", normal, 700, "../fonts/montserrat-v15-latin/montserrat-v15-latin-700.woff2");
+
+@include font("Material Icons", normal, 400, "../fonts/material-icons/material-icons.woff2");
+@include font("Material Icons Outlined", normal, 400, "../fonts/material-icons/material-icons-outlined.woff2");

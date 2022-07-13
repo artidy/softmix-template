@@ -1,0 +1,294 @@
+.intro {
+    position: relative;
+    min-height: 31.25rem;
+    z-index: 1;
+}
+
+.intro-slider,
+.intro-item {
+    display: block;
+    min-height: 40rem;
+    overflow: hidden;
+}
+
+.intro-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 3.5rem 0;
+    color: $text-primary;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-color: $primary-color;
+    width: 100%;
+    .container {
+        position: relative;
+        z-index: 3;
+    }
+    &::after {
+        content: none;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: $primary-color;
+        opacity: 0.7;
+    }
+    .section-desc {
+        max-width: 100%;
+    }
+    .intro-heading-custom-font {
+        --intro-heading-font-size: 2.5rem;
+        h1, h2, h3 {
+            font-size: var(--intro-heading-font-size);
+        }
+    }
+}
+.intro-item-bgc {
+	background-color: $primary-bg-color;
+}
+
+.intro-content {
+    --margin-left: 0;
+    --margin-right: 0;
+    --max-width: 25rem;
+    width: 100%;
+    max-width: var(--max-width);
+    margin: 0 var(--margin-right) 0 var(--margin-left);
+    padding: 0 0 3.75rem 0;
+    &.intro-content-center {
+        margin: 0 auto;
+        text-align: center;
+        padding: 0;
+        .intro-btns {
+            justify-content: center;
+        }
+    }
+}
+
+.intro-btns {
+    margin-top: 1.625rem;
+}
+
+
+.intro-box {
+    --margin-left: 0;
+    --margin-right: 0;
+    --max-width: 31.25rem;
+    width: 100%;
+    max-width: var(--max-width);
+    margin: 0 var(--margin-right) 0 var(--margin-left);
+    padding: 3rem 3rem 3rem 4.375rem;
+    background-color: $primary-color;
+    border-radius: $el-border-radius;
+    box-shadow: $el-box-shadow;
+}
+
+.intro-item-img-right {
+    position: absolute;
+    right: 0;
+    width: 70%;
+    height: 100%;
+    z-index: 1;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+
+.intro-grid {
+    margin-top: $grid-gutter-width;
+    .section-desc {
+        max-width: 100%;
+    }
+    .section-heading {
+        max-width: 420px;
+    }
+}
+.ig-center {
+    text-align: center;
+    .intro-btns {
+        justify-content: center;
+    }
+    .section-heading {
+        margin: 0 auto;
+    }
+}
+.ig-items {
+    margin-bottom: -$grid-gutter-width;
+}
+$item-height: 540px;
+.ig-item {
+    position: relative;
+    margin-bottom: $grid-gutter-width;
+    height: $item-height;
+    padding: 2.5rem;
+    .wrapp-btn-link {
+        margin-top: 1rem;
+    }
+    &:hover {
+        .ig-item-bg {
+            transform: scale(1.05);
+        }
+    }
+}
+.ig-item-small {
+    display: flex;
+    align-items: center;
+    height: $item-height/2 - $grid-gutter-width/2;
+    padding: 2rem;
+    .ig-item-bg {
+        background-position: left center;
+    }
+    .section-heading {
+        h1, h2, h3 {
+            font-size: 1.5rem;
+        }
+    }
+    .section-subheading {
+        font-size: 0.875rem;
+    }
+}
+.ig-item-bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    transition: all 1s;
+}
+
+
+@include media-breakpoint-down(lg) {
+
+    .intro-slider,
+    .intro-item {
+        min-height: 35rem;
+    }
+    .intro-item {
+        min-height: 35rem;
+        &::after {
+            content: "";
+        }
+    }
+    .intro-box {
+        margin-bottom: 2rem;
+    }
+
+    $item-height: 450px;
+    .ig-item {
+        height: $item-height;
+    }
+    .ig-item-small {
+        height: $item-height/2 - $grid-gutter-width/2;
+    }
+
+}
+
+@include media-breakpoint-down(md) {
+
+    .intro-content,
+    .intro-box {
+        margin: 0!important;
+    }
+
+}
+
+@media 
+    only screen and (max-width: 767.98px), 
+    only screen and (min-width: 567px) and (max-width: 900px) and (orientation: landscape) {
+
+    .intro-content {
+        padding-bottom: 0;
+        .section-desc {
+            color: $text-primary;
+        }
+    }
+    .intro-item {
+        &::after {
+            background-color: $primary-color;
+            opacity: 0.8;
+        }
+        .intro-heading-custom-font {
+            --intro-heading-font-size: 2.5rem!important;
+        }
+    }
+
+    .intro-box {
+        padding: 0;
+        background: transparent;
+        box-shadow: none;
+        color: $primary-color;
+        .section-desc {
+            color: $primary-color;
+        }
+        .btn.btn-border {
+            color: $primary-color;
+            fill: $primary-color;
+            &:hover {
+                color: $primary-color;
+                fill: $primary-color;
+            }
+            &::before {
+                border-color: $primary-color;
+            }
+            &::after {
+                background: $primary-color;
+            }
+        }
+    }
+    .intro-item-mob-dark {
+        &::after {
+            background-color: $text-primary;
+            opacity: 0.8;
+        }
+    }
+    .intro-item-img-right {
+        width: 100%;
+        &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: $text-primary;
+            opacity: 0.8;
+            z-index: 2;
+        }
+    }
+
+}
+
+
+
+@media only screen and (max-width: 480px) {
+
+    .ig-item-small {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+
+}
+
+@media only screen and (min-width : 567px) and (max-width : 900px) and (orientation : landscape) {
+    
+    .intro-slider,
+    .intro-item {
+        height: auto;
+        min-height: 25rem;
+    }
+    .intro-content {
+        margin-bottom: 2.5rem;
+    }
+    .intro {
+        min-height: 25rem;
+    }
+
+}   

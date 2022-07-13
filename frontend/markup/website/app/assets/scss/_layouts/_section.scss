@@ -1,0 +1,162 @@
+.section {
+	position: relative;
+	padding: 4.5rem 0;
+	background-color: $primary-color;
+	color: $text-primary;
+	&.section-without-padding {
+		padding: 0;
+	}
+	&.section-without-padding-top {
+		padding-top: 0;
+	}
+	&.section-without-padding-bottom {
+		padding-bottom: 0;
+	}
+}
+
+.page-sections {
+	padding-top: 3.5rem;
+	.section {
+		padding: 0;
+		margin-bottom: 3.5rem;
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+}
+
+.section-overflow-hidden {
+	overflow: hidden;
+}
+
+.section-bg,
+.section-background-image {
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.section-bg,
+.section-bgc {
+	background-color: $primary-bg-color;
+}
+
+.section-dark {
+	background-color: #000;
+	color: #fff;
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	a {
+		color: #fff;
+	}
+}
+
+.section-heading {
+	margin-bottom: 3.25rem;
+	h1, h2, h3 {
+		position: relative;
+		font-size: 2.5rem;
+		margin: 0;
+	}
+	&.shm-none {
+		margin-bottom: 0;
+	}
+	.btn-group {
+		margin-top: 2rem;
+	}
+}
+.heading-center {
+	text-align: center;
+}
+
+.section-subheading {
+	font-size: 1rem;
+	margin-bottom: 0.3125rem;
+	text-transform: uppercase;
+	color: $main-color;
+}
+.section-desc {
+	margin: 1.25rem auto 0 auto;
+	max-width: 35rem;
+	color: $text-secondary;
+}
+
+.section-btns {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	margin-left: -1rem;
+	margin-bottom: -1rem;
+	margin-top: 0.3125rem;
+	.btn {
+		margin-bottom: 1rem;
+		margin-left: 1rem;
+	}
+}
+
+
+.section-nav {
+    position: relative;
+    margin-bottom: 2rem;
+    margin-top: -0.3125rem;
+}
+
+.section-nav-list {
+    list-style: none;
+    margin: 0;
+    padding: 0.3125rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    text-transform: uppercase;
+    width: 100%;
+    overflow-x: auto;
+    li {
+        cursor: pointer;
+        padding: 0 0.3125rem;
+        margin-right: 1.5rem;
+        white-space: nowrap;
+        transition: all 0.2s;
+        &:last-child {
+            margin-right: 0;
+        }
+        &:hover, &.active {
+            color: $main-color;
+        }
+    }
+}
+
+
+.section-row {
+	display: flex;
+	flex-wrap: wrap;
+}
+.section-item {
+	width: 50%;
+	max-height: 100%;
+}
+.section-path {
+	width: calc(1140px / 2);
+	padding: 0 $grid-gutter-width/2;
+}
+.section-path-left {
+	margin-left: auto;
+}
+.section-path-right {
+	margin-right: auto;
+}
+
+.section-right-picture {
+	display: block;
+	width: 100%;
+	height: 100%;
+	padding-left: 2rem;
+	img {
+		display: block;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+}

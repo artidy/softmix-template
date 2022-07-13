@@ -1,0 +1,169 @@
+.filter-by-color {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -0.625rem;
+    margin-bottom: -0.875rem;
+    > li {
+        margin-left: 0.625rem;
+        margin-bottom: 0.875rem;
+        &.active, &:hover {
+            > a {
+                .fbc-label {
+                    width: 70%;
+                    height: 70%;
+                }
+                &.fbc-link-border {
+                    &::after {
+                        border-width: 2px;
+                    }
+                }
+                &::after {
+                    opacity: 1;
+                    border-color: $main-color;
+                }
+            }
+        }
+        > a {
+            position: relative;
+            display: block;
+            width: 1.5rem;
+            height: 1.5rem;
+            text-decoration: none;
+            border-radius: 50%;
+            overflow: hidden;
+            &::after {
+                content: "";
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                border-radius: 50%;
+                border: 2px solid $border-color;
+                opacity: 0;
+                z-index: 1;
+                transition: all 0.2s;
+            }
+            &.fbc-link-border {
+                &::after {
+                    opacity: 1;
+                    border-width: 1px;
+                }
+            }
+        }
+    }
+}
+.fbc-label {
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 100%;
+    height: 100%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    transition: all 0.2s;
+}
+
+.filter-by-checkbox {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -0.625rem;
+    margin-bottom: -0.875rem;
+    font-size: 0.75rem;
+    > li {
+        margin-left: 0.625rem;
+        margin-bottom: 0.875rem;
+        &:hover, &.active {
+            > a {
+                color: $main-color;
+                &::after {
+                    border-color: $main-color;
+                }
+            }
+        }
+        > a {
+            position: relative;
+            display: block;
+            text-decoration: none;
+            color: $text-secondary;
+            min-width: 2.25rem;
+            height: 2.25rem;
+            line-height: 2.25rem;
+            padding: 0 0.5rem;
+            text-align: center;
+            &::after {
+                content: "";
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                border-radius: $el-border-radius-min;
+                border: 2px solid $border-color;
+                transition: all 0.2s;
+            }
+        }
+    }
+}
+
+.sidebar-filters {
+    .side-close {
+        display: none;
+    }
+}
+
+.sidebar-filters-desktop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translateX(-20rem);
+    width: 20rem;
+    height: 100%;
+    background: $primary-color;
+    overflow: hidden;
+    overflow-y: auto;
+    z-index: 1111;
+    padding-top: 1.5rem;
+    padding-bottom: 1rem;
+    transition: all 0.4s;
+    &.open {
+        transform: none;
+    }
+    .sidebar-item-style {
+        border: none;
+    }
+    .side-close {
+        display: block;
+    }
+}
+
+
+@include media-breakpoint-down(md) {
+
+    .sidebar-filters-mob {
+        position: fixed;
+        top: 0;
+        left: 0;
+        transform: translateX(-20rem);
+        width: 20rem;
+        height: 100%;
+        background: $primary-color;
+        overflow: hidden;
+        overflow-y: auto;
+        z-index: 1111;
+        padding-top: 1.5rem;
+        padding-bottom: 1rem;
+        transition: all 0.4s;
+        &.open {
+            transform: none;
+        }
+        .sidebar-item-style {
+            border: none;
+        }
+        .side-close {
+            display: block;
+        }
+    }
+
+}

@@ -1,0 +1,35 @@
+.ui-nav {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    li {
+        cursor: pointer;
+        padding: 0.625rem 1rem;
+        border-left: 2px solid transparent;
+        transition: all 0.25s;
+        &.active {
+            color: $main-color;
+            border-left-color: $main-color;
+            background-color: $primary-bg-color;
+        }
+        &:hover {
+            color: $main-color;
+        }
+    }
+}
+
+
+.ui-item {
+    display: none;
+    &.active {
+        display: block;
+    }
+    .page-sections {
+        padding-top: 0;
+    }
+}
+.ui-item-icons {
+    svg {
+        fill: $text-primary;
+    }
+}

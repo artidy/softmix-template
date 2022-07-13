@@ -1,0 +1,15 @@
+@import "vars";
+
+@import "../libs/bootstrap/scss/functions";
+@import "../libs/bootstrap/scss/variables";
+@import "../libs/bootstrap/scss/bootstrap-reboot";
+@import "../libs/bootstrap/scss/mixins/breakpoints";
+@import "../libs/bootstrap/scss/mixins/grid-framework";
+@import "../libs/bootstrap/scss/mixins/grid";
+@import "../libs/bootstrap/scss/grid";
+@import "../libs/bootstrap/scss/utilities/display";
+@import "../libs/bootstrap/scss/utilities/flex";
+
+@import "../libs/flickity/flickity.scss";
+@import "../libs/flickity/flickity-fade.scss";
+@import "_libs/lightgallery.scss";

@@ -1,0 +1,134 @@
+h1, h2, h3, h4, h5, h6 {
+    font-family: $heading-font-family;
+    font-weight: $heading-font-weight;
+    line-height: $heading-line-height;
+	padding: 0;
+	margin: 0 0 2rem 0;
+}
+h1 {
+    font-size: 2.5rem;
+}
+h2 {
+	font-size: 2rem;
+}
+h3 {
+	font-size: 1.75rem;
+}
+h4 {
+	font-size: 1.5rem;
+}
+h5 {
+	font-size: 1.25rem;
+}
+h6 {
+    font-size: 1.125rem;
+}
+
+p {
+	margin: 0 0 2rem 0;
+}
+
+mark {
+    padding: .2em;
+    background-color: $main-color;
+    color: $primary-color;
+}
+
+small {
+    font-size: 0.85rem;
+}
+
+blockquote {
+    padding: 0 0 0 1.25em;
+    font-style: italic;
+    color: $text-secondary;
+    border-left: 3px solid $main-color;
+    p {
+        margin-bottom: 0!important;
+    }
+    footer {
+        color: $main-color;
+        font-style: normal;
+        padding-top: 0.8em;
+    }
+}
+
+.content {
+    text-align: justify;
+	> * {
+		margin-bottom: 2rem;
+		&:last-child {
+			margin-bottom: 0;
+		}
+    }
+    h2, h3, h4, h5, h6 {
+        margin-top: 2.5rem;
+        text-align: left;
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+	ul, ol {
+		list-style: none;
+        margin: 0 0 2rem 0;
+        padding: 0;
+        li {
+            position: relative;
+            display: flex;
+            margin-bottom: 0.625rem;
+            &::before {
+                margin-right: 0.5rem;
+                display: block;
+                min-width: 1rem;
+                color: $main-color;
+			}
+		}
+	}    
+    ul {
+		li {
+			&::before {
+                content: "\e5ca";
+                position: relative;
+                top: -0.125rem;
+                font-family: 'Material Icons';
+                list-style: $line-height;
+                font-size: 1.125rem;
+			}
+		}
+	}
+    ol {
+		counter-reset: item;
+        li {
+			&::before {
+				content: counter(item) ".";
+                counter-increment: item;
+			}
+		}
+	}
+    img {
+		display: block;
+        margin-bottom: 2rem;
+        max-width: 100%;
+        height: auto;
+	}
+}
+
+@media 
+    only screen and (max-width: 767.98px), 
+    only screen and (min-width: 567px) and (max-width: 900px) and (orientation: landscape) {
+    h1 {
+        font-size: 2rem;
+    }
+    h2 {
+        font-size: 1.75rem;
+    }
+    h3 {
+        font-size: 1.5rem;
+    }
+    h4 {
+        font-size: 1.25rem;
+    }
+    h5 {
+        font-size: 1.125rem;
+    }
+}

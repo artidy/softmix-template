@@ -1,0 +1,90 @@
+$item-height: 240px;
+
+.gallery-item {
+    position: relative;
+    margin: 0;
+    display: block;
+    width: 100%;
+    height: $item-height;
+    text-decoration: none;
+    color: $primary-color;
+    background-color: $primary-bg-color;
+    overflow: hidden;
+    &:hover {
+        color: $primary-color;
+        .gallery-item-caption {
+            opacity: 1;
+            visibility: visible;
+            &::after {
+                height: 100%;
+            }
+        }
+    }
+    img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+.gallery-item-caption {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0.625rem 1rem;
+    text-align: center;
+    color: $primary-color;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    font-size: 1.125rem;
+    font-weight: bold;
+    transition: all 0.3s;
+    &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 50%;
+        height: 3.125rem;
+        width: 100%;
+        background-color: $text-primary;
+        opacity: 0.5;
+        transform: translateY(-50%);
+        transition: all 0.3s;
+    }
+    span {
+        position: relative;
+        display: block;
+        z-index: 2;
+    }
+}
+
+.pswp__img {
+    object-fit: cover;
+}
+
+.lg-outer .lg-thumb {
+    margin: 0 auto -0.625rem;
+}
+
+.gallery-grid-item-height2 { 
+    .gallery-item {
+        height: $item-height * 2 + $grid-gutter-width;
+    }
+}
+
+@media 
+    only screen and (max-width: 767.98px), 
+    only screen and (min-width: 567px) and (max-width: 900px) and (orientation: landscape) {
+
+    .gallery-grid-item-height2 { 
+        .gallery-item {
+            height: $item-height;
+        }
+    }
+
+}

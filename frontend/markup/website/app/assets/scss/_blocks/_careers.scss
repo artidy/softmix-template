@@ -1,0 +1,94 @@
+.careers-item {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    color: $text-primary;
+    text-decoration: none;
+    padding: 0.625rem;
+    &:hover {
+        text-decoration: none;
+        color: $text-primary;
+    }
+}
+.careers-item-labels {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -0.625rem;
+}
+.careers-item-label {
+    font-size: 0.625rem;
+    line-height: 1;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 0.3125rem 0.5rem;
+    margin-left: 0.625rem;
+    background-color: $text-primary;
+    color: $primary-color;
+    border-radius: $el-border-radius-min;
+    transition: all .25s;
+    &.clabel-hot {
+        background-color: $alert-danger;
+    }
+    &.clabel-primary {
+        background-color: $alert-primary;
+    }
+}
+.careers-item-details {
+    width: 100%;
+    padding: 1.25rem 0.625rem 1rem;
+}
+.careers-item-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: -1.25rem;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+}
+.careers-item-location {
+    display: flex;
+    align-items: center;
+    line-height: 1;
+    margin-left: 1.25rem;
+    i {
+        margin-right: 0.25rem;
+    }
+}
+.careers-item-directions {
+    margin-left: 1.25rem;
+    text-align: right;
+}
+.careers-item-heading {
+    font-size: 1.125rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 1.75rem 0 0;
+}
+
+.single-careers-content {
+    margin: 2.5rem 0;
+}
+
+@include media-breakpoint-down(xs) {
+
+    .single-careers-sidebar {
+        .item-style {
+            max-width: 100%;
+        }
+    }
+
+}
+
+@media only screen and (max-width : 480px) {
+
+    .single-careers-header {
+        display: block;
+        .careers-item-directions {
+            text-align: left;
+            margin-top: 1rem;
+        }
+    }
+
+}

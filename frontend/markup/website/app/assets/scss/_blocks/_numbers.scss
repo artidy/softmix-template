@@ -1,0 +1,269 @@
+.main-counter {
+    padding-right: 4.375rem;
+    padding-left: 4.375rem;
+    padding-top: 1.25rem;
+    &::after, &::before {
+        content: "";
+        position: absolute;
+        right: 0;
+        background-color: $main-color;
+        border-radius: $el-border-radius;
+        background: linear-gradient(to right, $el-gradient1 0%, $el-gradient2 100%);
+    }
+    &::after {
+        top: 0;
+        width: 3rem;
+        height: 3rem;
+    }
+    &::before {
+        top: 5.625rem;
+        width: 2.25rem;
+        height: 2.25rem;
+    }
+}
+.main-counter-item {
+    position: relative;
+    width: 20rem;
+    height: 20rem;
+    border-radius: $el-border-radius;
+    padding-bottom: 0.625rem;
+}
+.main-counter-item-circ {
+    position: absolute;
+    left: -4.375rem;
+    top: -1.25rem;
+    width: 100%;
+    height: 100%;
+    width: calc(100% - 1.25rem);
+    height: calc(100% - 1.25rem);
+    background-color: $main-color;
+    border-radius: $el-border-radius;
+    overflow: hidden;
+    &::after, &::before {
+        content: "";
+        position: absolute;
+        border-radius: $el-border-radius;
+        background-color: $primary-color;
+        transition: all 0.2s;
+    }
+    &::after {
+        left: 2rem;
+        bottom: -4rem;
+        width: 13.75rem;
+        height: 13.75rem;
+        opacity: 0.15;
+    }
+    &::before {
+        left: -1.75rem;
+        bottom: -4rem;
+        width: 13.75rem;
+        height: 13.75rem;
+        opacity: 0.1;
+    }
+}
+.main-counter-item-center {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    background-color: $primary-color;
+    box-shadow: $el-box-shadow;
+    border-radius: $el-border-radius;
+    z-index: 1;
+}
+
+.main-counter-heading {
+    font-size: 1.5rem;
+    font-family: $heading-font-family;
+    font-weight: bold;
+    line-height: 1.2;
+    max-width: 14.375rem;
+}
+.main-counter-numb {
+    font-size: 9rem;
+    font-family: $heading-font-family;
+    font-weight: bold;
+    color: $main-color;
+    margin-bottom: 0;
+    line-height: 1;
+}
+  
+
+.counter-item-heading {
+    font-family: $heading-font-family;
+    font-weight: $heading-font-weight;
+    line-height: $heading-line-height;
+    font-size: 1.5rem;
+    margin-bottom: 0;
+}
+.counter-item-numb {
+    font-size: 2.5rem;
+    font-family: $heading-font-family;
+    font-weight: bold;
+    line-height: 1.2;
+    color: $main-color;
+    margin-bottom: 0.625rem;
+}
+
+
+.counter-col {
+    padding: 0 1.25rem 2rem;
+    text-align: center;
+}
+.counter-col-numb {
+    font-size: 2.5rem;
+    font-family: $heading-font-family;
+    font-weight: bold;
+    line-height: 1.2;
+    color: $main-color;
+    margin-bottom: 0.625rem;
+}
+.counter-col-heading {
+    margin-bottom: 0;
+    font-size: 1.25rem;
+}
+.counter-col-ico {
+    width: 5.625rem;
+    height: 5.625rem;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    border-radius: 50%;
+    border: 1px solid $border-color;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.5rem;
+    margin-top: -2.5rem;
+    background-color: $primary-bg-color;
+    color: $main-color;
+}
+
+
+.counter-min {
+    position: relative;
+    height: 6.875rem;
+    padding-left: 1.875rem;
+}
+.counter-min-block {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 4.625rem;
+    width: 7.5rem;
+    border-radius: $el-border-radius-min;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $primary-color;
+    background: $main-color;
+	background: linear-gradient(to right, $el-gradient1 0%, $el-gradient2 100%);
+}
+.counter-min-ico {
+    line-height: 1;
+}
+.counter-min-info {
+    padding-left: 6.625rem;
+    height: 100%;
+    display: flex;
+    border-radius: $el-border-radius-min;
+    background-color: $primary-bg-color;
+    align-items: center;
+    padding-right: 0.625rem;
+    .counter-min-heading {
+        margin-bottom: 0;
+        font-size: 1.125rem;
+    }
+}
+
+.counter-min-numb {
+    font-size: 2.1875rem;
+    font-family: $heading-font-family;
+    font-weight: bold;
+    margin-left: 0.625rem;
+}
+
+
+
+@include media-breakpoint-down(md) {
+
+    .main-counter-item {
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 2.5rem;
+    }
+    .counter-items {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    .counter-item {
+        text-align: center;
+    }
+
+}
+
+@media 
+    only screen and (max-width: 767.98px), 
+    only screen and (min-width: 567px) and (max-width: 900px) and (orientation: landscape) {
+
+    .counter-item-numb {
+        font-size: 2rem;
+    }
+    .main-counter-heading {
+        font-size: 1.25rem;
+        max-width: 12rem;
+    }
+    .counter-item-heading {
+        font-size: 1.25rem;
+    }
+
+    .main-counter-numb {
+        font-size: 6.25rem;
+    }
+    .main-counter-item {
+        width: 250px;
+        height: 250px;
+    }
+    .main-counter-item-circ {
+        left: -50px;
+        top: -10px;
+    }
+    .main-counter {
+        padding-left: 3rem;
+        padding-right: 3rem;
+        &::after, &::before {
+            content: none;
+        }
+    }
+
+}
+
+@include media-breakpoint-down(xs) {
+
+    .counter-items {
+        display: block;
+    }
+
+}
+
+@media only screen and (max-width : 370px) {
+
+    .main-counter-item {
+        width: 230px;
+        height: 230px;
+    }
+    .main-counter {
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+    }
+    .main-counter-item-circ {
+        left: -30px;
+        top: -5px;
+    }
+
+}

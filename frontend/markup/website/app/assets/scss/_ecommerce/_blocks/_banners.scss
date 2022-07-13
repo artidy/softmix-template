@@ -1,0 +1,65 @@
+.banner-dark {
+    text-align: center;
+}
+
+.banner-dark-heading {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.bdt-mt {
+    margin-top: 1.125rem;
+}
+
+.banner-dark-price {
+    position: relative;
+    img {
+        display: block;
+        max-width: 100%;
+        margin: 0 auto;
+        height: auto;
+    }
+}
+
+.banner-dark-price-text {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font: bold 3.75rem $heading-font-family;
+    white-space: nowrap;
+    color: $main-color;
+    margin-top: 0.25rem;
+    line-height: 1;
+}
+
+.banner-dark-btn {
+    margin-top: 1.5rem;
+}
+
+.banner-container {
+    padding-left: 6rem;
+    padding-right: 2rem;
+    background-position: left center;
+}
+
+
+@include media-breakpoint-down(md) {
+
+    .banner-dark-price-text {
+        font-size: 3rem;
+    }
+
+}
+
+@media only screen and (max-width : 480px) {
+
+    .banner-container {
+        text-align: center;
+        padding-left: 2rem;
+        .btn-group {
+            justify-content: center;
+        }
+    }
+
+}

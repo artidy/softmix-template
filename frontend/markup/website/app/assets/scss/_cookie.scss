@@ -1,0 +1,60 @@
+.cookie-message {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 1.25rem 1rem;
+    opacity: 0;
+    visibility: hidden;
+    color: $primary-color;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    z-index: 111111;
+    transition: all 0.2s;
+    &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.9;
+        background-color: $text-primary;
+        z-index: -1;
+    }
+    &.open {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+.cmc-title {
+    font-size: 1.125rem;
+    margin-bottom: 0.625rem;
+}
+.cmc-desc {
+    p {
+        display: block;
+        margin: 0;
+    }
+}
+
+.mc-btn {
+    white-space: nowrap;
+    margin-left: 1.5rem;
+    min-width: 11.25rem;
+}
+
+@media only screen and (max-width : 576px) {
+    .cookie-message {
+        display: block;
+        padding: 1rem;
+    }
+    .cmc-desc {
+        margin-bottom: 1rem;
+    }
+    .mc-btn {
+        margin-left: 0;
+    }
+}

@@ -1,0 +1,138 @@
+* {
+	box-sizing: border-box;
+	&:before, &:after {
+		box-sizing: border-box;
+	}	
+}
+
+html {
+	font-size: $font-size;
+}
+
+html, body {
+	height: 100%;
+}
+
+body {
+	position: relative;
+	font-size: 1rem;
+	width: 100%;
+	min-width: 320px;
+	line-height: $line-height;
+	font-family: $font-family;
+	font-weight: $font-weight;
+	font-style: $font-style;
+	overflow-x: hidden;
+	color: $text-primary;
+	margin: 0;
+	padding: 0;
+	opacity: 1;
+	background-color: $primary-color;
+	&.overflow-hidden {
+		overflow: hidden;
+	}
+}
+	
+main {
+	position: relative;
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	opacity: 0;
+	&.main-visible {
+		opacity: 1;
+	}
+}
+	
+.main-inner {
+	flex: 1 0 auto;
+	overflow: hidden;
+}
+	
+.footer {
+	flex: 0 0 auto;
+}
+	
+header, footer, aside, nav {
+	ul, ol {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+}
+	
+a {
+	color: $main-color;
+	text-decoration: underline;
+	transition: all 0.2s;
+	&:hover {
+		text-decoration: none;
+		color: $main-color;
+	}	
+}
+
+code {
+    font-size: 87.5%;
+    color: #e83e8c;
+    word-break: break-word;
+}
+
+$gatters-default: 0.625rem;
+.gutters-default {
+	margin-right: -$gatters-default;
+	margin-left: -$gatters-default;
+	> .col,
+	> [class*="col-"] {
+		padding-right: $gatters-default;
+		padding-left: $gatters-default;
+	}
+}
+
+$gatters-20: 0.625rem;
+.gutters-20 {
+	margin-right: -$gatters-20;
+	margin-left: -$gatters-20;
+	> .col,
+	> [class*="col-"] {
+		padding-right: $gatters-20;
+		padding-left: $gatters-20;
+	}
+}
+$gatters-10: 0.3125rem;
+.gutters-10 {
+	margin-right: -$gatters-10;
+	margin-left: -$gatters-10;
+	> .col,
+	> [class*="col-"] {
+		padding-right: $gatters-10;
+		padding-left: $gatters-10;
+	}
+}
+
+.list-style-none {
+ 	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.text-center {
+	text-align: center;
+}
+.text-right {
+	text-align: right;
+}
+.text-justify {
+	text-align: justify;
+}
+
+.d-flex {
+	display: flex;
+	flex-wrap: wrap;
+	margin-left: -1rem;
+}
+.d-flex-item {
+	margin-left: 1rem;
+}

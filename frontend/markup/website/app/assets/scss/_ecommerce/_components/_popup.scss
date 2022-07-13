@@ -1,0 +1,121 @@
+.card_preview_popup {
+    max-width: 62rem;
+    .popup {
+        padding: 1.75rem;
+    }
+}
+
+.card-preview-container {
+    display: flex;
+    .card-page-rating {
+        .card-rating {
+            height: 1.25rem;
+        }
+    }
+}
+
+.card-preview-img {
+    min-width: 28.125rem;
+    width: 28.125rem;
+}
+.card-preview-info {
+    padding-left: 1.5rem;
+    .btn {
+        white-space: nowrap;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
+
+
+.wishlist_popup {
+    max-width: 41.25rem;
+    .popup {
+        padding: 2.25rem 2rem;
+    }
+    .card-heading,
+    .card-price {
+        font-size: 1rem;
+    }
+    .cart-product {
+        .card-heading {
+            margin-bottom: 0.25rem;
+        }
+        .card-image {
+            margin-right: 1rem;
+        }
+    }
+    .card-prices {
+        justify-content: flex-start;
+        margin-bottom: 0.375rem;
+    }
+    .inventory-status {
+        font-size: 0.75rem;
+        margin-bottom: 0;
+    }
+    .cart-table {
+        td {
+            &.cart-btn {
+                padding: 1rem 0.5rem;
+                width: 4rem;
+            }
+            &.cart-product {
+                width: 100%;
+            }
+            &.cart-remove {
+                width: 3.5rem;
+            }
+        }
+    }
+}
+
+@include media-breakpoint-down(md) {
+
+    .card-preview-container {
+        display: block;
+    }
+
+    .card-preview-img {
+        width: auto;
+        min-width: 100%;
+        margin-top: 1.25rem;
+    }
+    .card-preview-info {
+        padding-left: 0;
+        margin-top: 1.5rem;
+    }
+    .card_preview_popup {
+        max-width: 34.375rem;
+    }
+
+}
+
+@media 
+    only screen and (max-width: 767.98px), 
+    only screen and (min-width: 567px) and (max-width: 900px) and (orientation: landscape) {
+
+    .card_preview_popup {
+        max-width: 30rem;
+    }
+
+}
+
+@include media-breakpoint-down(xs) {
+
+    .card_preview_popup {
+        .popup {
+            padding: 1.75rem 1rem;
+        }
+    }
+
+}
+
+@media only screen and (max-width : 360px) {
+    .card-preview-info {
+        .btn {
+            i {
+                display: none;
+            }
+        }
+    }
+}

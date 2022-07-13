@@ -1,0 +1,133 @@
+.comming-soon {
+    position: relative;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: $primary-color;
+        opacity: 0.6;
+    }
+    .container {
+        position: relative;
+        z-index: 2;
+    }
+}
+
+.countdown {
+    display: flex;
+    justify-content: space-between;
+    max-width: 42.5rem;
+    margin-left: auto;
+    margin-right: auto;
+    &.hidden {
+        display: none;
+    }
+}
+.countdown-number {
+    padding: 1.25rem;
+    width: 9.375rem;
+    height: 9.375rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    &.item-style {
+        height: 9.375rem;
+        width: 9.375rem;
+    }
+}
+.countdown-time {
+    display: flex;
+    justify-content: center;
+    font-size: 3.75rem;
+    font-family: $heading-font-family;
+    font-weight: bold;
+    width: 100%;
+    line-height: 1;
+}
+.countdown-text {
+    display: block;
+    line-height: 1;
+    color: $text-secondary;
+}
+
+.deadline-message {
+    text-align: center;
+    font-size: 1.25rem;
+    font-weight: bold;
+    text-decoration: line-through;
+    display: none;
+    &.visible {
+        display: block;
+    }
+}
+
+.comming-soon-form {
+    margin-top: 2.5rem;
+}
+
+
+@media 
+    only screen and (max-width: 767.98px), 
+    only screen and (min-width: 567px) and (max-width: 900px) and (orientation: landscape) {
+
+    .countdown-number {
+        width: 6.25rem;
+        height: 6.25rem;
+        &.item-style {
+            width: 6.25rem;
+            height: 6.25rem;
+        }
+    }
+    .countdown-time {
+        font-size: 2.5rem;
+    }
+
+}
+
+@media only screen and (max-width : 480px) {
+
+    .countdown-number {
+        width: 5rem;
+        height: 5rem;
+        padding: 0.625rem;
+        &.item-style {
+            width: 5rem;
+            height: 5rem;
+        }
+    }
+    .countdown-time {
+        font-size: 2rem;
+    }
+    .countdown-text {
+        font-size: 1rem;
+    }
+
+}
+
+@media only screen and (max-width : 370px) {
+    
+    .countdown-number {
+        width: 4rem;
+        height: 4rem;
+        padding: 0.625rem 0;
+        &.item-style {
+            width: 4rem;
+            height: 4rem;
+        }
+    }
+    .countdown-time {
+        font-size: 1.375rem;
+    }
+    .countdown-text {
+        font-size: 0.8125rem;
+    } 
+
+}

@@ -1,0 +1,146 @@
+@import "info";
+@import "vars-root";
+@import "vars";
+@import '../libs/bootstrap/scss/functions';
+@import '../libs/bootstrap/scss/variables';
+@import '../libs/bootstrap/scss/mixins/_breakpoints.scss';
+
+/* === CSS Table Of Content
+
+1. Content
+    1.1 Fonts
+    1.2 Base
+    1.3 Tables
+    1.4 Typography
+2. Components
+    2.1 Accordion
+    2.2 Alerts
+    2.3 Breadcrumb
+    2.4 Buttons
+    2.5 Carusel
+    2.6 Forms
+    2.7 Icons
+    2.8 Pagination
+    2.9 Popup
+    2.10 Tabs
+    2.11 Range slider
+3. Bloks
+    3.1 Intro
+    3.2 Icon items
+    3.3 Image items
+    3.4 Items of numbers
+    3.5 Numbers
+    3.6 Team
+    3.7 Reviews
+    3.8 News
+    3.9 Comments
+    3.10 Pricing
+    3.11 Brands
+    3.12 Countdown
+    3.13 Gallery
+    3.14 Contact
+    3.15 404
+    3.16 Careers
+4. Layouts
+    4.1 Header
+    4.2 Sidebar
+    4.3 Section
+    4.4 Page
+    4.5 Footer
+    4.6 Elements style
+5. Cookie
+6. UI elements
+7. Media
+
+=== */
+
+/* === 1. Content === */
+/* 1.1 Fonts */
+@import "fonts";
+/* 1.2 Base */
+@import "_content/base";
+/* 1.3 Tables */
+@import "_content/tables";
+/* 1.4 Typography */
+@import "_content/typography";
+
+/* === 2. Components === */
+/* 2.1 Accordion */
+@import "_components/accordion";
+/* 2.2 Alerts */
+@import "_components/alerts";
+/* 2.3 Breadcrumb */
+@import "_components/breadcrumb";
+/* 2.4 Buttons */
+@import "_components/buttons";
+/* 2.5 Carusel */
+@import "_components/carusel";
+/* 2.6 Forms */
+@import "_components/forms";
+/* 2.7 Icons */
+@import "_components/icons";
+/* 2.8 Pagination */
+@import "_components/pagination";
+/* 2.9 Popup */
+@import "_components/popup";
+/* 2.10 Tabs */
+@import "_components/tabs";
+/* 2.11 Range slider */
+@import "_components/range-slider";
+
+/* === 3. Bloks === */
+/* 3.1 Intro */
+@import "_blocks/intro";
+/* 3.2 Icon items */
+@import "_blocks/icon_items";
+/* 3.3 Image items */
+@import "_blocks/image_items";
+/* 3.4 Items of numbers */
+@import "_blocks/items_of_numbers";
+/* 3.5 Numbers */
+@import "_blocks/numbers";
+/* 3.6 Team */
+@import "_blocks/team";
+/* 3.7 Reviews */
+@import "_blocks/reviews";
+/* 3.8 News */
+@import "_blocks/news";
+/* 3.9 Comments */
+@import "_blocks/comments";
+/* 3.10 Pricing */
+@import "_blocks/pricing";
+/* 3.11 Brands */
+@import "_blocks/brands";
+/* 3.12 Countdown */
+@import "_blocks/countdown";
+/* 3.13 Gallery */
+@import "_blocks/gallery";
+/* 3.14 Contacts */
+@import "_blocks/contacts";
+/* 3.15 404 */
+@import "_blocks/404";
+/* 3.16 Careers */
+@import "_blocks/careers";
+
+/* === 4. Layouts === */
+/* 4.1 Header */
+@import "_layouts/header";
+/* 4.2 Sidebar */
+@import "_layouts/sidebar";
+/* 4.3 Section */
+@import "_layouts/section";
+/* 4.4 Page */
+@import "_layouts/page";
+/* 4.5 Footer */
+@import "_layouts/footer";
+/* 4.6 Elements style */
+@import "elements_style";
+
+/* === 5. Cookie === */
+@import "cookie";
+
+/* === 6. UI elements === */
+@import "ui";
+
+/* === 7. Media === */
+@import "media";

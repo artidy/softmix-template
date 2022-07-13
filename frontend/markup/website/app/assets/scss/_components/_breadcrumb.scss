@@ -1,0 +1,47 @@
+.bread-crumbs {
+    position: relative;
+    padding: 1.125rem 0;
+    background-color: $primary-bg-color;
+}
+.bread-crumbs-list {
+    position: relative;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    font-size: 1rem;
+    overflow: hidden;
+    li {
+        position: relative;
+        margin-right: 2rem;
+        white-space: nowrap;
+        &:last-child {
+            margin-right: 0;
+            a, span {
+                pointer-events: none;
+                cursor: text;
+                color: $main-color;
+                &:hover {
+                    text-decoration: none;
+                }
+            }
+            i {
+                display: none;
+            }
+        }
+        a, span {
+            text-decoration: none;
+            color: $text-secondary;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+        i {
+            position: absolute;
+            top: 50%;
+            right: -1.5625rem;
+            margin-top: -0.5625rem;
+            color: $main-color;
+        }
+    }
+}

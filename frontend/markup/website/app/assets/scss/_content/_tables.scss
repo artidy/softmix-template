@@ -1,0 +1,105 @@
+table {
+    width: 100%;
+    border-bottom: 1px solid $border-color;
+    &.table-border {
+        border: 1px solid $border-color;
+        td {
+            border-right: 1px solid $border-color;
+        }
+    }
+    &.table-secondary {
+        tr {
+            &:nth-child(even) {
+                background-color: transparent;
+            }  
+        }
+        tbody {
+            tr {
+                border-bottom: 1px solid $border-color;
+                transition: all 0.2s;
+                &:first-child {
+                    border-top: 1px solid $border-color;
+                }
+                &:hover {
+                    background-color: $primary-bg-color;
+                }
+            }
+        }
+    }
+    &.table-bordered {
+        tr {
+            &:nth-child(even) {
+                background-color: transparent;
+            }  
+        }
+        td {
+            border: 1px solid $border-color;
+        }
+        thead {
+            tr {
+                th {
+                    color: $text-primary;
+                    border: 1px solid $border-color;
+                }
+            }
+        }
+    }
+    td, th {
+        padding: 1rem;
+    }
+    tr {
+        &:nth-child(even) {
+            background-color: $primary-bg-color;
+        }
+    }
+    thead {
+        tr {
+            border-bottom: 1px solid $border-color;
+            th {
+                font-weight: bold;
+                font-size: 1rem;
+            }
+        }
+    }
+    tfoot {
+        font-weight: 600;
+    }
+}
+
+// ≥768px
+@media 
+    only screen and (max-width: 767.98px), 
+    only screen and (min-width: 567px) and (max-width: 900px) and (orientation: landscape) {
+
+    .table-responsive {
+        position: relative;
+        width: 100%;
+        overflow-y: auto;
+        table {
+            width: 650px;
+        }		
+    }	
+    .table-responsive-outer {
+        position: relative;
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 0.625rem;
+            height: 100%;
+            background-image: linear-gradient(0deg, rgba(255,255,255,.3), #fff);
+        }			
+    }	
+    .table-container::-webkit-scrollbar {
+        -webkit-appearance: none;
+        width: 0.875rem;
+        height: 0.875rem;
+    }		
+    .table-container::-webkit-scrollbar-thumb {
+        border-radius: $el-border-radius;
+        border: 3px solid #fff;
+        background-color: rgba(0, 0, 0, .3);
+    }
+
+}

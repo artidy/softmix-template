@@ -1,0 +1,41 @@
+.page-404 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    overflow: hidden;
+    > svg {
+        width: 100%;
+        height: 85%;
+    }
+    .btn-group {
+        position: absolute;
+        left: 50%;
+        bottom: 2rem;
+        transform: translateX(-50%);
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width : 480px) {
+    
+    .page-404 {
+        > svg {
+            height: 100%;
+        }
+    }
+
+}
+
+@media only screen and (min-width : 567px) and (max-width : 900px) and (orientation : landscape) {
+
+    .page-404 {
+        > svg {
+            height: 78%;
+        }
+    }
+
+}
