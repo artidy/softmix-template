@@ -1,0 +1,85 @@
+@@include('layouts/menu/mobile-menu.html')
+
+<!-- Begin header -->
+<header class="header">
+    <!-- Begin header fixed -->
+    <nav class="header-fixed">
+        <div class="container">
+            <div class="row flex-nowrap align-items-center justify-content-between">
+                <div class="col-auto d-block d-lg-none header-fixed-col">
+                    <div class="main-mnu-btn">
+                        <span class="bar bar-1"></span>
+                        <span class="bar bar-2"></span>
+                        <span class="bar bar-3"></span>
+                        <span class="bar bar-4"></span>
+                    </div>
+                </div>
+                <div class="col-auto header-fixed-col">
+                    <!-- Begin logo -->
+                    <a href="/" class="logo" title="PathSoft">
+                        <img src="assets/img/logo.svg" width="133" height="36" alt="PathSoft">
+                    </a><!-- End logo -->
+                </div>
+                <div class="col-lg col-auto col-static header-fixed-col">
+                    <div class="row flex-nowrap align-items-center justify-content-end">
+                        <div class="col-auto header-fixed-col d-none d-lg-block col-static">
+                            @@include('layouts/menu/main-menu.html')
+                        </div>
+                        <div class="col-auto d-block d-lg-none col-static header-fixed-col">
+                            <div class="header-navbar">
+                                <div class="header-navbar-btn">
+                                    <i class="material-icons md-24">more_vert</i>
+                                </div>
+                                <ul class="header-navbar-content">
+                                    <li>
+                                        <a href="mailto:mail@example.com">
+                                            <i class="material-icons md-20">mail_outline</i>
+                                            <span>mail@example.com</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="mailto:mail@example.com" class="formingHrefTel">
+                                            <i class="material-icons md-20">support_agent</i>
+                                            <span>1-888-777-1234</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#сallback_popup" class="header-call-back-link сallback_popup_open">
+                                            <i class="material-icons">ring_volume</i>
+                                            <span>Callback</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <!-- Begin social links -->
+                                        <ul class="social-links">
+                                            <li>
+                                                <a href="#!" title="Facebook">
+                                                    <svg viewBox="0 0 320 512"><use xlink:href="assets/img/sprite.svg#facebook-icon"></use></svg>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#!" title="Instagram">
+                                                    <svg viewBox="0 0 448 512"><use xlink:href="assets/img/sprite.svg#instagram-icon"></use></svg>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#!" title="LinkedIn">
+                                                    <svg viewBox="0 0 448 512"><use xlink:href="assets/img/sprite.svg#linkedin-icon"></use></svg>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#!" title="Twitter">
+                                                    <svg viewBox="0 0 512 512"><use xlink:href="assets/img/sprite.svg#twitter-icon"></use></svg>
+                                                </a>
+                                            </li>
+                                        </ul><!-- End social links -->
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav><!-- End header fixed -->
+</header><!-- End header -->

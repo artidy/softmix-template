@@ -1,0 +1,232 @@
+<!DOCTYPE html><html lang="en">
+
+	@@include('layouts/head-shop.html')
+
+<body>
+
+	<main class="main">
+		
+		<div class="main-inner">
+
+			@@include('layouts/header-shop.html')
+
+			<!-- Begin bread crumbs -->
+			<nav class="bread-crumbs">
+				<div class="container">
+					<div class="row">
+						<div class="col-12">
+							<ul class="bread-crumbs-list">
+								<li>
+									<a href="index.html">Home</a>
+									<i class="material-icons md-18">chevron_right</i>
+								</li>
+								<li><a href="#!">Cart</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</nav><!-- End bread crumbs -->
+
+			<div class="section">
+				<div class="container">
+					<div class="row items">
+						<div class="col-12">
+							<div class="section-heading heading-center">
+								<h1>Cart</h1>
+							</div>
+						</div>
+						<div class="col-lg-8 item">
+							<form action="#!" method="post">
+								<table class="table-secondary cart-table">
+									<thead>
+										<tr>
+											<th>Product</th>
+											<th>Price</th>
+											<th>Quantity</th>
+											<th>Remove</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td class="cart-product">
+												<a href="product-single.html" class="card-image img-style img-style-min">
+													<img data-src="assets/img/shop/s-img1-d.jpg" class="lazy" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" alt="">
+												</a>
+												<div class="cart-product-info">
+													<h3 class="item-heading card-heading">
+														<a href="product-single.html" title="Green seedless grapes">Green seedless grapes</a>
+													</h3>
+												</div>
+											</td>
+											<td class="cart-price" data-title="Price">
+												<div class="card-prices">
+													<div class="card-price">$16.50</div>
+												</div>
+											</td>
+											<td class="cart-quantity" data-title="Quantity">
+												<div class="card-quantity">
+													<button type="button" class="cpq-btn cpq-plus">
+														<i class="material-icons md-20">expand_less</i>
+													</button>
+													<input type="number" step="1" min="1" name="quantity" value="1" size="4" inputmode="numeric">
+													<button type="button" class="cpq-btn cpq-minus">
+														<i class="material-icons md-20">expand_more</i>
+													</button>
+												</div>
+											</td>
+											<td class="cart-remove" data-title="Remove">
+												<a href="#!" aria-label="Remove this item" title="Remove"><i class="material-icons md-24">close</i></a>
+											</td>
+										</tr>
+										<tr>
+											<td class="cart-product">
+												<a href="product-single.html" class="card-image img-style img-style-min">
+													<img data-src="assets/img/shop/s-img1-e.jpg" class="lazy" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" alt="">
+												</a>
+												<div class="cart-product-info">
+													<h3 class="item-heading card-heading">
+														<a href="product-single.html" title="Nikon AF-P DX Nikkor">Nikon AF-P DX Nikkor</a>
+													</h3>
+												</div>
+											</td>
+											<td class="cart-price" data-title="Price">
+												<div class="card-prices">
+													<div class="card-price">$187.26</div>
+												</div>
+											</td>
+											<td class="cart-quantity" data-title="Quantity">
+												<div class="card-quantity">
+													<button type="button" class="cpq-btn cpq-plus">
+														<i class="material-icons md-20">expand_less</i>
+													</button>
+													<input type="number" step="1" min="1" name="quantity" value="1" size="4" inputmode="numeric">
+													<button type="button" class="cpq-btn cpq-minus">
+														<i class="material-icons md-20">expand_more</i>
+													</button>
+												</div>
+											</td>
+											<td class="cart-remove" data-title="Remove">
+												<a href="#!" aria-label="Remove this item" title="Remove"><i class="material-icons md-24">close</i></a>
+											</td>
+										</tr>
+										<tr>
+											<td class="cart-product">
+												<a href="product-single.html" class="card-image img-style img-style-min">
+													<img data-src="assets/img/shop/s-img1-b.jpg" class="lazy" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" alt="">
+												</a>
+												<div class="cart-product-info">
+													<h3 class="item-heading card-heading">
+														<a href="product-single.html" title="8th Muse">8th Muse</a>
+													</h3>
+												</div>
+											</td>
+											<td class="cart-price" data-title="Price">
+												<div class="card-prices">
+													<div class="card-price">$43.00</div>
+												</div>
+											</td>
+											<td class="cart-quantity" data-title="Quantity">
+												<div class="card-quantity">
+													<button type="button" class="cpq-btn cpq-plus">
+														<i class="material-icons md-20">expand_less</i>
+													</button>
+													<input type="number" step="1" min="1" name="quantity" value="1" size="4" inputmode="numeric">
+													<button type="button" class="cpq-btn cpq-minus">
+														<i class="material-icons md-20">expand_more</i>
+													</button>
+												</div>
+											</td>
+											<td class="cart-remove" data-title="Remove">
+												<a href="#!" aria-label="Remove this item" title="Remove"><i class="material-icons md-24">close</i></a>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+								<footer class="row cart-footer">
+									<div class="col-12">
+										<div class="cart-coupon">
+											<div class="form-field">
+												<label for="input-coupon-code" class="form-field-label">Coupon Code</label>
+												<input type="text" class="form-field-input" name="couponCode" value="" autocomplete="off" id="input-coupon-code">
+											</div>
+											<button type="submit" class="btn btn-border btn-w240 ripple" name="applyCoupon" value="Apply coupon"><span>Apply coupon</span></button>
+										</div>
+									</div>
+								</footer>
+							</form>
+						</div>
+						<div class="col-lg-4 item">
+							<aside>
+								<div class="section-bgc item-border-radius sibebar-item-bg-style">
+									<p class="sidebar-item-heading item-heading">Cart Totals</p>
+									<table class="shop-table">
+										<tbody>
+											<tr>
+												<th>Subtotal</th>
+												<td>
+													<div class="shop-table-price">$246.76</div>
+												</span>
+												</td>
+											</tr>
+											<tr>
+												<td colspan="2">
+													<b class="stt">Shipping</b>
+													<ul class="shop-table-radios">
+														<li>
+															<div class="radio">
+																<input type="radio" class="radio-input" name="radios" id="radio-flat-rate" checked="checked">
+																<label for="radio-flat-rate" class="radio-label">
+																	Flat rate
+																</label>
+															</div>
+														</li>
+														<li>
+															<div class="radio">
+																<input type="radio" class="radio-input" name="radios" id="radio-free-shipping">
+																<label for="radio-free-shipping" class="radio-label">
+																	Free shipping
+																</label>
+															</div>
+														</li>
+														<li>
+															<div class="radio">
+																<input type="radio" class="radio-input" name="radios" id="radio-local-pickup">
+																<label for="radio-local-pickup" class="radio-label">
+																	Local pickup
+																</label>
+															</div>
+														</li>
+													</ul>
+													<div class="shop-table-shipping-methods">
+														<p class="stsm-item">Shipping to <strong>USA</strong>.</p>
+														<a href="#" class="stsm-item">Change address</a>
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<th>Total</th>
+												<td>
+													<div class="shop-table-price stp-large">$246.76</div>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+									<a href="checkout.html" class="btn btn-wide btn-proceed-to-checkout ripple"><span>Proceed to checkout</span></a>
+								</div>
+							</aside>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+		@@include('layouts/footer.html')
+
+	</main><!-- End main -->
+
+	@@include('includes/scripts.html')
+	@@include('includes/scripts-ecommerce.html')
+	
+</body>
+</html>

@@ -1,0 +1,230 @@
+<!DOCTYPE html><html lang="en">
+
+@@include('layouts/head-shop.html')
+
+<body>
+
+	<main class="main">
+		
+		<div class="main-inner">
+
+			@@include('layouts/header-shop.html')
+
+			<!-- Begin bread crumbs -->
+			<nav class="bread-crumbs">
+				<div class="container">
+					<div class="row">
+						<div class="col-12">
+							<ul class="bread-crumbs-list">
+								<li>
+									<a href="index.html">Home</a>
+									<i class="material-icons md-18">chevron_right</i>
+								</li>
+								<li><a href="#!">Shop</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</nav><!-- End bread crumbs -->
+            
+            <!-- Begin main content -->
+			<div class="section">
+				<div class="container">
+					<div class="row">
+						<div class="col-12">
+							<div class="section-heading heading-center">
+                                <div class="section-subheading">Multipurpose online store</div>
+								<h1>Products</h1>
+							</div>
+						</div>
+					</div>
+					<!-- Begin shop sorting -->
+					<div class="row gutters-20 align-items-center shop-sorting">
+						<div class="col-lg-4 col-md-6 col-auto">
+							<div class="shop-sorting-items">
+								<div class="shop-sorting-item shop-filter-toggle d-lg-none">
+									<a class="btn btn-with-icon btn-border btn-small ripple side-open" data-side=".sidebar-filters">
+										<i class="material-icons btn-icon-left md-22">filter_list</i>
+										<span>Filters</span>
+									</a>
+								</div>
+								<div class="shop-sorting-item shop-result-count d-none d-md-block">Showing 1–12 of 44 results</div>
+							</div>
+						</div>
+						<div class="col-lg-8 col-md-6 col">
+							<div class="shop-sorting-items justify-content-end">
+								<div class="d-none d-lg-block">
+									<ul class="shop-sorting-item list-style-none orderby-list hl-list">
+										<li class="active"><a class="hover-link" href="#!" data-title="Popularity"><span>Popularity</span></a></li>
+										<li><a href="#!" class="hover-link" data-title="Latest"><span>Latest</span></a></li>
+										<li><a href="#!" class="hover-link" data-title="Low price first"><span>Low price first</span></a></li>
+										<li><a href="#!" class="hover-link" data-title="High price first"><span>High price first</span></a></li>
+										<li><a href="#!" class="hover-link" data-title="Rating"><span>Rating</span></a></li>
+									</ul>
+								</div>
+								<div class="d-none d-md-block shop-sorting-item">
+									<ul class="list-style-none shop-gridlist-toggle">
+										<li class="active">
+											<a href="shop.html">
+												<i class="material-icons md-20">grid_view</i>
+											</a>
+										</li>
+										<li>
+											<a href="shop-list.html">
+												<i class="material-icons md-20">format_list_bulleted</i>
+											</a>
+										</li>
+									</ul>
+								</div>
+								<form class="shop-sorting-item shop-ordering d-lg-none" action="#!" method="get">
+									<div class="form-field form-field-small form-field-m0">
+										<div class="select">
+											<select name="orderby" class="shop-orderby" aria-label="Shop order">
+												<option value="menu_order" selected="selected">Default sorting</option>
+												<option value="popularity">Sort by popularity</option>
+												<option value="rating">Sort by average rating</option>
+												<option value="date">Sort by latest</option>
+												<option value="price">Sort by price: low to high</option>
+												<option value="price-desc">Sort by price: high to low</option>
+											</select>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div><!-- End shop sorting -->
+					<div class="row gutters-20">
+						<div class="col-lg-3 col-12">
+							<aside class="sidebar sidebar-filters sidebar-filters-mob items">
+								<div class="sidebar-item sidebar-item-style item">
+									<p class="sidebar-item-heading item-heading">Product categories</p>
+									<ul class="sidebar-cat hl-list sidebar-cat-tree">
+										<li class="sidebar-cat-item active">
+											<a href="#!" class="sidebar-cat-link hover-link" data-title="Food & Grocery"><span>Food & Grocery</span></a>
+										</li>
+										<li class="sidebar-cat-item sidebar-cat-item-has-child open">
+											<a href="#!" class="sidebar-cat-link hover-link" data-title="Clothing">
+												<span>Clothing</span>
+												<i class="material-icons md-22 sidebar-cat-icon">chevron_right</i>
+											</a>
+											<ul style="display: block;">
+												<li><a href="#!" class="hover-link" data-title="Jackets, coats"><span>Jackets, coats</span></a></li>
+												<li><a href="#!" class="hover-link" data-title="Sweaters"><span>Sweaters</span></a></li>
+												<li><a href="#!" class="hover-link" data-title="Dresses"><span>Dresses</span></a></li>
+												<li><a href="#!" class="hover-link" data-title="Hoodies"><span>Hoodies</span></a></li>
+												<li><a href="#!" class="hover-link" data-title="Jeans"><span>Jeans</span></a></li>
+												<li><a href="#!" class="hover-link" data-title="Shirts"><span>Shirts</span></a></li>
+												<li><a href="#!" class="hover-link" data-title="Blouses"><span>Blouses</span></a></li>
+												<li><a href="#!" class="hover-link" data-title="T-shirts"><span>T-shirts</span></a></li>
+											</ul>
+										</li>
+										<li class="sidebar-cat-item">
+											<a href="#!" class="sidebar-cat-link hover-link" data-title="Electronics & Computers"><span>Electronics & Computers</span></a>
+										</li>
+										<li class="sidebar-cat-item">
+											<a href="#!" class="sidebar-cat-link hover-link" data-title="Furniture"><span>Furniture</span></a>
+										</li>
+										<li class="sidebar-cat-item">
+											<a href="#!" class="sidebar-cat-link hover-link" data-title="Beauty & Health"><span>Beauty & Health</span></a>
+										</li>
+										<li class="sidebar-cat-item">
+											<a href="#!" class="sidebar-cat-link hover-link" data-title="Garden & Kitchen"><span>Garden & Kitchen</span></a>
+										</li>
+										<li class="sidebar-cat-item">
+											<a href="#!" class="sidebar-cat-link hover-link" data-title="Jewelry"><span>Jewelry</span></a>
+										</li>
+										<li class="sidebar-cat-item">
+											<a href="#!" class="sidebar-cat-link hover-link" data-title="Sports & Outdoors"><span>Sports & Outdoors</span></a>
+										</li>
+										<li class="sidebar-cat-item">
+											<a href="#!" class="sidebar-cat-link hover-link" data-title="Tools & Parts"><span>Tools & Parts</span></a>
+										</li>
+										<li class="sidebar-cat-item">
+											<a href="#!" class="sidebar-cat-link hover-link" data-title="Uncategorized"><span>Uncategorized</span></a>
+										</li>
+									</ul>
+								</div>
+								<div class="sidebar-item sidebar-item-style item">
+									<div class="sidebar-item-row">
+										<p class="sidebar-item-heading item-heading">Filter by price</p>
+										<div class="slider-range-outer">
+											<div class="ui-slider-outer">
+												<div id="filter-by-price"></div>
+											</div>
+											<div class="slider-range-info">
+												<div class="slider-range-item">$<span class="sri1">8</span></div>
+												<div class="slider-range-item">$<span class="sri2">54</span></div>
+											</div>
+										</div>
+									</div>
+									<div class="sidebar-item-row">
+										<p class="sidebar-item-heading item-heading">Filter by Color</p>
+										<ul class="filter-by-color">
+											<li>
+												<a href="#!"><span class="fbc-label" style="background-color: #FFD43D;"></span></a>
+											</li>
+											<li>
+												<a href="#!"><span class="fbc-label" style="background-color: #DCDCDC;"></span></a>
+											</li>
+											<li>
+												<a href="#!" class="fbc-link-border"><span class="fbc-label" style="background-color: #ffffff;"></span></a>
+											</li>
+											<li>
+												<a href="#!"><span class="fbc-label" style="background-color: #000000;"></span></a>
+											</li>
+											<li>
+												<a href="#!"><span class="fbc-label" style="background-color: #6AD87C;"></span></a>
+											</li>
+											<li>
+												<a href="#!"><span class="fbc-label" style="background-color: #FF4949;"></span></a>
+											</li>
+											<li>
+												<a href="#!"><span class="fbc-label" style="background-color: #49F4FF;"></span></a>
+											</li>
+											<li>
+												<a href="#!"><span class="fbc-label" style="background-color: #923DFF;"></span></a>
+											</li>
+											<li>
+												<a href="#!"><span class="fbc-label" style="background-color: #E745C3;"></span></a>
+											</li>
+										</ul>
+									</div>
+									<div class="sidebar-item-row">
+										<p class="sidebar-item-heading item-heading">Filter by Size</p>
+										<ul class="filter-by-checkbox">
+											<li><a href="#!">XS</a></li>
+											<li><a href="#!">S</a></li>
+											<li><a href="#!">M</a></li>
+											<li><a href="#!">L</a></li>
+											<li><a href="#!">XL</a></li>
+										</ul>
+									</div>
+								</div>
+								<div class="side-close"><i class="material-icons md-24">close</i></div>
+							</aside>
+						</div>
+						<div class="col-lg-9 col-12">
+							@@include('ecommerce/catalog/catalog2.html')
+							<div class="row">
+								<div class="col-12">
+									<br>
+									@@include('components/pagination.html')
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+		@@include('layouts/footer.html')
+
+		@@include('ecommerce/catalog/card-preview.html')
+
+	</main><!-- End main -->
+
+	@@include('includes/scripts.html')
+	@@include('includes/scripts-ecommerce.html')
+	
+</body></html>
