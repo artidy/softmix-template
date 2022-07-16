@@ -1,5 +1,7 @@
 import { Outlet } from "react-router-dom";
+
 import MainMenu from "../main-menu";
+import HeaderTopInfo from "../header-top-info";
 
 const Layout = (): JSX.Element => {
   return (
@@ -10,14 +12,7 @@ const Layout = (): JSX.Element => {
             <div className="container">
               <div className="row align-items-center justify-content-between">
                 <div className="col-auto">
-                  <ul className="header-top-info">
-                    <li>
-                      <a href="mailto:info@softmix.kz">
-                        <i className="material-icons md-18">mail_outline</i>
-                        <span>info@softmix.kz</span>
-                      </a>
-                    </li>
-                  </ul>
+                  <HeaderTopInfo />
                 </div>
                 <div className="col-auto">
                   <div className="header-top-links">
@@ -75,7 +70,7 @@ const Layout = (): JSX.Element => {
                 </div>
                 <div className="col-auto header-fixed-col">
                   <a href="/" className="logo" title="Soft Mix">
-                    <img src="assets/img/logo.svg" width="133" height="36" alt="Soft Mix" />
+                    <img src="assets/img/logo.png" width="273" height="273" alt="Soft Mix" />
                   </a>
                 </div>
                 <div className="col-lg col-auto col-static header-fixed-col">

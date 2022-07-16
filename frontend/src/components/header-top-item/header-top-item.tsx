@@ -16,3 +16,5 @@ const HeaderTopItem = ({outline, title, contactType}: HeaderTopItemProps): JSX.E
     </li>
   )
 }
+
+export default HeaderTopItem;
