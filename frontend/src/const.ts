@@ -3,4 +3,9 @@ enum ContactTypes {
   Email = 'mailto'
 }
 
-export {ContactTypes}
+enum AppRoutes {
+  Main = '/',
+  NotFound = '*'
+}
+
+export {ContactTypes, AppRoutes}

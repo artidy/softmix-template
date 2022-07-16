@@ -153,36 +153,7 @@ const Layout = (): JSX.Element => {
                                 </a>
                               </li>
                               <li>
-                                <ul className="social-links">
-                                  <li>
-                                    <a href="#!" title="Facebook">
-                                      <svg viewBox="0 0 320 512">
-                                        <use xlinkHref="assets/img/sprite.svg#facebook-icon"></use>
-                                      </svg>
-                                    </a>
-                                  </li>
-                                  <li>
-                                    <a href="#!" title="Instagram">
-                                      <svg viewBox="0 0 448 512">
-                                        <use xlinkHref="assets/img/sprite.svg#instagram-icon"></use>
-                                      </svg>
-                                    </a>
-                                  </li>
-                                  <li>
-                                    <a href="#!" title="LinkedIn">
-                                      <svg viewBox="0 0 448 512">
-                                        <use xlinkHref="assets/img/sprite.svg#linkedin-icon"></use>
-                                      </svg>
-                                    </a>
-                                  </li>
-                                  <li>
-                                    <a href="#!" title="Twitter">
-                                      <svg viewBox="0 0 512 512">
-                                        <use xlinkHref="assets/img/sprite.svg#twitter-icon"></use>
-                                      </svg>
-                                    </a>
-                                  </li>
-                                </ul>
+                                <SocialLinks />
                               </li>
                             </ul>
                           </div>
@@ -194,6 +165,7 @@ const Layout = (): JSX.Element => {
               </div>
             </div>
           </nav>
+          <div></div>
         </header>
         <Outlet />
       </div>
