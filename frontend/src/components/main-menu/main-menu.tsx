@@ -4,7 +4,7 @@ const MainMenu = (): JSX.Element => {
   return (
     <nav className="main-mnu">
       <ul className="main-mnu-list main-mnu-list-min">
-        <MenuItem hrefLink={'index.html'} title={'Гравная'} />
+        <MenuItem hrefLink={'index.html'} title={'Главная'} />
         <MenuItem hrefLink={'services.html'} title={'О компании'} />
         <MenuItem hrefLink={'ui.html'} title={'Услуги'} />
         <MenuItem hrefLink={'shop.html'} title={'Товары'} />
