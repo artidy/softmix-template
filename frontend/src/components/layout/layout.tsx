@@ -2,6 +2,8 @@ import { Outlet } from "react-router-dom";
 
 import MainMenu from "../main-menu";
 import HeaderTopInfo from "../header-top-info";
+import Logo from "../logo";
+import SocialLinks from "../social-links";
 
 const Layout = (): JSX.Element => {
   return (
@@ -16,36 +18,7 @@ const Layout = (): JSX.Element => {
                 </div>
                 <div className="col-auto">
                   <div className="header-top-links">
-                    <ul className="social-links">
-                      <li>
-                        <a href="#!" title="Facebook">
-                          <svg viewBox="0 0 320 512">
-                            <use xlinkHref="assets/img/sprite.svg#facebook-icon"></use>
-                          </svg>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#!" title="Instagram">
-                          <svg viewBox="0 0 448 512">
-                            <use xlinkHref="assets/img/sprite.svg#instagram-icon"></use>
-                          </svg>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#!" title="LinkedIn">
-                          <svg viewBox="0 0 448 512">
-                            <use xlinkHref="assets/img/sprite.svg#linkedin-icon"></use>
-                          </svg>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#!" title="Twitter">
-                          <svg viewBox="0 0 512 512">
-                            <use xlinkHref="assets/img/sprite.svg#twitter-icon"></use>
-                          </svg>
-                        </a>
-                      </li>
-                    </ul>
+                    <SocialLinks />
                     <div className="header-top-btn">
                       <a href="#сallback_popup" className="header-call-back-link сallback_popup_open">
                         <i className="material-icons">ring_volume</i>
@@ -69,9 +42,7 @@ const Layout = (): JSX.Element => {
                   </div>
                 </div>
                 <div className="col-auto header-fixed-col">
-                  <a href="/" className="logo" title="Soft Mix">
-                    <img src="assets/img/logo.png" width="273" height="273" alt="Soft Mix" />
-                  </a>
+                  <Logo title="Soft Mix" src="assets/img/logo.png" />
                 </div>
                 <div className="col-lg col-auto col-static header-fixed-col">
                   <div className="row flex-nowrap align-items-center justify-content-end">
