@@ -3307,7 +3307,7 @@ textarea {
 
 .ini-min {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
 }
 
 .aim-icon {

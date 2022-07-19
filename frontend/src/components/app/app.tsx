@@ -5,6 +5,7 @@ import Layout from "../layout";
 import IntroGrid from "../intro-grid";
 import {AppRoutes} from "../../const";
 import {useEffect} from "react";
+import Advantages from "../advantages";
 
 const App = (): JSX.Element => {
   // lib for lazy load elements with selector '.lazy'
