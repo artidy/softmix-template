@@ -1,4 +1,5 @@
 import Advantages from "../advantages";
+import Categories from "../categories";
 
 const IntroGrid = (): JSX.Element => {
   return (
@@ -72,6 +73,7 @@ const IntroGrid = (): JSX.Element => {
         </div>
       </div>
       <Advantages />
+      <Categories />
     </>
   )
 }
