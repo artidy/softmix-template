@@ -5708,7 +5708,7 @@ textarea {
 }
 
 .header-center .logo img {
-    max-height: 6rem;
+    max-height: 4rem;
 }
 
 .header-logo-center {
@@ -5745,7 +5745,7 @@ textarea {
 
 .logo img {
     display: block;
-    max-height: 6rem;
+    max-height: 4rem;
     width: auto;
 }
 

@@ -1,8 +1,12 @@
 import SocialLinkItem from "./social-link-item";
 
-const SocialLinks = (): JSX.Element => {
+type SocialLinksProps = {
+  className: string;
+}
+
+const SocialLinks = ({className}: SocialLinksProps): JSX.Element => {
   return (
-    <ul className="social-links">
+    <ul className={className}>
       <SocialLinkItem
         title='Facebook'
         link='#'

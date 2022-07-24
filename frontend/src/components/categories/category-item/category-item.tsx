@@ -1,5 +1,5 @@
 import Products from "../../products";
-import {Product} from "../../../types";
+import {Product} from "../../../types/product";
 
 type CategoryItemProps = {
   dataSrc: string;

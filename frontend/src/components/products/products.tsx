@@ -1,5 +1,5 @@
 import ProductItem from "./product-item";
-import {Product} from "../../types";
+import {Product} from "../../types/product";
 
 type ProductsProps = {
   products: Product[];
