@@ -1,6 +1,7 @@
 import Logo from "../logo";
 import SocialLinks from "../social-links";
 import Menu from "../menu";
+import {AppRoutes} from "../../const";
 
 const MAIN_MENU_FOOTER = {
   navClass: 'footer-nav',
@@ -9,13 +10,13 @@ const MAIN_MENU_FOOTER = {
     {
       title: 'Главная',
       dataTitle: 'Главная',
-      link: 'index.html',
+      link: AppRoutes.Main,
       className: 'hover-link'
     },
     {
       title: 'О компании',
       dataTitle: 'О компании',
-      link: 'services.html',
+      link: AppRoutes.About,
       className: 'hover-link'
     },
     {

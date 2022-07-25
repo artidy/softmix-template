@@ -2,10 +2,10 @@ import {BrowserRouter, Route, Routes} from 'react-router-dom';
 import lozad from 'lozad';
 
 import Layout from "../layout";
-import IntroGrid from "../intro-grid";
 import {AppRoutes} from "../../const";
 import {useEffect} from "react";
-import Advantages from "../advantages";
+import Main from "../../pages/main";
+import AboutUs from "../../pages/about-us";
 
 const App = (): JSX.Element => {
   // lib for lazy load elements with selector '.lazy'
@@ -24,7 +24,11 @@ const App = (): JSX.Element => {
         >
           <Route
             path={AppRoutes.Main}
-            element={<IntroGrid />}
+            element={<Main />}
+          />
+          <Route
+            path={AppRoutes.About}
+            element={<AboutUs />}
           />
         </Route>
       </Routes>

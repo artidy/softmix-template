@@ -1,10 +1,11 @@
-import { Outlet } from "react-router-dom";
+import {Outlet} from "react-router-dom";
 
 import Menu from "../menu";
 import HeaderTopInfo from "../header-top-info";
 import Logo from "../logo";
 import SocialLinks from "../social-links";
 import Footer from "../footer";
+import {AppRoutes} from "../../const";
 
 const MAIN_MENU = {
   navClass: 'main-mnu',
@@ -13,13 +14,13 @@ const MAIN_MENU = {
     {
       title: 'Главная',
       dataTitle: 'Главная',
-      link: 'index.html',
+      link: AppRoutes.Main,
       className: ''
     },
     {
       title: 'О компании',
       dataTitle: 'О компании',
-      link: 'services.html',
+      link: AppRoutes.About,
       className: ''
     },
     {

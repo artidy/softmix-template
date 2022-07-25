@@ -1,7 +1,7 @@
-import Advantages from "../advantages";
-import Categories from "../categories";
+import Advantages from "../components/advantages";
+import Categories from "../components/categories";
 
-const IntroGrid = (): JSX.Element => {
+const Main = (): JSX.Element => {
   return (
     <>
       <div className="intro-grid">
@@ -78,4 +78,4 @@ const IntroGrid = (): JSX.Element => {
   )
 }
 
-export default IntroGrid;
+export default Main;
