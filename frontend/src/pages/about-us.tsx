@@ -2,6 +2,7 @@ import BreadCrumbs from "../components/bread-crumbs";
 import {AppRoutes} from "../const";
 import About from "../components/about";
 import AdvantagesNumber from "../components/advantages-number";
+import Customers from "../components/customers";
 
 const BREAD_CRUMBS = [
   {
@@ -16,6 +17,7 @@ const AboutUs = (): JSX.Element => {
       <BreadCrumbs elements={BREAD_CRUMBS} />
       <About />
       <AdvantagesNumber />
+      <Customers />
     </>
   )
 }
