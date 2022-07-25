@@ -85,7 +85,7 @@ const Footer = (): JSX.Element => {
             <div className="col-xl-3 col-lg-3 col-md-5 col-12 item">
               <div className="footer-company-info">
                 <div className="footer-company-top">
-                  <Logo title="Soft Mix" src="/" />
+                  <Logo title="Soft Mix" src="assets/img/logo.png" />
                   <div className="footer-company-desc">
                     <p>Our company has been developing high-quality and reliable software for corporate needs since
                       2008. We are renowned professionals of software development.</p>
