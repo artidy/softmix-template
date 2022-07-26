@@ -38,7 +38,7 @@ const MAIN_MENU = {
     {
       title: 'Контакты',
       dataTitle: 'Контакты',
-      link: 'news.html',
+      link: AppRoutes.Contacts,
       className: ''
     }
   ]

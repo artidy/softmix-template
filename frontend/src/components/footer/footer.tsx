@@ -34,7 +34,7 @@ const MAIN_MENU_FOOTER = {
     {
       title: 'Контакты',
       dataTitle: 'Контакты',
-      link: 'news.html',
+      link: AppRoutes.Contacts,
       className: 'hover-link'
     }
   ]

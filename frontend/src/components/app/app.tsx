@@ -6,6 +6,7 @@ import {AppRoutes} from "../../const";
 import {useEffect} from "react";
 import Main from "../../pages/main";
 import AboutUs from "../../pages/about-us";
+import Contacts from "../../pages/contacts";
 
 const App = (): JSX.Element => {
   // lib for lazy load elements with selector '.lazy'
@@ -13,7 +14,7 @@ const App = (): JSX.Element => {
 
   useEffect(() => {
     observer.observe();
-  }, []);
+  }, [observer]);
 
   return (
     <BrowserRouter>
@@ -29,6 +30,10 @@ const App = (): JSX.Element => {
           <Route
             path={AppRoutes.About}
             element={<AboutUs />}
+          />
+          <Route
+            path={AppRoutes.Contacts}
+            element={<Contacts />}
           />
         </Route>
       </Routes>

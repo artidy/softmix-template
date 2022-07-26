@@ -6,12 +6,8 @@ enum ContactTypes {
 enum AppRoutes {
   Main = '/',
   About = '/about',
+  Contacts = '/contacts',
   NotFound = '*'
-}
-
-const MAIN_MENU = {
-  classNameNav: "main-mnu",
-  classNameList: "main-mnu-list main-mnu-list-min",
 }
 
 export {ContactTypes, AppRoutes}
