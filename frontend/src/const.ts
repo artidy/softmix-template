@@ -7,7 +7,31 @@ enum AppRoutes {
   Main = '/',
   About = '/about',
   Contacts = '/contacts',
+  Services = '/services',
   NotFound = '*'
 }
 
-export {ContactTypes, AppRoutes}
+enum ApiRoutes {
+  Services = '/services'
+}
+
+enum NameSpace {
+  Services = 'SERVICES',
+}
+
+enum HTTP_CODE {
+  BAD_REQUEST = 400,
+  UNAUTHORIZED = 401,
+  NOT_FOUND = 404,
+}
+
+const AUTH_TOKEN_KEY_NAME = 'softmix';
+
+export {
+  ContactTypes,
+  AppRoutes,
+  ApiRoutes,
+  NameSpace,
+  HTTP_CODE,
+  AUTH_TOKEN_KEY_NAME
+}

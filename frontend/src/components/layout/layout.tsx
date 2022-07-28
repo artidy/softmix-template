@@ -26,7 +26,7 @@ const MAIN_MENU = {
     {
       title: 'Услуги',
       dataTitle: 'Услуги',
-      link: 'ui.html',
+      link: AppRoutes.Services,
       className: ''
     },
     {

@@ -7,7 +7,7 @@ type ProductsProps = {
 
 const Products = ({products}: ProductsProps): JSX.Element => {
   const productsContent = products.map((product) =>
-    <ProductItem title={product.title} href={product.href} dataTitle={product.dataTitle} />)
+    <ProductItem key={product.dataTitle} title={product.title} href={product.href} dataTitle={product.dataTitle} />);
 
   return (
     <ul className="list-style-none catt-item-links">

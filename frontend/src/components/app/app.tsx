@@ -1,5 +1,4 @@
 import {BrowserRouter, Route, Routes} from 'react-router-dom';
-import lozad from 'lozad';
 
 import Layout from "../layout";
 import {AppRoutes} from "../../const";
@@ -7,14 +6,14 @@ import {useEffect} from "react";
 import Main from "../../pages/main";
 import AboutUs from "../../pages/about-us";
 import Contacts from "../../pages/contacts";
+import Services from "../../pages/services";
+import {observer} from "../../hooks/lozad";
 
 const App = (): JSX.Element => {
-  // lib for lazy load elements with selector '.lazy'
-  const observer = lozad('.lazy');
 
   useEffect(() => {
     observer.observe();
-  }, [observer]);
+  }, []);
 
   return (
     <BrowserRouter>
@@ -34,6 +33,10 @@ const App = (): JSX.Element => {
           <Route
             path={AppRoutes.Contacts}
             element={<Contacts />}
+          />
+          <Route
+            path={AppRoutes.Services}
+            element={<Services />}
           />
         </Route>
       </Routes>

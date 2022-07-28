@@ -22,7 +22,7 @@ const MAIN_MENU_FOOTER = {
     {
       title: 'Услуги',
       dataTitle: 'Услуги',
-      link: 'ui.html',
+      link: AppRoutes.Services,
       className: 'hover-link'
     },
     {
@@ -78,6 +78,11 @@ const PRODUCT_MENU_FOOTER = {
 }
 
 const Footer = (): JSX.Element => {
+
+  const changeEmail = () => {
+
+  }
+
   return (
     <footer className="footer">
       <div className="footer-main">
@@ -139,7 +144,7 @@ const Footer = (): JSX.Element => {
                   <div className="form-field">
                     <label htmlFor="subscribe-email" className="form-field-label">Your email</label>
                     <input type="email" className="form-field-input" name="Subscribe_email" value="" autoComplete="off"
-                           required={true} id="subscribe-email" />
+                           required={true} id="subscribe-email" onChange={changeEmail} />
                   </div>
                   <div className="form-btn">
                     <button type="submit" className="btn ripple"><span>Subscribe</span></button>

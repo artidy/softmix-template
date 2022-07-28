@@ -8,7 +8,7 @@ type MenuProps = {
 }
 
 const Menu = ({navClass, listClass, elements}: MenuProps): JSX.Element => {
-  const menuContent = elements.map((menuItem) => <MenuItemElement {...menuItem}/>);
+  const menuContent = elements.map((menuItem) => <MenuItemElement key={menuItem.dataTitle} {...menuItem}/>);
 
   return (
     <nav className={navClass}>

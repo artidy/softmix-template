@@ -5,7 +5,8 @@ type BreadCrumbsProps = {
 }
 
 const BreadCrumbs = ({elements}: BreadCrumbsProps): JSX.Element => {
-  const content = elements.map((breadCrumb) => <li><a href={breadCrumb.link}>{breadCrumb.title}</a></li>);
+  const content = elements.map((breadCrumb) =>
+    <li key={breadCrumb.title}><a href={breadCrumb.link}>{breadCrumb.title}</a></li>);
 
   return (
     <nav className="bread-crumbs">
