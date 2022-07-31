@@ -6,6 +6,7 @@
 /docs/
 .idea/
 /upload/
+/mysql/
 /mocks/*.tsv
 
 .DS_Store
