@@ -1,7 +1,7 @@
 const Component = {
   Application: Symbol.for('Application'),
   LoggerInterface: Symbol.for('LoggerInterface'),
-  ConfigService: Symbol.for('ConfigService')
+  ConfigInterface: Symbol.for('ConfigInterface')
 }
 
 export default Component;
