@@ -10,6 +10,7 @@ type ConfigSchema = {
   DB_PORT: number;
   DB_USER: string;
   DB_PASSWORD: string;
+  DB_NAME: string;
 }
 
 const configSchema = convict<ConfigSchema>({
@@ -29,7 +30,7 @@ const configSchema = convict<ConfigSchema>({
     doc: 'Адрес базы данных',
     format: String,
     env: 'DB_HOST',
-    default: 'http://localhost'
+    default: 'localhost'
   },
   DB_PORT: {
     doc: 'Порт базы данных',
@@ -47,6 +48,12 @@ const configSchema = convict<ConfigSchema>({
     doc: 'Пароль базы данных',
     format: String,
     env: 'DB_PASSWORD',
+    default: null
+  },
+  DB_NAME: {
+    doc: 'Имя базы данных сайта',
+    format: String,
+    env: 'DB_NAME',
     default: null
   }
 });
