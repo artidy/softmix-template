@@ -32,7 +32,7 @@ const MAIN_MENU = {
     {
       title: 'Товары',
       dataTitle: 'Товары',
-      link: 'shop.html',
+      link: AppRoutes.Products,
       className: ''
     },
     {

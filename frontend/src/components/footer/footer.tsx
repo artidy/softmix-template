@@ -28,7 +28,7 @@ const MAIN_MENU_FOOTER = {
     {
       title: 'Товары',
       dataTitle: 'Товары',
-      link: 'shop.html',
+      link: AppRoutes.Products,
       className: 'hover-link'
     },
     {

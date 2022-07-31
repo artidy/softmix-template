@@ -16,7 +16,7 @@ const BREAD_CRUMBS = [
 
 const Services = (): JSX.Element => {
   const dispatch = useAppDispatch();
-  const {services} = useAppSelector(({SERVICES}) => SERVICES)
+  const {services} = useAppSelector(({SERVICES}) => SERVICES);
 
   useEffect(() => {
     dispatch(fetchServicesAction());

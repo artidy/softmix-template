@@ -8,6 +8,7 @@ import AboutUs from "../../pages/about-us";
 import Contacts from "../../pages/contacts";
 import Services from "../../pages/services";
 import {observer} from "../../hooks/lozad";
+import Products from "../../pages/products";
 
 const App = (): JSX.Element => {
 
@@ -37,6 +38,10 @@ const App = (): JSX.Element => {
           <Route
             path={AppRoutes.Services}
             element={<Services />}
+          />
+          <Route
+            path={AppRoutes.Products}
+            element={<Products />}
           />
         </Route>
       </Routes>

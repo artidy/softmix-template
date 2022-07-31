@@ -1,6 +1,17 @@
 import CategoryItem from "./category-item";
+import {useAppDispatch, useAppSelector} from "../../hooks/store";
+import {useEffect} from "react";
+import {fetchCategoriesAction, fetchProductsAction} from "../../store/api-actions";
 
 const Categories = (): JSX.Element => {
+  const dispatch = useAppDispatch();
+  const {products, categories} = useAppSelector(({PRODUCTS}) => PRODUCTS);
+
+  useEffect(() => {
+    dispatch(fetchCategoriesAction());
+    dispatch(fetchProductsAction())
+  }, [dispatch]);
+
   return (
     <section className="section section-bgc">
       <div className="container">
@@ -19,28 +30,7 @@ const Categories = (): JSX.Element => {
             alt=""
             title="Mobile & Tablets"
             btnHref="#!"
-            products={[
-              {
-                title: "Iphone",
-                dataTitle: "Iphone",
-                href: "!#"
-              },
-              {
-                title: "Samsung",
-                dataTitle: "Samsung",
-                href: "!#"
-              },
-              {
-                title: "Google Pixel",
-                dataTitle: "Google Pixel",
-                href: "!#"
-              },
-              {
-                title: "OnePlus",
-                dataTitle: "OnePlus",
-                href: "!#"
-              },
-            ]}
+            products={products}
           />
           <CategoryItem
             dataSrc="assets/img/shop/cat/c1.jpg"
@@ -48,28 +38,7 @@ const Categories = (): JSX.Element => {
             alt=""
             title="Computers"
             btnHref="#!"
-            products={[
-              {
-                title: "Iphone",
-                dataTitle: "Iphone",
-                href: "!#"
-              },
-              {
-                title: "Samsung",
-                dataTitle: "Samsung",
-                href: "!#"
-              },
-              {
-                title: "Google Pixel",
-                dataTitle: "Google Pixel",
-                href: "!#"
-              },
-              {
-                title: "OnePlus",
-                dataTitle: "OnePlus",
-                href: "!#"
-              },
-            ]}
+            products={products}
           />
           <CategoryItem
             dataSrc="assets/img/shop/cat/c1.jpg"
@@ -77,28 +46,7 @@ const Categories = (): JSX.Element => {
             alt=""
             title="Home"
             btnHref="#!"
-            products={[
-              {
-                title: "Iphone",
-                dataTitle: "Iphone",
-                href: "!#"
-              },
-              {
-                title: "Samsung",
-                dataTitle: "Samsung",
-                href: "!#"
-              },
-              {
-                title: "Google Pixel",
-                dataTitle: "Google Pixel",
-                href: "!#"
-              },
-              {
-                title: "OnePlus",
-                dataTitle: "OnePlus",
-                href: "!#"
-              },
-            ]}
+            products={products}
           />
           <CategoryItem
             dataSrc="assets/img/shop/cat/c1.jpg"
@@ -106,28 +54,7 @@ const Categories = (): JSX.Element => {
             alt=""
             title="Kitchen"
             btnHref="#!"
-            products={[
-              {
-                title: "Iphone",
-                dataTitle: "Iphone",
-                href: "!#"
-              },
-              {
-                title: "Samsung",
-                dataTitle: "Samsung",
-                href: "!#"
-              },
-              {
-                title: "Google Pixel",
-                dataTitle: "Google Pixel",
-                href: "!#"
-              },
-              {
-                title: "OnePlus",
-                dataTitle: "OnePlus",
-                href: "!#"
-              },
-            ]}
+            products={products}
           />
           <CategoryItem
             dataSrc="assets/img/shop/cat/c1.jpg"
@@ -135,28 +62,7 @@ const Categories = (): JSX.Element => {
             alt=""
             title="Washing mashines"
             btnHref="#!"
-            products={[
-              {
-                title: "Iphone",
-                dataTitle: "Iphone",
-                href: "!#"
-              },
-              {
-                title: "Samsung",
-                dataTitle: "Samsung",
-                href: "!#"
-              },
-              {
-                title: "Google Pixel",
-                dataTitle: "Google Pixel",
-                href: "!#"
-              },
-              {
-                title: "OnePlus",
-                dataTitle: "OnePlus",
-                href: "!#"
-              },
-            ]}
+            products={products}
           />
           <CategoryItem
             dataSrc="assets/img/shop/cat/c1.jpg"
@@ -164,28 +70,7 @@ const Categories = (): JSX.Element => {
             alt=""
             title="Home & Cleaning"
             btnHref="#!"
-            products={[
-              {
-                title: "Iphone",
-                dataTitle: "Iphone",
-                href: "!#"
-              },
-              {
-                title: "Samsung",
-                dataTitle: "Samsung",
-                href: "!#"
-              },
-              {
-                title: "Google Pixel",
-                dataTitle: "Google Pixel",
-                href: "!#"
-              },
-              {
-                title: "OnePlus",
-                dataTitle: "OnePlus",
-                href: "!#"
-              },
-            ]}
+            products={products}
           />
         </div>
       </div>

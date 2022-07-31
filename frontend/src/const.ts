@@ -8,6 +8,7 @@ enum AppRoutes {
   About = '/about',
   Contacts = '/contacts',
   Services = '/services',
+  Products = '/products',
   NotFound = '*'
 }
 
@@ -17,6 +18,7 @@ enum ApiRoutes {
 
 enum NameSpace {
   Services = 'SERVICES',
+  Products = 'PRODUCTS',
 }
 
 enum HTTP_CODE {
