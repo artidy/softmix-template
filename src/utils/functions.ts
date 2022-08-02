@@ -21,8 +21,8 @@ const getRandomItems = <T>(items: T[]): T[] => {
   return result;
 };
 
-const getMysqlUri = (user: string, password: string, host: string, port: number, dbName: string): string => {
-  return `mysql://${user}:${password}@${host}:${port}/${dbName}`;
+const getMysqlUri = (user: string, password: string, host: string, port: number): string => {
+  return `mysql://${user}:${password}@${host}:${port}`;
 };
 
 export {

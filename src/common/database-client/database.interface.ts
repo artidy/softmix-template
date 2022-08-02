@@ -1,5 +1,5 @@
 interface DatabaseInterface {
-  connect(uri: string): Promise<void>;
+  connect(uri: string, database: string): Promise<void>;
   disconnect(): Promise<void>;
 }
 

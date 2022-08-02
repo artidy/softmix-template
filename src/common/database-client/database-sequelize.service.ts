@@ -12,24 +12,27 @@ class DatabaseSequelizeService implements DatabaseInterface {
 
   constructor(@inject(Component.LoggerInterface) private logger: LoggerInterface) {}
 
-  public async connect(uri: string): Promise<void> {
+  public async connect(uri: string, database: string): Promise<void> {
     this.logger.info('Попытка подключения к базе данных...');
-    this.connection = new Sequelize(uri);
+    await this.init(uri, database);
 
-    try {
-      await this.connection.authenticate({
+    this.connection = new Sequelize(`${uri}/${database}`);
 
-      });
-      this.logger.info('Подключение к базе данных успешно установлено.');
-    } catch (error) {
-      this.logger.error(`Ошибка подключения к базе данных: ${error}`);
-    }
+    await this.connection.authenticate();
+    this.logger.info('Подключение к базе данных успешно установлено.');
   }
 
   public async disconnect(): Promise<void> {
     this.logger.info('Попытка отключения от базы данных...');
     this.connection?.close();
     this.logger.info('База данных отключена.');
+  }
+
+  async init(uri: string, database: string): Promise<void> {
+    const connection = new Sequelize(uri);
+
+    await connection.query(`CREATE DATABASE IF NOT EXISTS \`${database}\`;`);
+    await connection.close();
   }
 }
 

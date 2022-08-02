@@ -36,9 +36,9 @@ class Application {
     const db_user = this.config.get('DB_USER');
     const db_pass = this.config.get('DB_PASSWORD');
     const db_name = this.config.get('DB_NAME');
-    const dbUri = getMysqlUri(db_user, db_pass, db_host, db_port, db_name);
+    const dbUri = getMysqlUri(db_user, db_pass, db_host, db_port);
 
-    await this.database.connect(dbUri);
+    await this.database.connect(dbUri, db_name);
 
     this.registerMiddlewares();
     this.registerRoutes();
