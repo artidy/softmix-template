@@ -1,3 +1,7 @@
+import {ClassConstructor, plainToInstance} from 'class-transformer';
+
+import ValidateTypeEnum from '../types/validate-type.enum.js';
+
 const generateRandomValue = (min: number, max: number, digit = 0): number =>
   +((Math.random() * (max - min)) + min).toFixed(digit);
 
@@ -25,10 +29,26 @@ const getMysqlUri = (user: string, password: string, host: string, port: number)
   return `mysql://${user}:${password}@${host}:${port}`;
 };
 
+const getValidateMessage = (validateType: ValidateTypeEnum, value: string | number = ''): string => {
+  switch(validateType) {
+    case ValidateTypeEnum.MinLength:
+      return `должно содержать значение длиной не меньше ${value} символов.`;
+    case ValidateTypeEnum.Maxlength:
+      return `должно содержать значение длиной больше ${value} символов.`;
+    default:
+      return `${validateType} - неизвестная ошибка.`;
+  }
+};
+
+const fillDTO = <T, V>(someDto: ClassConstructor<T>, plainObject: V) =>
+  plainToInstance(someDto, plainObject, {excludeExtraneousValues: true});
+
 export {
   generateRandomValue,
   getRandomItem,
   getRandomBoolean,
   getRandomItems,
-  getMysqlUri
+  getMysqlUri,
+  getValidateMessage,
+  fillDTO
 };

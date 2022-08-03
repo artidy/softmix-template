@@ -7,6 +7,7 @@ import {LoggerInterface} from "../common/logger/logger.interface.js";
 import ConfigInterface from '../common/config/config.interface.js';
 import {getMysqlUri} from '../utils/functions.js';
 import DatabaseInterface from '../common/database-client/database.interface.js';
+import {ControllerInterface} from '../common/controller/controller.interface.js';
 
 @injectable()
 class Application {
@@ -15,12 +16,15 @@ class Application {
   constructor(
     @inject(Component.LoggerInterface) private logger: LoggerInterface,
     @inject(Component.ConfigInterface) private config: ConfigInterface,
-    @inject(Component.DatabaseInterface) private database: DatabaseInterface
+    @inject(Component.DatabaseInterface) private database: DatabaseInterface,
+    @inject(Component.CategoryController) private categoryController: ControllerInterface
   ) {
     this.expressApp = express();
   }
 
-  public registerRoutes() {}
+  public registerRoutes() {
+    this.expressApp.use('/categories', this.categoryController.router);
+  }
 
   public registerMiddlewares() {}
 
