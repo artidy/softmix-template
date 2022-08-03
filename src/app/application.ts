@@ -1,5 +1,6 @@
 import "reflect-metadata";
 import {inject, injectable} from "inversify";
+import cors from 'cors';
 import express, {Express} from "express";
 
 import Component from "../types/component.types.js";
@@ -26,7 +27,10 @@ class Application {
     this.expressApp.use('/categories', this.categoryController.router);
   }
 
-  public registerMiddlewares() {}
+  public registerMiddlewares() {
+    this.expressApp.use(express.json());
+    this.expressApp.use(cors());
+  }
 
   public registerExceptionFilters() {}
 
