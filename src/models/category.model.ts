@@ -1,8 +1,7 @@
-import {Column, Model, Table, DataType, Length, ForeignKey, BelongsTo, HasMany} from 'sequelize-typescript';
+import {Column, Model, Table, DataType, Length, ForeignKey, BelongsTo} from 'sequelize-typescript';
 
 import {TITLE_MAX_LENGTH, TITLE_MIN_LENGTH} from '../common/const.js';
 import CategoryParentModel from './category-parent.model.js';
-import ProductModel from './product.model.js';
 
 @Table({
   tableName: 'categories',
@@ -20,9 +19,6 @@ class CategoryModel extends Model {
 
   @BelongsTo(() => CategoryParentModel, 'parentId')
   parent!: CategoryParentModel;
-
-  @HasMany(() => ProductModel, 'categoryId')
-  products?: ProductModel[];
 
   @Column(DataType.TEXT)
   preview!: string;
