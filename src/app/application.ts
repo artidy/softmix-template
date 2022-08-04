@@ -18,13 +18,15 @@ class Application {
     @inject(Component.LoggerInterface) private logger: LoggerInterface,
     @inject(Component.ConfigInterface) private config: ConfigInterface,
     @inject(Component.DatabaseInterface) private database: DatabaseInterface,
-    @inject(Component.CategoryController) private categoryController: ControllerInterface
+    @inject(Component.CategoryController) private categoryController: ControllerInterface,
+    @inject(Component.ProductController) private  productController: ControllerInterface
   ) {
     this.expressApp = express();
   }
 
   public registerRoutes() {
     this.expressApp.use('/categories', this.categoryController.router);
+    this.expressApp.use('/products', this.productController.router);
   }
 
   public registerMiddlewares() {

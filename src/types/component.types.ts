@@ -5,6 +5,8 @@ const Component = {
   DatabaseInterface: Symbol.for('DatabaseInterface'),
   CategoryServiceInterface: Symbol.for('CategoryServiceInterface'),
   CategoryController: Symbol.for('CategoryController'),
+  ProductServiceInterface: Symbol.for('ProductServiceInterface'),
+  ProductController: Symbol.for('ProductController')
 }
 
 export default Component;

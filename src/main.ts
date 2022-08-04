@@ -12,6 +12,9 @@ import CategoryServiceInterface from './modules/category/category-service.interf
 import CategoryService from './modules/category/category.service.js';
 import CategoryController from './modules/category/category.controller.js';
 import {ControllerInterface} from './common/controller/controller.interface.js';
+import ProductServiceInterface from './modules/product/product-service.interface.js';
+import ProductService from './modules/product/product.service.js';
+import ProductController from './modules/product/product.controller.js';
 
 const applicationContainer = new Container();
 
@@ -21,6 +24,8 @@ applicationContainer.bind<ConfigInterface>(Component.ConfigInterface).to(ConfigS
 applicationContainer.bind<DatabaseInterface>(Component.DatabaseInterface).to(DatabaseSequelizeService).inSingletonScope();
 applicationContainer.bind<CategoryServiceInterface>(Component.CategoryServiceInterface).to(CategoryService).inSingletonScope();
 applicationContainer.bind<ControllerInterface>(Component.CategoryController).to(CategoryController).inSingletonScope();
+applicationContainer.bind<ProductServiceInterface>(Component.ProductServiceInterface).to(ProductService).inSingletonScope();
+applicationContainer.bind<ControllerInterface>(Component.ProductController).to(ProductController).inSingletonScope();
 
 const application = applicationContainer.get<Application>(Component.Application);
 
