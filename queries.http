@@ -9,5 +9,6 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYyNzQzYzFiZTczMDQwY2I3NzBjY
 Content-Type: application/json
 
 {
-  "title": "Товары"
+  "title": "Новая пора",
+  "parentId": 6
 }

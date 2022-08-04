@@ -15,7 +15,7 @@ class CreateCategoryDto {
 
   @IsOptional()
   @IsNumber()
-  parentId!: string;
+  parentId!: number;
 
   @IsOptional()
   @IsString()

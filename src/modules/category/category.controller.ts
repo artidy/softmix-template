@@ -9,6 +9,7 @@ import {HttpMethod} from '../../types/http-method.enum.js';
 import CreateCategoryDto from './dto/create-category.dto.js';
 import {fillDTO} from '../../utils/functions.js';
 import ValidateDtoMiddleware from '../../common/middlewares/validate-dto.middleware.js';
+import CategoryDto from './dto/category.dto.js';
 
 @injectable()
 class CategoryController extends Controller {
@@ -30,7 +31,9 @@ class CategoryController extends Controller {
   }
 
   public async index(_req: Request, res: Response) {
-    this.ok(res, this.categoryService.findAll());
+    const result = await this.categoryService.findAll();
+
+    this.ok(res, fillDTO(CategoryDto, result));
   }
 
 
@@ -38,7 +41,7 @@ class CategoryController extends Controller {
     Record<string, unknown>, CreateCategoryDto>, res: Response) {
     const result = await this.categoryService.create(body);
 
-    this.created(res, fillDTO(CreateCategoryDto, result));
+    this.created(res, fillDTO(CategoryDto, result));
   }
 }
 
