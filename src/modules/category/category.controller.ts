@@ -8,6 +8,7 @@ import CategoryServiceInterface from './category-service.interface.js';
 import {HttpMethod} from '../../types/http-method.enum.js';
 import CreateCategoryDto from './dto/create-category.dto.js';
 import {fillDTO} from '../../utils/functions.js';
+import ValidateDtoMiddleware from '../../common/middlewares/validate-dto.middleware.js';
 
 @injectable()
 class CategoryController extends Controller {
@@ -21,7 +22,10 @@ class CategoryController extends Controller {
     this.addRoute({
       path: '/',
       method: HttpMethod.Post,
-      handler: this.create
+      handler: this.create,
+      middlewares: [
+        new ValidateDtoMiddleware(CreateCategoryDto)
+      ]
     });
   }
 
