@@ -9,6 +9,7 @@ import ConfigInterface from '../common/config/config.interface.js';
 import {getMysqlUri} from '../utils/functions.js';
 import DatabaseInterface from '../common/database-client/database.interface.js';
 import {ControllerInterface} from '../common/controller/controller.interface.js';
+import {ExceptionFilterInterface} from '../common/errors/exception-filter.interface.js';
 
 @injectable()
 class Application {
@@ -19,7 +20,8 @@ class Application {
     @inject(Component.ConfigInterface) private config: ConfigInterface,
     @inject(Component.DatabaseInterface) private database: DatabaseInterface,
     @inject(Component.CategoryController) private categoryController: ControllerInterface,
-    @inject(Component.ProductController) private  productController: ControllerInterface
+    @inject(Component.ProductController) private  productController: ControllerInterface,
+    @inject(Component.ExceptionFilterInterface) private exceptionFilter: ExceptionFilterInterface
   ) {
     this.expressApp = express();
   }
@@ -34,7 +36,9 @@ class Application {
     this.expressApp.use(cors());
   }
 
-  public registerExceptionFilters() {}
+  public registerExceptionFilters() {
+    this.expressApp.use(this.exceptionFilter.catch.bind(this.exceptionFilter));
+  }
 
   public async init() {
     this.logger.info('Инициализация приложения...');

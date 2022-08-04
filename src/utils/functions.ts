@@ -43,6 +43,10 @@ const getValidateMessage = (validateType: ValidateTypeEnum, value: string | numb
 const fillDTO = <T, V>(someDto: ClassConstructor<T>, plainObject: V) =>
   plainToInstance(someDto, plainObject, {excludeExtraneousValues: true});
 
+const createErrorObject = (message: string) => ({
+  error: message,
+});
+
 export {
   generateRandomValue,
   getRandomItem,
@@ -50,5 +54,6 @@ export {
   getRandomItems,
   getMysqlUri,
   getValidateMessage,
-  fillDTO
+  fillDTO,
+  createErrorObject
 };

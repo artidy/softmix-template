@@ -15,6 +15,8 @@ import {ControllerInterface} from './common/controller/controller.interface.js';
 import ProductServiceInterface from './modules/product/product-service.interface.js';
 import ProductService from './modules/product/product.service.js';
 import ProductController from './modules/product/product.controller.js';
+import {ExceptionFilterInterface} from './common/errors/exception-filter.interface.js';
+import ExceptionFilter from './common/errors/exception-filter.js';
 
 const applicationContainer = new Container();
 
@@ -26,6 +28,7 @@ applicationContainer.bind<CategoryServiceInterface>(Component.CategoryServiceInt
 applicationContainer.bind<ControllerInterface>(Component.CategoryController).to(CategoryController).inSingletonScope();
 applicationContainer.bind<ProductServiceInterface>(Component.ProductServiceInterface).to(ProductService).inSingletonScope();
 applicationContainer.bind<ControllerInterface>(Component.ProductController).to(ProductController).inSingletonScope();
+applicationContainer.bind<ExceptionFilterInterface>(Component.ExceptionFilterInterface).to(ExceptionFilter).inSingletonScope();
 
 const application = applicationContainer.get<Application>(Component.Application);
 
