@@ -10,6 +10,7 @@ import CategoryParentModel from '../../models/category-parent.model.js';
 import ProductModel from '../../models/product.model.js';
 import CompanyEmailModel from '../../models/company-email.model.js';
 import CompanyPhoneModel from '../../models/company-phone.model.js';
+import ServiceModel from '../../models/service.model.js';
 
 @injectable()
 class DatabaseSequelizeService implements DatabaseInterface {
@@ -28,7 +29,8 @@ class DatabaseSequelizeService implements DatabaseInterface {
       CategoryParentModel,
       ProductModel,
       CompanyEmailModel,
-      CompanyPhoneModel
+      CompanyPhoneModel,
+      ServiceModel
     ]);
     // Создает все модели в базе данных
     await this.connection.sync({ alter: true });

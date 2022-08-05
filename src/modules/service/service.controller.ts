@@ -10,6 +10,7 @@ import {HttpMethod} from '../../types/http-method.enum.js';
 import {fillDTO} from '../../utils/functions.js';
 import ServiceDto from './dto/service.dto.js';
 import CreateServiceDto from './dto/create-service.dto.js';
+import ValidateDtoMiddleware from '../../common/middlewares/validate-dto.middleware.js';
 
 @injectable()
 class ServiceController extends Controller {
@@ -21,6 +22,12 @@ class ServiceController extends Controller {
 
     this.logger.info('Добавление роутов для услуг...');
     this.addRoute({path: '/', method: HttpMethod.Get, handler: this.index});
+    this.addRoute({
+      path: '/',
+      method: HttpMethod.Post,
+      handler: this.create,
+      middlewares: [new ValidateDtoMiddleware(CreateServiceDto)]
+    })
   }
 
   public async index(_req: Request, res: Response): Promise<void> {
