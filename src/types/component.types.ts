@@ -9,7 +9,9 @@ const Component = {
   ProductController: Symbol.for('ProductController'),
   ExceptionFilterInterface: Symbol.for('ExceptionFilterInterface'),
   CompanyEmailServiceInterface: Symbol.for('CompanyEmailServiceInterface'),
-  CompanyEmailController: Symbol.for('CompanyEmailController')
+  CompanyEmailController: Symbol.for('CompanyEmailController'),
+  CompanyPhoneServiceInterface: Symbol.for('CompanyPhoneServiceInterface'),
+  CompanyPhoneController: Symbol.for('CompanyPhoneController')
 }
 
 export default Component;

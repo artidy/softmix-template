@@ -1,3 +1,4 @@
+import 'reflect-metadata';
 import {injectable} from 'inversify';
 
 import ProductServiceInterface from './product-service.interface.js';

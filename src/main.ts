@@ -20,6 +20,9 @@ import ExceptionFilter from './common/errors/exception-filter.js';
 import CompanyEmailServiceInterface from './modules/company-email/company-email-service.interface.js';
 import CompanyEmailService from './modules/company-email/company-email.service.js';
 import CompanyEmailController from './modules/company-email/company-email.controller.js';
+import CompanyPhoneServiceInterface from './modules/company-phone/company-phone-service.interface.js';
+import CompanyPhoneService from './modules/company-phone/company-phone.service.js';
+import CompanyPhoneController from './modules/company-phone/company-phone.controller.js';
 
 const applicationContainer = new Container();
 
@@ -34,6 +37,8 @@ applicationContainer.bind<ControllerInterface>(Component.ProductController).to(P
 applicationContainer.bind<ExceptionFilterInterface>(Component.ExceptionFilterInterface).to(ExceptionFilter).inSingletonScope();
 applicationContainer.bind<CompanyEmailServiceInterface>(Component.CompanyEmailServiceInterface).to(CompanyEmailService).inSingletonScope();
 applicationContainer.bind<ControllerInterface>(Component.CompanyEmailController).to(CompanyEmailController).inSingletonScope();
+applicationContainer.bind<CompanyPhoneServiceInterface>(Component.CompanyPhoneServiceInterface).to(CompanyPhoneService).inSingletonScope();
+applicationContainer.bind<ControllerInterface>(Component.CompanyPhoneController).to(CompanyPhoneController).inSingletonScope();
 
 const application = applicationContainer.get<Application>(Component.Application);
 
