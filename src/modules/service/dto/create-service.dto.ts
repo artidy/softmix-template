@@ -1,10 +1,10 @@
-import {IsNumber, IsOptional, IsString, MaxLength, MinLength} from 'class-validator';
+import {IsNotEmpty, IsOptional, IsString, MaxLength, MinLength} from 'class-validator';
 
-import ValidateTypeEnum from '../../../types/validate-type.enum.js';
+import {TITLE_MAX_LENGTH, TITLE_MIN_LENGTH} from '../../../common/const.js';
 import {getValidateMessage} from '../../../utils/functions.js';
-import {TITLE_MIN_LENGTH, TITLE_MAX_LENGTH} from '../../../common/const.js'
+import ValidateTypeEnum from '../../../types/validate-type.enum.js';
 
-class CreateCategoryDto {
+class CreateServiceDto {
   @MinLength(TITLE_MIN_LENGTH, {
     message: getValidateMessage(ValidateTypeEnum.MinLength, TITLE_MIN_LENGTH)
   })
@@ -14,12 +14,12 @@ class CreateCategoryDto {
   title!: string;
 
   @IsOptional()
-  @IsNumber()
-  parentId!: number;
-
-  @IsOptional()
   @IsString()
   preview?: string;
+
+  @IsString()
+  @IsNotEmpty()
+  description!: string;
 }
 
-export default CreateCategoryDto;
+export default CreateServiceDto;

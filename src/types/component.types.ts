@@ -11,7 +11,9 @@ const Component = {
   CompanyEmailServiceInterface: Symbol.for('CompanyEmailServiceInterface'),
   CompanyEmailController: Symbol.for('CompanyEmailController'),
   CompanyPhoneServiceInterface: Symbol.for('CompanyPhoneServiceInterface'),
-  CompanyPhoneController: Symbol.for('CompanyPhoneController')
+  CompanyPhoneController: Symbol.for('CompanyPhoneController'),
+  ServiceService: Symbol.for('ServiceService'),
+  ServiceController: Symbol.for('ServiceController')
 }
 
 export default Component;

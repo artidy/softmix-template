@@ -23,6 +23,9 @@ import CompanyEmailController from './modules/company-email/company-email.contro
 import CompanyPhoneServiceInterface from './modules/company-phone/company-phone-service.interface.js';
 import CompanyPhoneService from './modules/company-phone/company-phone.service.js';
 import CompanyPhoneController from './modules/company-phone/company-phone.controller.js';
+import ServiceServiceInterface from './modules/service/service-service.interface.js';
+import ServiceService from './modules/service/service.service.js';
+import ServiceController from './modules/service/service.controller.js';
 
 const applicationContainer = new Container();
 
@@ -39,6 +42,8 @@ applicationContainer.bind<CompanyEmailServiceInterface>(Component.CompanyEmailSe
 applicationContainer.bind<ControllerInterface>(Component.CompanyEmailController).to(CompanyEmailController).inSingletonScope();
 applicationContainer.bind<CompanyPhoneServiceInterface>(Component.CompanyPhoneServiceInterface).to(CompanyPhoneService).inSingletonScope();
 applicationContainer.bind<ControllerInterface>(Component.CompanyPhoneController).to(CompanyPhoneController).inSingletonScope();
+applicationContainer.bind<ServiceServiceInterface>(Component.ServiceService).to(ServiceService).inSingletonScope();
+applicationContainer.bind<ControllerInterface>(Component.ServiceController).to(ServiceController).inSingletonScope();
 
 const application = applicationContainer.get<Application>(Component.Application);
 

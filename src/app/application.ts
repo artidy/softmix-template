@@ -23,7 +23,8 @@ class Application {
     @inject(Component.ProductController) private  productController: ControllerInterface,
     @inject(Component.ExceptionFilterInterface) private exceptionFilter: ExceptionFilterInterface,
     @inject(Component.CompanyEmailController) private companyEmailController: ControllerInterface,
-    @inject(Component.CompanyPhoneController) private companyPhoneController: ControllerInterface
+    @inject(Component.CompanyPhoneController) private companyPhoneController: ControllerInterface,
+    @inject(Component.ServiceController) private serviceController: ControllerInterface
   ) {
     this.expressApp = express();
   }
@@ -33,6 +34,7 @@ class Application {
     this.expressApp.use('/products', this.productController.router);
     this.expressApp.use('/company_emails', this.companyEmailController.router);
     this.expressApp.use('/company_phones', this.companyPhoneController.router);
+    this.expressApp.use('/services', this.serviceController.router);
   }
 
   public registerMiddlewares() {
