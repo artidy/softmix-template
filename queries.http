@@ -28,3 +28,33 @@ Content-Type: application/json
   "categoryId": 3,
   "description": "Новое описание товара"
 }
+
+### Запрос всех электронных адресов компании
+GET http://localhost:4000/company_emails
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYyOTI0MmJkZDMwOWU1NmI3NWZjYjZkZSIsImVtYWlsIjoiYW5kcmV5QGV4YW1wbGUucnUiLCJpYXQiOjE2NTM3NjYzMDUsImV4cCI6MTY1Mzc2NzIwNX0.JEJ2zfJJKkmUqr50nOc0oW9hnYZ2qf4wzxvhMEtTU0k
+Accept: application/json
+
+### Добавление нового электронного адреса
+POST http://localhost:4000/company_emails
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYyNzQzYzFiZTczMDQwY2I3NzBjYjQ2NiIsImVtYWlsIjoiYW50b25pb0BleGFtcGxlLnJ1IiwiaWF0IjoxNjUzNzUxNDE5LCJleHAiOjE2NTM3NTIzMTl9._dGxw5xxG5PeeHOqwZ1MDA9BvrhR_0lPSEvBm5iZA-8
+Content-Type: application/json
+
+{
+  "email": "info@softmix.kz",
+  "isMain": true
+}
+
+### Запрос всех телефонов компании
+GET http://localhost:4000/company_phones
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYyOTI0MmJkZDMwOWU1NmI3NWZjYjZkZSIsImVtYWlsIjoiYW5kcmV5QGV4YW1wbGUucnUiLCJpYXQiOjE2NTM3NjYzMDUsImV4cCI6MTY1Mzc2NzIwNX0.JEJ2zfJJKkmUqr50nOc0oW9hnYZ2qf4wzxvhMEtTU0k
+Accept: application/json
+
+### Добавление нового телефона компании
+POST http://localhost:4000/company_phones
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJpZCI6IjYyNzQzYzFiZTczMDQwY2I3NzBjYjQ2NiIsImVtYWlsIjoiYW50b25pb0BleGFtcGxlLnJ1IiwiaWF0IjoxNjUzNzUxNDE5LCJleHAiOjE2NTM3NTIzMTl9._dGxw5xxG5PeeHOqwZ1MDA9BvrhR_0lPSEvBm5iZA-8
+Content-Type: application/json
+
+{
+  "phoneNumber": "+7(7172) 78-72-06",
+  "isMain": true
+}

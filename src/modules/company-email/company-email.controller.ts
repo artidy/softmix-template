@@ -9,8 +9,8 @@ import CompanyEmailServiceInterface from './company-email-service.interface.js';
 import {HttpMethod} from '../../types/http-method.enum.js';
 import {fillDTO} from '../../utils/functions.js';
 import CompanyEmailDto from './dto/company-email.dto.js';
-import ProductDto from '../product/dto/product.dto.js';
 import CreateCompanyEmailDto from './dto/create-company-email.dto.js';
+import ValidateDtoMiddleware from '../../common/middlewares/validate-dto.middleware.js';
 
 @injectable()
 class CompanyEmailController extends Controller {
@@ -25,21 +25,22 @@ class CompanyEmailController extends Controller {
     this.addRoute({
       path: '/',
       method: HttpMethod.Post,
-      handler: this.create
+      handler: this.create,
+      middlewares: [new ValidateDtoMiddleware(CreateCompanyEmailDto)]
     });
   }
 
-  async index(_req: Request, res: Response) {
+  public async index(_req: Request, res: Response): Promise<void> {
     const result = await this.companyEmailService.findAll();
 
     this.ok(res, fillDTO(CompanyEmailDto, result));
   }
 
   public async create({body}: Request<Record<string, unknown>,
-    Record<string, unknown>, CreateCompanyEmailDto>, res: Response) {
+    Record<string, unknown>, CreateCompanyEmailDto>, res: Response): Promise<void> {
     const result = await this.companyEmailService.create(body);
 
-    this.created(res, fillDTO(ProductDto, result));
+    this.created(res, fillDTO(CompanyEmailDto, result));
   }
 }
 

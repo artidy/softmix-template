@@ -1,8 +1,7 @@
-import {IsBoolean, IsNotEmpty, IsString} from 'class-validator';
+import {IsBoolean, IsPhoneNumber} from 'class-validator';
 
 class CreateCompanyPhoneDto {
-  @IsString()
-  @IsNotEmpty()
+  @IsPhoneNumber()
   phoneNumber!: string;
 
   @IsBoolean()
