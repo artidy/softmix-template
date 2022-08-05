@@ -7,7 +7,9 @@ const Component = {
   CategoryController: Symbol.for('CategoryController'),
   ProductServiceInterface: Symbol.for('ProductServiceInterface'),
   ProductController: Symbol.for('ProductController'),
-  ExceptionFilterInterface: Symbol.for('ExceptionFilterInterface')
+  ExceptionFilterInterface: Symbol.for('ExceptionFilterInterface'),
+  CompanyEmailServiceInterface: Symbol.for('CompanyEmailServiceInterface'),
+  CompanyEmailController: Symbol.for('CompanyEmailController')
 }
 
 export default Component;

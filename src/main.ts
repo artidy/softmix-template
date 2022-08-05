@@ -17,6 +17,9 @@ import ProductService from './modules/product/product.service.js';
 import ProductController from './modules/product/product.controller.js';
 import {ExceptionFilterInterface} from './common/errors/exception-filter.interface.js';
 import ExceptionFilter from './common/errors/exception-filter.js';
+import CompanyEmailServiceInterface from './modules/company-email/company-email-service.interface.js';
+import CompanyEmailService from './modules/company-email/company-email.service.js';
+import CompanyEmailController from './modules/company-email/company-email.controller.js';
 
 const applicationContainer = new Container();
 
@@ -29,6 +32,8 @@ applicationContainer.bind<ControllerInterface>(Component.CategoryController).to(
 applicationContainer.bind<ProductServiceInterface>(Component.ProductServiceInterface).to(ProductService).inSingletonScope();
 applicationContainer.bind<ControllerInterface>(Component.ProductController).to(ProductController).inSingletonScope();
 applicationContainer.bind<ExceptionFilterInterface>(Component.ExceptionFilterInterface).to(ExceptionFilter).inSingletonScope();
+applicationContainer.bind<CompanyEmailServiceInterface>(Component.CompanyEmailServiceInterface).to(CompanyEmailService).inSingletonScope();
+applicationContainer.bind<ControllerInterface>(Component.CompanyEmailController).to(CompanyEmailController).inSingletonScope();
 
 const application = applicationContainer.get<Application>(Component.Application);
 

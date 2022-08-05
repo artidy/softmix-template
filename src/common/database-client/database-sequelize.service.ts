@@ -8,6 +8,7 @@ import {LoggerInterface} from '../logger/logger.interface.js';
 import CategoryModel from '../../models/category.model.js';
 import CategoryParentModel from '../../models/category-parent.model.js';
 import ProductModel from '../../models/product.model.js';
+import CompanyEmailModel from '../../models/company-email.model.js';
 
 @injectable()
 class DatabaseSequelizeService implements DatabaseInterface {
@@ -21,7 +22,12 @@ class DatabaseSequelizeService implements DatabaseInterface {
     await this.init(uri, database);
 
     this.connection = new Sequelize(`${uri}/${database}`);
-    this.connection.addModels([CategoryModel, CategoryParentModel, ProductModel]);
+    this.connection.addModels([
+      CategoryModel,
+      CategoryParentModel,
+      ProductModel,
+      CompanyEmailModel
+    ]);
     // Создает все модели в базе данных
     await this.connection.sync({ alter: true });
 
