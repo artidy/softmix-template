@@ -16,7 +16,11 @@ class UserService implements UserServiceInterface {
   }
 
   public async create(dto: CreateUserDto, saltRounds: number): Promise<UserModel> {
-    return UserModel.create({email: dto.email, password: {password: dto.password, saltRounds}});
+    const user = await UserModel.create({email: dto.email});
+
+    await user.setPassword(dto.password, saltRounds);
+
+    return user.save();
   }
 }
 
