@@ -11,6 +11,7 @@ type ConfigSchema = {
   DB_USER: string;
   DB_PASSWORD: string;
   DB_NAME: string;
+  SALT_ROUNDS: number;
 }
 
 const configSchema = convict<ConfigSchema>({
@@ -54,6 +55,12 @@ const configSchema = convict<ConfigSchema>({
     doc: 'Имя базы данных сайта',
     format: String,
     env: 'DB_NAME',
+    default: null
+  },
+  SALT_ROUNDS: {
+    doc: 'Сложность соли для хеширования пароля',
+    format: Number,
+    env: 'SALT_ROUNDS',
     default: null
   }
 });

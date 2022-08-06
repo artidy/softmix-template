@@ -26,6 +26,9 @@ import CompanyPhoneController from './modules/company-phone/company-phone.contro
 import ServiceServiceInterface from './modules/service/service-service.interface.js';
 import ServiceService from './modules/service/service.service.js';
 import ServiceController from './modules/service/service.controller.js';
+import UserServiceInterface from './modules/user/user-service.interface.js';
+import UserService from './modules/user/user.service.js';
+import UserController from './modules/user/user.controller.js';
 
 const applicationContainer = new Container();
 
@@ -44,6 +47,8 @@ applicationContainer.bind<CompanyPhoneServiceInterface>(Component.CompanyPhoneSe
 applicationContainer.bind<ControllerInterface>(Component.CompanyPhoneController).to(CompanyPhoneController).inSingletonScope();
 applicationContainer.bind<ServiceServiceInterface>(Component.ServiceService).to(ServiceService).inSingletonScope();
 applicationContainer.bind<ControllerInterface>(Component.ServiceController).to(ServiceController).inSingletonScope();
+applicationContainer.bind<UserServiceInterface>(Component.UserService).to(UserService).inSingletonScope();
+applicationContainer.bind<ControllerInterface>(Component.UserController).to(UserController).inSingletonScope();
 
 const application = applicationContainer.get<Application>(Component.Application);
 

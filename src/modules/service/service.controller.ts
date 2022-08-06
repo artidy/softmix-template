@@ -27,7 +27,7 @@ class ServiceController extends Controller {
       method: HttpMethod.Post,
       handler: this.create,
       middlewares: [new ValidateDtoMiddleware(CreateServiceDto)]
-    })
+    });
   }
 
   public async index(_req: Request, res: Response): Promise<void> {

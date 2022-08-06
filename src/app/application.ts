@@ -24,7 +24,8 @@ class Application {
     @inject(Component.ExceptionFilterInterface) private exceptionFilter: ExceptionFilterInterface,
     @inject(Component.CompanyEmailController) private companyEmailController: ControllerInterface,
     @inject(Component.CompanyPhoneController) private companyPhoneController: ControllerInterface,
-    @inject(Component.ServiceController) private serviceController: ControllerInterface
+    @inject(Component.ServiceController) private serviceController: ControllerInterface,
+    @inject(Component.UserController) private userController: ControllerInterface,
   ) {
     this.expressApp = express();
   }
@@ -35,6 +36,7 @@ class Application {
     this.expressApp.use('/company_emails', this.companyEmailController.router);
     this.expressApp.use('/company_phones', this.companyPhoneController.router);
     this.expressApp.use('/services', this.serviceController.router);
+    this.expressApp.use('/users', this.userController.router);
   }
 
   public registerMiddlewares() {
