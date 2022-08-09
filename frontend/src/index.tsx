@@ -7,8 +7,9 @@ import {ToastContainer} from "react-toastify";
 import App from './components/app';
 import {store} from "./store";
 
-import './index.css';
-import 'react-toastify/dist/ReactToastify.css';
+import './css/ecommerce.css';
+import './css/libs.css';
+import './css/style.css';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') ||

@@ -3306,8 +3306,9 @@ textarea {
 }
 
 .ini-min {
-    display: flex;
-    align-items: flex-start;
+  display: flex;
+  align-items: flex-start;
+  height: 100%;
 }
 
 .aim-icon {
@@ -5708,7 +5709,7 @@ textarea {
 }
 
 .header-center .logo img {
-    max-height: 4rem;
+    max-height: 6rem;
 }
 
 .header-logo-center {
