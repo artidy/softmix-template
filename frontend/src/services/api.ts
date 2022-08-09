@@ -2,7 +2,7 @@ import axios, {AxiosInstance, AxiosRequestConfig} from "axios";
 
 import {getToken} from "./token";
 
-const BACKEND_URL = 'http://localhost:3123/api';
+const BACKEND_URL = 'http://localhost:4000/';
 const REQUEST_TIMEOUT = 5000;
 const HEADERS_FIELD_TOKEN = 'x-token';
 

@@ -12,8 +12,8 @@ const fetchServicesAction = createAsyncThunk(
   'data/services',
   async () => {
     try {
-      const {data} = await api.get('');
-      store.dispatch(fetchServices(ServicesAdapter(data.services)));
+      const {data} = await api.get('/services');
+      store.dispatch(fetchServices(ServicesAdapter(data)));
     } catch (error) {
       errorHandle(error);
     }
@@ -24,8 +24,8 @@ const fetchProductsAction = createAsyncThunk(
   'data/products',
   async () => {
     try {
-      const {data} = await api.get('');
-      store.dispatch(fetchProducts(adaptProducts(data.products)));
+      const {data} = await api.get('/products');
+      store.dispatch(fetchProducts(adaptProducts(data)));
     } catch (error) {
       errorHandle(error);
     }
@@ -36,8 +36,8 @@ const fetchCategoriesAction = createAsyncThunk(
   'data/products',
   async () => {
     try {
-      const {data} = await api.get('');
-      store.dispatch(fetchCategories(adaptCategories(data.product_categories)));
+      const {data} = await api.get('/categories');
+      store.dispatch(fetchCategories(adaptCategories(data)));
     } catch (error) {
       errorHandle(error);
     }
