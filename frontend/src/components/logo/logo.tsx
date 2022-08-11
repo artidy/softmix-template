@@ -1,3 +1,7 @@
+import {Link} from 'react-router-dom';
+
+import {AppRoutes} from '../../const';
+
 type LogoProps = {
   title: string;
   src: string;
@@ -5,9 +9,9 @@ type LogoProps = {
 
 const Logo = ({title, src}: LogoProps): JSX.Element => {
   return (
-    <a href="/" className="logo" title={title}>
+    <Link to={AppRoutes.Main} className="logo" title={title}>
       <img src={src} width="273" height="273" alt={title} />
-    </a>
+    </Link>
   )
 }
 
