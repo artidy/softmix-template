@@ -50,9 +50,17 @@ const FIXED_STYLES = {
   left: 0
 }
 
-const FixedHeaderComponent = (): JSX.Element => {
+type FixedHeaderComponentProps = {
+  setIsLogin: Function;
+}
+
+const FixedHeaderComponent = ({setIsLogin}: FixedHeaderComponentProps): JSX.Element => {
   const headerFixed: MutableRefObject<HTMLElement | null> = useRef(null);
   const [fixed, setFixed] = useState(false);
+
+  const onClick = () => {
+    setIsLogin(true);
+  };
 
   const changeFixed = () => {
     if (headerFixed.current) {
@@ -90,7 +98,11 @@ const FixedHeaderComponent = (): JSX.Element => {
                 <div className="col-auto header-fixed-col col-static">
                   <ul className="header-actions">
                     <li className="d-none d-sm-block">
-                      <div className="header-action-icon side-open header-account" data-side=".side-account">
+                      <div
+                        className="header-action-icon side-open header-account"
+                        data-side=".side-account"
+                        onClick={onClick}
+                      >
                         <i className="material-icons md-24">login</i>
                       </div>
                     </li>

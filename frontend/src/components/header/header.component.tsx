@@ -2,7 +2,11 @@ import HeaderTopInfo from '../header-top-info';
 import SocialLinks from '../social-links';
 import FixedHeaderComponent from './fixed-header';
 
-const HeaderComponent = (): JSX.Element => {
+type HeaderComponentProps = {
+  setIsLogin: Function;
+}
+
+const HeaderComponent = ({setIsLogin}: HeaderComponentProps): JSX.Element => {
   return (
     <header className="header">
       <nav className="header-top">
@@ -25,7 +29,7 @@ const HeaderComponent = (): JSX.Element => {
           </div>
         </div>
       </nav>
-      <FixedHeaderComponent />
+      <FixedHeaderComponent setIsLogin={setIsLogin} />
     </header>
   )
 };
