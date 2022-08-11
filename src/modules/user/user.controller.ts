@@ -14,6 +14,8 @@ import {fillDTO} from '../../utils/functions.js';
 import UserDto from './dto/user.dto.js';
 import ConfigInterface from '../../common/config/config.interface.js';
 import HttpError from '../../common/errors/http-error.js';
+import LoginUserDto from './dto/login-user.dto.js';
+import LoggedUserDto from './dto/logged-user.dto.js';
 
 @injectable()
 class UserController extends Controller {
@@ -31,6 +33,12 @@ class UserController extends Controller {
       method: HttpMethod.Post,
       handler: this.create,
       middlewares: [new ValidateDtoMiddleware(CreateUserDto)]
+    });
+    this.addRoute({
+      path: '/login',
+      method: HttpMethod.Post,
+      handler: this.login,
+      middlewares: [new ValidateDtoMiddleware(LoginUserDto)]
     });
   }
 
@@ -56,6 +64,22 @@ class UserController extends Controller {
 
     this.created(res, fillDTO(UserDto, result));
   }
+
+  public async login({body}: Request<Record<string, unknown>, Record<string, unknown>, LoginUserDto>,
+                     res: Response): Promise<void> {
+    const user = await this.userService.verifyUser(body);
+
+    if (!user) {
+      throw new HttpError(
+        StatusCodes.UNAUTHORIZED,
+        'Не прошли авторизацию',
+        'UserController'
+      );
+    }
+
+    this.ok(res, fillDTO(LoggedUserDto, {id: user.id, email: user.email, token: 'user-pro'}));
+  }
+
 }
 
 export default UserController;

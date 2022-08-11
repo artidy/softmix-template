@@ -16,6 +16,7 @@ enum ApiRoutes {
   Services = '/services',
   Products = '/products',
   Categories = '/categories',
+  Users = '/users',
   Login = '/login',
   Logout = '/logout',
   CheckAuth = '/check-auth'

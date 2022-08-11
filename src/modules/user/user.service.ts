@@ -4,6 +4,7 @@ import {injectable} from 'inversify';
 import UserServiceInterface from './user-service.interface.js';
 import UserModel from '../../models/user.model.js';
 import CreateUserDto from './dto/create-user.dto.js';
+import LoginUserDto from './dto/login-user.dto';
 
 @injectable()
 class UserService implements UserServiceInterface {
@@ -21,6 +22,16 @@ class UserService implements UserServiceInterface {
     await user.setPassword(dto.password, saltRounds);
 
     return user.save();
+  }
+
+  public async verifyUser(dto: LoginUserDto): Promise<UserModel | null> {
+    const user = await this.findByEmail(dto.email);
+
+    if (!user || !await user.verifyPassword(dto.password)) {
+      return null;
+    }
+
+    return user;
   }
 }
 

@@ -14,6 +14,7 @@ import ProductApi from '../types/product-api';
 import CategoryApi from '../types/category-api';
 import UserApi from '../types/user-api';
 import {setAuthorization} from './functions';
+import UserAuth from '../types/user-auth';
 
 const fetchServicesAction = createAsyncThunk(
   `data${ApiRoutes.Services}`,
@@ -53,9 +54,9 @@ const fetchCategoriesAction = createAsyncThunk(
 
 const login = createAsyncThunk(
   `data${ApiRoutes.Login}`,
-  async () => {
+  async (user: UserAuth) => {
     try {
-      const {data} = await api.post<UserApi>(ApiRoutes.Login);
+      const {data} = await api.post<UserApi>(`${ApiRoutes.Users}${ApiRoutes.Login}`, user);
       setAuthorization(data);
     } catch (error) {
       errorHandle(error);

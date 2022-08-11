@@ -1,12 +1,22 @@
-import {ChangeEvent, useState} from 'react';
+import {ChangeEvent, FormEvent, useState} from 'react';
 import {Link} from 'react-router-dom';
+
+import {login} from '../../store/api-actions';
+import {useAppDispatch} from '../../hooks/store';
 
 const FOCUS_CLASS = 'focus';
 
 const LoginFormComponent = (): JSX.Element => {
+  const dispatch = useAppDispatch();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [isRemember, setRemember] = useState('false');
+
+  const authenticate = (evt: FormEvent<HTMLFormElement>) => {
+    evt.preventDefault();
+
+    dispatch(login({email, password}));
+  }
 
   const onChangeEmail = (evt: ChangeEvent<HTMLInputElement>) => {
     setEmail(evt.target.value);
@@ -32,7 +42,7 @@ const LoginFormComponent = (): JSX.Element => {
 
   return (
     <div className="side-login">
-      <form action="#!" method="post" className="side-form">
+      <form action="#" method="post" className="side-form" onSubmit={authenticate}>
         <div className="side-form-title item-heading">Авторизация</div>
         <div className="form-field">
           <label className="input-states-labelled" htmlFor="email">Email
