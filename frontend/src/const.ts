@@ -13,18 +13,30 @@ enum AppRoutes {
 }
 
 enum ApiRoutes {
-  Services = '/services'
+  Services = '/services',
+  Products = '/products',
+  Categories = '/categories',
+  Login = '/login',
+  Logout = '/logout',
+  CheckAuth = '/check-auth'
 }
 
 enum NameSpace {
   Services = 'SERVICES',
   Products = 'PRODUCTS',
+  User = 'USER'
 }
 
 enum HTTP_CODE {
   BAD_REQUEST = 400,
   UNAUTHORIZED = 401,
   NOT_FOUND = 404,
+}
+
+enum AuthorizationStatus {
+  Auth = 'AUTH',
+  NoAuth = 'NO_AUTH',
+  Unknown = 'UNKNOWN',
 }
 
 const AUTH_TOKEN_KEY_NAME = 'softmix';
@@ -35,5 +47,6 @@ export {
   ApiRoutes,
   NameSpace,
   HTTP_CODE,
+  AuthorizationStatus,
   AUTH_TOKEN_KEY_NAME
 }

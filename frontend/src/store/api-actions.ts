@@ -7,12 +7,19 @@ import {ServicesAdapter} from "../adapters/services.adapter";
 import {adaptProducts} from "../adapters/products.adapter";
 import {fetchCategories, fetchProducts} from "./products-slice";
 import {adaptCategories} from "../adapters/categories.adapter";
+import {ApiRoutes, AuthorizationStatus} from '../const';
+import {requireAuthorization} from './user-slice';
+import ServiceApi from '../types/service-api';
+import ProductApi from '../types/product-api';
+import CategoryApi from '../types/category-api';
+import UserApi from '../types/user-api';
+import {setAuthorization} from './functions';
 
 const fetchServicesAction = createAsyncThunk(
-  'data/services',
+  `data${ApiRoutes.Services}`,
   async () => {
     try {
-      const {data} = await api.get('/services');
+      const {data} = await api.get<ServiceApi[]>(ApiRoutes.Services);
       store.dispatch(fetchServices(ServicesAdapter(data)));
     } catch (error) {
       errorHandle(error);
@@ -21,10 +28,10 @@ const fetchServicesAction = createAsyncThunk(
 );
 
 const fetchProductsAction = createAsyncThunk(
-  'data/products',
+  `data${ApiRoutes.Products}`,
   async () => {
     try {
-      const {data} = await api.get('/products');
+      const {data} = await api.get<ProductApi[]>(ApiRoutes.Products);
       store.dispatch(fetchProducts(adaptProducts(data)));
     } catch (error) {
       errorHandle(error);
@@ -33,10 +40,10 @@ const fetchProductsAction = createAsyncThunk(
 );
 
 const fetchCategoriesAction = createAsyncThunk(
-  'data/products',
+  `data${ApiRoutes.Categories}`,
   async () => {
     try {
-      const {data} = await api.get('/categories');
+      const {data} = await api.get<CategoryApi[]>(ApiRoutes.Categories);
       store.dispatch(fetchCategories(adaptCategories(data)));
     } catch (error) {
       errorHandle(error);
@@ -44,4 +51,22 @@ const fetchCategoriesAction = createAsyncThunk(
   }
 );
 
-export {fetchServicesAction, fetchProductsAction, fetchCategoriesAction};
+const login = createAsyncThunk(
+  `data${ApiRoutes.Login}`,
+  async () => {
+    try {
+      const {data} = await api.post<UserApi>(ApiRoutes.Login);
+      setAuthorization(data);
+    } catch (error) {
+      errorHandle(error);
+      store.dispatch(requireAuthorization(AuthorizationStatus.NoAuth));
+    }
+  }
+)
+
+export {
+  fetchServicesAction,
+  fetchProductsAction,
+  fetchCategoriesAction,
+  login
+};
