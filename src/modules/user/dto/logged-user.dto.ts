@@ -1,14 +1,13 @@
 import {Expose} from 'class-transformer';
 
-class LoggedUserDto {
-  @Expose()
-  public id!: number;
+import User from './user.dto.js';
 
-  @Expose()
-  public email!: string;
-
+class LoggedUserDto extends User {
   @Expose()
   public token!: number;
+
+  @Expose()
+  public refreshToken!: number;
 }
 
 export default LoggedUserDto;

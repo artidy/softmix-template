@@ -1,5 +1,5 @@
 import {compare, genSalt, hash} from 'bcrypt';
-import {Column, DataType, IsEmail, Model, Table} from 'sequelize-typescript';
+import {Column, DataType, Default, IsEmail, Model, Table} from 'sequelize-typescript';
 
 @Table({
   tableName: 'users',
@@ -7,11 +7,12 @@ import {Column, DataType, IsEmail, Model, Table} from 'sequelize-typescript';
 })
 class UserModel extends Model {
   @IsEmail
-  @Column({
-    type: DataType.STRING,
-    unique: true
-  })
+  @Column(DataType.STRING)
   email!: string;
+
+  @Default('')
+  @Column(DataType.STRING)
+  name!: string
 
   @Column(DataType.STRING)
   private password!: string;

@@ -1,6 +1,9 @@
 import {ClassConstructor, plainToInstance} from 'class-transformer';
+import {jwtVerify, SignJWT} from 'jose';
+import {createSecretKey} from 'crypto';
 
 import ValidateTypeEnum from '../types/validate-type.enum.js';
+import Payload from '../types/payload';
 
 const generateRandomValue = (min: number, max: number, digit = 0): number =>
   +((Math.random() * (max - min)) + min).toFixed(digit);
@@ -47,6 +50,24 @@ const createErrorObject = (message: string) => ({
   error: message,
 });
 
+const createJWT = async (
+  algorithm: string,
+  jwtSecret: string,
+  payload: object,
+  expirationTime = '1m'): Promise<string> =>
+  new SignJWT({...payload})
+    .setProtectedHeader({alg: algorithm})
+    .setIssuedAt()
+    .setExpirationTime(expirationTime)
+    .sign(createSecretKey(jwtSecret, 'utf-8'));
+
+const verifyToken = async (token: string, secret: string, algorithm: string): Promise<Payload> => {
+  const {payload} = await jwtVerify(token, createSecretKey(secret, 'utf-8'),
+    {algorithms: [algorithm]});
+
+  return {id: payload.id as number, email: payload.email as string};
+};
+
 export {
   generateRandomValue,
   getRandomItem,
@@ -55,5 +76,7 @@ export {
   getMysqlUri,
   getValidateMessage,
   fillDTO,
-  createErrorObject
+  createErrorObject,
+  createJWT,
+  verifyToken
 };

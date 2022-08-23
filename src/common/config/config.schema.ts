@@ -12,6 +12,11 @@ type ConfigSchema = {
   DB_PASSWORD: string;
   DB_NAME: string;
   SALT_ROUNDS: number;
+  UPLOAD_DIR: string;
+  JWT_SECRET: string;
+  JWT_REFRESH_SECRET: string;
+  TOKEN_EXPIRATION_TIME: string;
+  JWT_ALGORITHM: string;
 }
 
 const configSchema = convict<ConfigSchema>({
@@ -62,6 +67,36 @@ const configSchema = convict<ConfigSchema>({
     format: Number,
     env: 'SALT_ROUNDS',
     default: null
+  },
+  UPLOAD_DIR: {
+    doc: 'Директория для загрузки файлов',
+    format: String,
+    env: 'UPLOAD_DIR',
+    default: './upload',
+  },
+  JWT_SECRET: {
+    doc: 'Секретная строка для генерации токена',
+    format: String,
+    env: 'JWT_SECRET',
+    default: null,
+  },
+  JWT_REFRESH_SECRET: {
+    doc: 'Секретная строка для генерации токена',
+    format: String,
+    env: 'JWT_REFRESH_SECRET',
+    default: null,
+  },
+  TOKEN_EXPIRATION_TIME: {
+    doc: 'Время действия токена',
+    format: String,
+    env: 'TOKEN_EXPIRATION_TIME',
+    default: '1d',
+  },
+  JWT_ALGORITHM: {
+    doc: 'Алгоритм шифрования токена',
+    format: String,
+    env: 'JWT_ALGORITHM',
+    default: 'HS256',
   }
 });
 

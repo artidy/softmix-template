@@ -29,6 +29,8 @@ import ServiceController from './modules/service/service.controller.js';
 import UserServiceInterface from './modules/user/user-service.interface.js';
 import UserService from './modules/user/user.service.js';
 import UserController from './modules/user/user.controller.js';
+import {TokenServiceInterface} from './modules/token/token-service.interface.js';
+import TokenService from './modules/token/token.service.js';
 
 const applicationContainer = new Container();
 
@@ -47,8 +49,9 @@ applicationContainer.bind<CompanyPhoneServiceInterface>(Component.CompanyPhoneSe
 applicationContainer.bind<ControllerInterface>(Component.CompanyPhoneController).to(CompanyPhoneController).inSingletonScope();
 applicationContainer.bind<ServiceServiceInterface>(Component.ServiceService).to(ServiceService).inSingletonScope();
 applicationContainer.bind<ControllerInterface>(Component.ServiceController).to(ServiceController).inSingletonScope();
-applicationContainer.bind<UserServiceInterface>(Component.UserService).to(UserService).inSingletonScope();
+applicationContainer.bind<UserServiceInterface>(Component.UserServiceInterface).to(UserService).inSingletonScope();
 applicationContainer.bind<ControllerInterface>(Component.UserController).to(UserController).inSingletonScope();
+applicationContainer.bind<TokenServiceInterface>(Component.TokenServiceInterface).to(TokenService).inSingletonScope();
 
 const application = applicationContainer.get<Application>(Component.Application);
 
