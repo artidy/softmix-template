@@ -27,10 +27,12 @@ abstract class Controller implements ControllerInterface {
   }
 
   public send<T>(res: Response, statusCode: number, data: T): void {
+    const newTokens = res.locals?.newTokens;
+
     res
       .type('application/json')
       .status(statusCode)
-      .json(data);
+      .json({data, newTokens});
   }
 
   public ok<T>(res: Response, data: T): void {
