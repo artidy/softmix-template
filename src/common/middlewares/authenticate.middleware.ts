@@ -3,7 +3,7 @@ import {NextFunction, Request, Response} from 'express';
 import {MiddlewareInterface} from '../../types/middleware.interface.js';
 import {TokenServiceInterface} from '../../modules/token/token-service.interface.js';
 import {fillDTO, verifyToken} from '../../utils/functions.js';
-import {ApiTokenTypes} from '../conts.js';
+import {ApiTokenTypes} from '../const.js';
 import UserDto from '../../modules/user/dto/user.dto.js';
 import UserServiceInterface from '../../modules/user/user-service.interface.js';
 
