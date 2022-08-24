@@ -16,10 +16,7 @@ enum ApiRoutes {
   Services = '/services',
   Products = '/products',
   Categories = '/categories',
-  Users = '/users',
-  Login = '/login',
-  Logout = '/logout',
-  CheckAuth = '/check-auth'
+  Users = '/users'
 }
 
 enum NameSpace {
@@ -41,8 +38,8 @@ enum AuthorizationStatus {
 }
 
 enum TokenType {
-  Token = 'olgin-matrix-token',
-  RefreshToken = 'olgin-matrix-refresh-token'
+  Token = 'token',
+  RefreshToken = 'refresh-token'
 }
 
 const AUTH_TOKEN_KEY_NAME = 'softmix';
