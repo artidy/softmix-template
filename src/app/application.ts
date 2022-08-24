@@ -10,6 +10,10 @@ import {getMysqlUri} from '../utils/functions.js';
 import DatabaseInterface from '../common/database-client/database.interface.js';
 import {ControllerInterface} from '../common/controller/controller.interface.js';
 import {ExceptionFilterInterface} from '../common/errors/exception-filter.interface.js';
+import AuthenticateMiddleware from '../common/middlewares/authenticate.middleware.js';
+import UpdateRefreshTokenMiddleware from '../common/middlewares/update-refresh-token.middleware.js';
+import {TokenServiceInterface} from '../modules/token/token-service.interface.js';
+import UserServiceInterface from '../modules/user/user-service.interface.js';
 
 @injectable()
 class Application {
@@ -19,6 +23,8 @@ class Application {
     @inject(Component.LoggerInterface) private logger: LoggerInterface,
     @inject(Component.ConfigInterface) private config: ConfigInterface,
     @inject(Component.DatabaseInterface) private database: DatabaseInterface,
+    @inject(Component.TokenServiceInterface) private tokenService: TokenServiceInterface,
+    @inject(Component.UserServiceInterface) private userService: UserServiceInterface,
     @inject(Component.CategoryController) private categoryController: ControllerInterface,
     @inject(Component.ProductController) private  productController: ControllerInterface,
     @inject(Component.ExceptionFilterInterface) private exceptionFilter: ExceptionFilterInterface,
@@ -41,6 +47,18 @@ class Application {
 
   public registerMiddlewares() {
     this.expressApp.use(express.json());
+    this.expressApp.use(express.json());
+    this.expressApp.use(
+      '/upload',
+      express.static(this.config.get('UPLOAD_DIR'))
+    );
+
+    const authenticateMiddleware = new AuthenticateMiddleware(
+      this.config.get('JWT_SECRET'), this.config.get('JWT_ALGORITHM'), this.tokenService, this.userService);
+    const updateRefreshTokenMiddleware = new UpdateRefreshTokenMiddleware(
+      this.config.get('JWT_REFRESH_SECRET'), this.config.get('JWT_ALGORITHM'), this.tokenService, this.userService);
+    this.expressApp.use(authenticateMiddleware.execute.bind(authenticateMiddleware));
+    this.expressApp.use(updateRefreshTokenMiddleware.execute.bind(updateRefreshTokenMiddleware));
     this.expressApp.use(cors());
   }
 

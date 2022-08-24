@@ -6,10 +6,7 @@ import {Column, DataType, IsEmail, Model, Table} from 'sequelize-typescript';
 })
 class CompanyEmailModel extends Model {
   @IsEmail
-  @Column({
-    type: DataType.STRING,
-    unique: true
-  })
+  @Column(DataType.STRING)
   email!: string;
 
   @Column(DataType.BOOLEAN)
