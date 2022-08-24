@@ -5,15 +5,18 @@ import Footer from "../footer";
 import HeaderComponent from '../header';
 import PopupSideComponent from '../popup-side';
 import LoginFormComponent from '../login-form';
+import {useAppSelector} from '../../hooks/store';
+import {AuthorizationStatus} from '../../const';
 
 const Layout = (): JSX.Element => {
   const [isLogin, setIsLogin] = useState(false);
+  const {authorizationStatus, user} = useAppSelector(({USER}) => USER);
   const clientWidth = document.body.clientWidth;
 
   useEffect(() => {
     document.body.style.overflow = isLogin ? 'hidden' : '';
     document.body.style.paddingRight = isLogin ? `${document.body.clientWidth - clientWidth}px` : '';
-  }, [isLogin, clientWidth])
+  }, [isLogin, clientWidth]);
 
   return (
     <>
@@ -25,7 +28,7 @@ const Layout = (): JSX.Element => {
             isOpen={isLogin}
             toggleOpen={setIsLogin}
           >
-            <LoginFormComponent />
+            {authorizationStatus === AuthorizationStatus.Auth ? <div>{user?.name}</div> : <LoginFormComponent/>}
           </PopupSideComponent>
           <Outlet />
         </div>

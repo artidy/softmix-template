@@ -17,4 +17,6 @@ type UserAuth = {
   isRemember: boolean;
 }
 
-export type {User, UserLogin, UserAuth};
+type UserSlice = User | null;
+
+export type {User, UserLogin, UserAuth, UserSlice};
