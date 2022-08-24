@@ -57,7 +57,7 @@ const login = createAsyncThunk(
   async (user: UserAuth) => {
     try {
       const {data} = await api.post<DataApi<UserLogin>>(`${ApiRoutes.Users}${ApiRoutes.Login}`, user);
-      setAuthorization(data.data);
+      setAuthorization(data.data, user.isRemember);
     } catch (error) {
       errorHandle(error);
       store.dispatch(requireAuthorization(AuthorizationStatus.NoAuth));

@@ -14,6 +14,7 @@ type UserLogin = User & {
 type UserAuth = {
   email: string;
   password: string;
+  isRemember: boolean;
 }
 
 export type {User, UserLogin, UserAuth};

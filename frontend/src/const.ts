@@ -40,6 +40,11 @@ enum AuthorizationStatus {
   Unknown = 'UNKNOWN',
 }
 
+enum TokenType {
+  Token = 'olgin-matrix-token',
+  RefreshToken = 'olgin-matrix-refresh-token'
+}
+
 const AUTH_TOKEN_KEY_NAME = 'softmix';
 
 export {
@@ -49,5 +54,6 @@ export {
   NameSpace,
   HTTP_CODE,
   AuthorizationStatus,
+  TokenType,
   AUTH_TOKEN_KEY_NAME
 }

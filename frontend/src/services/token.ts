@@ -1,17 +1,30 @@
-import {AUTH_TOKEN_KEY_NAME} from '../const';
 import Token from '../types/token';
+import {TokenType} from '../const';
+import {UserLogin} from '../types/user';
 
-const getToken = (): Token => {
-  const token = localStorage.getItem(AUTH_TOKEN_KEY_NAME);
+const getToken = (tokenType: TokenType): Token => {
+  const token = localStorage.getItem(tokenType);
   return token ?? '';
 };
 
-const saveToken = (token: Token): void => {
-  localStorage.setItem(AUTH_TOKEN_KEY_NAME, token);
+const saveToken = (token: Token, tokenType: TokenType): void => {
+  localStorage.setItem(tokenType, token);
 };
 
-const dropToken = (): void => {
-  localStorage.removeItem(AUTH_TOKEN_KEY_NAME);
+const saveTokens = (data: UserLogin): void => {
+  if (data.token && data.refreshToken) {
+    saveToken(data.token, TokenType.Token);
+    saveToken(data.refreshToken, TokenType.RefreshToken);
+  }
+}
+
+const dropToken = (tokenType: TokenType): void => {
+  localStorage.removeItem(tokenType);
 };
 
-export {getToken, saveToken, dropToken};
+const dropTokens = (): void => {
+  dropToken(TokenType.Token);
+  dropToken(TokenType.RefreshToken);
+};
+
+export {getToken, saveToken, saveTokens, dropToken, dropTokens};

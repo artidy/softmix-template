@@ -10,12 +10,12 @@ const LoginFormComponent = (): JSX.Element => {
   const dispatch = useAppDispatch();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [isRemember, setRemember] = useState('false');
+  const [isRemember, setRemember] = useState(false);
 
   const authenticate = (evt: FormEvent<HTMLFormElement>) => {
     evt.preventDefault();
 
-    dispatch(login({email, password}));
+    dispatch(login({email, password, isRemember}));
   }
 
   const onChangeEmail = (evt: ChangeEvent<HTMLInputElement>) => {
@@ -27,7 +27,7 @@ const LoginFormComponent = (): JSX.Element => {
   }
 
   const onChangeRemember = (evt: ChangeEvent<HTMLInputElement>) => {
-    setRemember(evt.target.value);
+    setRemember(evt.target.checked);
   }
 
   const onFocusField = (evt: ChangeEvent<HTMLInputElement>) => {
@@ -91,7 +91,7 @@ const LoginFormComponent = (): JSX.Element => {
               className="checkbox-input"
               name="SignInCheckbox"
               id="login-checkbox"
-              value={isRemember}
+              checked={isRemember}
               onChange={onChangeRemember}
             />
             <label htmlFor="login-checkbox" className="checkbox-label">Запомнить</label>
