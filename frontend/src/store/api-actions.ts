@@ -12,9 +12,9 @@ import {requireAuthorization} from './user-slice';
 import ServiceApi from '../types/service-api';
 import ProductApi from '../types/product-api';
 import CategoryApi from '../types/category-api';
-import UserApi from '../types/user-api';
+import {UserLogin, UserAuth} from '../types/user';
 import {setAuthorization} from './functions';
-import UserAuth from '../types/user-auth';
+import {DataApi} from '../types/data-api';
 
 const fetchServicesAction = createAsyncThunk(
   `data${ApiRoutes.Services}`,
@@ -56,8 +56,8 @@ const login = createAsyncThunk(
   `data${ApiRoutes.Login}`,
   async (user: UserAuth) => {
     try {
-      const {data} = await api.post<UserApi>(`${ApiRoutes.Users}${ApiRoutes.Login}`, user);
-      setAuthorization(data);
+      const {data} = await api.post<DataApi<UserLogin>>(`${ApiRoutes.Users}${ApiRoutes.Login}`, user);
+      setAuthorization(data.data);
     } catch (error) {
       errorHandle(error);
       store.dispatch(requireAuthorization(AuthorizationStatus.NoAuth));

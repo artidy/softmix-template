@@ -1,9 +1,9 @@
 import {createSlice} from '@reduxjs/toolkit';
 
 import {AuthorizationStatus, NameSpace} from '../../const';
-import User from '../../types/user';
+import {User} from '../../types/user';
 
-const INITIAL_USER: User = null as User;
+const INITIAL_USER: User | null = null;
 
 const initialState = {
   authorizationStatus: AuthorizationStatus.Unknown,
