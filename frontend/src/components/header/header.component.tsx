@@ -21,7 +21,7 @@ const HeaderComponent = ({setIsLogin}: HeaderComponentProps): JSX.Element => {
                 <div className="header-top-btn">
                   <a href="#сallback_popup" className="header-call-back-link сallback_popup_open">
                     <i className="material-icons">ring_volume</i>
-                    <span>Callback</span>
+                    <span>Перезвонить</span>
                   </a>
                 </div>
               </div>

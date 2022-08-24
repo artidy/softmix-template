@@ -7,6 +7,7 @@ import PopupSideComponent from '../popup-side';
 import LoginFormComponent from '../login-form';
 import {useAppSelector} from '../../hooks/store';
 import {AuthorizationStatus} from '../../const';
+import UserComponent from '../user';
 
 const Layout = (): JSX.Element => {
   const [isLogin, setIsLogin] = useState(false);
@@ -28,7 +29,7 @@ const Layout = (): JSX.Element => {
             isOpen={isLogin}
             toggleOpen={setIsLogin}
           >
-            {authorizationStatus === AuthorizationStatus.Auth ? <div>{user?.name}</div> : <LoginFormComponent/>}
+            {authorizationStatus === AuthorizationStatus.Auth ? <UserComponent /> : <LoginFormComponent/>}
           </PopupSideComponent>
           <Outlet />
         </div>

@@ -1,8 +1,9 @@
 import Logo from '../../logo';
 import Menu from '../../menu';
 import SocialLinks from '../../social-links';
-import {AppRoutes} from '../../../const';
+import {AppRoutes, AuthorizationStatus} from '../../../const';
 import {MutableRefObject, useRef, useState} from 'react';
+import {useAppSelector} from '../../../hooks/store';
 
 const MAIN_MENU = {
   navClass: 'main-mnu',
@@ -55,8 +56,10 @@ type FixedHeaderComponentProps = {
 }
 
 const FixedHeaderComponent = ({setIsLogin}: FixedHeaderComponentProps): JSX.Element => {
+  const {authorizationStatus} = useAppSelector(({USER}) => USER);
   const headerFixed: MutableRefObject<HTMLElement | null> = useRef(null);
   const [fixed, setFixed] = useState(false);
+  const iconUser = authorizationStatus === AuthorizationStatus.Auth ? 'person' : 'login';
 
   const onClick = () => {
     setIsLogin(true);
@@ -103,7 +106,7 @@ const FixedHeaderComponent = ({setIsLogin}: FixedHeaderComponentProps): JSX.Elem
                         data-side=".side-account"
                         onClick={onClick}
                       >
-                        <i className="material-icons md-24">login</i>
+                        <i className="material-icons md-24">{iconUser}</i>
                       </div>
                     </li>
                     <li className="d-none d-sm-block">
