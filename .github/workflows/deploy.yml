@@ -1,0 +1,123 @@
+name: Build & Deploy
+
+on:
+  push:
+    branches: [main]
+
+env:
+  REGISTRY: ghcr.io
+  IMAGE_PREFIX: ghcr.io/${{ github.repository_owner }}/softmix
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: softmix-workspace/softmix
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: softmix-workspace/softmix/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build all apps
+        run: npx nx run-many -t build --all --configuration=production
+
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build & push frontend
+        uses: docker/build-push-action@v5
+        with:
+          context: ./softmix-workspace/softmix
+          file: ./softmix-workspace/softmix/apps/frontend/Dockerfile
+          push: true
+          tags: |
+            ${{ env.IMAGE_PREFIX }}.frontend:latest
+            ${{ env.IMAGE_PREFIX }}.frontend:${{ github.sha }}
+
+      - name: Build & push bff
+        uses: docker/build-push-action@v5
+        with:
+          context: ./softmix-workspace/softmix
+          file: ./softmix-workspace/softmix/apps/bff/Dockerfile
+          push: true
+          tags: |
+            ${{ env.IMAGE_PREFIX }}.bff:latest
+            ${{ env.IMAGE_PREFIX }}.bff:${{ github.sha }}
+
+      - name: Build & push users
+        uses: docker/build-push-action@v5
+        with:
+          context: ./softmix-workspace/softmix
+          file: ./softmix-workspace/softmix/apps/users/Dockerfile
+          push: true
+          tags: |
+            ${{ env.IMAGE_PREFIX }}.users:latest
+            ${{ env.IMAGE_PREFIX }}.users:${{ github.sha }}
+
+      - name: Build & push shop
+        uses: docker/build-push-action@v5
+        with:
+          context: ./softmix-workspace/softmix
+          file: ./softmix-workspace/softmix/apps/shop/Dockerfile
+          push: true
+          tags: |
+            ${{ env.IMAGE_PREFIX }}.shop:latest
+            ${{ env.IMAGE_PREFIX }}.shop:${{ github.sha }}
+
+      - name: Build & push uploader
+        uses: docker/build-push-action@v5
+        with:
+          context: ./softmix-workspace/softmix
+          file: ./softmix-workspace/softmix/apps/uploader/Dockerfile
+          push: true
+          tags: |
+            ${{ env.IMAGE_PREFIX }}.uploader:latest
+            ${{ env.IMAGE_PREFIX }}.uploader:${{ github.sha }}
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to VPS
+        uses: appleboy/ssh-action@v1
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USER }}
+          key: ${{ secrets.VPS_SSH_KEY }}
+          envs: REGISTRY,IMAGE_PREFIX
+          script: |
+            cd /opt/softmix
+
+            # Логин в ghcr.io
+            echo ${{ secrets.GHCR_TOKEN }} | docker login ghcr.io -u ${{ github.actor }} --password-stdin
+
+            # Подтягиваем свежие образы
+            docker pull ghcr.io/artidy/softmix.frontend:latest
+            docker pull ghcr.io/artidy/softmix.bff:latest
+            docker pull ghcr.io/artidy/softmix.users:latest
+            docker pull ghcr.io/artidy/softmix.shop:latest
+            docker pull ghcr.io/artidy/softmix.uploader:latest
+
+            # Перезапускаем с новыми образами
+            docker compose up -d
+
+            # Чистим старые образы
+            docker image prune -f
+
+            echo "Deploy complete: $(date)"
