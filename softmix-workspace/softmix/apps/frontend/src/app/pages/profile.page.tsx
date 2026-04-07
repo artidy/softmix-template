@@ -57,7 +57,7 @@ function ProfilePage(): ReactElement {
                   </div>
                   <div className="mb-4">
                     <h5>Роль</h5>
-                    <p className="lead">{user?.role === 'admin' ? 'Администратор' : 'Пользователь'}</p>
+                    <p className="lead">{user?.role === 'admin' ? 'Администратор' : user?.role === 'manager' ? 'Менеджер' : 'Пользователь'}</p>
                   </div>
                   <div className="mb-4">
                     <h5>Дата регистрации</h5>

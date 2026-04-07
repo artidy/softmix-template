@@ -13,7 +13,9 @@ enum AppRoute {
   Register = '/register',
   Profile = '/profile',
   Cart = '/cart',
-  Users = '/users',
+  Users = '/admin/users',
+  Settings = '/admin/settings',
+  Admin = '/admin',
 }
 
 enum NameSpace {
@@ -23,6 +25,7 @@ enum NameSpace {
   Users = 'USERS',
   Cart = 'CART',
   Main = 'MAIN',
+  Settings = 'SETTINGS',
 }
 
 enum Message {
@@ -41,6 +44,10 @@ const USER_ROLES = [
   {
     role: UserRole.Admin,
     title: 'Администратор'
+  },
+  {
+    role: UserRole.Manager,
+    title: 'Менеджер'
   },
   {
     role: UserRole.User,

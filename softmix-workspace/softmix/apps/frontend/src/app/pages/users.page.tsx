@@ -1,12 +1,9 @@
 import { MouseEvent, ReactElement, useEffect } from 'react';
-import { Navigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
 import { useAppDispatch, useAppSelector } from '../hooks';
 import { getIsCreateMode, getIsUserEditLoading, getUser, getUserEdit, getUsers } from '../store/user-data/selectors';
 import { deleteUserApi, getApiUsers, getEditUserApi } from '../store/user-data/api-actions';
-import { UserRole } from '../types/user';
-import { AppRoute } from '../const';
 import { setCreateMode, setUserEdit, setUsers } from '../store/user-data/user-data';
 import { formatDate } from '../services/helpers';
 import Modal from '../components/modal/modal.component';
@@ -28,14 +25,6 @@ function UsersPage(): ReactElement {
       dispatch(setUsers([]));
     }
   }, []);
-
-  if (!user) {
-    return <Navigate to={AppRoute.Login} />
-  }
-
-  if (user.role === UserRole.User) {
-    return <Navigate to={AppRoute.Main} />
-  }
 
   const deleteHandler = (userId: string) => {
     return (evt: MouseEvent) => {

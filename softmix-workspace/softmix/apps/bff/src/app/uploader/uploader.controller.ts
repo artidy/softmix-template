@@ -8,7 +8,8 @@ import {
 } from '@nestjs/common';
 import { FileInterceptor } from '@nestjs/platform-express';
 import { ApiResponse, ApiTags } from '@nestjs/swagger';
-import { ProductImageSettings, UrlPaths } from '@project-lib/shared-types';
+import { ProductImageSettings, UrlPaths, UserRole } from '@project-lib/shared-types';
+import { Auth } from '@project-lib/core';
 import FormData from 'form-data';
 
 import { UploaderService } from './uploader.service';
@@ -36,6 +37,7 @@ export class UploaderController {
     return this.service.findByOwnerId(ownerId, headers);
   }
 
+  @Auth(UserRole.Admin, UserRole.Manager)
   @ApiResponse({
     status: HttpStatus.CREATED, description: 'Вы успешно создали'
   })

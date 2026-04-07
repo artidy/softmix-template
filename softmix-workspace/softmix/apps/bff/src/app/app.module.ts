@@ -1,5 +1,8 @@
-import { Module } from '@nestjs/common';
+import { MiddlewareConsumer, Module, NestModule } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
+import { HttpModule, HttpService } from '@nestjs/axios';
+import { ConfigService } from '@nestjs/config';
+import { authConfig, auth } from '@project-lib/core';
 
 import { ENV_FILE_PATH } from './const';
 import { bffConfig } from '../config/bff.config';
@@ -11,6 +14,7 @@ import { AlstyleModule } from './alstyle/alstyle.module';
 import { UploaderModule } from './uploader/uploader.module';
 import { CartModule } from './cart/cart.module';
 import { AuthModule } from './auth/auth.module';
+import { SettingsModule } from './settings/settings.module';
 
 @Module({
   imports: [
@@ -18,9 +22,10 @@ import { AuthModule } from './auth/auth.module';
       cache: true,
       isGlobal: true,
       envFilePath: ENV_FILE_PATH,
-      load: [bffConfig],
+      load: [bffConfig, authConfig],
       validate: validateEnvironments,
     }),
+    HttpModule,
     CategoryModule,
     ProductModule,
     UploaderModule,
@@ -28,6 +33,18 @@ import { AuthModule } from './auth/auth.module';
     AlstyleModule,
     CartModule,
     AuthModule,
+    SettingsModule,
   ]
 })
-export class AppModule {}
+export class AppModule implements NestModule {
+  constructor(
+    private readonly httpService: HttpService,
+    private readonly configService: ConfigService,
+  ) {}
+
+  configure(consumer: MiddlewareConsumer) {
+    consumer
+      .apply(auth(this.httpService, this.configService))
+      .forRoutes('*');
+  }
+}

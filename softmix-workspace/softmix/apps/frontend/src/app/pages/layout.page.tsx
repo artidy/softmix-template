@@ -1,8 +1,9 @@
 import { Outlet, useLocation } from 'react-router-dom';
-import { ReactElement, useState } from 'react';
+import { ReactElement, useEffect, useState } from 'react';
 
-import { useAppSelector } from '../hooks';
+import { useAppDispatch, useAppSelector } from '../hooks';
 import { getIsAdmin, getIsAuth, getIsUnknown } from '../store/user-data/selectors';
+import { getSettingsApi } from '../store/settings-data/api-actions';
 import HeaderComponent from '../components/header/header.component';
 import LoaderComponent from '../components/loader/loader.component';
 import CartMenuComponent from '../components/cart/cart-menu.component';
@@ -10,11 +11,16 @@ import FooterAreaComponent from '../components/footer/footer-area.component';
 import MenuMobile from '../components/menu-mobile/menu-mobile';
 
 function LayoutPage(): ReactElement {
+  const dispatch = useAppDispatch();
   const isLoading = useAppSelector(getIsUnknown);
   const routerLocation = useLocation();
   const userIsAdmin = useAppSelector(getIsAdmin);
   const userIsAuth = useAppSelector(getIsAuth);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  useEffect(() => {
+    dispatch(getSettingsApi());
+  }, []);
 
   if (isLoading) {
     return <LoaderComponent />

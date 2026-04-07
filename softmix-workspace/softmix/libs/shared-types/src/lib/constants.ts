@@ -1,5 +1,6 @@
 enum UserRole {
   User = 'user',
+  Manager = 'manager',
   Admin = 'admin'
 }
 
@@ -14,6 +15,7 @@ enum UrlPaths {
   Categories = 'categories',
   Products = 'products',
   Uploader = 'uploader',
+  Settings = 'settings',
 }
 
 enum AlStyleRoutes {

@@ -1,7 +1,7 @@
 import { Body, Controller, Get, HttpCode, HttpStatus, Post, Headers, Param, Patch, Delete } from '@nestjs/common';
 import { ApiResponse, ApiTags } from '@nestjs/swagger';
-import { LoginUser, UrlPaths } from '@project-lib/shared-types';
-import { MongoidValidationPipe } from '@project-lib/core';
+import { LoginUser, UrlPaths, UserRole } from '@project-lib/shared-types';
+import { Auth, MongoidValidationPipe } from '@project-lib/core';
 
 import { UsersService } from './users.service';
 
@@ -19,6 +19,7 @@ export class UsersController {
     return this.usersService.verify(headers);
   }
 
+  @Auth(UserRole.Admin)
   @ApiResponse({
     status: HttpStatus.OK, description: 'Вы успешно получили данные'
   })
@@ -46,6 +47,7 @@ export class UsersController {
     return this.usersService.login(user, headers);
   }
 
+  @Auth(UserRole.Admin)
   @ApiResponse({
     status: HttpStatus.OK, description: 'Вы успешно обновили данные'
   })
@@ -55,6 +57,7 @@ export class UsersController {
     return this.usersService.update(userId, updateData, headers);
   }
 
+  @Auth(UserRole.Admin)
   @ApiResponse({
     status: HttpStatus.CREATED, description: 'Новый пользователь создан'
   })
@@ -73,6 +76,7 @@ export class UsersController {
     return this.usersService.refresh(headers);
   }
 
+  @Auth(UserRole.Admin)
   @ApiResponse({
     status: HttpStatus.NO_CONTENT, description: 'Пользователь успешно удален'
   })

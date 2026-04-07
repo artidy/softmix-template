@@ -1,6 +1,0 @@
-Entrypoint [1mmain[39m[22m [1m[33m[big][39m[22m 1010 KiB = [1m[32mruntime.9bf2dfeb01b3abe9.js[39m[22m 1.38 KiB [1m[32mmain.750b934a423671dc.css[39m[22m 536 KiB [1m[32mmain.e9f2e99259668e7e.js[39m[22m 471 KiB
-Entrypoint [1mstyles[39m[22m 207 KiB (74.7 KiB) = [1m[32mruntime.9bf2dfeb01b3abe9.js[39m[22m 1.38 KiB [1m[32mstyles.b98acc789aae6d88.css[39m[22m 205 KiB [1m[32mstyles.7410d5fac804101d.js[39m[22m 108 bytes 3 auxiliary assets
-chunk (runtime: runtime) [1m[32mruntime.9bf2dfeb01b3abe9.js[39m[22m (runtime) 3.36 KiB [1m[33m[entry][39m[22m [1m[32m[rendered][39m[22m
-chunk (runtime: runtime) [1m[32mmain.750b934a423671dc.css[39m[22m, [1m[32mmain.e9f2e99259668e7e.js[39m[22m (main) 1.53 MiB (javascript) 633 KiB (css/mini-extract) [1m[33m[initial][39m[22m [1m[32m[rendered][39m[22m
-chunk (runtime: runtime) [1m[32mstyles.b98acc789aae6d88.css[39m[22m, [1m[32mstyles.7410d5fac804101d.js[39m[22m (styles) 50 bytes (javascript) 273 KiB (css/mini-extract) [1m[33m[initial][39m[22m [1m[32m[rendered][39m[22m
-webpack compiled [1m[32msuccessfully[39m[22m (34730d59ab8962a5)

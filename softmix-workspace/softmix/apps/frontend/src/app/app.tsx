@@ -13,6 +13,9 @@ import LoginPage from './pages/login.page';
 import RegisterPage from './pages/register.page';
 import ContactsPage from './pages/contacts.page';
 import ProfilePage from './pages/profile.page';
+import UsersPage from './pages/users.page';
+import SettingsPage from './pages/settings.page';
+import AdminLayoutPage from './pages/admin-layout.page';
 
 export function App(): ReactElement {
   return (
@@ -31,6 +34,14 @@ export function App(): ReactElement {
         <Route path={AppRoute.Login} element={<LoginPage />} />
         <Route path={AppRoute.Register} element={<RegisterPage />} />
         <Route path={AppRoute.Profile} element={<ProfilePage />} />
+        <Route path={AppRoute.Admin} element={
+          <PrivateRoute>
+            <AdminLayoutPage />
+          </PrivateRoute>
+        }>
+          <Route path={AppRoute.Users} element={<UsersPage />} />
+          <Route path={AppRoute.Settings} element={<SettingsPage />} />
+        </Route>
       </Route>
     </Routes>
   );

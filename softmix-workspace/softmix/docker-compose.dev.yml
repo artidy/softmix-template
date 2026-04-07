@@ -1,4 +1,11 @@
 services:
+  softmix.frontend:
+    image: ghcr.io/artidy/softmix.frontend:local
+    restart: always
+    container_name: softmix.frontend.service
+    ports:
+      - "4200:80"
+
   softmix.postgres:
     image: postgres:16-alpine
     restart: always
@@ -14,7 +21,39 @@ services:
       retries: 5
       start_period: 10s
     volumes:
-      - softmix.volume:/data/db-postgres
+      - pgdata:/var/lib/postgresql/data
+
+  softmix.shop:
+    image: ghcr.io/artidy/softmix.shop:latest
+    restart: always
+    depends_on:
+      softmix.postgres:
+        condition: service_healthy
+    container_name: softmix.shop.service
+    ports:
+      - "127.0.0.1:4444:4444"
+    env_file:
+      - environments/.shop.env
+
+  softmix.uploader:
+    image: ghcr.io/artidy/softmix.uploader:latest
+    restart: always
+    container_name: softmix-uploader.service
+    volumes:
+      - assets:/data/assets
+    ports:
+      - "127.0.0.1:7777:7777"
+    env_file:
+      - environments/.uploader.env
+
+  softmix.bff:
+    image: ghcr.io/artidy/softmix.bff:latest
+    restart: always
+    container_name: softmix.bff.service
+    ports:
+      - "5555:5555"
+    env_file:
+      - environments/.bff.env
 
   softmix.mongodb:
     image: mongo:7
@@ -25,12 +64,26 @@ services:
     ports:
       - '127.0.0.1:27017:27017'
     volumes:
-      - softmix.volume:/data/db
+      - mongodata:/data/db
     healthcheck:
       test: echo 'db.runCommand("ping").ok' | mongosh localhost:27017 --quiet
       interval: 10s
       timeout: 5s
       retries: 5
 
+  softmix.users:
+    image: ghcr.io/artidy/softmix.users:latest
+    restart: always
+    depends_on:
+      softmix.mongodb:
+        condition: service_healthy
+    container_name: softmix.users.service
+    ports:
+      - "127.0.0.1:3333:3333"
+    env_file:
+      - environments/.users.env
+
 volumes:
-  softmix.volume: {}
+  pgdata:
+  mongodata:
+  assets:

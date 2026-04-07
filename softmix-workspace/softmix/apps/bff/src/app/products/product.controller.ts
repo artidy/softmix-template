@@ -12,7 +12,8 @@ import {
   Query
 } from '@nestjs/common';
 import { ApiResponse, ApiTags } from '@nestjs/swagger';
-import { UrlPaths } from '@project-lib/shared-types';
+import { UrlPaths, UserRole } from '@project-lib/shared-types';
+import { Auth } from '@project-lib/core';
 
 import { ProductService } from './product.service';
 
@@ -39,6 +40,7 @@ export class ProductController {
     return this.service.findById(id, headers);
   }
 
+  @Auth(UserRole.Admin, UserRole.Manager)
   @ApiResponse({
     status: HttpStatus.CREATED, description: 'Вы успешно создали'
   })
@@ -48,6 +50,7 @@ export class ProductController {
     return this.service.create(createData, headers);
   }
 
+  @Auth(UserRole.Admin, UserRole.Manager)
   @ApiResponse({
     status: HttpStatus.CREATED, description: 'Вы успешно создали'
   })
@@ -57,6 +60,7 @@ export class ProductController {
     return this.service.createMany(createData, headers);
   }
 
+  @Auth(UserRole.Admin, UserRole.Manager)
   @ApiResponse({
     status: HttpStatus.OK, description: 'Вы успешно обновили данные'
   })
@@ -66,6 +70,7 @@ export class ProductController {
     return this.service.update(id, updateData, headers);
   }
 
+  @Auth(UserRole.Admin, UserRole.Manager)
   @ApiResponse({
     status: HttpStatus.NO_CONTENT, description: 'Вы успешно удалили данные'
   })

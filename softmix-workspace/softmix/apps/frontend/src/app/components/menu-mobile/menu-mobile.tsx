@@ -3,6 +3,8 @@ import { memo, MouseEventHandler, ReactElement } from 'react';
 import MenuComponent from '../menu/menu.component';
 import { AppRoute } from '../../const';
 import LogoComponent from '../logo/logo.component';
+import { useAppSelector } from '../../hooks';
+import { getSettings } from '../../store/settings-data/selectors';
 
 type MenuMobileProps = {
   userIsAuth: boolean;
@@ -11,6 +13,8 @@ type MenuMobileProps = {
 }
 
 function MenuMobile({userIsAuth, menuIsOpen, onClickClose}: MenuMobileProps): ReactElement {
+  const settings = useAppSelector(getSettings);
+
   return (
     <div
       id="ltn__utilize-mobile-menu"
@@ -21,7 +25,7 @@ function MenuMobile({userIsAuth, menuIsOpen, onClickClose}: MenuMobileProps): Re
           <LogoComponent
             className="site-logo"
             href={AppRoute.Main}
-            src="assets/img/logo.png"
+            src={settings?.logoUrl || 'assets/img/logo.png'}
             alt="Logo"
           />
           <button className="ltn__utilize-close" onClick={onClickClose}>×</button>

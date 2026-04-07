@@ -2,10 +2,13 @@ import { memo, ReactElement } from 'react';
 import { Link } from 'react-router-dom';
 
 import { AppRoute } from '../../const';
+import { useAppSelector } from '../../hooks';
+import { getSettings } from '../../store/settings-data/selectors';
 import LogoComponent from '../logo/logo.component';
-import EmailComponent from '../email/email.component';
 
 function FooterAboutComponent(): ReactElement {
+  const settings = useAppSelector(getSettings);
+
   return (
     <div className="col-xl-4 col-md-6 col-sm-6 col-12">
       <div className="footer-widget footer-about-widget">
@@ -14,13 +17,11 @@ function FooterAboutComponent(): ReactElement {
           <LogoComponent
             className="site-logo"
             href={AppRoute.Main}
-            src="assets/img/logo.png"
+            src={settings?.logoUrl || 'assets/img/logo.png'}
             alt="Logo"
           />
         </div>
-        <p>Товарищество с ограниченной ответственностью «Soft Mix» образовано 9 октября 2013 года
-          командой профессионалов в области Вычислительной техники,
-          программного обеспечения и проектирования.</p>
+        <p>{settings?.companyDescription || ''}</p>
         <div className="footer-address">
           <ul>
             <li>
@@ -28,7 +29,7 @@ function FooterAboutComponent(): ReactElement {
                 <i className="icon-location-pin"></i>
               </div>
               <div className="footer-address-info">
-                <p>Астана, ул. Достык 20 БЦ "Санкт-Петербург" офис 401</p>
+                <p>{settings?.address || ''}</p>
               </div>
             </li>
             <li>
@@ -36,7 +37,7 @@ function FooterAboutComponent(): ReactElement {
                 <i className="icon-phone"></i>
               </div>
               <div className="footer-address-info">
-                <p><a href="tel:787206">78-72-06</a></p>
+                <p><a href={`tel:${settings?.phone?.replace(/[^0-9+]/g, '') || ''}`}>{settings?.phone || ''}</a></p>
               </div>
             </li>
             <li>
@@ -44,17 +45,17 @@ function FooterAboutComponent(): ReactElement {
                 <i className="icon-envelope"></i>
               </div>
               <div className="footer-address-info">
-                <p><EmailComponent /></p>
+                <p><a href={`mailto:${settings?.email || ''}`}>{settings?.email || ''}</a></p>
               </div>
             </li>
           </ul>
         </div>
-        <div className="ltn__social-media mt-20 d-none">
+        <div className="ltn__social-media mt-20">
           <ul>
-            <li><Link to="#" title="Facebook"><i className="fab fa-facebook-f"></i></Link></li>
-            <li><Link to="#" title="Twitter"><i className="fab fa-twitter"></i></Link></li>
-            <li><Link to="#" title="Linkedin"><i className="fab fa-linkedin"></i></Link></li>
-            <li><Link to="#" title="Youtube"><i className="fab fa-youtube"></i></Link></li>
+            {settings?.socialFacebook ? <li><a href={settings.socialFacebook} target="_blank" rel="noreferrer" title="Facebook"><i className="fab fa-facebook-f"></i></a></li> : null}
+            {settings?.socialTwitter ? <li><a href={settings.socialTwitter} target="_blank" rel="noreferrer" title="Twitter"><i className="fab fa-twitter"></i></a></li> : null}
+            {settings?.socialInstagram ? <li><a href={settings.socialInstagram} target="_blank" rel="noreferrer" title="Instagram"><i className="fab fa-instagram"></i></a></li> : null}
+            {settings?.socialPinterest ? <li><a href={settings.socialPinterest} target="_blank" rel="noreferrer" title="Pinterest"><i className="fab fa-pinterest"></i></a></li> : null}
           </ul>
         </div>
         <div className="footer-payment-img">

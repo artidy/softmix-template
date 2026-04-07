@@ -10,6 +10,7 @@ import { validateEnvironments } from './env.validation';
 import { getTypeOrmConfig, postgresConfig } from '../config/postgres.config';
 import { CategoryModule } from './categories/category.module';
 import { ProductModule } from './products/product.module';
+import { SettingsModule } from './settings/settings.module';
 
 @Module({
   imports: [
@@ -28,6 +29,7 @@ import { ProductModule } from './products/product.module';
     HttpModule.registerAsync(getHttpOptions()),
     CategoryModule,
     ProductModule,
+    SettingsModule,
   ]
 })
 export class AppModule {}

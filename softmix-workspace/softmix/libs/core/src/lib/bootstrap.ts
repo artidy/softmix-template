@@ -1,6 +1,7 @@
 import { NestFactory } from '@nestjs/core';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import { Logger, ValidationPipe } from '@nestjs/common';
+import { json, urlencoded } from 'express';
 
 import { BootstrapFunction } from './bootstrap-function.interface';
 import { DEFAULT_PORT, GLOBAL_PREFIX } from './lib.const';
@@ -10,6 +11,8 @@ export async function bootstrap(module, serviceName: string, ...cbs: BootstrapFu
   const app = await NestFactory.create(module);
   const port = process.env.PORT || DEFAULT_PORT;
 
+  app.use(json({ limit: '10mb' }));
+  app.use(urlencoded({ extended: true, limit: '10mb' }));
   app.setGlobalPrefix(GLOBAL_PREFIX);
 
   // CORS configuration with security

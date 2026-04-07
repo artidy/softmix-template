@@ -2,9 +2,12 @@ import { memo, ReactElement } from 'react';
 
 import BreadcrumbComponent from '../components/breadcrumb/breadcrumb.component';
 import { AppRoute } from '../const';
-import EmailComponent from '../components/email/email.component';
+import { useAppSelector } from '../hooks';
+import { getSettings } from '../store/settings-data/selectors';
 
-function AboutPage(): ReactElement {
+function ContactsPage(): ReactElement {
+  const settings = useAppSelector(getSettings);
+
   return (
     <>
       <BreadcrumbComponent
@@ -23,7 +26,7 @@ function AboutPage(): ReactElement {
                   <i className="icon-location-pin"></i>
                 </div>
                 <h3>Адрес</h3>
-                <p>Астана, ул. Достык 20 БЦ "Санкт-Петербург" офис 401</p>
+                <p>{settings?.address || ''}</p>
               </div>
             </div>
             <div className="col-lg-3">
@@ -32,7 +35,7 @@ function AboutPage(): ReactElement {
                   <i className="icon-phone"></i>
                 </div>
                 <h3>Номер телефона</h3>
-                <p>78-72-06</p>
+                <p>{settings?.phone || ''}</p>
               </div>
             </div>
             <div className="col-lg-3">
@@ -41,7 +44,7 @@ function AboutPage(): ReactElement {
                   <i className="icon-envelope"></i>
                 </div>
                 <h3>Email</h3>
-                <p><EmailComponent /></p>
+                <p><a href={`mailto:${settings?.email || ''}`}>{settings?.email || ''}</a></p>
               </div>
             </div>
             <div className="col-lg-3">
@@ -61,4 +64,4 @@ function AboutPage(): ReactElement {
   )
 }
 
-export default memo(AboutPage);
+export default memo(ContactsPage);

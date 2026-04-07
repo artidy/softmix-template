@@ -7,6 +7,7 @@ import './header.css';
 import { AppRoute } from '../../const';
 import { useAppDispatch, useAppSelector } from '../../hooks';
 import { getIsAuth } from '../../store/user-data/selectors';
+import { getSettings } from '../../store/settings-data/selectors';
 import LogoComponent from '../logo/logo.component';
 import SearchPanelComponent from '../search/search-panel.component';
 import BtnMobileComponent from '../btn-mobile/btn-mobile.component';
@@ -20,6 +21,7 @@ type HeaderComponentProps = {
 
 function HeaderComponent({isOpenMenu, onToggleMobileMenu}: HeaderComponentProps): ReactElement {
   const userIsAuth = useAppSelector(getIsAuth);
+  const settings = useAppSelector(getSettings);
   const [currentHeight, setCurrentHeight] = useState(0);
   const startStickyHeight = 250;
 
@@ -42,7 +44,7 @@ function HeaderComponent({isOpenMenu, onToggleMobileMenu}: HeaderComponentProps)
               <LogoComponent
                 className="site-logo"
                 href={AppRoute.Main}
-                src="assets/img/logo.png"
+                src={settings?.logoUrl || 'assets/img/logo.png'}
                 alt="Logo"
               />
             </div>
@@ -54,7 +56,7 @@ function HeaderComponent({isOpenMenu, onToggleMobileMenu}: HeaderComponentProps)
                   </div>
                   <div className="header-feature-info">
                     <h6>Тел.</h6>
-                    <p><a href="tel:787206">78-72-06</a></p>
+                    <p><a href={`tel:${settings?.phone?.replace(/[^0-9+]/g, '') || ''}`}>{settings?.phone || ''}</a></p>
                   </div>
                 </div>
                 <SearchPanelComponent className="header-search-2"/>
@@ -73,7 +75,7 @@ function HeaderComponent({isOpenMenu, onToggleMobileMenu}: HeaderComponentProps)
                 <LogoComponent
                   className="site-logo"
                   href={AppRoute.Main}
-                  src="assets/img/logo.png"
+                  src={settings?.logoUrl || 'assets/img/logo.png'}
                   alt="Logo"
                 />
               </div>
@@ -96,7 +98,7 @@ function HeaderComponent({isOpenMenu, onToggleMobileMenu}: HeaderComponentProps)
               <LogoComponent
                 className="site-logo"
                 href={AppRoute.Main}
-                src="assets/img/logo.png"
+                src={settings?.logoUrl || 'assets/img/logo.png'}
                 alt="Logo"
               />
             </div>

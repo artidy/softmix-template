@@ -16,7 +16,9 @@ export class ProductService {
   ) {}
 
   public async findAll(query: ProductQuery): Promise<ProductsPaginationApi> {
-    const {isHot, categoryId, page, limit, isNew} = query;
+    const {isHot, categoryId, isNew} = query;
+    const page = Number(query.page) || 1;
+    const limit = Number(query.limit) || 20;
     const skip = (page - 1) * limit;
     const [products, total] = await this.repository.findAndCount(
       { where: { isHot, categoryId },

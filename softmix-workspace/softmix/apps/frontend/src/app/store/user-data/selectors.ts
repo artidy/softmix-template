@@ -51,6 +51,16 @@ export const getIsAdmin = createSelector(
   (state: UserState) => state.user?.role === UserRole.Admin
 );
 
+export const getIsManager = createSelector(
+  (state: State) => state[NameSpace.Users],
+  (state: UserState) => state.user?.role === UserRole.Manager
+);
+
+export const getCanManageProducts = createSelector(
+  (state: State) => state[NameSpace.Users],
+  (state: UserState) => state.user?.role === UserRole.Admin || state.user?.role === UserRole.Manager
+);
+
 export const getIsCreateMode = createSelector(
   (state: State) => state[NameSpace.Users],
   (state: UserState) => state.isCreateMode

@@ -27,6 +27,11 @@ class EnvironmentsConfig {
     message: EnvValidationMessage.URLServiceNotRequired
   })
   public AL_STYLE_TOKEN: string;
+
+  @IsString({
+    message: EnvValidationMessage.URLServiceNotRequired
+  })
+  public AUTH_SERVICE_URL: string;
 }
 
 export function validateEnvironments(config: Record<string, unknown>) {
