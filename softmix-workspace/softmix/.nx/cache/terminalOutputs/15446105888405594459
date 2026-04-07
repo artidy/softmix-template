@@ -1,0 +1,761 @@
+chunk (runtime: main) [1m[32mmain.js[39m[22m (main) 76.4 KiB [1m[33m[entry][39m[22m [1m[32m[rendered][39m[22m
+webpack compiled [1m[32msuccessfully[39m[22m (1a3e59c9d66cfc76)
+[1m[31mDebugger listening on ws://localhost:9229/10c13ba2-6af3-44f1-a941-a5f6c5a206c3[39m[22m
+[1m[31mDebugger listening on ws://localhost:9229/10c13ba2-6af3-44f1-a941-a5f6c5a206c3[39m[22m
+[1m[31mFor help, see: https://nodejs.org/en/docs/inspector[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 4439  - [39m[31m10/27/2024, 5:01:17 PM [31m  ERROR[39m[31m [38;5;3m[TypeOrmModule] [39m[31m[31mUnable to connect to the database. Retrying (1)...[39m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31mError: connect ECONNREFUSED ::1:5432[39m[22m
+[1m[31m    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1555:16)[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 4439  - [39m[31m10/27/2024, 5:01:20 PM [31m  ERROR[39m[31m [38;5;3m[TypeOrmModule] [39m[31m[31mUnable to connect to the database. Retrying (2)...[39m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31mError: connect ECONNREFUSED ::1:5432[39m[22m
+[1m[31m    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1555:16)[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 4439  - [39m[31m10/27/2024, 5:01:23 PM [31m  ERROR[39m[31m [38;5;3m[TypeOrmModule] [39m[31m[31mUnable to connect to the database. Retrying (3)...[39m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31mError: connect ECONNREFUSED ::1:5432[39m[22m
+[1m[31m    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1555:16)[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 4439  - [39m[31m10/27/2024, 5:01:26 PM [31m  ERROR[39m[31m [38;5;3m[TypeOrmModule] [39m[31m[31mUnable to connect to the database. Retrying (4)...[39m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31merror: database "softmix-shop" does not exist[39m[22m
+[1m[31m    at Parser.parseErrorMessage (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/pg-protocol/src/parser.ts:368:69)[39m[22m
+[1m[31m    at Parser.handlePacket (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/pg-protocol/src/parser.ts:187:21)[39m[22m
+[1m[31m    at Parser.parse (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/pg-protocol/src/parser.ts:102:30)[39m[22m
+[1m[31m    at Socket.<anonymous> (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/pg-protocol/src/index.ts:7:48)[39m[22m
+[1m[31m    at Socket.emit (node:events:517:28)[39m[22m
+[1m[31m    at addChunk (node:internal/streams/readable:368:12)[39m[22m
+[1m[31m    at readableAddChunk (node:internal/streams/readable:341:9)[39m[22m
+[1m[31m    at Socket.Readable.push (node:internal/streams/readable:278:10)[39m[22m
+[1m[31m    at TCP.onStreamRead (node:internal/stream_base_commons:190:23)[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 4439  - [39m[31m10/27/2024, 5:01:29 PM [31m  ERROR[39m[31m [38;5;3m[TypeOrmModule] [39m[31m[31mUnable to connect to the database. Retrying (5)...[39m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31merror: database "softmix-shop" does not exist[39m[22m
+[1m[31m    at Parser.parseErrorMessage (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/pg-protocol/src/parser.ts:368:69)[39m[22m
+[1m[31m    at Parser.handlePacket (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/pg-protocol/src/parser.ts:187:21)[39m[22m
+[1m[31m    at Parser.parse (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/pg-protocol/src/parser.ts:102:30)[39m[22m
+[1m[31m    at Socket.<anonymous> (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/pg-protocol/src/index.ts:7:48)[39m[22m
+[1m[31m    at Socket.emit (node:events:517:28)[39m[22m
+[1m[31m    at addChunk (node:internal/streams/readable:368:12)[39m[22m
+[1m[31m    at readableAddChunk (node:internal/streams/readable:341:9)[39m[22m
+[1m[31m    at Socket.Readable.push (node:internal/streams/readable:278:10)[39m[22m
+[1m[31m    at TCP.onStreamRead (node:internal/stream_base_commons:190:23)[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 4439  - [39m[31m10/27/2024, 5:01:32 PM [31m  ERROR[39m[31m [38;5;3m[TypeOrmModule] [39m[31m[31mUnable to connect to the database. Retrying (6)...[39m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31merror: the database system is starting up[39m[22m
+[1m[31m    at Parser.parseErrorMessage (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/pg-protocol/src/parser.ts:368:69)[39m[22m
+[1m[31m    at Parser.handlePacket (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/pg-protocol/src/parser.ts:187:21)[39m[22m
+[1m[31m    at Parser.parse (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/pg-protocol/src/parser.ts:102:30)[39m[22m
+[1m[31m    at Socket.<anonymous> (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/pg-protocol/src/index.ts:7:48)[39m[22m
+[1m[31m    at Socket.emit (node:events:517:28)[39m[22m
+[1m[31m    at addChunk (node:internal/streams/readable:368:12)[39m[22m
+[1m[31m    at readableAddChunk (node:internal/streams/readable:341:9)[39m[22m
+[1m[31m    at Socket.Readable.push (node:internal/streams/readable:278:10)[39m[22m
+[1m[31m    at TCP.onStreamRead (node:internal/stream_base_commons:190:23)[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 4439  - [39m[31m10/27/2024, 5:06:09 PM [31m  ERROR[39m[31m [38;5;3m[ExceptionsHandler] [39m[31m[31mProvided "skip" value is not a number. Please provide a numeric value.[39m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31mTypeORMError: Provided "skip" value is not a number. Please provide a numeric value.[39m[22m
+[1m[31m    at SelectQueryBuilder.skip (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/query-builder/SelectQueryBuilder.ts:1510:19)[39m[22m
+[1m[31m    at SelectQueryBuilder.applyFindOptions (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/query-builder/SelectQueryBuilder.ts:3217:22)[39m[22m
+[1m[31m    at SelectQueryBuilder.setFindOptions (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/query-builder/SelectQueryBuilder.ts:105:14)[39m[22m
+[1m[31m    at EntityManager.findAndCount (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/entity-manager/EntityManager.ts:1139:14)[39m[22m
+[1m[31m    at Repository.findAndCount (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/repository/Repository.ts:564:29)[39m[22m
+[1m[31m    at ProductService.<anonymous> (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/dist/apps/shop/webpack:/src/app/products/product.service.ts:21:53)[39m[22m
+[1m[31m    at Generator.next (<anonymous>)[39m[22m
+[1m[31m    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tslib/tslib.js:169:75[39m[22m
+[1m[31m    at new Promise (<anonymous>)[39m[22m
+[1m[31m    at Object.__awaiter (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tslib/tslib.js:165:16)[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 4439  - [39m[31m10/27/2024, 5:06:09 PM [31m  ERROR[39m[31m [38;5;3m[ExceptionsHandler] [39m[31m[31mProvided "skip" value is not a number. Please provide a numeric value.[39m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31mTypeORMError: Provided "skip" value is not a number. Please provide a numeric value.[39m[22m
+[1m[31m    at SelectQueryBuilder.skip (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/query-builder/SelectQueryBuilder.ts:1510:19)[39m[22m
+[1m[31m    at SelectQueryBuilder.applyFindOptions (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/query-builder/SelectQueryBuilder.ts:3217:22)[39m[22m
+[1m[31m    at SelectQueryBuilder.setFindOptions (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/query-builder/SelectQueryBuilder.ts:105:14)[39m[22m
+[1m[31m    at EntityManager.findAndCount (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/entity-manager/EntityManager.ts:1139:14)[39m[22m
+[1m[31m    at Repository.findAndCount (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/repository/Repository.ts:564:29)[39m[22m
+[1m[31m    at ProductService.<anonymous> (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/dist/apps/shop/webpack:/src/app/products/product.service.ts:21:53)[39m[22m
+[1m[31m    at Generator.next (<anonymous>)[39m[22m
+[1m[31m    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tslib/tslib.js:169:75[39m[22m
+[1m[31m    at new Promise (<anonymous>)[39m[22m
+[1m[31m    at Object.__awaiter (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tslib/tslib.js:165:16)[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 4439  - [39m[31m10/27/2024, 5:06:09 PM [31m  ERROR[39m[31m [38;5;3m[ExceptionsHandler] [39m[31m[31mProvided "skip" value is not a number. Please provide a numeric value.[39m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31mTypeORMError: Provided "skip" value is not a number. Please provide a numeric value.[39m[22m
+[1m[31m    at SelectQueryBuilder.skip (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/query-builder/SelectQueryBuilder.ts:1510:19)[39m[22m
+[1m[31m    at SelectQueryBuilder.applyFindOptions (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/query-builder/SelectQueryBuilder.ts:3217:22)[39m[22m
+[1m[31m    at SelectQueryBuilder.setFindOptions (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/query-builder/SelectQueryBuilder.ts:105:14)[39m[22m
+[1m[31m    at EntityManager.findAndCount (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/entity-manager/EntityManager.ts:1139:14)[39m[22m
+[1m[31m    at Repository.findAndCount (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/repository/Repository.ts:564:29)[39m[22m
+[1m[31m    at ProductService.<anonymous> (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/dist/apps/shop/webpack:/src/app/products/product.service.ts:21:53)[39m[22m
+[1m[31m    at Generator.next (<anonymous>)[39m[22m
+[1m[31m    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tslib/tslib.js:169:75[39m[22m
+[1m[31m    at new Promise (<anonymous>)[39m[22m
+[1m[31m    at Object.__awaiter (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tslib/tslib.js:165:16)[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 4439  - [39m[31m10/27/2024, 5:06:09 PM [31m  ERROR[39m[31m [38;5;3m[ExceptionsHandler] [39m[31m[31mProvided "skip" value is not a number. Please provide a numeric value.[39m[31m[39m[22m
+[1m[31mTypeORMError: Provided "skip" value is not a number. Please provide a numeric value.[39m[22m
+[1m[31m    at SelectQueryBuilder.skip (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/query-builder/SelectQueryBuilder.ts:1510:19)[39m[22m
+[1m[31m    at SelectQueryBuilder.applyFindOptions (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/query-builder/SelectQueryBuilder.ts:3217:22)[39m[22m
+[1m[31m    at SelectQueryBuilder.setFindOptions (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/query-builder/SelectQueryBuilder.ts:105:14)[39m[22m
+[1m[31m    at EntityManager.findAndCount (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/entity-manager/EntityManager.ts:1139:14)[39m[22m
+[1m[31m    at Repository.findAndCount (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/repository/Repository.ts:564:29)[39m[22m
+[1m[31m    at ProductService.<anonymous> (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/dist/apps/shop/webpack:/src/app/products/product.service.ts:21:53)[39m[22m
+[1m[31m    at Generator.next (<anonymous>)[39m[22m
+[1m[31m    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tslib/tslib.js:169:75[39m[22m
+[1m[31m    at new Promise (<anonymous>)[39m[22m
+[1m[31m    at Object.__awaiter (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tslib/tslib.js:165:16)[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 4439  - [39m[31m10/27/2024, 5:06:36 PM [31m  ERROR[39m[31m [38;5;3m[ExceptionsHandler] [39m[31m[31mProvided "skip" value is not a number. Please provide a numeric value.[39m[31m[39m[22m
+[1m[31mTypeORMError: Provided "skip" value is not a number. Please provide a numeric value.[39m[22m
+[1m[31m    at SelectQueryBuilder.skip (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/query-builder/SelectQueryBuilder.ts:1510:19)[39m[22m
+[1m[31m    at SelectQueryBuilder.applyFindOptions (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/query-builder/SelectQueryBuilder.ts:3217:22)[39m[22m
+[1m[31m    at SelectQueryBuilder.setFindOptions (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/query-builder/SelectQueryBuilder.ts:105:14)[39m[22m
+[1m[31m    at EntityManager.findAndCount (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/entity-manager/EntityManager.ts:1139:14)[39m[22m
+[1m[31m    at Repository.findAndCount (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/repository/Repository.ts:564:29)[39m[22m
+[1m[31m    at ProductService.<anonymous> (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/dist/apps/shop/webpack:/src/app/products/product.service.ts:21:53)[39m[22m
+[1m[31m    at Generator.next (<anonymous>)[39m[22m
+[1m[31m    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tslib/tslib.js:169:75[39m[22m
+[1m[31m    at new Promise (<anonymous>)[39m[22m
+[1m[31m    at Object.__awaiter (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tslib/tslib.js:165:16)[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 4439  - [39m[31m10/27/2024, 5:06:36 PM [31m  ERROR[39m[31m [38;5;3m[ExceptionsHandler] [39m[31m[31mProvided "skip" value is not a number. Please provide a numeric value.[39m[31m[39m[22m
+[1m[31mTypeORMError: Provided "skip" value is not a number. Please provide a numeric value.[39m[22m
+[1m[31m    at SelectQueryBuilder.skip (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/query-builder/SelectQueryBuilder.ts:1510:19)[39m[22m
+[1m[31m    at SelectQueryBuilder.applyFindOptions (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/query-builder/SelectQueryBuilder.ts:3217:22)[39m[22m
+[1m[31m    at SelectQueryBuilder.setFindOptions (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/query-builder/SelectQueryBuilder.ts:105:14)[39m[22m
+[1m[31m    at EntityManager.findAndCount (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/entity-manager/EntityManager.ts:1139:14)[39m[22m
+[1m[31m    at Repository.findAndCount (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/repository/Repository.ts:564:29)[39m[22m
+[1m[31m    at ProductService.<anonymous> (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/dist/apps/shop/webpack:/src/app/products/product.service.ts:21:53)[39m[22m
+[1m[31m    at Generator.next (<anonymous>)[39m[22m
+[1m[31m    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tslib/tslib.js:169:75[39m[22m
+[1m[31m    at new Promise (<anonymous>)[39m[22m
+[1m[31m    at Object.__awaiter (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tslib/tslib.js:165:16)[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 4439  - [39m[31m10/27/2024, 5:06:36 PM [31m  ERROR[39m[31m [38;5;3m[ExceptionsHandler] [39m[31m[31mProvided "skip" value is not a number. Please provide a numeric value.[39m[31m[39m[22m
+[1m[31mTypeORMError: Provided "skip" value is not a number. Please provide a numeric value.[39m[22m
+[1m[31m    at SelectQueryBuilder.skip (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/query-builder/SelectQueryBuilder.ts:1510:19)[39m[22m
+[1m[31m    at SelectQueryBuilder.applyFindOptions (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/query-builder/SelectQueryBuilder.ts:3217:22)[39m[22m
+[1m[31m    at SelectQueryBuilder.setFindOptions (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/query-builder/SelectQueryBuilder.ts:105:14)[39m[22m
+[1m[31m    at EntityManager.findAndCount (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/entity-manager/EntityManager.ts:1139:14)[39m[22m
+[1m[31m    at Repository.findAndCount (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/repository/Repository.ts:564:29)[39m[22m
+[1m[31m    at ProductService.<anonymous> (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/dist/apps/shop/webpack:/src/app/products/product.service.ts:21:53)[39m[22m
+[1m[31m    at Generator.next (<anonymous>)[39m[22m
+[1m[31m    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tslib/tslib.js:169:75[39m[22m
+[1m[31m    at new Promise (<anonymous>)[39m[22m
+[1m[31m    at Object.__awaiter (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tslib/tslib.js:165:16)[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 4439  - [39m[31m10/27/2024, 5:06:36 PM [31m  ERROR[39m[31m [38;5;3m[ExceptionsHandler] [39m[31m[31mProvided "skip" value is not a number. Please provide a numeric value.[39m[31m[39m[22m
+[1m[31mTypeORMError: Provided "skip" value is not a number. Please provide a numeric value.[39m[22m
+[1m[31m    at SelectQueryBuilder.skip (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/query-builder/SelectQueryBuilder.ts:1510:19)[39m[22m
+[1m[31m    at SelectQueryBuilder.applyFindOptions (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/query-builder/SelectQueryBuilder.ts:3217:22)[39m[22m
+[1m[31m    at SelectQueryBuilder.setFindOptions (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/query-builder/SelectQueryBuilder.ts:105:14)[39m[22m
+[1m[31m    at EntityManager.findAndCount (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/entity-manager/EntityManager.ts:1139:14)[39m[22m
+[1m[31m    at Repository.findAndCount (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/repository/Repository.ts:564:29)[39m[22m
+[1m[31m    at ProductService.<anonymous> (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/dist/apps/shop/webpack:/src/app/products/product.service.ts:21:53)[39m[22m
+[1m[31m    at Generator.next (<anonymous>)[39m[22m
+[1m[31m    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tslib/tslib.js:169:75[39m[22m
+[1m[31m    at new Promise (<anonymous>)[39m[22m
+[1m[31m    at Object.__awaiter (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tslib/tslib.js:165:16)[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 4439  - [39m[31m10/27/2024, 5:07:39 PM [31m  ERROR[39m[31m [31mObject:[39m[31m[39m[22m
+[1m[31m{[39m[22m
+[1m[31m  "statusCode": 401,[39m[22m
+[1m[31m  "message": "Unauthorized",[39m[22m
+[1m[31m  "date": "2024-10-27T12:07:39.535Z",[39m[22m
+[1m[31m  "resource": "/api/users/auth/jwt/verify",[39m[22m
+[1m[31m  "sourceData": {}[39m[22m
+[1m[31m}[39m[22m
+[1m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 4439  - [39m[31m10/27/2024, 5:07:39 PM [31m  ERROR[39m[31m [38;5;3m[ExceptionsHandler] [39m[31m[31mProvided "skip" value is not a number. Please provide a numeric value.[39m[31m[39m[22m
+[1m[31mTypeORMError: Provided "skip" value is not a number. Please provide a numeric value.[39m[22m
+[1m[31m    at SelectQueryBuilder.skip (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/query-builder/SelectQueryBuilder.ts:1510:19)[39m[22m
+[1m[31m    at SelectQueryBuilder.applyFindOptions (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/query-builder/SelectQueryBuilder.ts:3217:22)[39m[22m
+[1m[31m    at SelectQueryBuilder.setFindOptions (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/query-builder/SelectQueryBuilder.ts:105:14)[39m[22m
+[1m[31m    at EntityManager.findAndCount (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/entity-manager/EntityManager.ts:1139:14)[39m[22m
+[1m[31m    at Repository.findAndCount (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/repository/Repository.ts:564:29)[39m[22m
+[1m[31m    at ProductService.<anonymous> (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/dist/apps/shop/webpack:/src/app/products/product.service.ts:21:53)[39m[22m
+[1m[31m    at Generator.next (<anonymous>)[39m[22m
+[1m[31m    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tslib/tslib.js:169:75[39m[22m
+[1m[31m    at new Promise (<anonymous>)[39m[22m
+[1m[31m    at Object.__awaiter (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tslib/tslib.js:165:16)[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 4439  - [39m[31m10/27/2024, 5:07:39 PM [31m  ERROR[39m[31m [31mObject:[39m[31m[39m[22m
+[1m[31m{[39m[22m
+[1m[31m  "statusCode": 401,[39m[22m
+[1m[31m  "message": "Unauthorized",[39m[22m
+[1m[31m  "date": "2024-10-27T12:07:39.537Z",[39m[22m
+[1m[31m  "resource": "/api/users/auth/jwt/verify",[39m[22m
+[1m[31m  "sourceData": {}[39m[22m
+[1m[31m}[39m[22m
+[1m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 4439  - [39m[31m10/27/2024, 5:07:39 PM [31m  ERROR[39m[31m [38;5;3m[ExceptionsHandler] [39m[31m[31mProvided "skip" value is not a number. Please provide a numeric value.[39m[31m[39m[22m
+[1m[31mTypeORMError: Provided "skip" value is not a number. Please provide a numeric value.[39m[22m
+[1m[31m    at SelectQueryBuilder.skip (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/query-builder/SelectQueryBuilder.ts:1510:19)[39m[22m
+[1m[31m    at SelectQueryBuilder.applyFindOptions (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/query-builder/SelectQueryBuilder.ts:3217:22)[39m[22m
+[1m[31m    at SelectQueryBuilder.setFindOptions (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/query-builder/SelectQueryBuilder.ts:105:14)[39m[22m
+[1m[31m    at EntityManager.findAndCount (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/entity-manager/EntityManager.ts:1139:14)[39m[22m
+[1m[31m    at Repository.findAndCount (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/repository/Repository.ts:564:29)[39m[22m
+[1m[31m    at ProductService.<anonymous> (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/dist/apps/shop/webpack:/src/app/products/product.service.ts:21:53)[39m[22m
+[1m[31m    at Generator.next (<anonymous>)[39m[22m
+[1m[31m    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tslib/tslib.js:169:75[39m[22m
+[1m[31m    at new Promise (<anonymous>)[39m[22m
+[1m[31m    at Object.__awaiter (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tslib/tslib.js:165:16)[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 4439  - [39m[31m10/27/2024, 5:07:39 PM [31m  ERROR[39m[31m [31mObject:[39m[31m[39m[22m
+[1m[31m{[39m[22m
+[1m[31m  "statusCode": 401,[39m[22m
+[1m[31m  "message": "Unauthorized",[39m[22m
+[1m[31m  "date": "2024-10-27T12:07:39.537Z",[39m[22m
+[1m[31m  "resource": "/api/users/auth/jwt/verify",[39m[22m
+[1m[31m  "sourceData": {}[39m[22m
+[1m[31m}[39m[22m
+[1m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 4439  - [39m[31m10/27/2024, 5:07:39 PM [31m  ERROR[39m[31m [31mObject:[39m[31m[39m[22m
+[1m[31m{[39m[22m
+[1m[31m  "statusCode": 401,[39m[22m
+[1m[31m  "message": "Unauthorized",[39m[22m
+[1m[31m  "date": "2024-10-27T12:07:39.564Z",[39m[22m
+[1m[31m  "resource": "/api/users/auth/jwt/verify",[39m[22m
+[1m[31m  "sourceData": {}[39m[22m
+[1m[31m}[39m[22m
+[1m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 4439  - [39m[31m10/27/2024, 5:07:39 PM [31m  ERROR[39m[31m [38;5;3m[ExceptionsHandler] [39m[31m[31mProvided "skip" value is not a number. Please provide a numeric value.[39m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31mTypeORMError: Provided "skip" value is not a number. Please provide a numeric value.[39m[22m
+[1m[31m    at SelectQueryBuilder.skip (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/query-builder/SelectQueryBuilder.ts:1510:19)[39m[22m
+[1m[31m    at SelectQueryBuilder.applyFindOptions (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/query-builder/SelectQueryBuilder.ts:3217:22)[39m[22m
+[1m[31m    at SelectQueryBuilder.setFindOptions (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/query-builder/SelectQueryBuilder.ts:105:14)[39m[22m
+[1m[31m    at EntityManager.findAndCount (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/entity-manager/EntityManager.ts:1139:14)[39m[22m
+[1m[31m    at Repository.findAndCount (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/repository/Repository.ts:564:29)[39m[22m
+[1m[31m    at ProductService.<anonymous> (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/dist/apps/shop/webpack:/src/app/products/product.service.ts:21:53)[39m[22m
+[1m[31m    at Generator.next (<anonymous>)[39m[22m
+[1m[31m    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tslib/tslib.js:169:75[39m[22m
+[1m[31m    at new Promise (<anonymous>)[39m[22m
+[1m[31m    at Object.__awaiter (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tslib/tslib.js:165:16)[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 4439  - [39m[31m10/27/2024, 5:07:39 PM [31m  ERROR[39m[31m [31mObject:[39m[31m[39m[22m
+[1m[31m{[39m[22m
+[1m[31m  "statusCode": 401,[39m[22m
+[1m[31m  "message": "Unauthorized",[39m[22m
+[1m[31m  "date": "2024-10-27T12:07:39.565Z",[39m[22m
+[1m[31m  "resource": "/api/users/auth/jwt/verify",[39m[22m
+[1m[31m  "sourceData": {}[39m[22m
+[1m[31m}[39m[22m
+[1m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 4439  - [39m[31m10/27/2024, 5:07:39 PM [31m  ERROR[39m[31m [38;5;3m[ExceptionsHandler] [39m[31m[31mProvided "skip" value is not a number. Please provide a numeric value.[39m[31m[39m[22m
+[1m[31mTypeORMError: Provided "skip" value is not a number. Please provide a numeric value.[39m[22m
+[1m[31m    at SelectQueryBuilder.skip (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/query-builder/SelectQueryBuilder.ts:1510:19)[39m[22m
+[1m[31m    at SelectQueryBuilder.applyFindOptions (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/query-builder/SelectQueryBuilder.ts:3217:22)[39m[22m
+[1m[31m    at SelectQueryBuilder.setFindOptions (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/query-builder/SelectQueryBuilder.ts:105:14)[39m[22m
+[1m[31m    at EntityManager.findAndCount (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/entity-manager/EntityManager.ts:1139:14)[39m[22m
+[1m[31m    at Repository.findAndCount (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/repository/Repository.ts:564:29)[39m[22m
+[1m[31m    at ProductService.<anonymous> (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/dist/apps/shop/webpack:/src/app/products/product.service.ts:21:53)[39m[22m
+[1m[31m    at Generator.next (<anonymous>)[39m[22m
+[1m[31m    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tslib/tslib.js:169:75[39m[22m
+[1m[31m    at new Promise (<anonymous>)[39m[22m
+[1m[31m    at Object.__awaiter (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tslib/tslib.js:165:16)[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 4439  - [39m[31m10/27/2024, 5:47:32 PM [31m  ERROR[39m[31m [31mObject:[39m[31m[39m[22m
+[1m[31m{[39m[22m
+[1m[31m  "statusCode": 401,[39m[22m
+[1m[31m  "message": "Unauthorized",[39m[22m
+[1m[31m  "date": "2024-10-27T12:47:32.816Z",[39m[22m
+[1m[31m  "resource": "/api/users/auth/jwt/verify",[39m[22m
+[1m[31m  "sourceData": {}[39m[22m
+[1m[31m}[39m[22m
+[1m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 4439  - [39m[31m10/27/2024, 5:47:32 PM [31m  ERROR[39m[31m [31mObject:[39m[31m[39m[22m
+[1m[31m{[39m[22m
+[1m[31m  "statusCode": 401,[39m[22m
+[1m[31m  "message": "Unauthorized",[39m[22m
+[1m[31m  "date": "2024-10-27T12:47:32.820Z",[39m[22m
+[1m[31m  "resource": "/api/users/auth/jwt/verify",[39m[22m
+[1m[31m  "sourceData": {}[39m[22m
+[1m[31m}[39m[22m
+[1m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 4439  - [39m[31m10/27/2024, 5:47:32 PM [31m  ERROR[39m[31m [31mObject:[39m[31m[39m[22m
+[1m[31m{[39m[22m
+[1m[31m  "statusCode": 401,[39m[22m
+[1m[31m  "message": "Unauthorized",[39m[22m
+[1m[31m  "date": "2024-10-27T12:47:32.835Z",[39m[22m
+[1m[31m  "resource": "/api/users/auth/jwt/verify",[39m[22m
+[1m[31m  "sourceData": {}[39m[22m
+[1m[31m}[39m[22m
+[1m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 4439  - [39m[31m10/27/2024, 6:06:35 PM [31m  ERROR[39m[31m [31mObject:[39m[31m[39m[22m
+[1m[31m{[39m[22m
+[1m[31m  "statusCode": 401,[39m[22m
+[1m[31m  "message": "Unauthorized",[39m[22m
+[1m[31m  "date": "2024-10-27T13:06:35.491Z",[39m[22m
+[1m[31m  "resource": "/api/users/auth/jwt/verify",[39m[22m
+[1m[31m  "sourceData": {}[39m[22m
+[1m[31m}[39m[22m
+[1m[31m[39m[22m
+[1m[31m[39m[22m
+
+ [31m>[39m [0m[7m[1m[31m NX [39m[22m[27m[0m  [31mAn error occured while creating pruned lockfile[39m
+
+   Please open an issue at `https://github.com/nrwl/nx/issues/new?template=1-bug.yml` and provide a reproduction.
+   To prevent the build from breaking we are returning the root lock file.
+   If you run `npm install --package-lock-only` in your output folder it will regenerate the correct pruned lockfile.
+   
+Original error: Target project does not exist: npm:mime-db@1.52.0
+
+
+   Error: Target project does not exist: npm:mime-db@1.52.0
+    at validateCommonDependencyRules (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:323:15)
+    at validateDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:313:5)
+    at ProjectGraphBuilder.addDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:190:9)
+    at ProjectGraphBuilder.addStaticDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:89:14)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:81:17
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:80:9
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+
+chunk (runtime: main) [1m[32mmain.js[39m[22m (main) 76.5 KiB [1m[33m[entry][39m[22m [1m[32m[rendered][39m[22m
+webpack compiled [1m[32msuccessfully[39m[22m (a905c06c8c57035d)
+[1m[31mDebugger listening on ws://localhost:9229/e62c5243-1200-4608-899e-906bd9b6be0f[39m[22m
+[1m[31mDebugger listening on ws://localhost:9229/e62c5243-1200-4608-899e-906bd9b6be0f[39m[22m
+[1m[31mFor help, see: https://nodejs.org/en/docs/inspector[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 9307  - [39m[31m10/27/2024, 7:38:53 PM [31m  ERROR[39m[31m [38;5;3m[ExceptionsHandler] [39m[31m[31mProvided "skip" value is not a number. Please provide a numeric value.[39m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31mTypeORMError: Provided "skip" value is not a number. Please provide a numeric value.[39m[22m
+[1m[31m    at SelectQueryBuilder.skip (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/query-builder/SelectQueryBuilder.ts:1510:19)[39m[22m
+[1m[31m    at SelectQueryBuilder.applyFindOptions (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/query-builder/SelectQueryBuilder.ts:3217:22)[39m[22m
+[1m[31m    at SelectQueryBuilder.setFindOptions (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/query-builder/SelectQueryBuilder.ts:105:14)[39m[22m
+[1m[31m    at EntityManager.findAndCount (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/entity-manager/EntityManager.ts:1139:14)[39m[22m
+[1m[31m    at Repository.findAndCount (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/repository/Repository.ts:564:29)[39m[22m
+[1m[31m    at ProductService.<anonymous> (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/dist/apps/shop/webpack:/src/app/products/product.service.ts:21:53)[39m[22m
+[1m[31m    at Generator.next (<anonymous>)[39m[22m
+[1m[31m    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tslib/tslib.js:169:75[39m[22m
+[1m[31m    at new Promise (<anonymous>)[39m[22m
+[1m[31m    at Object.__awaiter (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tslib/tslib.js:165:16)[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 9307  - [39m[31m10/27/2024, 7:38:53 PM [31m  ERROR[39m[31m [38;5;3m[ExceptionsHandler] [39m[31m[31mProvided "skip" value is not a number. Please provide a numeric value.[39m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31mTypeORMError: Provided "skip" value is not a number. Please provide a numeric value.[39m[22m
+[1m[31m    at SelectQueryBuilder.skip (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/query-builder/SelectQueryBuilder.ts:1510:19)[39m[22m
+[1m[31m    at SelectQueryBuilder.applyFindOptions (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/query-builder/SelectQueryBuilder.ts:3217:22)[39m[22m
+[1m[31m    at SelectQueryBuilder.setFindOptions (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/query-builder/SelectQueryBuilder.ts:105:14)[39m[22m
+[1m[31m    at EntityManager.findAndCount (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/entity-manager/EntityManager.ts:1139:14)[39m[22m
+[1m[31m    at Repository.findAndCount (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/repository/Repository.ts:564:29)[39m[22m
+[1m[31m    at ProductService.<anonymous> (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/dist/apps/shop/webpack:/src/app/products/product.service.ts:21:53)[39m[22m
+[1m[31m    at Generator.next (<anonymous>)[39m[22m
+[1m[31m    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tslib/tslib.js:169:75[39m[22m
+[1m[31m    at new Promise (<anonymous>)[39m[22m
+[1m[31m    at Object.__awaiter (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tslib/tslib.js:165:16)[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 9307  - [39m[31m10/27/2024, 7:38:53 PM [31m  ERROR[39m[31m [38;5;3m[ExceptionsHandler] [39m[31m[31mProvided "skip" value is not a number. Please provide a numeric value.[39m[31m[39m[22m
+[1m[31mTypeORMError: Provided "skip" value is not a number. Please provide a numeric value.[39m[22m
+[1m[31m    at SelectQueryBuilder.skip (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/query-builder/SelectQueryBuilder.ts:1510:19)[39m[22m
+[1m[31m    at SelectQueryBuilder.applyFindOptions (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/query-builder/SelectQueryBuilder.ts:3217:22)[39m[22m
+[1m[31m    at SelectQueryBuilder.setFindOptions (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/query-builder/SelectQueryBuilder.ts:105:14)[39m[22m
+[1m[31m    at EntityManager.findAndCount (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/entity-manager/EntityManager.ts:1139:14)[39m[22m
+[1m[31m    at Repository.findAndCount (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/repository/Repository.ts:564:29)[39m[22m
+[1m[31m    at ProductService.<anonymous> (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/dist/apps/shop/webpack:/src/app/products/product.service.ts:21:53)[39m[22m
+[1m[31m    at Generator.next (<anonymous>)[39m[22m
+[1m[31m    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tslib/tslib.js:169:75[39m[22m
+[1m[31m    at new Promise (<anonymous>)[39m[22m
+[1m[31m    at Object.__awaiter (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tslib/tslib.js:165:16)[39m[22m
+[1m[31m[31m[Nest] 9307  - [39m[31m10/27/2024, 7:38:53 PM [31m  ERROR[39m[31m [38;5;3m[ExceptionsHandler] [39m[31m[31mProvided "skip" value is not a number. Please provide a numeric value.[39m[31m[39m[22m
+[1m[31mTypeORMError: Provided "skip" value is not a number. Please provide a numeric value.[39m[22m
+[1m[31m    at SelectQueryBuilder.skip (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/query-builder/SelectQueryBuilder.ts:1510:19)[39m[22m
+[1m[31m    at SelectQueryBuilder.applyFindOptions (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/query-builder/SelectQueryBuilder.ts:3217:22)[39m[22m
+[1m[31m    at SelectQueryBuilder.setFindOptions (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/query-builder/SelectQueryBuilder.ts:105:14)[39m[22m
+[1m[31m    at EntityManager.findAndCount (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/entity-manager/EntityManager.ts:1139:14)[39m[22m
+[1m[31m    at Repository.findAndCount (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/repository/Repository.ts:564:29)[39m[22m
+[1m[31m    at ProductService.<anonymous> (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/dist/apps/shop/webpack:/src/app/products/product.service.ts:21:53)[39m[22m
+[1m[31m    at Generator.next (<anonymous>)[39m[22m
+[1m[31m    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tslib/tslib.js:169:75[39m[22m
+[1m[31m    at new Promise (<anonymous>)[39m[22m
+[1m[31m    at Object.__awaiter (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tslib/tslib.js:165:16)[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 9307  - [39m[31m10/27/2024, 8:08:55 PM [31m  ERROR[39m[31m [31mObject:[39m[31m[39m[22m
+[1m[31m{[39m[22m
+[1m[31m  "statusCode": 401,[39m[22m
+[1m[31m  "message": "Unauthorized",[39m[22m
+[1m[31m  "date": "2024-10-27T15:08:55.387Z",[39m[22m
+[1m[31m  "resource": "/api/users/auth/jwt/verify",[39m[22m
+[1m[31m  "sourceData": {}[39m[22m
+[1m[31m}[39m[22m
+[1m[31m[39m[22m
+[1m[31m[39m[22m
+
+ [31m>[39m [0m[7m[1m[31m NX [39m[22m[27m[0m  [31mAn error occured while creating pruned lockfile[39m
+
+   Please open an issue at `https://github.com/nrwl/nx/issues/new?template=1-bug.yml` and provide a reproduction.
+   To prevent the build from breaking we are returning the root lock file.
+   If you run `npm install --package-lock-only` in your output folder it will regenerate the correct pruned lockfile.
+   
+Original error: Target project does not exist: npm:mime-db@1.52.0
+
+
+   Error: Target project does not exist: npm:mime-db@1.52.0
+    at validateCommonDependencyRules (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:323:15)
+    at validateDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:313:5)
+    at ProjectGraphBuilder.addDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:190:9)
+    at ProjectGraphBuilder.addStaticDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:89:14)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:81:17
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:80:9
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+
+chunk (runtime: main) [1m[32mmain.js[39m[22m (main) 76.5 KiB [1m[33m[entry][39m[22m [1m[32m[rendered][39m[22m
+webpack compiled [1m[32msuccessfully[39m[22m (4c5ac9834165ad54)
+[1m[31mDebugger listening on ws://localhost:9229/1e92b7f2-c42e-4425-954c-262a37f168fa[39m[22m
+[1m[31mDebugger listening on ws://localhost:9229/1e92b7f2-c42e-4425-954c-262a37f168fa[39m[22m
+[1m[31mFor help, see: https://nodejs.org/en/docs/inspector[39m[22m
+[1m[31m[39m[22m
+
+ [31m>[39m [0m[7m[1m[31m NX [39m[22m[27m[0m  [31mAn error occured while creating pruned lockfile[39m
+
+   Please open an issue at `https://github.com/nrwl/nx/issues/new?template=1-bug.yml` and provide a reproduction.
+   To prevent the build from breaking we are returning the root lock file.
+   If you run `npm install --package-lock-only` in your output folder it will regenerate the correct pruned lockfile.
+   
+Original error: Target project does not exist: npm:mime-db@1.52.0
+
+
+   Error: Target project does not exist: npm:mime-db@1.52.0
+    at validateCommonDependencyRules (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:323:15)
+    at validateDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:313:5)
+    at ProjectGraphBuilder.addDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:190:9)
+    at ProjectGraphBuilder.addStaticDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:89:14)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:81:17
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:80:9
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+
+chunk (runtime: main) [1m[32mmain.js[39m[22m (main) 76.5 KiB [1m[33m[entry][39m[22m [1m[32m[rendered][39m[22m
+webpack compiled [1m[32msuccessfully[39m[22m (b9f80578d87d5520)
+[1m[31mDebugger listening on ws://localhost:9229/1f732254-814d-4c19-ad0d-ebbe9f5cb593[39m[22m
+[1m[31mDebugger listening on ws://localhost:9229/1f732254-814d-4c19-ad0d-ebbe9f5cb593[39m[22m
+[1m[31mFor help, see: https://nodejs.org/en/docs/inspector[39m[22m
+[1m[31m[39m[22m
+
+ [31m>[39m [0m[7m[1m[31m NX [39m[22m[27m[0m  [31mAn error occured while creating pruned lockfile[39m
+
+   Please open an issue at `https://github.com/nrwl/nx/issues/new?template=1-bug.yml` and provide a reproduction.
+   To prevent the build from breaking we are returning the root lock file.
+   If you run `npm install --package-lock-only` in your output folder it will regenerate the correct pruned lockfile.
+   
+Original error: Target project does not exist: npm:mime-db@1.52.0
+
+
+   Error: Target project does not exist: npm:mime-db@1.52.0
+    at validateCommonDependencyRules (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:323:15)
+    at validateDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:313:5)
+    at ProjectGraphBuilder.addDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:190:9)
+    at ProjectGraphBuilder.addStaticDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:89:14)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:81:17
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:80:9
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+
+chunk (runtime: main) [1m[32mmain.js[39m[22m (main) 76.5 KiB [1m[33m[entry][39m[22m [1m[32m[rendered][39m[22m
+webpack compiled [1m[32msuccessfully[39m[22m (9bc6a2c4a7ac6d6e)
+[1m[31mStarting inspector on localhost:9229 failed: address already in use[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 11976  - [39m[31m10/27/2024, 9:17:52 PM [31m  ERROR[39m[31m [38;5;3m[ExceptionsHandler] [39m[31m[31mProvided "skip" value is not a number. Please provide a numeric value.[39m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31mTypeORMError: Provided "skip" value is not a number. Please provide a numeric value.[39m[22m
+[1m[31m    at SelectQueryBuilder.skip (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/query-builder/SelectQueryBuilder.ts:1510:19)[39m[22m
+[1m[31m    at SelectQueryBuilder.applyFindOptions (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/query-builder/SelectQueryBuilder.ts:3217:22)[39m[22m
+[1m[31m    at SelectQueryBuilder.setFindOptions (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/query-builder/SelectQueryBuilder.ts:105:14)[39m[22m
+[1m[31m    at EntityManager.findAndCount (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/entity-manager/EntityManager.ts:1139:14)[39m[22m
+[1m[31m    at Repository.findAndCount (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/repository/Repository.ts:564:29)[39m[22m
+[1m[31m    at ProductService.<anonymous> (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/dist/apps/shop/webpack:/src/app/products/product.service.ts:21:53)[39m[22m
+[1m[31m    at Generator.next (<anonymous>)[39m[22m
+[1m[31m    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tslib/tslib.js:169:75[39m[22m
+[1m[31m    at new Promise (<anonymous>)[39m[22m
+[1m[31m    at Object.__awaiter (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tslib/tslib.js:165:16)[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 11976  - [39m[31m10/27/2024, 9:17:52 PM [31m  ERROR[39m[31m [38;5;3m[ExceptionsHandler] [39m[31m[31mProvided "skip" value is not a number. Please provide a numeric value.[39m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31mTypeORMError: Provided "skip" value is not a number. Please provide a numeric value.[39m[22m
+[1m[31m    at SelectQueryBuilder.skip (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/query-builder/SelectQueryBuilder.ts:1510:19)[39m[22m
+[1m[31m    at SelectQueryBuilder.applyFindOptions (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/query-builder/SelectQueryBuilder.ts:3217:22)[39m[22m
+[1m[31m    at SelectQueryBuilder.setFindOptions (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/query-builder/SelectQueryBuilder.ts:105:14)[39m[22m
+[1m[31m    at EntityManager.findAndCount (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/entity-manager/EntityManager.ts:1139:14)[39m[22m
+[1m[31m    at Repository.findAndCount (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/repository/Repository.ts:564:29)[39m[22m
+[1m[31m    at ProductService.<anonymous> (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/dist/apps/shop/webpack:/src/app/products/product.service.ts:21:53)[39m[22m
+[1m[31m    at Generator.next (<anonymous>)[39m[22m
+[1m[31m    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tslib/tslib.js:169:75[39m[22m
+[1m[31m    at new Promise (<anonymous>)[39m[22m
+[1m[31m    at Object.__awaiter (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tslib/tslib.js:165:16)[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 11976  - [39m[31m10/27/2024, 9:17:52 PM [31m  ERROR[39m[31m [38;5;3m[ExceptionsHandler] [39m[31m[31mProvided "skip" value is not a number. Please provide a numeric value.[39m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31mTypeORMError: Provided "skip" value is not a number. Please provide a numeric value.[39m[22m
+[1m[31m    at SelectQueryBuilder.skip (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/query-builder/SelectQueryBuilder.ts:1510:19)[39m[22m
+[1m[31m    at SelectQueryBuilder.applyFindOptions (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/query-builder/SelectQueryBuilder.ts:3217:22)[39m[22m
+[1m[31m    at SelectQueryBuilder.setFindOptions (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/query-builder/SelectQueryBuilder.ts:105:14)[39m[22m
+[1m[31m    at EntityManager.findAndCount (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/entity-manager/EntityManager.ts:1139:14)[39m[22m
+[1m[31m    at Repository.findAndCount (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/repository/Repository.ts:564:29)[39m[22m
+[1m[31m    at ProductService.<anonymous> (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/dist/apps/shop/webpack:/src/app/products/product.service.ts:21:53)[39m[22m
+[1m[31m    at Generator.next (<anonymous>)[39m[22m
+[1m[31m    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tslib/tslib.js:169:75[39m[22m
+[1m[31m    at new Promise (<anonymous>)[39m[22m
+[1m[31m    at Object.__awaiter (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tslib/tslib.js:165:16)[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 11976  - [39m[31m10/27/2024, 9:17:52 PM [31m  ERROR[39m[31m [38;5;3m[ExceptionsHandler] [39m[31m[31mProvided "skip" value is not a number. Please provide a numeric value.[39m[31m[39m[22m
+[1m[31mTypeORMError: Provided "skip" value is not a number. Please provide a numeric value.[39m[22m
+[1m[31m    at SelectQueryBuilder.skip (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/query-builder/SelectQueryBuilder.ts:1510:19)[39m[22m
+[1m[31m    at SelectQueryBuilder.applyFindOptions (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/query-builder/SelectQueryBuilder.ts:3217:22)[39m[22m
+[1m[31m    at SelectQueryBuilder.setFindOptions (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/query-builder/SelectQueryBuilder.ts:105:14)[39m[22m
+[1m[31m    at EntityManager.findAndCount (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/entity-manager/EntityManager.ts:1139:14)[39m[22m
+[1m[31m    at Repository.findAndCount (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/repository/Repository.ts:564:29)[39m[22m
+[1m[31m    at ProductService.<anonymous> (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/dist/apps/shop/webpack:/src/app/products/product.service.ts:21:53)[39m[22m
+[1m[31m    at Generator.next (<anonymous>)[39m[22m
+[1m[31m    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tslib/tslib.js:169:75[39m[22m
+[1m[31m    at new Promise (<anonymous>)[39m[22m
+[1m[31m    at Object.__awaiter (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tslib/tslib.js:165:16)[39m[22m
+[1m[31m[39m[22m
+
+ [31m>[39m [0m[7m[1m[31m NX [39m[22m[27m[0m  [31mAn error occured while creating pruned lockfile[39m
+
+   Please open an issue at `https://github.com/nrwl/nx/issues/new?template=1-bug.yml` and provide a reproduction.
+   To prevent the build from breaking we are returning the root lock file.
+   If you run `npm install --package-lock-only` in your output folder it will regenerate the correct pruned lockfile.
+   
+Original error: Target project does not exist: npm:mime-db@1.52.0
+
+
+   Error: Target project does not exist: npm:mime-db@1.52.0
+    at validateCommonDependencyRules (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:323:15)
+    at validateDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:313:5)
+    at ProjectGraphBuilder.addDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:190:9)
+    at ProjectGraphBuilder.addStaticDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:89:14)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:81:17
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:80:9
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+
+chunk (runtime: main) [1m[32mmain.js[39m[22m (main) 76.5 KiB [1m[33m[entry][39m[22m [1m[32m[rendered][39m[22m
+webpack compiled [1m[32msuccessfully[39m[22m (8b2e30fc29917a70)
+[1m[31mStarting inspector on localhost:9229 failed: address already in use[39m[22m
+[1m[31m[39m[22m
+
+ [31m>[39m [0m[7m[1m[31m NX [39m[22m[27m[0m  [31mAn error occured while creating pruned lockfile[39m
+
+   Please open an issue at `https://github.com/nrwl/nx/issues/new?template=1-bug.yml` and provide a reproduction.
+   To prevent the build from breaking we are returning the root lock file.
+   If you run `npm install --package-lock-only` in your output folder it will regenerate the correct pruned lockfile.
+   
+Original error: Target project does not exist: npm:mime-db@1.52.0
+
+
+   Error: Target project does not exist: npm:mime-db@1.52.0
+    at validateCommonDependencyRules (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:323:15)
+    at validateDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:313:5)
+    at ProjectGraphBuilder.addDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:190:9)
+    at ProjectGraphBuilder.addStaticDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:89:14)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:81:17
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:80:9
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+
+chunk (runtime: main) [1m[32mmain.js[39m[22m (main) 76.5 KiB [1m[33m[entry][39m[22m [1m[32m[rendered][39m[22m
+webpack compiled [1m[32msuccessfully[39m[22m (04944bfa4388b132)
+[1m[31mStarting inspector on localhost:9229 failed: address already in use[39m[22m
+[1m[31m[39m[22m
+
+ [31m>[39m [0m[7m[1m[31m NX [39m[22m[27m[0m  [31mAn error occured while creating pruned lockfile[39m
+
+   Please open an issue at `https://github.com/nrwl/nx/issues/new?template=1-bug.yml` and provide a reproduction.
+   To prevent the build from breaking we are returning the root lock file.
+   If you run `npm install --package-lock-only` in your output folder it will regenerate the correct pruned lockfile.
+   
+Original error: Target project does not exist: npm:mime-db@1.52.0
+
+
+   Error: Target project does not exist: npm:mime-db@1.52.0
+    at validateCommonDependencyRules (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:323:15)
+    at validateDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:313:5)
+    at ProjectGraphBuilder.addDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:190:9)
+    at ProjectGraphBuilder.addStaticDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:89:14)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:81:17
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:80:9
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+
+chunk (runtime: main) [1m[32mmain.js[39m[22m (main) 76.5 KiB [1m[33m[entry][39m[22m [1m[32m[rendered][39m[22m
+webpack compiled [1m[32msuccessfully[39m[22m (6b20f174ae2e4d46)
+[1m[31mStarting inspector on localhost:9229 failed: address already in use[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 14068  - [39m[31m10/27/2024, 10:51:57 PM [31m  ERROR[39m[31m [38;5;3m[ExceptionsHandler] [39m[31m[31mProvided "skip" value is not a number. Please provide a numeric value.[39m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31mTypeORMError: Provided "skip" value is not a number. Please provide a numeric value.[39m[22m
+[1m[31m    at SelectQueryBuilder.skip (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/query-builder/SelectQueryBuilder.ts:1510:19)[39m[22m
+[1m[31m    at SelectQueryBuilder.applyFindOptions (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/query-builder/SelectQueryBuilder.ts:3217:22)[39m[22m
+[1m[31m    at SelectQueryBuilder.setFindOptions (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/query-builder/SelectQueryBuilder.ts:105:14)[39m[22m
+[1m[31m    at EntityManager.findAndCount (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/entity-manager/EntityManager.ts:1139:14)[39m[22m
+[1m[31m    at Repository.findAndCount (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/repository/Repository.ts:564:29)[39m[22m
+[1m[31m    at ProductService.<anonymous> (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/dist/apps/shop/webpack:/src/app/products/product.service.ts:21:53)[39m[22m
+[1m[31m    at Generator.next (<anonymous>)[39m[22m
+[1m[31m    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tslib/tslib.js:169:75[39m[22m
+[1m[31m    at new Promise (<anonymous>)[39m[22m
+[1m[31m    at Object.__awaiter (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tslib/tslib.js:165:16)[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 14068  - [39m[31m10/27/2024, 10:51:57 PM [31m  ERROR[39m[31m [38;5;3m[ExceptionsHandler] [39m[31m[31mProvided "skip" value is not a number. Please provide a numeric value.[39m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31mTypeORMError: Provided "skip" value is not a number. Please provide a numeric value.[39m[22m
+[1m[31m    at SelectQueryBuilder.skip (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/query-builder/SelectQueryBuilder.ts:1510:19)[39m[22m
+[1m[31m    at SelectQueryBuilder.applyFindOptions (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/query-builder/SelectQueryBuilder.ts:3217:22)[39m[22m
+[1m[31m    at SelectQueryBuilder.setFindOptions (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/query-builder/SelectQueryBuilder.ts:105:14)[39m[22m
+[1m[31m    at EntityManager.findAndCount (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/entity-manager/EntityManager.ts:1139:14)[39m[22m
+[1m[31m    at Repository.findAndCount (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/repository/Repository.ts:564:29)[39m[22m
+[1m[31m    at ProductService.<anonymous> (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/dist/apps/shop/webpack:/src/app/products/product.service.ts:21:53)[39m[22m
+[1m[31m    at Generator.next (<anonymous>)[39m[22m
+[1m[31m    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tslib/tslib.js:169:75[39m[22m
+[1m[31m    at new Promise (<anonymous>)[39m[22m
+[1m[31m    at Object.__awaiter (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tslib/tslib.js:165:16)[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 14068  - [39m[31m10/27/2024, 10:51:57 PM [31m  ERROR[39m[31m [38;5;3m[ExceptionsHandler] [39m[31m[31mProvided "skip" value is not a number. Please provide a numeric value.[39m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31mTypeORMError: Provided "skip" value is not a number. Please provide a numeric value.[39m[22m
+[1m[31m    at SelectQueryBuilder.skip (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/query-builder/SelectQueryBuilder.ts:1510:19)[39m[22m
+[1m[31m    at SelectQueryBuilder.applyFindOptions (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/query-builder/SelectQueryBuilder.ts:3217:22)[39m[22m
+[1m[31m    at SelectQueryBuilder.setFindOptions (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/query-builder/SelectQueryBuilder.ts:105:14)[39m[22m
+[1m[31m    at EntityManager.findAndCount (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/entity-manager/EntityManager.ts:1139:14)[39m[22m
+[1m[31m    at Repository.findAndCount (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/repository/Repository.ts:564:29)[39m[22m
+[1m[31m    at ProductService.<anonymous> (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/dist/apps/shop/webpack:/src/app/products/product.service.ts:21:53)[39m[22m
+[1m[31m    at Generator.next (<anonymous>)[39m[22m
+[1m[31m    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tslib/tslib.js:169:75[39m[22m
+[1m[31m    at new Promise (<anonymous>)[39m[22m
+[1m[31m    at Object.__awaiter (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tslib/tslib.js:165:16)[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 14068  - [39m[31m10/27/2024, 10:51:57 PM [31m  ERROR[39m[31m [38;5;3m[ExceptionsHandler] [39m[31m[31mProvided "skip" value is not a number. Please provide a numeric value.[39m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31mTypeORMError: Provided "skip" value is not a number. Please provide a numeric value.[39m[22m
+[1m[31m    at SelectQueryBuilder.skip (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/query-builder/SelectQueryBuilder.ts:1510:19)[39m[22m
+[1m[31m    at SelectQueryBuilder.applyFindOptions (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/query-builder/SelectQueryBuilder.ts:3217:22)[39m[22m
+[1m[31m    at SelectQueryBuilder.setFindOptions (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/query-builder/SelectQueryBuilder.ts:105:14)[39m[22m
+[1m[31m    at EntityManager.findAndCount (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/entity-manager/EntityManager.ts:1139:14)[39m[22m
+[1m[31m    at Repository.findAndCount (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/repository/Repository.ts:564:29)[39m[22m
+[1m[31m    at ProductService.<anonymous> (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/dist/apps/shop/webpack:/src/app/products/product.service.ts:21:53)[39m[22m
+[1m[31m    at Generator.next (<anonymous>)[39m[22m
+[1m[31m    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tslib/tslib.js:169:75[39m[22m
+[1m[31m    at new Promise (<anonymous>)[39m[22m
+[1m[31m    at Object.__awaiter (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tslib/tslib.js:165:16)[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 14068  - [39m[31m10/27/2024, 11:37:47 PM [31m  ERROR[39m[31m [31mObject:[39m[31m[39m[22m
+[1m[31m{[39m[22m
+[1m[31m  "statusCode": 401,[39m[22m
+[1m[31m  "message": "Unauthorized",[39m[22m
+[1m[31m  "date": "2024-10-27T18:37:47.630Z",[39m[22m
+[1m[31m  "resource": "/api/users/auth/jwt/verify",[39m[22m
+[1m[31m  "sourceData": {}[39m[22m
+[1m[31m}[39m[22m
+[1m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 14068  - [39m[31m10/27/2024, 11:37:47 PM [31m  ERROR[39m[31m [31mObject:[39m[31m[39m[22m
+[1m[31m{[39m[22m
+[1m[31m  "statusCode": 401,[39m[22m
+[1m[31m  "message": "Unauthorized",[39m[22m
+[1m[31m  "date": "2024-10-27T18:37:47.631Z",[39m[22m
+[1m[31m  "resource": "/api/users/auth/jwt/verify",[39m[22m
+[1m[31m  "sourceData": {}[39m[22m
+[1m[31m}[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 14068  - [39m[31m10/27/2024, 11:37:47 PM [31m  ERROR[39m[31m [31mObject:[39m[31m[39m[22m
+[1m[31m{[39m[22m
+[1m[31m  "statusCode": 401,[39m[22m
+[1m[31m  "message": "Unauthorized",[39m[22m
+[1m[31m  "date": "2024-10-27T18:37:47.631Z",[39m[22m
+[1m[31m  "resource": "/api/users/auth/jwt/verify",[39m[22m
+[1m[31m  "sourceData": {}[39m[22m
+[1m[31m}[39m[22m
+[1m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 14068  - [39m[31m10/27/2024, 11:39:30 PM [31m  ERROR[39m[31m [31mObject:[39m[31m[39m[22m
+[1m[31m{[39m[22m
+[1m[31m  "statusCode": 401,[39m[22m
+[1m[31m  "message": "Unauthorized",[39m[22m
+[1m[31m  "date": "2024-10-27T18:39:30.682Z",[39m[22m
+[1m[31m  "resource": "/api/users/auth/jwt/verify",[39m[22m
+[1m[31m  "sourceData": {}[39m[22m
+[1m[31m}[39m[22m
+[1m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 14068  - [39m[31m10/27/2024, 11:39:30 PM [31m  ERROR[39m[31m [31mObject:[39m[31m[39m[22m
+[1m[31m{[39m[22m
+[1m[31m  "statusCode": 401,[39m[22m
+[1m[31m  "message": "Unauthorized",[39m[22m
+[1m[31m  "date": "2024-10-27T18:39:30.688Z",[39m[22m
+[1m[31m  "resource": "/api/users/auth/jwt/verify",[39m[22m
+[1m[31m  "sourceData": {}[39m[22m
+[1m[31m}[39m[22m
+[1m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 14068  - [39m[31m10/27/2024, 11:39:30 PM [31m  ERROR[39m[31m [31mObject:[39m[31m[39m[22m
+[1m[31m{[39m[22m
+[1m[31m  "statusCode": 401,[39m[22m
+[1m[31m  "message": "Unauthorized",[39m[22m
+[1m[31m  "date": "2024-10-27T18:39:30.689Z",[39m[22m
+[1m[31m  "resource": "/api/users/auth/jwt/verify",[39m[22m
+[1m[31m  "sourceData": {}[39m[22m
+[1m[31m}[39m[22m
+[1m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 14068  - [39m[31m10/27/2024, 11:44:10 PM [31m  ERROR[39m[31m [31mObject:[39m[31m[39m[22m
+[1m[31m{[39m[22m
+[1m[31m  "statusCode": 401,[39m[22m
+[1m[31m  "message": "Unauthorized",[39m[22m
+[1m[31m  "date": "2024-10-27T18:44:10.834Z",[39m[22m
+[1m[31m  "resource": "/api/users/auth/jwt/verify",[39m[22m
+[1m[31m  "sourceData": {}[39m[22m
+[1m[31m}[39m[22m
+[1m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 14068  - [39m[31m10/27/2024, 11:44:10 PM [31m  ERROR[39m[31m [31mObject:[39m[31m[39m[22m
+[1m[31m{[39m[22m
+[1m[31m  "statusCode": 401,[39m[22m
+[1m[31m  "message": "Unauthorized",[39m[22m
+[1m[31m  "date": "2024-10-27T18:44:10.834Z",[39m[22m
+[1m[31m  "resource": "/api/users/auth/jwt/verify",[39m[22m
+[1m[31m  "sourceData": {}[39m[22m
+[1m[31m}[39m[22m
+[1m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 14068  - [39m[31m10/27/2024, 11:44:10 PM [31m  ERROR[39m[31m [31mObject:[39m[31m[39m[22m
+[1m[31m{[39m[22m
+[1m[31m  "statusCode": 401,[39m[22m
+[1m[31m  "message": "Unauthorized",[39m[22m
+[1m[31m  "date": "2024-10-27T18:44:10.836Z",[39m[22m
+[1m[31m  "resource": "/api/users/auth/jwt/verify",[39m[22m
+[1m[31m  "sourceData": {}[39m[22m
+[1m[31m}[39m[22m
+[1m[31m[39m[22m
+[1m[31m[39m[22m

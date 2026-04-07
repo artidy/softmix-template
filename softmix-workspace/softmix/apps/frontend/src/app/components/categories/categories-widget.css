@@ -1,0 +1,15 @@
+.widget h4 {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.widget-button {
+  display: contents;
+  color: var(--ltn__paragraph-color);
+  transition: all 0.2s ease-in-out;
+}
+
+.widget-button:hover {
+  color: var(--ltn__secondary-color);
+}

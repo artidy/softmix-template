@@ -1,0 +1,212 @@
+chunk (runtime: main) [1m[32mmain.js[39m[22m (main) 54.4 KiB [1m[33m[entry][39m[22m [1m[32m[rendered][39m[22m
+webpack compiled [1m[32msuccessfully[39m[22m (13bf5c44961a5e00)
+[1m[31mStarting inspector on localhost:9229 failed: address already in use[39m[22m
+[1m[31m[39m[22m
+
+ [31m>[39m [0m[7m[1m[31m NX [39m[22m[27m[0m  [31mAn error occured while creating pruned lockfile[39m
+
+   Please open an issue at `https://github.com/nrwl/nx/issues/new?template=1-bug.yml` and provide a reproduction.
+   To prevent the build from breaking we are returning the root lock file.
+   If you run `npm install --package-lock-only` in your output folder it will regenerate the correct pruned lockfile.
+   
+Original error: Target project does not exist: npm:mime-db@1.52.0
+
+
+   Error: Target project does not exist: npm:mime-db@1.52.0
+    at validateCommonDependencyRules (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:323:15)
+    at validateDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:313:5)
+    at ProjectGraphBuilder.addDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:190:9)
+    at ProjectGraphBuilder.addStaticDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:89:14)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:81:17
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:80:9
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+
+chunk (runtime: main) [1m[32mmain.js[39m[22m (main) 54.3 KiB [1m[33m[entry][39m[22m [1m[32m[rendered][39m[22m
+
+[1m[31mERROR[39m[22m in [1m./apps/uploader/src/app/products/product-image.controller.ts:[32m[1m16:10[22m[39m[1m[39m[22m
+[90mTS2305: [39mModule '"@project-lib/shared-types"' has no exported member 'AVATAR_TYPES'.
+  [0m [90m 14 |[39m [36mimport[39m { [33mFileInterceptor[39m } [36mfrom[39m [32m'@nestjs/platform-express'[39m[33m;[39m
+   [90m 15 |[39m [36mimport[39m { fillObject[33m,[39m [33mMongoidValidationPipe[39m } [36mfrom[39m [32m'@project-lib/core'[39m[33m;[39m
+  [31m[1m>[22m[39m[90m 16 |[39m [36mimport[39m { [33mAVATAR_TYPES[39m[33m,[39m [33mProductImageSettings[39m[33m,[39m [33mUrlPaths[39m } [36mfrom[39m [32m'@project-lib/shared-types'[39m[33m;[39m
+   [90m    |[39m          [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+   [90m 17 |[39m
+   [90m 18 |[39m [36mimport[39m { getMulterConfig } [36mfrom[39m [32m'../../config/multer.config'[39m[33m;[39m
+   [90m 19 |[39m [36mimport[39m { getFilePipe } [36mfrom[39m [32m'../helpers'[39m[33m;[39m[0m
+
+webpack compiled with [1m[31m1 error[39m[22m (f18953837af858da)
+[1m[31mBuild failed, waiting for changes to restart...[39m[22m
+
+ [31m>[39m [0m[7m[1m[31m NX [39m[22m[27m[0m  [31mAn error occured while creating pruned lockfile[39m
+
+   Please open an issue at `https://github.com/nrwl/nx/issues/new?template=1-bug.yml` and provide a reproduction.
+   To prevent the build from breaking we are returning the root lock file.
+   If you run `npm install --package-lock-only` in your output folder it will regenerate the correct pruned lockfile.
+   
+Original error: Target project does not exist: npm:mime-db@1.52.0
+
+
+   Error: Target project does not exist: npm:mime-db@1.52.0
+    at validateCommonDependencyRules (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:323:15)
+    at validateDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:313:5)
+    at ProjectGraphBuilder.addDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:190:9)
+    at ProjectGraphBuilder.addStaticDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:89:14)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:81:17
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:80:9
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+
+chunk (runtime: main) [1m[32mmain.js[39m[22m (main) 54.3 KiB [1m[33m[entry][39m[22m [1m[32m[rendered][39m[22m
+webpack compiled [1m[32msuccessfully[39m[22m (62f28303dac858c3)
+[1m[31mStarting inspector on localhost:9229 failed: address already in use[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 10898  - [39m[31m10/27/2024, 8:31:47 PM [31m  ERROR[39m[31m [31mКод ошибки: 400, описание: Неверный формат идентификатора[39m[31m[39m[22m
+[1m[31m[39m[22m
+
+ [31m>[39m [0m[7m[1m[31m NX [39m[22m[27m[0m  [31mAn error occured while creating pruned lockfile[39m
+
+   Please open an issue at `https://github.com/nrwl/nx/issues/new?template=1-bug.yml` and provide a reproduction.
+   To prevent the build from breaking we are returning the root lock file.
+   If you run `npm install --package-lock-only` in your output folder it will regenerate the correct pruned lockfile.
+   
+Original error: Target project does not exist: npm:mime-db@1.52.0
+
+
+   Error: Target project does not exist: npm:mime-db@1.52.0
+    at validateCommonDependencyRules (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:323:15)
+    at validateDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:313:5)
+    at ProjectGraphBuilder.addDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:190:9)
+    at ProjectGraphBuilder.addStaticDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:89:14)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:81:17
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:80:9
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+
+chunk (runtime: main) [1m[32mmain.js[39m[22m (main) 54.3 KiB [1m[33m[entry][39m[22m [1m[32m[rendered][39m[22m
+webpack compiled [1m[32msuccessfully[39m[22m (f663c8a49dc6e83f)
+[1m[31mStarting inspector on localhost:9229 failed: address already in use[39m[22m
+[1m[31m[39m[22m
+
+ [31m>[39m [0m[7m[1m[31m NX [39m[22m[27m[0m  [31mAn error occured while creating pruned lockfile[39m
+
+   Please open an issue at `https://github.com/nrwl/nx/issues/new?template=1-bug.yml` and provide a reproduction.
+   To prevent the build from breaking we are returning the root lock file.
+   If you run `npm install --package-lock-only` in your output folder it will regenerate the correct pruned lockfile.
+   
+Original error: Target project does not exist: npm:mime-db@1.52.0
+
+
+   Error: Target project does not exist: npm:mime-db@1.52.0
+    at validateCommonDependencyRules (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:323:15)
+    at validateDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:313:5)
+    at ProjectGraphBuilder.addDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:190:9)
+    at ProjectGraphBuilder.addStaticDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:89:14)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:81:17
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:80:9
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+
+chunk (runtime: main) [1m[32mmain.js[39m[22m (main) 54.3 KiB [1m[33m[entry][39m[22m [1m[32m[rendered][39m[22m
+webpack compiled [1m[32msuccessfully[39m[22m (5e5d636531cb5908)
+[1m[31mStarting inspector on localhost:9229 failed: address already in use[39m[22m
+[1m[31m[39m[22m
+
+ [31m>[39m [0m[7m[1m[31m NX [39m[22m[27m[0m  [31mAn error occured while creating pruned lockfile[39m
+
+   Please open an issue at `https://github.com/nrwl/nx/issues/new?template=1-bug.yml` and provide a reproduction.
+   To prevent the build from breaking we are returning the root lock file.
+   If you run `npm install --package-lock-only` in your output folder it will regenerate the correct pruned lockfile.
+   
+Original error: Target project does not exist: npm:mime-db@1.52.0
+
+
+   Error: Target project does not exist: npm:mime-db@1.52.0
+    at validateCommonDependencyRules (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:323:15)
+    at validateDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:313:5)
+    at ProjectGraphBuilder.addDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:190:9)
+    at ProjectGraphBuilder.addStaticDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:89:14)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:81:17
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:80:9
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+
+chunk (runtime: main) [1m[32mmain.js[39m[22m (main) 54.3 KiB [1m[33m[entry][39m[22m [1m[32m[rendered][39m[22m
+webpack compiled [1m[32msuccessfully[39m[22m (c8aea29253234413)
+[1m[31mDebugger listening on ws://localhost:9229/344d9db0-00a9-467b-974f-1ce353238e78[39m[22m
+[1m[31mDebugger listening on ws://localhost:9229/344d9db0-00a9-467b-974f-1ce353238e78[39m[22m
+[1m[31mFor help, see: https://nodejs.org/en/docs/inspector[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 11975  - [39m[31m10/27/2024, 9:18:39 PM [31m  ERROR[39m[31m [31mКод ошибки: 406, описание: файл с идентификатором — 68a1106d-531e-43fc-a723-e10a383f9f88 уже существует[39m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 11975  - [39m[31m10/27/2024, 9:23:21 PM [31m  ERROR[39m[31m [31mКод ошибки: 406, описание: файл с идентификатором — 68a1106d-531e-43fc-a723-e10a383f9f88 уже существует[39m[31m[39m[22m
+[1m[31m[39m[22m
+
+ [31m>[39m [0m[7m[1m[31m NX [39m[22m[27m[0m  [31mAn error occured while creating pruned lockfile[39m
+
+   Please open an issue at `https://github.com/nrwl/nx/issues/new?template=1-bug.yml` and provide a reproduction.
+   To prevent the build from breaking we are returning the root lock file.
+   If you run `npm install --package-lock-only` in your output folder it will regenerate the correct pruned lockfile.
+   
+Original error: Target project does not exist: npm:mime-db@1.52.0
+
+
+   Error: Target project does not exist: npm:mime-db@1.52.0
+    at validateCommonDependencyRules (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:323:15)
+    at validateDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:313:5)
+    at ProjectGraphBuilder.addDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:190:9)
+    at ProjectGraphBuilder.addStaticDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:89:14)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:81:17
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:80:9
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+
+chunk (runtime: main) [1m[32mmain.js[39m[22m (main) 54.7 KiB [1m[33m[entry][39m[22m [1m[32m[rendered][39m[22m
+
+[1m[31mERROR[39m[22m in [1m./apps/uploader/src/app/products/product-image.controller.ts:[32m[1m52:24[22m[39m[1m[39m[22m
+[90mTS2339: [39mProperty 'add' does not exist on type 'ProductImageService'.
+  [0m [90m 50 |[39m   ) {
+   [90m 51 |[39m     [36mconst[39m name [33m=[39m file[33m.[39mfilename[33m;[39m
+  [31m[1m>[22m[39m[90m 52 |[39m     [36mconst[39m newFile [33m=[39m [36mawait[39m [36mthis[39m[33m.[39mservice[33m.[39mupdateOrCreate(id[33m,[39m name)[33m;[39m
+   [90m    |[39m                        [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+   [90m 53 |[39m     [36mconst[39m url [33m=[39m [36mawait[39m [36mthis[39m[33m.[39mservice[33m.[39mgetAvatarUrl(id)[33m;[39m
+   [90m 54 |[39m
+   [90m 55 |[39m     [36mreturn[39m fillObject([33mProductImageRdo[39m[33m,[39m { [33m...[39mnewFile[33m,[39m url })[33m;[39m[0m
+
+webpack compiled with [1m[31m1 error[39m[22m (1ad0a1139cc8c2b5)
+
+ [31m>[39m [0m[7m[1m[31m NX [39m[22m[27m[0m  [31mAn error occured while creating pruned lockfile[39m
+
+   Please open an issue at `https://github.com/nrwl/nx/issues/new?template=1-bug.yml` and provide a reproduction.
+   To prevent the build from breaking we are returning the root lock file.
+   If you run `npm install --package-lock-only` in your output folder it will regenerate the correct pruned lockfile.
+   
+Original error: Target project does not exist: npm:mime-db@1.52.0
+
+
+   Error: Target project does not exist: npm:mime-db@1.52.0
+    at validateCommonDependencyRules (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:323:15)
+    at validateDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:313:5)
+    at ProjectGraphBuilder.addDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:190:9)
+    at ProjectGraphBuilder.addStaticDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:89:14)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:81:17
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:80:9
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+
+chunk (runtime: main) [1m[32mmain.js[39m[22m (main) 55.6 KiB [1m[33m[entry][39m[22m [1m[32m[rendered][39m[22m
+webpack compiled [1m[32msuccessfully[39m[22m (28cebf5ed0755c9c)
+[1m[31mBuild failed, waiting for changes to restart...[39m[22m

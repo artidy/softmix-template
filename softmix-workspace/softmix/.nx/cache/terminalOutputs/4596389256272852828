@@ -1,0 +1,107 @@
+
+ [36m>[39m [0m[7m[1m[36m NX [39m[22m[27m[0m  [36mRunning target [1mbuild[22m for project uploader and [1m2[22m tasks it depends on:[39m
+
+ 
+
+[2m> [22m[2mnx run[22m uploader:build:production
+
+chunk (runtime: main) [1m[32mmain.js[39m[22m (main) 54.5 KiB [1m[33m[entry][39m[22m [1m[32m[rendered][39m[22m
+webpack compiled [1m[32msuccessfully[39m[22m (f7370e3848c9770a)
+
+ 
+
+ [32m>[39m [0m[7m[1m[32m NX [39m[22m[27m[0m  [32mSuccessfully ran target [1mbuild[22m for project uploader and [1m2[22m tasks it depends on[39m
+
+   [2mNx read the output from the cache instead of running the command for 2 out of 3 tasks.[22m
+
+
+ [33m>[39m [0m[7m[1m[33m NX [39m[22m[27m[0m  [33mNx Cloud Problems[39m
+
+   - 401: Unable to connect to Nx Cloud.
+
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 266B done
+#1 WARN: FromPlatformFlagConstDisallowed: FROM --platform flag should not use constant value "linux/amd64" (line 1)
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/node:21-alpine3.17
+#2 DONE 0.8s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [1/5] FROM docker.io/library/node:21-alpine3.17@sha256:3c63a56bb358fe10657085d47590a0a68ee666db1ed44dfc90462c2288289884
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 247.84kB done
+#5 DONE 0.0s
+
+#6 [2/5] WORKDIR /opt/softmix
+#6 CACHED
+
+#7 [3/5] COPY ./dist/apps/uploader/package.json .
+#7 DONE 0.0s
+
+#8 [4/5] RUN npm install --omit=dev
+#8 51.27 
+#8 51.27 added 254 packages, and audited 255 packages in 51s
+#8 51.27 
+#8 51.27 39 packages are looking for funding
+#8 51.27   run `npm fund` for details
+#8 51.28 
+#8 51.28 10 vulnerabilities (1 low, 2 moderate, 7 high)
+#8 51.28 
+#8 51.28 To address issues that do not require attention, run:
+#8 51.28   npm audit fix
+#8 51.28 
+#8 51.28 To address all issues (including breaking changes), run:
+#8 51.28   npm audit fix --force
+#8 51.28 
+#8 51.28 Run `npm audit` for details.
+#8 51.28 npm notice 
+#8 51.28 npm notice New minor version of npm available! 10.2.4 -> 10.9.0
+#8 51.28 npm notice Changelog: <https://github.com/npm/cli/releases/tag/v10.9.0>
+#8 51.28 npm notice Run `npm install -g npm@10.9.0` to update!
+#8 51.28 npm notice 
+#8 DONE 51.4s
+
+#9 [5/5] COPY ./dist/apps/uploader .
+#9 DONE 0.0s
+
+#10 exporting to image
+#10 exporting layers
+#10 exporting layers 0.6s done
+#10 writing image sha256:0193caf3e2d0923920be1d1592d8ed0d063896526c9c0d49504c42fefbe7e773 done
+#10 naming to ghcr.io/artidy/softmix.uploader:latest
+#10 naming to ghcr.io/artidy/softmix.uploader:latest done
+#10 DONE 0.6s
+
+View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/y76axd5ktrzqamzk63ngpu4c2
+
+ [33m1 warning found (use docker --debug to expand):
+[0m - FromPlatformFlagConstDisallowed: FROM --platform flag should not use constant value "linux/amd64" (line 1)
+The push refers to repository [ghcr.io/artidy/softmix.uploader]
+6b8bf1f1d248: Preparing
+52e41c1e7ae4: Preparing
+f9387785dfbb: Preparing
+ffad0bf9787c: Preparing
+606bae91b09a: Preparing
+b26b96b420df: Preparing
+7927b0b6607c: Preparing
+617df26c9e2b: Preparing
+b26b96b420df: Waiting
+7927b0b6607c: Waiting
+617df26c9e2b: Waiting
+606bae91b09a: Mounted from artidy/softmix.bff
+ffad0bf9787c: Mounted from artidy/softmix.bff
+6b8bf1f1d248: Pushed
+f9387785dfbb: Pushed
+b26b96b420df: Mounted from artidy/softmix.bff
+7927b0b6607c: Mounted from artidy/softmix.bff
+617df26c9e2b: Mounted from artidy/softmix.bff
+52e41c1e7ae4: Pushed
+latest: digest: sha256:dcc34d3ad1c93fb6b98bf8a1351cc7ff854256f83b8d421614e6cd8cd534c7e0 size: 1993

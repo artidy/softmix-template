@@ -1,0 +1,65 @@
+{
+  "run": {
+    "command": "nx run-many -t serve -p frontend,users,shop,uploader,bff --parallel=5",
+    "startTime": "2026-02-21T06:55:55.623Z",
+    "endTime": "2026-02-21T16:42:06.986Z",
+    "inner": false
+  },
+  "tasks": [
+    {
+      "taskId": "bff:serve:development",
+      "target": "serve",
+      "projectName": "bff",
+      "hash": "12979556666000700220",
+      "startTime": "2026-02-21T06:55:55.633Z",
+      "endTime": "2026-02-21T16:42:06.982Z",
+      "params": "",
+      "cacheStatus": "cache-miss",
+      "status": 1
+    },
+    {
+      "taskId": "uploader:serve:development",
+      "target": "serve",
+      "projectName": "uploader",
+      "hash": "17621113902104462121",
+      "startTime": "2026-02-21T06:55:55.632Z",
+      "endTime": "2026-02-21T16:42:06.982Z",
+      "params": "",
+      "cacheStatus": "cache-miss",
+      "status": 1
+    },
+    {
+      "taskId": "users:serve:development",
+      "target": "serve",
+      "projectName": "users",
+      "hash": "18178980112989219562",
+      "startTime": "2026-02-21T06:55:55.631Z",
+      "endTime": "2026-02-21T16:42:06.983Z",
+      "params": "",
+      "cacheStatus": "cache-miss",
+      "status": 1
+    },
+    {
+      "taskId": "shop:serve:development",
+      "target": "serve",
+      "projectName": "shop",
+      "hash": "908269114684000284",
+      "startTime": "2026-02-21T06:55:55.629Z",
+      "endTime": "2026-02-21T16:42:06.983Z",
+      "params": "",
+      "cacheStatus": "cache-miss",
+      "status": 1
+    },
+    {
+      "taskId": "frontend:serve:development",
+      "target": "serve",
+      "projectName": "frontend",
+      "hash": "12339009490324612113",
+      "startTime": "2026-02-21T06:55:55.630Z",
+      "endTime": "2026-02-21T16:42:06.983Z",
+      "params": "",
+      "cacheStatus": "cache-miss",
+      "status": 1
+    }
+  ]
+}

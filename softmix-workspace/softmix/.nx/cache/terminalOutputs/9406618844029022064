@@ -1,0 +1,263 @@
+chunk (runtime: main) [1m[32mmain.js[39m[22m (main) 73 KiB [1m[33m[entry][39m[22m [1m[32m[rendered][39m[22m
+webpack compiled [1m[32msuccessfully[39m[22m (12f28479923bbbc7)
+[1m[31mStarting inspector on localhost:9229 failed: address already in use[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 3905  - [39m[31m10/22/2024, 12:03:27 AM [31m  ERROR[39m[31m [38;5;3m[ExceptionsHandler] [39m[31m[31minvalid input syntax for type uuid: "NaN"[39m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31mQueryFailedError: invalid input syntax for type uuid: "NaN"[39m[22m
+[1m[31m    at PostgresQueryRunner.query (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/driver/postgres/PostgresQueryRunner.ts:331:19)[39m[22m
+[1m[31m    at processTicksAndRejections (node:internal/process/task_queues:95:5)[39m[22m
+[1m[31m    at DeleteQueryBuilder.execute (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/query-builder/DeleteQueryBuilder.ts:77:33)[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 3905  - [39m[31m10/22/2024, 12:08:28 AM [31m  ERROR[39m[31m [38;5;3m[ExceptionsHandler] [39m[31m[31minvalid input syntax for type uuid: "NaN"[39m[31m[39m[22m
+[1m[31mQueryFailedError: invalid input syntax for type uuid: "NaN"[39m[22m
+[1m[31m    at PostgresQueryRunner.query (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/driver/postgres/PostgresQueryRunner.ts:331:19)[39m[22m
+[1m[31m    at processTicksAndRejections (node:internal/process/task_queues:95:5)[39m[22m
+[1m[31m    at DeleteQueryBuilder.execute (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/query-builder/DeleteQueryBuilder.ts:77:33)[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 3905  - [39m[31m10/22/2024, 12:08:34 AM [31m  ERROR[39m[31m [38;5;3m[ExceptionsHandler] [39m[31m[31minvalid input syntax for type uuid: "NaN"[39m[31m[39m[22m
+[1m[31mQueryFailedError: invalid input syntax for type uuid: "NaN"[39m[22m
+[1m[31m    at PostgresQueryRunner.query (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/driver/postgres/PostgresQueryRunner.ts:331:19)[39m[22m
+[1m[31m    at processTicksAndRejections (node:internal/process/task_queues:95:5)[39m[22m
+[1m[31m    at DeleteQueryBuilder.execute (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/query-builder/DeleteQueryBuilder.ts:77:33)[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 3905  - [39m[31m10/22/2024, 12:09:00 AM [31m  ERROR[39m[31m [38;5;3m[ExceptionsHandler] [39m[31m[31minvalid input syntax for type uuid: "NaN"[39m[31m[39m[22m
+[1m[31mQueryFailedError: invalid input syntax for type uuid: "NaN"[39m[22m
+[1m[31m    at PostgresQueryRunner.query (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/driver/postgres/PostgresQueryRunner.ts:331:19)[39m[22m
+[1m[31m    at processTicksAndRejections (node:internal/process/task_queues:95:5)[39m[22m
+[1m[31m    at DeleteQueryBuilder.execute (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/query-builder/DeleteQueryBuilder.ts:77:33)[39m[22m
+[1m[31m[39m[22m
+
+ [31m>[39m [0m[7m[1m[31m NX [39m[22m[27m[0m  [31mAn error occured while creating pruned lockfile[39m
+
+   Please open an issue at `https://github.com/nrwl/nx/issues/new?template=1-bug.yml` and provide a reproduction.
+   To prevent the build from breaking we are returning the root lock file.
+   If you run `npm install --package-lock-only` in your output folder it will regenerate the correct pruned lockfile.
+   
+Original error: Target project does not exist: npm:mime-db@1.52.0
+
+
+   Error: Target project does not exist: npm:mime-db@1.52.0
+    at validateCommonDependencyRules (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:323:15)
+    at validateDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:313:5)
+    at ProjectGraphBuilder.addDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:190:9)
+    at ProjectGraphBuilder.addStaticDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:89:14)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:81:17
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:80:9
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+
+chunk (runtime: main) [1m[32mmain.js[39m[22m (main) 73 KiB [1m[33m[entry][39m[22m [1m[32m[rendered][39m[22m
+webpack compiled [1m[32msuccessfully[39m[22m (1e22655932ad4321)
+[1m[31mStarting inspector on localhost:9229 failed: address already in use[39m[22m
+[1m[31m[39m[22m
+
+ [31m>[39m [0m[7m[1m[31m NX [39m[22m[27m[0m  [31mAn error occured while creating pruned lockfile[39m
+
+   Please open an issue at `https://github.com/nrwl/nx/issues/new?template=1-bug.yml` and provide a reproduction.
+   To prevent the build from breaking we are returning the root lock file.
+   If you run `npm install --package-lock-only` in your output folder it will regenerate the correct pruned lockfile.
+   
+Original error: Target project does not exist: npm:mime-db@1.52.0
+
+
+   Error: Target project does not exist: npm:mime-db@1.52.0
+    at validateCommonDependencyRules (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:323:15)
+    at validateDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:313:5)
+    at ProjectGraphBuilder.addDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:190:9)
+    at ProjectGraphBuilder.addStaticDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:89:14)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:81:17
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:80:9
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+
+chunk (runtime: main) [1m[32mmain.js[39m[22m (main) 73.4 KiB [1m[33m[entry][39m[22m [1m[32m[rendered][39m[22m
+webpack compiled [1m[32msuccessfully[39m[22m (2ef7a5db4d537b54)
+[1m[31mStarting inspector on localhost:9229 failed: address already in use[39m[22m
+[1m[31m[39m[22m
+
+ [31m>[39m [0m[7m[1m[31m NX [39m[22m[27m[0m  [31mAn error occured while creating pruned lockfile[39m
+
+   Please open an issue at `https://github.com/nrwl/nx/issues/new?template=1-bug.yml` and provide a reproduction.
+   To prevent the build from breaking we are returning the root lock file.
+   If you run `npm install --package-lock-only` in your output folder it will regenerate the correct pruned lockfile.
+   
+Original error: Target project does not exist: npm:mime-db@1.52.0
+
+
+   Error: Target project does not exist: npm:mime-db@1.52.0
+    at validateCommonDependencyRules (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:323:15)
+    at validateDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:313:5)
+    at ProjectGraphBuilder.addDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:190:9)
+    at ProjectGraphBuilder.addStaticDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:89:14)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:81:17
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:80:9
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+
+chunk (runtime: main) [1m[32mmain.js[39m[22m (main) 73.4 KiB [1m[33m[entry][39m[22m [1m[32m[rendered][39m[22m
+webpack compiled [1m[32msuccessfully[39m[22m (b893d7db206c5ab4)
+[1m[31mStarting inspector on localhost:9229 failed: address already in use[39m[22m
+[1m[31m[39m[22m
+
+ [31m>[39m [0m[7m[1m[31m NX [39m[22m[27m[0m  [31mAn error occured while creating pruned lockfile[39m
+
+   Please open an issue at `https://github.com/nrwl/nx/issues/new?template=1-bug.yml` and provide a reproduction.
+   To prevent the build from breaking we are returning the root lock file.
+   If you run `npm install --package-lock-only` in your output folder it will regenerate the correct pruned lockfile.
+   
+Original error: Target project does not exist: npm:mime-db@1.52.0
+
+
+   Error: Target project does not exist: npm:mime-db@1.52.0
+    at validateCommonDependencyRules (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:323:15)
+    at validateDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:313:5)
+    at ProjectGraphBuilder.addDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:190:9)
+    at ProjectGraphBuilder.addStaticDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:89:14)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:81:17
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:80:9
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+
+chunk (runtime: main) [1m[32mmain.js[39m[22m (main) 73.4 KiB [1m[33m[entry][39m[22m [1m[32m[rendered][39m[22m
+webpack compiled [1m[32msuccessfully[39m[22m (03cdaebfaced9ad4)
+[1m[31mStarting inspector on localhost:9229 failed: address already in use[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 4735  - [39m[31m10/22/2024, 12:23:26 AM [31m  ERROR[39m[31m [31mObject:[39m[31m[39m[22m
+[1m[31m{[39m[22m
+[1m[31m  "statusCode": 401,[39m[22m
+[1m[31m  "message": "Unauthorized",[39m[22m
+[1m[31m  "date": "2024-10-21T19:23:26.193Z",[39m[22m
+[1m[31m  "resource": "/api/users/auth/jwt/verify",[39m[22m
+[1m[31m  "sourceData": {}[39m[22m
+[1m[31m}[39m[22m
+[1m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 4735  - [39m[31m10/22/2024, 12:23:26 AM [31m  ERROR[39m[31m [31mObject:[39m[31m[39m[22m
+[1m[31m{[39m[22m
+[1m[31m  "statusCode": 401,[39m[22m
+[1m[31m  "message": "Unauthorized",[39m[22m
+[1m[31m  "date": "2024-10-21T19:23:26.194Z",[39m[22m
+[1m[31m  "resource": "/api/users/auth/jwt/verify",[39m[22m
+[1m[31m  "sourceData": {}[39m[22m
+[1m[31m}[39m[22m
+[1m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 4735  - [39m[31m10/22/2024, 12:23:26 AM [31m  ERROR[39m[31m [31mObject:[39m[31m[39m[22m
+[1m[31m{[39m[22m
+[1m[31m  "statusCode": 401,[39m[22m
+[1m[31m  "message": "Unauthorized",[39m[22m
+[1m[31m  "date": "2024-10-21T19:23:26.255Z",[39m[22m
+[1m[31m  "resource": "/api/users/auth/jwt/verify",[39m[22m
+[1m[31m  "sourceData": {}[39m[22m
+[1m[31m}[39m[22m
+[1m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 4735  - [39m[31m10/22/2024, 12:43:04 AM [31m  ERROR[39m[31m [31mObject:[39m[31m[39m[22m
+[1m[31m{[39m[22m
+[1m[31m  "statusCode": 401,[39m[22m
+[1m[31m  "message": "Unauthorized",[39m[22m
+[1m[31m  "date": "2024-10-21T19:43:04.237Z",[39m[22m
+[1m[31m  "resource": "/api/users/auth/jwt/verify",[39m[22m
+[1m[31m  "sourceData": {}[39m[22m
+[1m[31m}[39m[22m
+[1m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 4735  - [39m[31m10/22/2024, 12:43:04 AM [31m  ERROR[39m[31m [31mObject:[39m[31m[39m[22m
+[1m[31m{[39m[22m
+[1m[31m  "statusCode": 401,[39m[22m
+[1m[31m  "message": "Unauthorized",[39m[22m
+[1m[31m  "date": "2024-10-21T19:43:04.238Z",[39m[22m
+[1m[31m  "resource": "/api/users/auth/jwt/verify",[39m[22m
+[1m[31m  "sourceData": {}[39m[22m
+[1m[31m}[39m[22m
+[1m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 4735  - [39m[31m10/22/2024, 12:43:04 AM [31m  ERROR[39m[31m [31mObject:[39m[31m[39m[22m
+[1m[31m{[39m[22m
+[1m[31m  "statusCode": 401,[39m[22m
+[1m[31m  "message": "Unauthorized",[39m[22m
+[1m[31m  "date": "2024-10-21T19:43:04.260Z",[39m[22m
+[1m[31m  "resource": "/api/users/auth/jwt/verify",[39m[22m
+[1m[31m  "sourceData": {}[39m[22m
+[1m[31m}[39m[22m
+[1m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 4735  - [39m[31m10/22/2024, 12:45:07 AM [31m  ERROR[39m[31m [31mObject:[39m[31m[39m[22m
+[1m[31m{[39m[22m
+[1m[31m  "statusCode": 401,[39m[22m
+[1m[31m  "message": "Unauthorized",[39m[22m
+[1m[31m  "date": "2024-10-21T19:45:07.395Z",[39m[22m
+[1m[31m  "resource": "/api/users/auth/jwt/verify",[39m[22m
+[1m[31m  "sourceData": {}[39m[22m
+[1m[31m}[39m[22m
+[1m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 4735  - [39m[31m10/22/2024, 12:52:49 AM [31m  ERROR[39m[31m [31mObject:[39m[31m[39m[22m
+[1m[31m{[39m[22m
+[1m[31m  "statusCode": 401,[39m[22m
+[1m[31m  "message": "Unauthorized",[39m[22m
+[1m[31m  "date": "2024-10-21T19:52:49.257Z",[39m[22m
+[1m[31m  "resource": "/api/users/auth/jwt/verify",[39m[22m
+[1m[31m  "sourceData": {}[39m[22m
+[1m[31m}[39m[22m
+[1m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 4735  - [39m[31m10/22/2024, 12:52:49 AM [31m  ERROR[39m[31m [31mObject:[39m[31m[39m[22m
+[1m[31m{[39m[22m
+[1m[31m  "statusCode": 401,[39m[22m
+[1m[31m  "message": "Unauthorized",[39m[22m
+[1m[31m  "date": "2024-10-21T19:52:49.258Z",[39m[22m
+[1m[31m  "resource": "/api/users/auth/jwt/verify",[39m[22m
+[1m[31m  "sourceData": {}[39m[22m
+[1m[31m}[39m[22m
+[1m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 4735  - [39m[31m10/22/2024, 12:52:49 AM [31m  ERROR[39m[31m [31mObject:[39m[31m[39m[22m
+[1m[31m{[39m[22m
+[1m[31m  "statusCode": 401,[39m[22m
+[1m[31m  "message": "Unauthorized",[39m[22m
+[1m[31m  "date": "2024-10-21T19:52:49.258Z",[39m[22m
+[1m[31m  "resource": "/api/users/auth/jwt/verify",[39m[22m
+[1m[31m  "sourceData": {}[39m[22m
+[1m[31m}[39m[22m
+[1m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 4735  - [39m[31m10/22/2024, 12:56:18 AM [31m  ERROR[39m[31m [31mObject:[39m[31m[39m[22m
+[1m[31m{[39m[22m
+[1m[31m  "statusCode": 401,[39m[22m
+[1m[31m  "message": "Unauthorized",[39m[22m
+[1m[31m  "date": "2024-10-21T19:56:18.173Z",[39m[22m
+[1m[31m  "resource": "/api/users/auth/jwt/verify",[39m[22m
+[1m[31m  "sourceData": {}[39m[22m
+[1m[31m}[39m[22m
+[1m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 4735  - [39m[31m10/22/2024, 12:56:18 AM [31m  ERROR[39m[31m [31mObject:[39m[31m[39m[22m
+[1m[31m{[39m[22m
+[1m[31m  "statusCode": 401,[39m[22m
+[1m[31m  "message": "Unauthorized",[39m[22m
+[1m[31m  "date": "2024-10-21T19:56:18.174Z",[39m[22m
+[1m[31m  "resource": "/api/users/auth/jwt/verify",[39m[22m
+[1m[31m  "sourceData": {}[39m[22m
+[1m[31m}[39m[22m
+[1m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 4735  - [39m[31m10/22/2024, 12:56:18 AM [31m  ERROR[39m[31m [31mObject:[39m[31m[39m[22m
+[1m[31m{[39m[22m
+[1m[31m  "statusCode": 401,[39m[22m
+[1m[31m  "message": "Unauthorized",[39m[22m
+[1m[31m  "date": "2024-10-21T19:56:18.174Z",[39m[22m
+[1m[31m  "resource": "/api/users/auth/jwt/verify",[39m[22m
+[1m[31m  "sourceData": {}[39m[22m
+[1m[31m}[39m[22m
+[1m[31m[39m[22m
+[1m[31m[39m[22m

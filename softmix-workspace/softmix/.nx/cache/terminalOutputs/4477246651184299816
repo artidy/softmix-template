@@ -1,0 +1,1049 @@
+<i> [1m[32m[webpack-dev-server] Project is running at:[39m[22m
+<i> [1m[32m[webpack-dev-server] Loopback: [36mhttp://localhost:4200/[39m, [36mhttp://[::1]:4200/[39m[39m[22m
+<i> [1m[32m[webpack-dev-server] 404s will fallback to '[36m/index.html[39m'[39m[22m
+
+[36m>[39m [7m[1m[36m NX [39m[22m[27m [1mWeb Development Server is listening at http://localhost:4200/[22m
+
+Entrypoint [1mmain[39m[22m [1m[33m[big][39m[22m 4.02 MiB (8.71 MiB) = [1m[32mruntime.js[39m[22m 50.2 KiB [1m[32mvendor.css[39m[22m 240 KiB [1m[32mvendor.js[39m[22m 2.79 MiB [1m[32mmain.css[39m[22m 392 KiB [1m[32mmain.js[39m[22m 570 KiB 32 auxiliary assets
+Entrypoint [1mstyles[39m[22m [1m[33m[big][39m[22m 734 KiB (1.15 MiB) = [1m[32mruntime.js[39m[22m 50.2 KiB [1m[32mstyles.css[39m[22m 273 KiB [1m[32mstyles.js[39m[22m 411 KiB 6 auxiliary assets
+chunk (runtime: runtime) [1m[32mmain.css[39m[22m, [1m[32mmain.js[39m[22m (main) 406 KiB (javascript) 392 KiB (css/mini-extract) [1m[33m[initial][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mruntime.js[39m[22m (runtime) 33.8 KiB [1m[33m[entry][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mstyles.css[39m[22m, [1m[32mstyles.js[39m[22m (styles) 395 KiB (javascript) 273 KiB (css/mini-extract) [1m[33m[initial][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mvendor.css[39m[22m, [1m[32mvendor.js[39m[22m (vendor) (id hint: vendor) 2.75 MiB (javascript) 240 KiB (css/mini-extract) [1m[33m[initial][39m[22m [1m[32m[rendered][39m[22m [1m[33msplit chunk (cache group: vendor) (name: vendor)[39m[22m
+webpack compiled [1m[32msuccessfully[39m[22m (e126686f4a23f36b)
+[32mNo errors found.[39m
+
+ [31m>[39m [0m[7m[1m[31m NX [39m[22m[27m[0m  [31mAn error occured while creating pruned lockfile[39m
+
+   Please open an issue at `https://github.com/nrwl/nx/issues/new?template=1-bug.yml` and provide a reproduction.
+   To prevent the build from breaking we are returning the root lock file.
+   If you run `npm install --package-lock-only` in your output folder it will regenerate the correct pruned lockfile.
+   
+Original error: Target project does not exist: npm:react-is@18.3.1
+
+
+   Error: Target project does not exist: npm:react-is@18.3.1
+    at validateCommonDependencyRules (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:323:15)
+    at validateDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:313:5)
+    at ProjectGraphBuilder.addDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:190:9)
+    at ProjectGraphBuilder.addStaticDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:89:14)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:81:17
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:80:9
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:70:9
+    at Array.forEach (<anonymous>)
+    at addNodesAndDependencies (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:67:37)
+    at pruneProjectGraph (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:14:5)
+    at createLockFile (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/lock-file.js:133:79)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/@nx/webpack/src/plugins/generate-package-json-plugin.js:42:138
+    at fn (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/webpack/lib/Compilation.js:491:10)
+    at _next0 (eval at create (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:41:1)
+    at eval (eval at create (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:54:1)
+    at eval (eval at create (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:11:1)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/webpack/lib/Compilation.js:515:10
+    at Hook.eval [as callAsync] (eval at create (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:7:1)
+    at Hook.CALL_ASYNC_DELEGATE [as _callAsync] (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tapable/lib/Hook.js:18:14)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/webpack/lib/Compilation.js:528:46
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/@nx/webpack/node_modules/copy-webpack-plugin/dist/index.js:909:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+
+Entrypoint [1mmain[39m[22m [1m[33m[big][39m[22m 4.02 MiB (8.72 MiB) = 7 assets 34 auxiliary assets
+Entrypoint [1mstyles[39m[22m [1m[33m[big][39m[22m 734 KiB (1.15 MiB) = [1m[32mruntime.js[39m[22m 50.2 KiB [1m[32mruntime.e126686f4a23f36b.hot-update.js[39m[22m 343 bytes [1m[32mstyles.css[39m[22m 273 KiB [1m[32mstyles.js[39m[22m 411 KiB 7 auxiliary assets
+chunk (runtime: runtime) [1m[32mmain.css[39m[22m, [1m[32mmain.js[39m[22m, [1m[32mmain.e126686f4a23f36b.hot-update.js[39m[22m (main) 406 KiB (javascript) 392 KiB (css/mini-extract) [1m[33m[initial][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mruntime.js[39m[22m, [1m[32mruntime.e126686f4a23f36b.hot-update.js[39m[22m (runtime) 33.8 KiB [1m[33m[entry][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mstyles.css[39m[22m, [1m[32mstyles.js[39m[22m (styles) 395 KiB (javascript) 273 KiB (css/mini-extract) [1m[33m[initial][39m[22m
+chunk (runtime: runtime) [1m[32mvendor.css[39m[22m, [1m[32mvendor.js[39m[22m (vendor) (id hint: vendor) 2.75 MiB (javascript) 240 KiB (css/mini-extract) [1m[33m[initial][39m[22m [1m[33msplit chunk (cache group: vendor) (name: vendor)[39m[22m
+webpack compiled [1m[32msuccessfully[39m[22m (7f2fd1d957e8f135)
+[32mNo errors found.[39m
+
+ [31m>[39m [0m[7m[1m[31m NX [39m[22m[27m[0m  [31mAn error occured while creating pruned lockfile[39m
+
+   Please open an issue at `https://github.com/nrwl/nx/issues/new?template=1-bug.yml` and provide a reproduction.
+   To prevent the build from breaking we are returning the root lock file.
+   If you run `npm install --package-lock-only` in your output folder it will regenerate the correct pruned lockfile.
+   
+Original error: Target project does not exist: npm:react-is@18.3.1
+
+
+   Error: Target project does not exist: npm:react-is@18.3.1
+    at validateCommonDependencyRules (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:323:15)
+    at validateDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:313:5)
+    at ProjectGraphBuilder.addDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:190:9)
+    at ProjectGraphBuilder.addStaticDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:89:14)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:81:17
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:80:9
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:70:9
+    at Array.forEach (<anonymous>)
+    at addNodesAndDependencies (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:67:37)
+    at pruneProjectGraph (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:14:5)
+    at createLockFile (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/lock-file.js:133:79)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/@nx/webpack/src/plugins/generate-package-json-plugin.js:42:138
+    at fn (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/webpack/lib/Compilation.js:491:10)
+    at _next0 (eval at create (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:41:1)
+    at eval (eval at create (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:54:1)
+    at eval (eval at create (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:11:1)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/webpack/lib/Compilation.js:515:10
+    at Hook.eval [as callAsync] (eval at create (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:7:1)
+    at Hook.CALL_ASYNC_DELEGATE [as _callAsync] (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tapable/lib/Hook.js:18:14)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/webpack/lib/Compilation.js:528:46
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/@nx/webpack/node_modules/copy-webpack-plugin/dist/index.js:909:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+
+Entrypoint [1mmain[39m[22m [1m[33m[big][39m[22m 4.02 MiB (8.72 MiB) = 7 assets 34 auxiliary assets
+Entrypoint [1mstyles[39m[22m [1m[33m[big][39m[22m 734 KiB (1.15 MiB) = [1m[32mruntime.js[39m[22m 50.2 KiB [1m[32mruntime.7f2fd1d957e8f135.hot-update.js[39m[22m 343 bytes [1m[32mstyles.css[39m[22m 273 KiB [1m[32mstyles.js[39m[22m 411 KiB 7 auxiliary assets
+chunk (runtime: runtime) [1m[32mmain.css[39m[22m, [1m[32mmain.js[39m[22m, [1m[32mmain.7f2fd1d957e8f135.hot-update.js[39m[22m (main) 406 KiB (javascript) 392 KiB (css/mini-extract) [1m[33m[initial][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mruntime.js[39m[22m, [1m[32mruntime.7f2fd1d957e8f135.hot-update.js[39m[22m (runtime) 33.8 KiB [1m[33m[entry][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mstyles.css[39m[22m, [1m[32mstyles.js[39m[22m (styles) 395 KiB (javascript) 273 KiB (css/mini-extract) [1m[33m[initial][39m[22m
+chunk (runtime: runtime) [1m[32mvendor.css[39m[22m, [1m[32mvendor.js[39m[22m (vendor) (id hint: vendor) 2.75 MiB (javascript) 240 KiB (css/mini-extract) [1m[33m[initial][39m[22m [1m[33msplit chunk (cache group: vendor) (name: vendor)[39m[22m
+webpack compiled [1m[32msuccessfully[39m[22m (653c9cf1948110cd)
+[32mNo errors found.[39m
+
+ [31m>[39m [0m[7m[1m[31m NX [39m[22m[27m[0m  [31mAn error occured while creating pruned lockfile[39m
+
+   Please open an issue at `https://github.com/nrwl/nx/issues/new?template=1-bug.yml` and provide a reproduction.
+   To prevent the build from breaking we are returning the root lock file.
+   If you run `npm install --package-lock-only` in your output folder it will regenerate the correct pruned lockfile.
+   
+Original error: Target project does not exist: npm:react-is@18.3.1
+
+
+   Error: Target project does not exist: npm:react-is@18.3.1
+    at validateCommonDependencyRules (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:323:15)
+    at validateDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:313:5)
+    at ProjectGraphBuilder.addDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:190:9)
+    at ProjectGraphBuilder.addStaticDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:89:14)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:81:17
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:80:9
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:70:9
+    at Array.forEach (<anonymous>)
+    at addNodesAndDependencies (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:67:37)
+    at pruneProjectGraph (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:14:5)
+    at createLockFile (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/lock-file.js:133:79)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/@nx/webpack/src/plugins/generate-package-json-plugin.js:42:138
+    at fn (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/webpack/lib/Compilation.js:491:10)
+    at _next0 (eval at create (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:41:1)
+    at eval (eval at create (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:54:1)
+    at eval (eval at create (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:11:1)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/webpack/lib/Compilation.js:515:10
+    at Hook.eval [as callAsync] (eval at create (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:7:1)
+    at Hook.CALL_ASYNC_DELEGATE [as _callAsync] (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tapable/lib/Hook.js:18:14)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/webpack/lib/Compilation.js:528:46
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/@nx/webpack/node_modules/copy-webpack-plugin/dist/index.js:909:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+
+Entrypoint [1mmain[39m[22m [1m[33m[big][39m[22m 4.03 MiB (8.72 MiB) = 7 assets 34 auxiliary assets
+Entrypoint [1mstyles[39m[22m [1m[33m[big][39m[22m 734 KiB (1.15 MiB) = [1m[32mruntime.js[39m[22m 50.2 KiB [1m[32mruntime.653c9cf1948110cd.hot-update.js[39m[22m 343 bytes [1m[32mstyles.css[39m[22m 273 KiB [1m[32mstyles.js[39m[22m 411 KiB 7 auxiliary assets
+chunk (runtime: runtime) [1m[32mmain.css[39m[22m, [1m[32mmain.js[39m[22m, [1m[32mmain.653c9cf1948110cd.hot-update.js[39m[22m (main) 406 KiB (javascript) 392 KiB (css/mini-extract) [1m[33m[initial][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mruntime.js[39m[22m, [1m[32mruntime.653c9cf1948110cd.hot-update.js[39m[22m (runtime) 33.8 KiB [1m[33m[entry][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mstyles.css[39m[22m, [1m[32mstyles.js[39m[22m (styles) 395 KiB (javascript) 273 KiB (css/mini-extract) [1m[33m[initial][39m[22m
+chunk (runtime: runtime) [1m[32mvendor.css[39m[22m, [1m[32mvendor.js[39m[22m (vendor) (id hint: vendor) 2.75 MiB (javascript) 240 KiB (css/mini-extract) [1m[33m[initial][39m[22m [1m[33msplit chunk (cache group: vendor) (name: vendor)[39m[22m
+webpack compiled [1m[32msuccessfully[39m[22m (30b0676c3836c18e)
+[32mNo errors found.[39m
+
+ [31m>[39m [0m[7m[1m[31m NX [39m[22m[27m[0m  [31mAn error occured while creating pruned lockfile[39m
+
+   Please open an issue at `https://github.com/nrwl/nx/issues/new?template=1-bug.yml` and provide a reproduction.
+   To prevent the build from breaking we are returning the root lock file.
+   If you run `npm install --package-lock-only` in your output folder it will regenerate the correct pruned lockfile.
+   
+Original error: Target project does not exist: npm:react-is@18.3.1
+
+
+   Error: Target project does not exist: npm:react-is@18.3.1
+    at validateCommonDependencyRules (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:323:15)
+    at validateDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:313:5)
+    at ProjectGraphBuilder.addDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:190:9)
+    at ProjectGraphBuilder.addStaticDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:89:14)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:81:17
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:80:9
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:70:9
+    at Array.forEach (<anonymous>)
+    at addNodesAndDependencies (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:67:37)
+    at pruneProjectGraph (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:14:5)
+    at createLockFile (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/lock-file.js:133:79)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/@nx/webpack/src/plugins/generate-package-json-plugin.js:42:138
+    at fn (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/webpack/lib/Compilation.js:491:10)
+    at _next0 (eval at create (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:41:1)
+    at eval (eval at create (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:54:1)
+    at eval (eval at create (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:11:1)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/webpack/lib/Compilation.js:515:10
+    at Hook.eval [as callAsync] (eval at create (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:7:1)
+    at Hook.CALL_ASYNC_DELEGATE [as _callAsync] (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tapable/lib/Hook.js:18:14)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/webpack/lib/Compilation.js:528:46
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/@nx/webpack/node_modules/copy-webpack-plugin/dist/index.js:909:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+
+Entrypoint [1mmain[39m[22m [1m[33m[big][39m[22m 4.03 MiB (8.72 MiB) = 7 assets 34 auxiliary assets
+Entrypoint [1mstyles[39m[22m [1m[33m[big][39m[22m 734 KiB (1.15 MiB) = [1m[32mruntime.js[39m[22m 50.2 KiB [1m[32mruntime.30b0676c3836c18e.hot-update.js[39m[22m 343 bytes [1m[32mstyles.css[39m[22m 273 KiB [1m[32mstyles.js[39m[22m 411 KiB 7 auxiliary assets
+chunk (runtime: runtime) [1m[32mmain.css[39m[22m, [1m[32mmain.js[39m[22m, [1m[32mmain.30b0676c3836c18e.hot-update.js[39m[22m (main) 406 KiB (javascript) 392 KiB (css/mini-extract) [1m[33m[initial][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mruntime.js[39m[22m, [1m[32mruntime.30b0676c3836c18e.hot-update.js[39m[22m (runtime) 33.8 KiB [1m[33m[entry][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mstyles.css[39m[22m, [1m[32mstyles.js[39m[22m (styles) 395 KiB (javascript) 273 KiB (css/mini-extract) [1m[33m[initial][39m[22m
+chunk (runtime: runtime) [1m[32mvendor.css[39m[22m, [1m[32mvendor.js[39m[22m (vendor) (id hint: vendor) 2.75 MiB (javascript) 240 KiB (css/mini-extract) [1m[33m[initial][39m[22m [1m[33msplit chunk (cache group: vendor) (name: vendor)[39m[22m
+webpack compiled [1m[32msuccessfully[39m[22m (a097ba1c1d46d6ed)
+[32mNo errors found.[39m
+
+ [31m>[39m [0m[7m[1m[31m NX [39m[22m[27m[0m  [31mAn error occured while creating pruned lockfile[39m
+
+   Please open an issue at `https://github.com/nrwl/nx/issues/new?template=1-bug.yml` and provide a reproduction.
+   To prevent the build from breaking we are returning the root lock file.
+   If you run `npm install --package-lock-only` in your output folder it will regenerate the correct pruned lockfile.
+   
+Original error: Target project does not exist: npm:react-is@18.3.1
+
+
+   Error: Target project does not exist: npm:react-is@18.3.1
+    at validateCommonDependencyRules (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:323:15)
+    at validateDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:313:5)
+    at ProjectGraphBuilder.addDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:190:9)
+    at ProjectGraphBuilder.addStaticDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:89:14)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:81:17
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:80:9
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:70:9
+    at Array.forEach (<anonymous>)
+    at addNodesAndDependencies (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:67:37)
+    at pruneProjectGraph (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:14:5)
+    at createLockFile (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/lock-file.js:133:79)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/@nx/webpack/src/plugins/generate-package-json-plugin.js:42:138
+    at fn (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/webpack/lib/Compilation.js:491:10)
+    at _next0 (eval at create (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:41:1)
+    at eval (eval at create (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:54:1)
+    at eval (eval at create (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:11:1)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/webpack/lib/Compilation.js:515:10
+    at Hook.eval [as callAsync] (eval at create (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:7:1)
+    at Hook.CALL_ASYNC_DELEGATE [as _callAsync] (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tapable/lib/Hook.js:18:14)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/webpack/lib/Compilation.js:528:46
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/@nx/webpack/node_modules/copy-webpack-plugin/dist/index.js:909:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+
+Entrypoint [1mmain[39m[22m [1m[33m[big][39m[22m 4.02 MiB (8.72 MiB) = 7 assets 34 auxiliary assets
+Entrypoint [1mstyles[39m[22m [1m[33m[big][39m[22m 734 KiB (1.15 MiB) = [1m[32mruntime.js[39m[22m 50.2 KiB [1m[32mruntime.a097ba1c1d46d6ed.hot-update.js[39m[22m 343 bytes [1m[32mstyles.css[39m[22m 273 KiB [1m[32mstyles.js[39m[22m 411 KiB 7 auxiliary assets
+chunk (runtime: runtime) [1m[32mmain.css[39m[22m, [1m[32mmain.js[39m[22m, [1m[32mmain.a097ba1c1d46d6ed.hot-update.js[39m[22m (main) 406 KiB (javascript) 392 KiB (css/mini-extract) [1m[33m[initial][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mruntime.js[39m[22m, [1m[32mruntime.a097ba1c1d46d6ed.hot-update.js[39m[22m (runtime) 33.8 KiB [1m[33m[entry][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mstyles.css[39m[22m, [1m[32mstyles.js[39m[22m (styles) 395 KiB (javascript) 273 KiB (css/mini-extract) [1m[33m[initial][39m[22m
+chunk (runtime: runtime) [1m[32mvendor.css[39m[22m, [1m[32mvendor.js[39m[22m (vendor) (id hint: vendor) 2.75 MiB (javascript) 240 KiB (css/mini-extract) [1m[33m[initial][39m[22m [1m[33msplit chunk (cache group: vendor) (name: vendor)[39m[22m
+webpack compiled [1m[32msuccessfully[39m[22m (6f192842fbfcc778)
+[32mNo errors found.[39m
+
+ [31m>[39m [0m[7m[1m[31m NX [39m[22m[27m[0m  [31mAn error occured while creating pruned lockfile[39m
+
+   Please open an issue at `https://github.com/nrwl/nx/issues/new?template=1-bug.yml` and provide a reproduction.
+   To prevent the build from breaking we are returning the root lock file.
+   If you run `npm install --package-lock-only` in your output folder it will regenerate the correct pruned lockfile.
+   
+Original error: Target project does not exist: npm:react-is@18.3.1
+
+
+   Error: Target project does not exist: npm:react-is@18.3.1
+    at validateCommonDependencyRules (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:323:15)
+    at validateDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:313:5)
+    at ProjectGraphBuilder.addDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:190:9)
+    at ProjectGraphBuilder.addStaticDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:89:14)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:81:17
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:80:9
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:70:9
+    at Array.forEach (<anonymous>)
+    at addNodesAndDependencies (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:67:37)
+    at pruneProjectGraph (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:14:5)
+    at createLockFile (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/lock-file.js:133:79)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/@nx/webpack/src/plugins/generate-package-json-plugin.js:42:138
+    at fn (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/webpack/lib/Compilation.js:491:10)
+    at _next0 (eval at create (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:41:1)
+    at eval (eval at create (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:54:1)
+    at eval (eval at create (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:11:1)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/webpack/lib/Compilation.js:515:10
+    at Hook.eval [as callAsync] (eval at create (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:7:1)
+    at Hook.CALL_ASYNC_DELEGATE [as _callAsync] (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tapable/lib/Hook.js:18:14)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/webpack/lib/Compilation.js:528:46
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/@nx/webpack/node_modules/copy-webpack-plugin/dist/index.js:909:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+
+Entrypoint [1mmain[39m[22m [1m[33m[big][39m[22m 4.02 MiB (8.72 MiB) = 7 assets 34 auxiliary assets
+Entrypoint [1mstyles[39m[22m [1m[33m[big][39m[22m 734 KiB (1.15 MiB) = [1m[32mruntime.js[39m[22m 50.2 KiB [1m[32mruntime.6f192842fbfcc778.hot-update.js[39m[22m 343 bytes [1m[32mstyles.css[39m[22m 273 KiB [1m[32mstyles.js[39m[22m 411 KiB 7 auxiliary assets
+chunk (runtime: runtime) [1m[32mmain.css[39m[22m, [1m[32mmain.js[39m[22m, [1m[32mmain.6f192842fbfcc778.hot-update.js[39m[22m (main) 406 KiB (javascript) 392 KiB (css/mini-extract) [1m[33m[initial][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mruntime.js[39m[22m, [1m[32mruntime.6f192842fbfcc778.hot-update.js[39m[22m (runtime) 33.8 KiB [1m[33m[entry][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mstyles.css[39m[22m, [1m[32mstyles.js[39m[22m (styles) 395 KiB (javascript) 273 KiB (css/mini-extract) [1m[33m[initial][39m[22m
+chunk (runtime: runtime) [1m[32mvendor.css[39m[22m, [1m[32mvendor.js[39m[22m (vendor) (id hint: vendor) 2.75 MiB (javascript) 240 KiB (css/mini-extract) [1m[33m[initial][39m[22m [1m[33msplit chunk (cache group: vendor) (name: vendor)[39m[22m
+webpack compiled [1m[32msuccessfully[39m[22m (f27b7111486f6c07)
+[32mNo errors found.[39m
+
+ [31m>[39m [0m[7m[1m[31m NX [39m[22m[27m[0m  [31mAn error occured while creating pruned lockfile[39m
+
+   Please open an issue at `https://github.com/nrwl/nx/issues/new?template=1-bug.yml` and provide a reproduction.
+   To prevent the build from breaking we are returning the root lock file.
+   If you run `npm install --package-lock-only` in your output folder it will regenerate the correct pruned lockfile.
+   
+Original error: Target project does not exist: npm:react-is@18.3.1
+
+
+   Error: Target project does not exist: npm:react-is@18.3.1
+    at validateCommonDependencyRules (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:323:15)
+    at validateDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:313:5)
+    at ProjectGraphBuilder.addDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:190:9)
+    at ProjectGraphBuilder.addStaticDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:89:14)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:81:17
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:80:9
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:70:9
+    at Array.forEach (<anonymous>)
+    at addNodesAndDependencies (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:67:37)
+    at pruneProjectGraph (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:14:5)
+    at createLockFile (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/lock-file.js:133:79)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/@nx/webpack/src/plugins/generate-package-json-plugin.js:42:138
+    at fn (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/webpack/lib/Compilation.js:491:10)
+    at _next0 (eval at create (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:41:1)
+    at eval (eval at create (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:54:1)
+    at eval (eval at create (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:11:1)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/webpack/lib/Compilation.js:515:10
+    at Hook.eval [as callAsync] (eval at create (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:7:1)
+    at Hook.CALL_ASYNC_DELEGATE [as _callAsync] (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tapable/lib/Hook.js:18:14)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/webpack/lib/Compilation.js:528:46
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/@nx/webpack/node_modules/copy-webpack-plugin/dist/index.js:909:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+
+Entrypoint [1mmain[39m[22m [1m[33m[big][39m[22m 4.02 MiB (8.72 MiB) = 7 assets 34 auxiliary assets
+Entrypoint [1mstyles[39m[22m [1m[33m[big][39m[22m 735 KiB (1.15 MiB) = [1m[32mruntime.js[39m[22m 50.2 KiB [1m[32mruntime.f27b7111486f6c07.hot-update.js[39m[22m 343 bytes [1m[32mstyles.css[39m[22m 273 KiB [1m[32mstyles.js[39m[22m 411 KiB [1m[32mstyles.f27b7111486f6c07.hot-update.js[39m[22m 514 bytes 8 auxiliary assets
+chunk (runtime: runtime) [1m[32mmain.css[39m[22m, [1m[32mmain.js[39m[22m, [1m[32mmain.f27b7111486f6c07.hot-update.js[39m[22m (main) 406 KiB (javascript) 392 KiB (css/mini-extract) [1m[33m[initial][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mruntime.js[39m[22m, [1m[32mruntime.f27b7111486f6c07.hot-update.js[39m[22m (runtime) 33.8 KiB [1m[33m[entry][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mstyles.css[39m[22m, [1m[32mstyles.js[39m[22m, [1m[32mstyles.f27b7111486f6c07.hot-update.js[39m[22m (styles) 395 KiB (javascript) 273 KiB (css/mini-extract) [1m[33m[initial][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mvendor.css[39m[22m, [1m[32mvendor.js[39m[22m (vendor) (id hint: vendor) 2.75 MiB (javascript) 240 KiB (css/mini-extract) [1m[33m[initial][39m[22m [1m[33msplit chunk (cache group: vendor) (name: vendor)[39m[22m
+webpack compiled [1m[32msuccessfully[39m[22m (005fc04082002d9b)
+[32mNo errors found.[39m
+
+ [31m>[39m [0m[7m[1m[31m NX [39m[22m[27m[0m  [31mAn error occured while creating pruned lockfile[39m
+
+   Please open an issue at `https://github.com/nrwl/nx/issues/new?template=1-bug.yml` and provide a reproduction.
+   To prevent the build from breaking we are returning the root lock file.
+   If you run `npm install --package-lock-only` in your output folder it will regenerate the correct pruned lockfile.
+   
+Original error: Target project does not exist: npm:react-is@18.3.1
+
+
+   Error: Target project does not exist: npm:react-is@18.3.1
+    at validateCommonDependencyRules (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:323:15)
+    at validateDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:313:5)
+    at ProjectGraphBuilder.addDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:190:9)
+    at ProjectGraphBuilder.addStaticDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:89:14)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:81:17
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:80:9
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:70:9
+    at Array.forEach (<anonymous>)
+    at addNodesAndDependencies (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:67:37)
+    at pruneProjectGraph (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:14:5)
+    at createLockFile (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/lock-file.js:133:79)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/@nx/webpack/src/plugins/generate-package-json-plugin.js:42:138
+    at fn (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/webpack/lib/Compilation.js:491:10)
+    at _next0 (eval at create (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:41:1)
+    at eval (eval at create (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:54:1)
+    at eval (eval at create (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:11:1)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/webpack/lib/Compilation.js:515:10
+    at Hook.eval [as callAsync] (eval at create (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:7:1)
+    at Hook.CALL_ASYNC_DELEGATE [as _callAsync] (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tapable/lib/Hook.js:18:14)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/webpack/lib/Compilation.js:528:46
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/@nx/webpack/node_modules/copy-webpack-plugin/dist/index.js:909:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+
+Entrypoint [1mmain[39m[22m [1m[33m[big][39m[22m 4.03 MiB (8.72 MiB) = 7 assets 34 auxiliary assets
+Entrypoint [1mstyles[39m[22m [1m[33m[big][39m[22m 734 KiB (1.15 MiB) = [1m[32mruntime.js[39m[22m 50.2 KiB [1m[32mruntime.005fc04082002d9b.hot-update.js[39m[22m 343 bytes [1m[32mstyles.css[39m[22m 273 KiB [1m[32mstyles.js[39m[22m 411 KiB 7 auxiliary assets
+chunk (runtime: runtime) [1m[32mmain.css[39m[22m, [1m[32mmain.js[39m[22m, [1m[32mmain.005fc04082002d9b.hot-update.js[39m[22m (main) 407 KiB (javascript) 392 KiB (css/mini-extract) [1m[33m[initial][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mruntime.js[39m[22m, [1m[32mruntime.005fc04082002d9b.hot-update.js[39m[22m (runtime) 33.8 KiB [1m[33m[entry][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mstyles.css[39m[22m, [1m[32mstyles.js[39m[22m (styles) 395 KiB (javascript) 273 KiB (css/mini-extract) [1m[33m[initial][39m[22m
+chunk (runtime: runtime) [1m[32mvendor.css[39m[22m, [1m[32mvendor.js[39m[22m (vendor) (id hint: vendor) 2.75 MiB (javascript) 240 KiB (css/mini-extract) [1m[33m[initial][39m[22m [1m[33msplit chunk (cache group: vendor) (name: vendor)[39m[22m
+webpack compiled [1m[32msuccessfully[39m[22m (05ba432910eca98d)
+[32mNo errors found.[39m
+
+ [31m>[39m [0m[7m[1m[31m NX [39m[22m[27m[0m  [31mAn error occured while creating pruned lockfile[39m
+
+   Please open an issue at `https://github.com/nrwl/nx/issues/new?template=1-bug.yml` and provide a reproduction.
+   To prevent the build from breaking we are returning the root lock file.
+   If you run `npm install --package-lock-only` in your output folder it will regenerate the correct pruned lockfile.
+   
+Original error: Target project does not exist: npm:react-is@18.3.1
+
+
+   Error: Target project does not exist: npm:react-is@18.3.1
+    at validateCommonDependencyRules (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:323:15)
+    at validateDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:313:5)
+    at ProjectGraphBuilder.addDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:190:9)
+    at ProjectGraphBuilder.addStaticDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:89:14)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:81:17
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:80:9
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:70:9
+    at Array.forEach (<anonymous>)
+    at addNodesAndDependencies (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:67:37)
+    at pruneProjectGraph (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:14:5)
+    at createLockFile (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/lock-file.js:133:79)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/@nx/webpack/src/plugins/generate-package-json-plugin.js:42:138
+    at fn (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/webpack/lib/Compilation.js:491:10)
+    at _next0 (eval at create (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:41:1)
+    at eval (eval at create (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:54:1)
+    at eval (eval at create (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:11:1)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/webpack/lib/Compilation.js:515:10
+    at Hook.eval [as callAsync] (eval at create (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:7:1)
+    at Hook.CALL_ASYNC_DELEGATE [as _callAsync] (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tapable/lib/Hook.js:18:14)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/webpack/lib/Compilation.js:528:46
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/@nx/webpack/node_modules/copy-webpack-plugin/dist/index.js:909:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+
+Entrypoint [1mmain[39m[22m [1m[33m[big][39m[22m 4.03 MiB (8.72 MiB) = 7 assets 34 auxiliary assets
+Entrypoint [1mstyles[39m[22m [1m[33m[big][39m[22m 734 KiB (1.15 MiB) = [1m[32mruntime.js[39m[22m 50.2 KiB [1m[32mruntime.05ba432910eca98d.hot-update.js[39m[22m 343 bytes [1m[32mstyles.css[39m[22m 273 KiB [1m[32mstyles.js[39m[22m 411 KiB 7 auxiliary assets
+chunk (runtime: runtime) [1m[32mmain.css[39m[22m, [1m[32mmain.js[39m[22m, [1m[32mmain.05ba432910eca98d.hot-update.js[39m[22m (main) 407 KiB (javascript) 392 KiB (css/mini-extract) [1m[33m[initial][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mruntime.js[39m[22m, [1m[32mruntime.05ba432910eca98d.hot-update.js[39m[22m (runtime) 33.8 KiB [1m[33m[entry][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mstyles.css[39m[22m, [1m[32mstyles.js[39m[22m (styles) 395 KiB (javascript) 273 KiB (css/mini-extract) [1m[33m[initial][39m[22m
+chunk (runtime: runtime) [1m[32mvendor.css[39m[22m, [1m[32mvendor.js[39m[22m (vendor) (id hint: vendor) 2.75 MiB (javascript) 240 KiB (css/mini-extract) [1m[33m[initial][39m[22m [1m[33msplit chunk (cache group: vendor) (name: vendor)[39m[22m
+webpack compiled [1m[32msuccessfully[39m[22m (65b1a288185631f6)
+[32mNo errors found.[39m
+
+ [31m>[39m [0m[7m[1m[31m NX [39m[22m[27m[0m  [31mAn error occured while creating pruned lockfile[39m
+
+   Please open an issue at `https://github.com/nrwl/nx/issues/new?template=1-bug.yml` and provide a reproduction.
+   To prevent the build from breaking we are returning the root lock file.
+   If you run `npm install --package-lock-only` in your output folder it will regenerate the correct pruned lockfile.
+   
+Original error: Target project does not exist: npm:react-is@18.3.1
+
+
+   Error: Target project does not exist: npm:react-is@18.3.1
+    at validateCommonDependencyRules (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:323:15)
+    at validateDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:313:5)
+    at ProjectGraphBuilder.addDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:190:9)
+    at ProjectGraphBuilder.addStaticDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:89:14)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:81:17
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:80:9
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:70:9
+    at Array.forEach (<anonymous>)
+    at addNodesAndDependencies (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:67:37)
+    at pruneProjectGraph (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:14:5)
+    at createLockFile (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/lock-file.js:133:79)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/@nx/webpack/src/plugins/generate-package-json-plugin.js:42:138
+    at fn (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/webpack/lib/Compilation.js:491:10)
+    at _next0 (eval at create (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:41:1)
+    at eval (eval at create (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:54:1)
+    at eval (eval at create (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:11:1)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/webpack/lib/Compilation.js:515:10
+    at Hook.eval [as callAsync] (eval at create (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:7:1)
+    at Hook.CALL_ASYNC_DELEGATE [as _callAsync] (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tapable/lib/Hook.js:18:14)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/webpack/lib/Compilation.js:528:46
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/@nx/webpack/node_modules/copy-webpack-plugin/dist/index.js:909:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+
+Entrypoint [1mmain[39m[22m [1m[33m[big][39m[22m 4.02 MiB (8.72 MiB) = 7 assets 34 auxiliary assets
+Entrypoint [1mstyles[39m[22m [1m[33m[big][39m[22m 735 KiB (1.15 MiB) = [1m[32mruntime.js[39m[22m 50.2 KiB [1m[32mruntime.65b1a288185631f6.hot-update.js[39m[22m 343 bytes [1m[32mstyles.css[39m[22m 273 KiB [1m[32mstyles.js[39m[22m 411 KiB [1m[32mstyles.65b1a288185631f6.hot-update.js[39m[22m 514 bytes 8 auxiliary assets
+chunk (runtime: runtime) [1m[32mmain.css[39m[22m, [1m[32mmain.js[39m[22m, [1m[32mmain.65b1a288185631f6.hot-update.js[39m[22m (main) 407 KiB (javascript) 392 KiB (css/mini-extract) [1m[33m[initial][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mruntime.js[39m[22m, [1m[32mruntime.65b1a288185631f6.hot-update.js[39m[22m (runtime) 33.8 KiB [1m[33m[entry][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mstyles.css[39m[22m, [1m[32mstyles.js[39m[22m, [1m[32mstyles.65b1a288185631f6.hot-update.js[39m[22m (styles) 395 KiB (javascript) 273 KiB (css/mini-extract) [1m[33m[initial][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mvendor.css[39m[22m, [1m[32mvendor.js[39m[22m (vendor) (id hint: vendor) 2.75 MiB (javascript) 240 KiB (css/mini-extract) [1m[33m[initial][39m[22m [1m[33msplit chunk (cache group: vendor) (name: vendor)[39m[22m
+webpack compiled [1m[32msuccessfully[39m[22m (8fe2782e0ed59b49)
+[32mNo errors found.[39m
+
+ [31m>[39m [0m[7m[1m[31m NX [39m[22m[27m[0m  [31mAn error occured while creating pruned lockfile[39m
+
+   Please open an issue at `https://github.com/nrwl/nx/issues/new?template=1-bug.yml` and provide a reproduction.
+   To prevent the build from breaking we are returning the root lock file.
+   If you run `npm install --package-lock-only` in your output folder it will regenerate the correct pruned lockfile.
+   
+Original error: Target project does not exist: npm:react-is@18.3.1
+
+
+   Error: Target project does not exist: npm:react-is@18.3.1
+    at validateCommonDependencyRules (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:323:15)
+    at validateDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:313:5)
+    at ProjectGraphBuilder.addDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:190:9)
+    at ProjectGraphBuilder.addStaticDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:89:14)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:81:17
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:80:9
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:70:9
+    at Array.forEach (<anonymous>)
+    at addNodesAndDependencies (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:67:37)
+    at pruneProjectGraph (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:14:5)
+    at createLockFile (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/lock-file.js:133:79)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/@nx/webpack/src/plugins/generate-package-json-plugin.js:42:138
+    at fn (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/webpack/lib/Compilation.js:491:10)
+    at _next0 (eval at create (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:41:1)
+    at eval (eval at create (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:54:1)
+    at eval (eval at create (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:11:1)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/webpack/lib/Compilation.js:515:10
+    at Hook.eval [as callAsync] (eval at create (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:7:1)
+    at Hook.CALL_ASYNC_DELEGATE [as _callAsync] (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tapable/lib/Hook.js:18:14)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/webpack/lib/Compilation.js:528:46
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/@nx/webpack/node_modules/copy-webpack-plugin/dist/index.js:909:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+
+Entrypoint [1mmain[39m[22m [1m[33m[big][39m[22m 4.03 MiB (8.72 MiB) = 7 assets 34 auxiliary assets
+Entrypoint [1mstyles[39m[22m [1m[33m[big][39m[22m 735 KiB (1.15 MiB) = [1m[32mruntime.js[39m[22m 50.2 KiB [1m[32mruntime.8fe2782e0ed59b49.hot-update.js[39m[22m 343 bytes [1m[32mstyles.css[39m[22m 273 KiB [1m[32mstyles.js[39m[22m 411 KiB 7 auxiliary assets
+chunk (runtime: runtime) [1m[32mmain.css[39m[22m, [1m[32mmain.js[39m[22m, [1m[32mmain.8fe2782e0ed59b49.hot-update.js[39m[22m (main) 407 KiB (javascript) 392 KiB (css/mini-extract) [1m[33m[initial][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mruntime.js[39m[22m, [1m[32mruntime.8fe2782e0ed59b49.hot-update.js[39m[22m (runtime) 33.8 KiB [1m[33m[entry][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mstyles.css[39m[22m, [1m[32mstyles.js[39m[22m (styles) 395 KiB (javascript) 273 KiB (css/mini-extract) [1m[33m[initial][39m[22m
+chunk (runtime: runtime) [1m[32mvendor.css[39m[22m, [1m[32mvendor.js[39m[22m (vendor) (id hint: vendor) 2.75 MiB (javascript) 240 KiB (css/mini-extract) [1m[33m[initial][39m[22m [1m[33msplit chunk (cache group: vendor) (name: vendor)[39m[22m
+webpack compiled [1m[32msuccessfully[39m[22m (aed40079a5e27799)
+[32mNo errors found.[39m
+
+ [31m>[39m [0m[7m[1m[31m NX [39m[22m[27m[0m  [31mAn error occured while creating pruned lockfile[39m
+
+   Please open an issue at `https://github.com/nrwl/nx/issues/new?template=1-bug.yml` and provide a reproduction.
+   To prevent the build from breaking we are returning the root lock file.
+   If you run `npm install --package-lock-only` in your output folder it will regenerate the correct pruned lockfile.
+   
+Original error: Target project does not exist: npm:react-is@18.3.1
+
+
+   Error: Target project does not exist: npm:react-is@18.3.1
+    at validateCommonDependencyRules (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:323:15)
+    at validateDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:313:5)
+    at ProjectGraphBuilder.addDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:190:9)
+    at ProjectGraphBuilder.addStaticDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:89:14)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:81:17
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:80:9
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:70:9
+    at Array.forEach (<anonymous>)
+    at addNodesAndDependencies (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:67:37)
+    at pruneProjectGraph (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:14:5)
+    at createLockFile (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/lock-file.js:133:79)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/@nx/webpack/src/plugins/generate-package-json-plugin.js:42:138
+    at fn (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/webpack/lib/Compilation.js:491:10)
+    at _next0 (eval at create (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:41:1)
+    at eval (eval at create (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:54:1)
+    at eval (eval at create (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:11:1)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/webpack/lib/Compilation.js:515:10
+    at Hook.eval [as callAsync] (eval at create (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:7:1)
+    at Hook.CALL_ASYNC_DELEGATE [as _callAsync] (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tapable/lib/Hook.js:18:14)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/webpack/lib/Compilation.js:528:46
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/@nx/webpack/node_modules/copy-webpack-plugin/dist/index.js:909:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+
+Entrypoint [1mmain[39m[22m [1m[33m[big][39m[22m 4.04 MiB (8.73 MiB) = 7 assets 34 auxiliary assets
+Entrypoint [1mstyles[39m[22m [1m[33m[big][39m[22m 735 KiB (1.15 MiB) = [1m[32mruntime.js[39m[22m 50.2 KiB [1m[32mruntime.aed40079a5e27799.hot-update.js[39m[22m 343 bytes [1m[32mstyles.css[39m[22m 273 KiB [1m[32mstyles.js[39m[22m 411 KiB 7 auxiliary assets
+chunk (runtime: runtime) [1m[32mmain.css[39m[22m, [1m[32mmain.js[39m[22m, [1m[32mmain.aed40079a5e27799.hot-update.js[39m[22m (main) 409 KiB (javascript) 392 KiB (css/mini-extract) [1m[33m[initial][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mruntime.js[39m[22m, [1m[32mruntime.aed40079a5e27799.hot-update.js[39m[22m (runtime) 33.8 KiB [1m[33m[entry][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mstyles.css[39m[22m, [1m[32mstyles.js[39m[22m (styles) 395 KiB (javascript) 273 KiB (css/mini-extract) [1m[33m[initial][39m[22m
+chunk (runtime: runtime) [1m[32mvendor.css[39m[22m, [1m[32mvendor.js[39m[22m (vendor) (id hint: vendor) 2.75 MiB (javascript) 240 KiB (css/mini-extract) [1m[33m[initial][39m[22m [1m[33msplit chunk (cache group: vendor) (name: vendor)[39m[22m
+webpack compiled [1m[32msuccessfully[39m[22m (6e2bc9b6c4dddbc5)
+[36mType-checking in progress...[39m
+[32mNo errors found.[39m
+
+ [31m>[39m [0m[7m[1m[31m NX [39m[22m[27m[0m  [31mAn error occured while creating pruned lockfile[39m
+
+   Please open an issue at `https://github.com/nrwl/nx/issues/new?template=1-bug.yml` and provide a reproduction.
+   To prevent the build from breaking we are returning the root lock file.
+   If you run `npm install --package-lock-only` in your output folder it will regenerate the correct pruned lockfile.
+   
+Original error: Target project does not exist: npm:react-is@18.3.1
+
+
+   Error: Target project does not exist: npm:react-is@18.3.1
+    at validateCommonDependencyRules (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:323:15)
+    at validateDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:313:5)
+    at ProjectGraphBuilder.addDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:190:9)
+    at ProjectGraphBuilder.addStaticDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:89:14)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:81:17
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:80:9
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:70:9
+    at Array.forEach (<anonymous>)
+    at addNodesAndDependencies (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:67:37)
+    at pruneProjectGraph (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:14:5)
+    at createLockFile (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/lock-file.js:133:79)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/@nx/webpack/src/plugins/generate-package-json-plugin.js:42:138
+    at fn (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/webpack/lib/Compilation.js:491:10)
+    at _next0 (eval at create (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:41:1)
+    at eval (eval at create (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:54:1)
+    at eval (eval at create (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:11:1)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/webpack/lib/Compilation.js:515:10
+    at Hook.eval [as callAsync] (eval at create (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:7:1)
+    at Hook.CALL_ASYNC_DELEGATE [as _callAsync] (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tapable/lib/Hook.js:18:14)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/webpack/lib/Compilation.js:528:46
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/@nx/webpack/node_modules/copy-webpack-plugin/dist/index.js:909:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+
+Entrypoint [1mmain[39m[22m [1m[33m[big][39m[22m 4.02 MiB (8.72 MiB) = [1m[32mruntime.js[39m[22m 50.2 KiB [1m[32mvendor.css[39m[22m 240 KiB [1m[32mvendor.js[39m[22m 2.79 MiB [1m[32mmain.css[39m[22m 392 KiB [1m[32mmain.js[39m[22m 574 KiB 32 auxiliary assets
+Entrypoint [1mstyles[39m[22m [1m[33m[big][39m[22m 734 KiB (1.15 MiB) = [1m[32mruntime.js[39m[22m 50.2 KiB [1m[32mstyles.css[39m[22m 273 KiB [1m[32mstyles.js[39m[22m 411 KiB 6 auxiliary assets
+chunk (runtime: runtime) [1m[32mmain.css[39m[22m, [1m[32mmain.js[39m[22m (main) 409 KiB (javascript) 392 KiB (css/mini-extract) [1m[33m[initial][39m[22m
+chunk (runtime: runtime) [1m[32mruntime.js[39m[22m (runtime) 33.8 KiB [1m[33m[entry][39m[22m
+chunk (runtime: runtime) [1m[32mstyles.css[39m[22m, [1m[32mstyles.js[39m[22m (styles) 395 KiB (javascript) 273 KiB (css/mini-extract) [1m[33m[initial][39m[22m
+chunk (runtime: runtime) [1m[32mvendor.css[39m[22m, [1m[32mvendor.js[39m[22m (vendor) (id hint: vendor) 2.75 MiB (javascript) 240 KiB (css/mini-extract) [1m[33m[initial][39m[22m [1m[33msplit chunk (cache group: vendor) (name: vendor)[39m[22m
+webpack compiled [1m[32msuccessfully[39m[22m (6e2bc9b6c4dddbc5)
+[36mType-checking in progress...[39m
+[32mNo errors found.[39m
+
+ [31m>[39m [0m[7m[1m[31m NX [39m[22m[27m[0m  [31mAn error occured while creating pruned lockfile[39m
+
+   Please open an issue at `https://github.com/nrwl/nx/issues/new?template=1-bug.yml` and provide a reproduction.
+   To prevent the build from breaking we are returning the root lock file.
+   If you run `npm install --package-lock-only` in your output folder it will regenerate the correct pruned lockfile.
+   
+Original error: Target project does not exist: npm:react-is@18.3.1
+
+
+   Error: Target project does not exist: npm:react-is@18.3.1
+    at validateCommonDependencyRules (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:323:15)
+    at validateDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:313:5)
+    at ProjectGraphBuilder.addDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:190:9)
+    at ProjectGraphBuilder.addStaticDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:89:14)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:81:17
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:80:9
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:70:9
+    at Array.forEach (<anonymous>)
+    at addNodesAndDependencies (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:67:37)
+    at pruneProjectGraph (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:14:5)
+    at createLockFile (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/lock-file.js:133:79)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/@nx/webpack/src/plugins/generate-package-json-plugin.js:42:138
+    at fn (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/webpack/lib/Compilation.js:491:10)
+    at _next0 (eval at create (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:41:1)
+    at eval (eval at create (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:54:1)
+    at eval (eval at create (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:11:1)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/webpack/lib/Compilation.js:515:10
+    at Hook.eval [as callAsync] (eval at create (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:7:1)
+    at Hook.CALL_ASYNC_DELEGATE [as _callAsync] (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tapable/lib/Hook.js:18:14)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/webpack/lib/Compilation.js:528:46
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/@nx/webpack/node_modules/copy-webpack-plugin/dist/index.js:909:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+
+Entrypoint [1mmain[39m[22m [1m[33m[big][39m[22m 4.02 MiB (8.72 MiB) = [1m[32mruntime.js[39m[22m 50.2 KiB [1m[32mvendor.css[39m[22m 240 KiB [1m[32mvendor.js[39m[22m 2.79 MiB [1m[32mmain.css[39m[22m 392 KiB [1m[32mmain.js[39m[22m 574 KiB 32 auxiliary assets
+Entrypoint [1mstyles[39m[22m [1m[33m[big][39m[22m 734 KiB (1.15 MiB) = [1m[32mruntime.js[39m[22m 50.2 KiB [1m[32mstyles.css[39m[22m 273 KiB [1m[32mstyles.js[39m[22m 411 KiB 6 auxiliary assets
+chunk (runtime: runtime) [1m[32mmain.css[39m[22m, [1m[32mmain.js[39m[22m (main) 409 KiB (javascript) 392 KiB (css/mini-extract) [1m[33m[initial][39m[22m
+chunk (runtime: runtime) [1m[32mruntime.js[39m[22m (runtime) 33.8 KiB [1m[33m[entry][39m[22m
+chunk (runtime: runtime) [1m[32mstyles.css[39m[22m, [1m[32mstyles.js[39m[22m (styles) 395 KiB (javascript) 273 KiB (css/mini-extract) [1m[33m[initial][39m[22m
+chunk (runtime: runtime) [1m[32mvendor.css[39m[22m, [1m[32mvendor.js[39m[22m (vendor) (id hint: vendor) 2.75 MiB (javascript) 240 KiB (css/mini-extract) [1m[33m[initial][39m[22m [1m[33msplit chunk (cache group: vendor) (name: vendor)[39m[22m
+webpack compiled [1m[32msuccessfully[39m[22m (6e2bc9b6c4dddbc5)
+[32mNo errors found.[39m
+
+ [31m>[39m [0m[7m[1m[31m NX [39m[22m[27m[0m  [31mAn error occured while creating pruned lockfile[39m
+
+   Please open an issue at `https://github.com/nrwl/nx/issues/new?template=1-bug.yml` and provide a reproduction.
+   To prevent the build from breaking we are returning the root lock file.
+   If you run `npm install --package-lock-only` in your output folder it will regenerate the correct pruned lockfile.
+   
+Original error: Target project does not exist: npm:react-is@18.3.1
+
+
+   Error: Target project does not exist: npm:react-is@18.3.1
+    at validateCommonDependencyRules (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:323:15)
+    at validateDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:313:5)
+    at ProjectGraphBuilder.addDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:190:9)
+    at ProjectGraphBuilder.addStaticDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:89:14)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:81:17
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:80:9
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:70:9
+    at Array.forEach (<anonymous>)
+    at addNodesAndDependencies (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:67:37)
+    at pruneProjectGraph (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:14:5)
+    at createLockFile (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/lock-file.js:133:79)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/@nx/webpack/src/plugins/generate-package-json-plugin.js:42:138
+    at fn (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/webpack/lib/Compilation.js:491:10)
+    at _next0 (eval at create (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:41:1)
+    at eval (eval at create (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:54:1)
+    at eval (eval at create (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:11:1)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/webpack/lib/Compilation.js:515:10
+    at Hook.eval [as callAsync] (eval at create (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:7:1)
+    at Hook.CALL_ASYNC_DELEGATE [as _callAsync] (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tapable/lib/Hook.js:18:14)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/webpack/lib/Compilation.js:528:46
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/@nx/webpack/node_modules/copy-webpack-plugin/dist/index.js:909:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+
+Entrypoint [1mmain[39m[22m [1m[33m[big][39m[22m 4.03 MiB (8.73 MiB) = 7 assets 34 auxiliary assets
+Entrypoint [1mstyles[39m[22m [1m[33m[big][39m[22m 735 KiB (1.15 MiB) = [1m[32mruntime.js[39m[22m 50.2 KiB [1m[32mruntime.6e2bc9b6c4dddbc5.hot-update.js[39m[22m 343 bytes [1m[32mstyles.css[39m[22m 273 KiB [1m[32mstyles.js[39m[22m 411 KiB 7 auxiliary assets
+chunk (runtime: runtime) [1m[32mmain.css[39m[22m, [1m[32mmain.js[39m[22m, [1m[32mmain.6e2bc9b6c4dddbc5.hot-update.js[39m[22m (main) 410 KiB (javascript) 392 KiB (css/mini-extract) [1m[33m[initial][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mruntime.js[39m[22m, [1m[32mruntime.6e2bc9b6c4dddbc5.hot-update.js[39m[22m (runtime) 33.8 KiB [1m[33m[entry][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mstyles.css[39m[22m, [1m[32mstyles.js[39m[22m (styles) 395 KiB (javascript) 273 KiB (css/mini-extract) [1m[33m[initial][39m[22m
+chunk (runtime: runtime) [1m[32mvendor.css[39m[22m, [1m[32mvendor.js[39m[22m (vendor) (id hint: vendor) 2.75 MiB (javascript) 240 KiB (css/mini-extract) [1m[33m[initial][39m[22m [1m[33msplit chunk (cache group: vendor) (name: vendor)[39m[22m
+webpack compiled [1m[32msuccessfully[39m[22m (fef82a99d5e02e1f)
+[31m[1mERROR[22m[39m in [1m./apps/frontend/src/app/components/categories/categories-widget.component.tsx[22m:[32m[1m101:52[22m[39m
+[90mTS2304: [39mCannot find name 'product'.
+  [0m [90m  99 |[39m           isOpen[33m=[39m{modalIsOpen}
+   [90m 100 |[39m           onCloseHandler[33m=[39m{onCloseModalHandler}
+  [31m[1m>[22m[39m[90m 101 |[39m           children[33m=[39m{[33m<[39m[33mProductEditComponent[39m product[33m=[39m{product} onCloseHandler[33m=[39m{onCloseModalHandler}[33m/[39m[33m>[39m}
+   [90m     |[39m                                                    [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+   [90m 102 |[39m         [33m/[39m[33m>[39m
+   [90m 103 |[39m         [33m<[39m[33mModalComponent[39m
+   [90m 104 |[39m           isOpen[33m=[39m{modalDeleteIsOpen}[0m
+
+Found [31m[1m1 error[22m[39m in 146 ms.
+
+ [31m>[39m [0m[7m[1m[31m NX [39m[22m[27m[0m  [31mAn error occured while creating pruned lockfile[39m
+
+   Please open an issue at `https://github.com/nrwl/nx/issues/new?template=1-bug.yml` and provide a reproduction.
+   To prevent the build from breaking we are returning the root lock file.
+   If you run `npm install --package-lock-only` in your output folder it will regenerate the correct pruned lockfile.
+   
+Original error: Target project does not exist: npm:react-is@18.3.1
+
+
+   Error: Target project does not exist: npm:react-is@18.3.1
+    at validateCommonDependencyRules (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:323:15)
+    at validateDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:313:5)
+    at ProjectGraphBuilder.addDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:190:9)
+    at ProjectGraphBuilder.addStaticDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:89:14)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:81:17
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:80:9
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:70:9
+    at Array.forEach (<anonymous>)
+    at addNodesAndDependencies (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:67:37)
+    at pruneProjectGraph (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:14:5)
+    at createLockFile (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/lock-file.js:133:79)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/@nx/webpack/src/plugins/generate-package-json-plugin.js:42:138
+    at fn (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/webpack/lib/Compilation.js:491:10)
+    at _next0 (eval at create (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:41:1)
+    at eval (eval at create (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:54:1)
+    at eval (eval at create (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:11:1)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/webpack/lib/Compilation.js:515:10
+    at Hook.eval [as callAsync] (eval at create (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:7:1)
+    at Hook.CALL_ASYNC_DELEGATE [as _callAsync] (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tapable/lib/Hook.js:18:14)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/webpack/lib/Compilation.js:528:46
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/@nx/webpack/node_modules/copy-webpack-plugin/dist/index.js:909:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+
+Entrypoint [1mmain[39m[22m [1m[33m[big][39m[22m 4.04 MiB (8.73 MiB) = 7 assets 34 auxiliary assets
+Entrypoint [1mstyles[39m[22m [1m[33m[big][39m[22m 735 KiB (1.15 MiB) = [1m[32mruntime.js[39m[22m 50.2 KiB [1m[32mruntime.fef82a99d5e02e1f.hot-update.js[39m[22m 343 bytes [1m[32mstyles.css[39m[22m 273 KiB [1m[32mstyles.js[39m[22m 411 KiB 7 auxiliary assets
+chunk (runtime: runtime) [1m[32mmain.css[39m[22m, [1m[32mmain.js[39m[22m, [1m[32mmain.fef82a99d5e02e1f.hot-update.js[39m[22m (main) 413 KiB (javascript) 392 KiB (css/mini-extract) [1m[33m[initial][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mruntime.js[39m[22m, [1m[32mruntime.fef82a99d5e02e1f.hot-update.js[39m[22m (runtime) 33.8 KiB [1m[33m[entry][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mstyles.css[39m[22m, [1m[32mstyles.js[39m[22m (styles) 395 KiB (javascript) 273 KiB (css/mini-extract) [1m[33m[initial][39m[22m
+chunk (runtime: runtime) [1m[32mvendor.css[39m[22m, [1m[32mvendor.js[39m[22m (vendor) (id hint: vendor) 2.75 MiB (javascript) 240 KiB (css/mini-extract) [1m[33m[initial][39m[22m [1m[33msplit chunk (cache group: vendor) (name: vendor)[39m[22m
+webpack compiled [1m[32msuccessfully[39m[22m (dcc5530b5410f3f8)
+[32mNo errors found.[39m
+
+ [31m>[39m [0m[7m[1m[31m NX [39m[22m[27m[0m  [31mAn error occured while creating pruned lockfile[39m
+
+   Please open an issue at `https://github.com/nrwl/nx/issues/new?template=1-bug.yml` and provide a reproduction.
+   To prevent the build from breaking we are returning the root lock file.
+   If you run `npm install --package-lock-only` in your output folder it will regenerate the correct pruned lockfile.
+   
+Original error: Target project does not exist: npm:react-is@18.3.1
+
+
+   Error: Target project does not exist: npm:react-is@18.3.1
+    at validateCommonDependencyRules (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:323:15)
+    at validateDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:313:5)
+    at ProjectGraphBuilder.addDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:190:9)
+    at ProjectGraphBuilder.addStaticDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:89:14)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:81:17
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:80:9
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:70:9
+    at Array.forEach (<anonymous>)
+    at addNodesAndDependencies (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:67:37)
+    at pruneProjectGraph (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:14:5)
+    at createLockFile (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/lock-file.js:133:79)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/@nx/webpack/src/plugins/generate-package-json-plugin.js:42:138
+    at fn (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/webpack/lib/Compilation.js:491:10)
+    at _next0 (eval at create (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:41:1)
+    at eval (eval at create (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:54:1)
+    at eval (eval at create (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:11:1)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/webpack/lib/Compilation.js:515:10
+    at Hook.eval [as callAsync] (eval at create (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:7:1)
+    at Hook.CALL_ASYNC_DELEGATE [as _callAsync] (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tapable/lib/Hook.js:18:14)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/webpack/lib/Compilation.js:528:46
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/@nx/webpack/node_modules/copy-webpack-plugin/dist/index.js:909:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+
+Entrypoint [1mmain[39m[22m [1m[33m[big][39m[22m 4.04 MiB (8.73 MiB) = 7 assets 34 auxiliary assets
+Entrypoint [1mstyles[39m[22m [1m[33m[big][39m[22m 735 KiB (1.15 MiB) = [1m[32mruntime.js[39m[22m 50.2 KiB [1m[32mruntime.dcc5530b5410f3f8.hot-update.js[39m[22m 343 bytes [1m[32mstyles.css[39m[22m 273 KiB [1m[32mstyles.js[39m[22m 411 KiB 7 auxiliary assets
+chunk (runtime: runtime) [1m[32mmain.css[39m[22m, [1m[32mmain.js[39m[22m, [1m[32mmain.dcc5530b5410f3f8.hot-update.js[39m[22m (main) 413 KiB (javascript) 392 KiB (css/mini-extract) [1m[33m[initial][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mruntime.js[39m[22m, [1m[32mruntime.dcc5530b5410f3f8.hot-update.js[39m[22m (runtime) 33.8 KiB [1m[33m[entry][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mstyles.css[39m[22m, [1m[32mstyles.js[39m[22m (styles) 395 KiB (javascript) 273 KiB (css/mini-extract) [1m[33m[initial][39m[22m
+chunk (runtime: runtime) [1m[32mvendor.css[39m[22m, [1m[32mvendor.js[39m[22m (vendor) (id hint: vendor) 2.75 MiB (javascript) 240 KiB (css/mini-extract) [1m[33m[initial][39m[22m [1m[33msplit chunk (cache group: vendor) (name: vendor)[39m[22m
+webpack compiled [1m[32msuccessfully[39m[22m (7d585a588d7913db)
+[32mNo errors found.[39m
+
+ [31m>[39m [0m[7m[1m[31m NX [39m[22m[27m[0m  [31mAn error occured while creating pruned lockfile[39m
+
+   Please open an issue at `https://github.com/nrwl/nx/issues/new?template=1-bug.yml` and provide a reproduction.
+   To prevent the build from breaking we are returning the root lock file.
+   If you run `npm install --package-lock-only` in your output folder it will regenerate the correct pruned lockfile.
+   
+Original error: Target project does not exist: npm:react-is@18.3.1
+
+
+   Error: Target project does not exist: npm:react-is@18.3.1
+    at validateCommonDependencyRules (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:323:15)
+    at validateDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:313:5)
+    at ProjectGraphBuilder.addDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:190:9)
+    at ProjectGraphBuilder.addStaticDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:89:14)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:81:17
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:80:9
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:70:9
+    at Array.forEach (<anonymous>)
+    at addNodesAndDependencies (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:67:37)
+    at pruneProjectGraph (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:14:5)
+    at createLockFile (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/lock-file.js:133:79)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/@nx/webpack/src/plugins/generate-package-json-plugin.js:42:138
+    at fn (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/webpack/lib/Compilation.js:491:10)
+    at _next0 (eval at create (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:41:1)
+    at eval (eval at create (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:54:1)
+    at eval (eval at create (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:11:1)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/webpack/lib/Compilation.js:515:10
+    at Hook.eval [as callAsync] (eval at create (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:7:1)
+    at Hook.CALL_ASYNC_DELEGATE [as _callAsync] (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tapable/lib/Hook.js:18:14)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/webpack/lib/Compilation.js:528:46
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/@nx/webpack/node_modules/copy-webpack-plugin/dist/index.js:909:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+
+Entrypoint [1mmain[39m[22m [1m[33m[big][39m[22m 4.03 MiB (8.72 MiB) = [1m[32mruntime.js[39m[22m 50.2 KiB [1m[32mvendor.css[39m[22m 240 KiB [1m[32mvendor.js[39m[22m 2.79 MiB [1m[32mmain.css[39m[22m 392 KiB [1m[32mmain.js[39m[22m 580 KiB 32 auxiliary assets
+Entrypoint [1mstyles[39m[22m [1m[33m[big][39m[22m 734 KiB (1.15 MiB) = [1m[32mruntime.js[39m[22m 50.2 KiB [1m[32mstyles.css[39m[22m 273 KiB [1m[32mstyles.js[39m[22m 411 KiB 6 auxiliary assets
+chunk (runtime: runtime) [1m[32mmain.css[39m[22m, [1m[32mmain.js[39m[22m (main) 413 KiB (javascript) 392 KiB (css/mini-extract) [1m[33m[initial][39m[22m
+chunk (runtime: runtime) [1m[32mruntime.js[39m[22m (runtime) 33.8 KiB [1m[33m[entry][39m[22m
+chunk (runtime: runtime) [1m[32mstyles.css[39m[22m, [1m[32mstyles.js[39m[22m (styles) 395 KiB (javascript) 273 KiB (css/mini-extract) [1m[33m[initial][39m[22m
+chunk (runtime: runtime) [1m[32mvendor.css[39m[22m, [1m[32mvendor.js[39m[22m (vendor) (id hint: vendor) 2.75 MiB (javascript) 240 KiB (css/mini-extract) [1m[33m[initial][39m[22m [1m[33msplit chunk (cache group: vendor) (name: vendor)[39m[22m
+webpack compiled [1m[32msuccessfully[39m[22m (7d585a588d7913db)
+[36mType-checking in progress...[39m
+[32mNo errors found.[39m
+
+ [31m>[39m [0m[7m[1m[31m NX [39m[22m[27m[0m  [31mAn error occured while creating pruned lockfile[39m
+
+   Please open an issue at `https://github.com/nrwl/nx/issues/new?template=1-bug.yml` and provide a reproduction.
+   To prevent the build from breaking we are returning the root lock file.
+   If you run `npm install --package-lock-only` in your output folder it will regenerate the correct pruned lockfile.
+   
+Original error: Target project does not exist: npm:react-is@18.3.1
+
+
+   Error: Target project does not exist: npm:react-is@18.3.1
+    at validateCommonDependencyRules (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:323:15)
+    at validateDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:313:5)
+    at ProjectGraphBuilder.addDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:190:9)
+    at ProjectGraphBuilder.addStaticDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:89:14)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:81:17
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:80:9
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:70:9
+    at Array.forEach (<anonymous>)
+    at addNodesAndDependencies (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:67:37)
+    at pruneProjectGraph (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:14:5)
+    at createLockFile (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/lock-file.js:133:79)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/@nx/webpack/src/plugins/generate-package-json-plugin.js:42:138
+    at fn (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/webpack/lib/Compilation.js:491:10)
+    at _next0 (eval at create (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:41:1)
+    at eval (eval at create (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:54:1)
+    at eval (eval at create (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:11:1)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/webpack/lib/Compilation.js:515:10
+    at Hook.eval [as callAsync] (eval at create (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:7:1)
+    at Hook.CALL_ASYNC_DELEGATE [as _callAsync] (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tapable/lib/Hook.js:18:14)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/webpack/lib/Compilation.js:528:46
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/@nx/webpack/node_modules/copy-webpack-plugin/dist/index.js:909:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+
+Entrypoint [1mmain[39m[22m [1m[33m[big][39m[22m 4.03 MiB (8.73 MiB) = 7 assets 34 auxiliary assets
+Entrypoint [1mstyles[39m[22m [1m[33m[big][39m[22m 735 KiB (1.15 MiB) = [1m[32mruntime.js[39m[22m 50.2 KiB [1m[32mruntime.7d585a588d7913db.hot-update.js[39m[22m 343 bytes [1m[32mstyles.css[39m[22m 273 KiB [1m[32mstyles.js[39m[22m 411 KiB 7 auxiliary assets
+chunk (runtime: runtime) [1m[32mmain.css[39m[22m, [1m[32mmain.js[39m[22m, [1m[32mmain.7d585a588d7913db.hot-update.js[39m[22m (main) 413 KiB (javascript) 392 KiB (css/mini-extract) [1m[33m[initial][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mruntime.js[39m[22m, [1m[32mruntime.7d585a588d7913db.hot-update.js[39m[22m (runtime) 33.8 KiB [1m[33m[entry][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mstyles.css[39m[22m, [1m[32mstyles.js[39m[22m (styles) 395 KiB (javascript) 273 KiB (css/mini-extract) [1m[33m[initial][39m[22m
+chunk (runtime: runtime) [1m[32mvendor.css[39m[22m, [1m[32mvendor.js[39m[22m (vendor) (id hint: vendor) 2.75 MiB (javascript) 240 KiB (css/mini-extract) [1m[33m[initial][39m[22m [1m[33msplit chunk (cache group: vendor) (name: vendor)[39m[22m
+webpack compiled [1m[32msuccessfully[39m[22m (ad12b90c458c40f3)
+[31m[1mERROR[22m[39m in [1m./apps/frontend/src/app/components/categories/categories-widget.component.tsx[22m:[32m[1m103:14[22m[39m
+[90mTS2741: [39mProperty 'categoryId' is missing in type '{ categoryTitle: string; onCloseHandler: (evt: MouseEvent<Element, MouseEvent>) => void; }' but required in type 'CategoryEditComponentProps'.
+  [0m [90m 101 |[39m           onCloseHandler[33m=[39m{onCloseModalUpdateHandler}
+   [90m 102 |[39m           children[33m=[39m{
+  [31m[1m>[22m[39m[90m 103 |[39m             [33m<[39m[33mCategoryEditComponent[39m
+   [90m     |[39m              [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+   [90m 104 |[39m               categoryTitle[33m=[39m{currentCategory[33m?[39m[33m.[39mtitle}
+   [90m 105 |[39m               onCloseHandler[33m=[39m{onCloseModalUpdateHandler}
+   [90m 106 |[39m             [33m/[39m[33m>[39m[0m
+
+Found [31m[1m1 error[22m[39m in 132 ms.
+
+ [31m>[39m [0m[7m[1m[31m NX [39m[22m[27m[0m  [31mAn error occured while creating pruned lockfile[39m
+
+   Please open an issue at `https://github.com/nrwl/nx/issues/new?template=1-bug.yml` and provide a reproduction.
+   To prevent the build from breaking we are returning the root lock file.
+   If you run `npm install --package-lock-only` in your output folder it will regenerate the correct pruned lockfile.
+   
+Original error: Target project does not exist: npm:react-is@18.3.1
+
+
+   Error: Target project does not exist: npm:react-is@18.3.1
+    at validateCommonDependencyRules (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:323:15)
+    at validateDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:313:5)
+    at ProjectGraphBuilder.addDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:190:9)
+    at ProjectGraphBuilder.addStaticDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:89:14)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:81:17
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:80:9
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:70:9
+    at Array.forEach (<anonymous>)
+    at addNodesAndDependencies (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:67:37)
+    at pruneProjectGraph (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:14:5)
+    at createLockFile (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/lock-file.js:133:79)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/@nx/webpack/src/plugins/generate-package-json-plugin.js:42:138
+    at fn (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/webpack/lib/Compilation.js:491:10)
+    at _next0 (eval at create (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:41:1)
+    at eval (eval at create (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:54:1)
+    at eval (eval at create (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:11:1)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/webpack/lib/Compilation.js:515:10
+    at Hook.eval [as callAsync] (eval at create (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:7:1)
+    at Hook.CALL_ASYNC_DELEGATE [as _callAsync] (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tapable/lib/Hook.js:18:14)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/webpack/lib/Compilation.js:528:46
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/@nx/webpack/node_modules/copy-webpack-plugin/dist/index.js:909:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+
+Entrypoint [1mmain[39m[22m [1m[33m[big][39m[22m 4.04 MiB (8.73 MiB) = 7 assets 34 auxiliary assets
+Entrypoint [1mstyles[39m[22m [1m[33m[big][39m[22m 735 KiB (1.15 MiB) = [1m[32mruntime.js[39m[22m 50.2 KiB [1m[32mruntime.ad12b90c458c40f3.hot-update.js[39m[22m 343 bytes [1m[32mstyles.css[39m[22m 273 KiB [1m[32mstyles.js[39m[22m 411 KiB 7 auxiliary assets
+chunk (runtime: runtime) [1m[32mmain.css[39m[22m, [1m[32mmain.js[39m[22m, [1m[32mmain.ad12b90c458c40f3.hot-update.js[39m[22m (main) 413 KiB (javascript) 392 KiB (css/mini-extract) [1m[33m[initial][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mruntime.js[39m[22m, [1m[32mruntime.ad12b90c458c40f3.hot-update.js[39m[22m (runtime) 33.8 KiB [1m[33m[entry][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mstyles.css[39m[22m, [1m[32mstyles.js[39m[22m (styles) 395 KiB (javascript) 273 KiB (css/mini-extract) [1m[33m[initial][39m[22m
+chunk (runtime: runtime) [1m[32mvendor.css[39m[22m, [1m[32mvendor.js[39m[22m (vendor) (id hint: vendor) 2.75 MiB (javascript) 240 KiB (css/mini-extract) [1m[33m[initial][39m[22m [1m[33msplit chunk (cache group: vendor) (name: vendor)[39m[22m
+webpack compiled [1m[32msuccessfully[39m[22m (6bbbbd4d97a124bd)
+[32mNo errors found.[39m
+
+ [31m>[39m [0m[7m[1m[31m NX [39m[22m[27m[0m  [31mAn error occured while creating pruned lockfile[39m
+
+   Please open an issue at `https://github.com/nrwl/nx/issues/new?template=1-bug.yml` and provide a reproduction.
+   To prevent the build from breaking we are returning the root lock file.
+   If you run `npm install --package-lock-only` in your output folder it will regenerate the correct pruned lockfile.
+   
+Original error: Target project does not exist: npm:react-is@18.3.1
+
+
+   Error: Target project does not exist: npm:react-is@18.3.1
+    at validateCommonDependencyRules (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:323:15)
+    at validateDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:313:5)
+    at ProjectGraphBuilder.addDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:190:9)
+    at ProjectGraphBuilder.addStaticDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:89:14)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:81:17
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:80:9
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:70:9
+    at Array.forEach (<anonymous>)
+    at addNodesAndDependencies (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:67:37)
+    at pruneProjectGraph (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:14:5)
+    at createLockFile (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/lock-file.js:133:79)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/@nx/webpack/src/plugins/generate-package-json-plugin.js:42:138
+    at fn (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/webpack/lib/Compilation.js:491:10)
+    at _next0 (eval at create (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:41:1)
+    at eval (eval at create (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:54:1)
+    at eval (eval at create (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:11:1)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/webpack/lib/Compilation.js:515:10
+    at Hook.eval [as callAsync] (eval at create (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:7:1)
+    at Hook.CALL_ASYNC_DELEGATE [as _callAsync] (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tapable/lib/Hook.js:18:14)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/webpack/lib/Compilation.js:528:46
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/@nx/webpack/node_modules/copy-webpack-plugin/dist/index.js:909:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+
+Entrypoint [1mmain[39m[22m [1m[33m[big][39m[22m 4.04 MiB (8.73 MiB) = 7 assets 34 auxiliary assets
+Entrypoint [1mstyles[39m[22m [1m[33m[big][39m[22m 735 KiB (1.15 MiB) = [1m[32mruntime.js[39m[22m 50.2 KiB [1m[32mruntime.6bbbbd4d97a124bd.hot-update.js[39m[22m 343 bytes [1m[32mstyles.css[39m[22m 273 KiB [1m[32mstyles.js[39m[22m 411 KiB 7 auxiliary assets
+chunk (runtime: runtime) [1m[32mmain.css[39m[22m, [1m[32mmain.js[39m[22m, [1m[32mmain.6bbbbd4d97a124bd.hot-update.js[39m[22m (main) 413 KiB (javascript) 392 KiB (css/mini-extract) [1m[33m[initial][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mruntime.js[39m[22m, [1m[32mruntime.6bbbbd4d97a124bd.hot-update.js[39m[22m (runtime) 33.8 KiB [1m[33m[entry][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mstyles.css[39m[22m, [1m[32mstyles.js[39m[22m (styles) 395 KiB (javascript) 273 KiB (css/mini-extract) [1m[33m[initial][39m[22m
+chunk (runtime: runtime) [1m[32mvendor.css[39m[22m, [1m[32mvendor.js[39m[22m (vendor) (id hint: vendor) 2.75 MiB (javascript) 240 KiB (css/mini-extract) [1m[33m[initial][39m[22m [1m[33msplit chunk (cache group: vendor) (name: vendor)[39m[22m
+webpack compiled [1m[32msuccessfully[39m[22m (6dccafe8780075f9)
+[32mNo errors found.[39m
+
+ [31m>[39m [0m[7m[1m[31m NX [39m[22m[27m[0m  [31mAn error occured while creating pruned lockfile[39m
+
+   Please open an issue at `https://github.com/nrwl/nx/issues/new?template=1-bug.yml` and provide a reproduction.
+   To prevent the build from breaking we are returning the root lock file.
+   If you run `npm install --package-lock-only` in your output folder it will regenerate the correct pruned lockfile.
+   
+Original error: Target project does not exist: npm:react-is@18.3.1
+
+
+   Error: Target project does not exist: npm:react-is@18.3.1
+    at validateCommonDependencyRules (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:323:15)
+    at validateDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:313:5)
+    at ProjectGraphBuilder.addDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:190:9)
+    at ProjectGraphBuilder.addStaticDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:89:14)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:81:17
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:80:9
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:70:9
+    at Array.forEach (<anonymous>)
+    at addNodesAndDependencies (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:67:37)
+    at pruneProjectGraph (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:14:5)
+    at createLockFile (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/lock-file.js:133:79)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/@nx/webpack/src/plugins/generate-package-json-plugin.js:42:138
+    at fn (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/webpack/lib/Compilation.js:491:10)
+    at _next0 (eval at create (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:41:1)
+    at eval (eval at create (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:54:1)
+    at eval (eval at create (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:11:1)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/webpack/lib/Compilation.js:515:10
+    at Hook.eval [as callAsync] (eval at create (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:7:1)
+    at Hook.CALL_ASYNC_DELEGATE [as _callAsync] (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tapable/lib/Hook.js:18:14)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/webpack/lib/Compilation.js:528:46
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/@nx/webpack/node_modules/copy-webpack-plugin/dist/index.js:909:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+
+Entrypoint [1mmain[39m[22m [1m[33m[big][39m[22m 4.03 MiB (8.73 MiB) = 7 assets 34 auxiliary assets
+Entrypoint [1mstyles[39m[22m [1m[33m[big][39m[22m 735 KiB (1.15 MiB) = [1m[32mruntime.js[39m[22m 50.2 KiB [1m[32mruntime.6dccafe8780075f9.hot-update.js[39m[22m 343 bytes [1m[32mstyles.css[39m[22m 273 KiB [1m[32mstyles.js[39m[22m 411 KiB 7 auxiliary assets
+chunk (runtime: runtime) [1m[32mmain.css[39m[22m, [1m[32mmain.js[39m[22m, [1m[32mmain.6dccafe8780075f9.hot-update.js[39m[22m (main) 413 KiB (javascript) 392 KiB (css/mini-extract) [1m[33m[initial][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mruntime.js[39m[22m, [1m[32mruntime.6dccafe8780075f9.hot-update.js[39m[22m (runtime) 33.8 KiB [1m[33m[entry][39m[22m [1m[32m[rendered][39m[22m
+chunk (runtime: runtime) [1m[32mstyles.css[39m[22m, [1m[32mstyles.js[39m[22m (styles) 395 KiB (javascript) 273 KiB (css/mini-extract) [1m[33m[initial][39m[22m
+chunk (runtime: runtime) [1m[32mvendor.css[39m[22m, [1m[32mvendor.js[39m[22m (vendor) (id hint: vendor) 2.75 MiB (javascript) 240 KiB (css/mini-extract) [1m[33m[initial][39m[22m [1m[33msplit chunk (cache group: vendor) (name: vendor)[39m[22m
+webpack compiled [1m[32msuccessfully[39m[22m (8eeeaf7345936731)
+[32mNo errors found.[39m

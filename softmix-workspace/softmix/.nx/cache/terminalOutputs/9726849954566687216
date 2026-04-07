@@ -1,0 +1,662 @@
+chunk (runtime: main) [1m[32mmain.js[39m[22m (main) 97.1 KiB [1m[33m[entry][39m[22m [1m[32m[rendered][39m[22m
+webpack compiled [1m[32msuccessfully[39m[22m (b184e4174cfb85b6)
+Debugger listening on ws://localhost:9229/74344ffe-dfa2-480e-b0dd-9094fc0913d7
+Debugger listening on ws://localhost:9229/74344ffe-dfa2-480e-b0dd-9094fc0913d7
+For help, see: https://nodejs.org/en/docs/inspector
+
+[31m[Nest] 53813  - [39m11/15/2025, 10:38:06 PM [31m  ERROR[39m [38;5;3m[ExceptionsHandler] [39m[31mCannot read properties of undefined (reading 'data')[39m
+
+TypeError: Cannot read properties of undefined (reading 'data')
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/dist/apps/bff/webpack:/src/app/categories/category.service.ts:24:44
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/operators/catchError.ts:117:35
+    at OperatorSubscriber._this._error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/operators/OperatorSubscriber.ts:79:13)
+    at OperatorSubscriber.Subscriber.error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/Subscriber.ts:91:12)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/@nestjs/axios/dist/http.service.js:65:28
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+
+[31m[Nest] 53813  - [39m11/15/2025, 10:38:06 PM [31m  ERROR[39m [38;5;3m[ExceptionsHandler] [39m[31mCannot read properties of undefined (reading 'data')[39m
+TypeError: Cannot read properties of undefined (reading 'data')
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/dist/apps/bff/webpack:/src/app/uploader/uploader.service.ts:26:44
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/operators/catchError.ts:117:35
+    at OperatorSubscriber._this._error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/operators/OperatorSubscriber.ts:79:13)
+    at OperatorSubscriber.Subscriber.error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/Subscriber.ts:91:12)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/@nestjs/axios/dist/http.service.js:65:28
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+
+[31m[Nest] 53813  - [39m11/15/2025, 10:38:06 PM [31m  ERROR[39m [38;5;3m[ExceptionsHandler] [39m[31mCannot read properties of undefined (reading 'data')[39m
+TypeError: Cannot read properties of undefined (reading 'data')
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/dist/apps/bff/webpack:/src/app/products/product.service.ts:24:44
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/operators/catchError.ts:117:35
+    at OperatorSubscriber._this._error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/operators/OperatorSubscriber.ts:79:13)
+    at OperatorSubscriber.Subscriber.error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/Subscriber.ts:91:12)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/@nestjs/axios/dist/http.service.js:65:28
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+
+[31m[Nest] 53813  - [39m11/15/2025, 10:38:06 PM [31m  ERROR[39m [38;5;3m[ExceptionsHandler] [39m[31mCannot read properties of undefined (reading 'data')[39m
+
+TypeError: Cannot read properties of undefined (reading 'data')
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/dist/apps/bff/webpack:/src/app/categories/category.service.ts:24:44
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/operators/catchError.ts:117:35
+    at OperatorSubscriber._this._error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/operators/OperatorSubscriber.ts:79:13)
+    at OperatorSubscriber.Subscriber.error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/Subscriber.ts:91:12)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/@nestjs/axios/dist/http.service.js:65:28
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+
+[31m[Nest] 53813  - [39m11/15/2025, 10:38:06 PM [31m  ERROR[39m [38;5;3m[ExceptionsHandler] [39m[31mCannot read properties of undefined (reading 'data')[39m
+TypeError: Cannot read properties of undefined (reading 'data')
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/dist/apps/bff/webpack:/src/app/uploader/uploader.service.ts:26:44
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/operators/catchError.ts:117:35
+    at OperatorSubscriber._this._error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/operators/OperatorSubscriber.ts:79:13)
+    at OperatorSubscriber.Subscriber.error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/Subscriber.ts:91:12)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/@nestjs/axios/dist/http.service.js:65:28
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+
+[31m[Nest] 53813  - [39m11/15/2025, 10:38:06 PM [31m  ERROR[39m [38;5;3m[ExceptionsHandler] [39m[31mCannot read properties of undefined (reading 'data')[39m
+TypeError: Cannot read properties of undefined (reading 'data')
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/dist/apps/bff/webpack:/src/app/products/product.service.ts:24:44
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/operators/catchError.ts:117:35
+    at OperatorSubscriber._this._error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/operators/OperatorSubscriber.ts:79:13)
+    at OperatorSubscriber.Subscriber.error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/Subscriber.ts:91:12)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/@nestjs/axios/dist/http.service.js:65:28
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+
+[31m[Nest] 53813  - [39m11/15/2025, 10:38:48 PM [31m  ERROR[39m [38;5;3m[ExceptionsHandler] [39m[31mCannot read properties of undefined (reading 'data')[39m
+
+TypeError: Cannot read properties of undefined (reading 'data')
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/dist/apps/bff/webpack:/src/app/categories/category.service.ts:24:44
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/operators/catchError.ts:117:35
+    at OperatorSubscriber._this._error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/operators/OperatorSubscriber.ts:79:13)
+    at OperatorSubscriber.Subscriber.error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/Subscriber.ts:91:12)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/@nestjs/axios/dist/http.service.js:65:28
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+[31m[Nest] 53813  - [39m11/15/2025, 10:38:48 PM [31m  ERROR[39m [38;5;3m[ExceptionsHandler] [39m[31mCannot read properties of undefined (reading 'data')[39m
+TypeError: Cannot read properties of undefined (reading 'data')
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/dist/apps/bff/webpack:/src/app/categories/category.service.ts:24:44
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/operators/catchError.ts:117:35
+    at OperatorSubscriber._this._error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/operators/OperatorSubscriber.ts:79:13)
+    at OperatorSubscriber.Subscriber.error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/Subscriber.ts:91:12)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/@nestjs/axios/dist/http.service.js:65:28
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+
+[31m[Nest] 53813  - [39m11/15/2025, 10:38:48 PM [31m  ERROR[39m [38;5;3m[ExceptionsHandler] [39m[31mCannot read properties of undefined (reading 'data')[39m
+TypeError: Cannot read properties of undefined (reading 'data')
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/dist/apps/bff/webpack:/src/app/products/product.service.ts:24:44
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/operators/catchError.ts:117:35
+    at OperatorSubscriber._this._error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/operators/OperatorSubscriber.ts:79:13)
+    at OperatorSubscriber.Subscriber.error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/Subscriber.ts:91:12)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/@nestjs/axios/dist/http.service.js:65:28
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+
+[31m[Nest] 53813  - [39m11/15/2025, 10:38:48 PM [31m  ERROR[39m [38;5;3m[ExceptionsHandler] [39m[31mCannot read properties of undefined (reading 'data')[39m
+TypeError: Cannot read properties of undefined (reading 'data')
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/dist/apps/bff/webpack:/src/app/products/product.service.ts:24:44
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/operators/catchError.ts:117:35
+    at OperatorSubscriber._this._error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/operators/OperatorSubscriber.ts:79:13)
+    at OperatorSubscriber.Subscriber.error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/Subscriber.ts:91:12)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/@nestjs/axios/dist/http.service.js:65:28
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+
+[31m[Nest] 53813  - [39m11/15/2025, 10:38:48 PM [31m  ERROR[39m [38;5;3m[ExceptionsHandler] [39m[31mCannot read properties of undefined (reading 'data')[39m
+
+TypeError: Cannot read properties of undefined (reading 'data')
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/dist/apps/bff/webpack:/src/app/products/product.service.ts:24:44
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/operators/catchError.ts:117:35
+    at OperatorSubscriber._this._error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/operators/OperatorSubscriber.ts:79:13)
+    at OperatorSubscriber.Subscriber.error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/Subscriber.ts:91:12)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/@nestjs/axios/dist/http.service.js:65:28
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+
+[31m[Nest] 53813  - [39m11/15/2025, 10:38:48 PM [31m  ERROR[39m [38;5;3m[ExceptionsHandler] [39m[31mCannot read properties of undefined (reading 'data')[39m
+
+TypeError: Cannot read properties of undefined (reading 'data')
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/dist/apps/bff/webpack:/src/app/products/product.service.ts:24:44
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/operators/catchError.ts:117:35
+    at OperatorSubscriber._this._error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/operators/OperatorSubscriber.ts:79:13)
+    at OperatorSubscriber.Subscriber.error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/Subscriber.ts:91:12)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/@nestjs/axios/dist/http.service.js:65:28
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+
+
+ >  NX   An error occured while creating pruned lockfile
+
+   Please open an issue at `https://github.com/nrwl/nx/issues/new?template=1-bug.yml` and provide a reproduction.
+   To prevent the build from breaking we are returning the root lock file.
+   If you run `npm install --package-lock-only` in your output folder it will regenerate the correct pruned lockfile.
+   
+Original error: Target project does not exist: npm:mime-db@1.52.0
+
+
+   Error: Target project does not exist: npm:mime-db@1.52.0
+    at validateCommonDependencyRules (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:323:15)
+    at validateDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:313:5)
+    at ProjectGraphBuilder.addDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:190:9)
+    at ProjectGraphBuilder.addStaticDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:89:14)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:81:17
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:80:9
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+
+chunk (runtime: main) [1m[32mmain.js[39m[22m (main) 97.1 KiB [1m[33m[entry][39m[22m [1m[32m[rendered][39m[22m
+webpack compiled [1m[32msuccessfully[39m[22m (64b122d85e12aec1)
+Debugger listening on ws://localhost:9229/8b06757d-3325-4e81-b010-fb92757a6351
+Debugger listening on ws://localhost:9229/8b06757d-3325-4e81-b010-fb92757a6351
+For help, see: https://nodejs.org/en/docs/inspector
+
+
+ >  NX   An error occured while creating pruned lockfile
+
+   Please open an issue at `https://github.com/nrwl/nx/issues/new?template=1-bug.yml` and provide a reproduction.
+   To prevent the build from breaking we are returning the root lock file.
+   If you run `npm install --package-lock-only` in your output folder it will regenerate the correct pruned lockfile.
+   
+Original error: Target project does not exist: npm:mime-db@1.52.0
+
+
+   Error: Target project does not exist: npm:mime-db@1.52.0
+    at validateCommonDependencyRules (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:323:15)
+    at validateDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:313:5)
+    at ProjectGraphBuilder.addDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:190:9)
+    at ProjectGraphBuilder.addStaticDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:89:14)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:81:17
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:80:9
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+
+chunk (runtime: main) [1m[32mmain.js[39m[22m (main) 97.1 KiB [1m[33m[entry][39m[22m [1m[32m[rendered][39m[22m
+webpack compiled [1m[32msuccessfully[39m[22m (2964260ae168c140)
+Debugger listening on ws://localhost:9229/02908a0a-46f1-4686-af20-5184fefc551d
+Debugger listening on ws://localhost:9229/02908a0a-46f1-4686-af20-5184fefc551d
+For help, see: https://nodejs.org/en/docs/inspector
+
+
+ >  NX   An error occured while creating pruned lockfile
+
+   Please open an issue at `https://github.com/nrwl/nx/issues/new?template=1-bug.yml` and provide a reproduction.
+   To prevent the build from breaking we are returning the root lock file.
+   If you run `npm install --package-lock-only` in your output folder it will regenerate the correct pruned lockfile.
+   
+Original error: Target project does not exist: npm:mime-db@1.52.0
+
+
+   Error: Target project does not exist: npm:mime-db@1.52.0
+    at validateCommonDependencyRules (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:323:15)
+    at validateDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:313:5)
+    at ProjectGraphBuilder.addDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:190:9)
+    at ProjectGraphBuilder.addStaticDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:89:14)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:81:17
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:80:9
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+
+chunk (runtime: main) [1m[32mmain.js[39m[22m (main) 97.1 KiB [1m[33m[entry][39m[22m [1m[32m[rendered][39m[22m
+webpack compiled [1m[32msuccessfully[39m[22m (da90076751f9db0b)
+Debugger listening on ws://localhost:9229/47668be4-261c-44b6-b3dd-178d7131dcfb
+Debugger listening on ws://localhost:9229/47668be4-261c-44b6-b3dd-178d7131dcfb
+For help, see: https://nodejs.org/en/docs/inspector
+
+
+ >  NX   An error occured while creating pruned lockfile
+
+   Please open an issue at `https://github.com/nrwl/nx/issues/new?template=1-bug.yml` and provide a reproduction.
+   To prevent the build from breaking we are returning the root lock file.
+   If you run `npm install --package-lock-only` in your output folder it will regenerate the correct pruned lockfile.
+   
+Original error: Target project does not exist: npm:mime-db@1.52.0
+
+
+   Error: Target project does not exist: npm:mime-db@1.52.0
+    at validateCommonDependencyRules (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:323:15)
+    at validateDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:313:5)
+    at ProjectGraphBuilder.addDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:190:9)
+    at ProjectGraphBuilder.addStaticDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:89:14)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:81:17
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:80:9
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+
+chunk (runtime: main) [1m[32mmain.js[39m[22m (main) 97.1 KiB [1m[33m[entry][39m[22m [1m[32m[rendered][39m[22m
+webpack compiled [1m[32msuccessfully[39m[22m (5330fcafd4221e48)
+Debugger listening on ws://localhost:9229/b1bf42da-9a63-4c5f-9a36-8481e08adf12
+Debugger listening on ws://localhost:9229/b1bf42da-9a63-4c5f-9a36-8481e08adf12
+For help, see: https://nodejs.org/en/docs/inspector
+
+[31m[Nest] 55035  - [39m11/15/2025, 10:43:30 PM [31m  ERROR[39m [38;5;3m[ExceptionsHandler] [39m[31mCannot read properties of undefined (reading 'data')[39m
+
+TypeError: Cannot read properties of undefined (reading 'data')
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/dist/apps/bff/webpack:/src/app/categories/category.service.ts:24:44
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/operators/catchError.ts:117:35
+    at OperatorSubscriber._this._error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/operators/OperatorSubscriber.ts:79:13)
+    at OperatorSubscriber.Subscriber.error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/Subscriber.ts:91:12)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/@nestjs/axios/dist/http.service.js:65:28
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+
+[31m[Nest] 55035  - [39m11/15/2025, 10:43:30 PM [31m  ERROR[39m [38;5;3m[ExceptionsHandler] [39m[31mCannot read properties of undefined (reading 'data')[39m
+
+TypeError: Cannot read properties of undefined (reading 'data')
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/dist/apps/bff/webpack:/src/app/products/product.service.ts:24:44
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/operators/catchError.ts:117:35
+    at OperatorSubscriber._this._error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/operators/OperatorSubscriber.ts:79:13)
+    at OperatorSubscriber.Subscriber.error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/Subscriber.ts:91:12)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/@nestjs/axios/dist/http.service.js:65:28
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+
+[31m[Nest] 55035  - [39m11/15/2025, 10:43:30 PM [31m  ERROR[39m [38;5;3m[ExceptionsHandler] [39m[31mCannot read properties of undefined (reading 'data')[39m
+TypeError: Cannot read properties of undefined (reading 'data')
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/dist/apps/bff/webpack:/src/app/products/product.service.ts:24:44
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/operators/catchError.ts:117:35
+    at OperatorSubscriber._this._error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/operators/OperatorSubscriber.ts:79:13)
+    at OperatorSubscriber.Subscriber.error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/Subscriber.ts:91:12)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/@nestjs/axios/dist/http.service.js:65:28
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+
+[31m[Nest] 55035  - [39m11/15/2025, 10:43:30 PM [31m  ERROR[39m [38;5;3m[ExceptionsHandler] [39m[31mCannot read properties of undefined (reading 'data')[39m
+TypeError: Cannot read properties of undefined (reading 'data')
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/dist/apps/bff/webpack:/src/app/categories/category.service.ts:24:44
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/operators/catchError.ts:117:35
+    at OperatorSubscriber._this._error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/operators/OperatorSubscriber.ts:79:13)
+    at OperatorSubscriber.Subscriber.error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/Subscriber.ts:91:12)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/@nestjs/axios/dist/http.service.js:65:28
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+
+[31m[Nest] 55035  - [39m11/15/2025, 10:43:30 PM [31m  ERROR[39m [38;5;3m[ExceptionsHandler] [39m[31mCannot read properties of undefined (reading 'data')[39m
+
+TypeError: Cannot read properties of undefined (reading 'data')
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/dist/apps/bff/webpack:/src/app/products/product.service.ts:24:44
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/operators/catchError.ts:117:35
+    at OperatorSubscriber._this._error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/operators/OperatorSubscriber.ts:79:13)
+    at OperatorSubscriber.Subscriber.error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/Subscriber.ts:91:12)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/@nestjs/axios/dist/http.service.js:65:28
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+
+[31m[Nest] 55035  - [39m11/15/2025, 10:43:30 PM [31m  ERROR[39m [38;5;3m[ExceptionsHandler] [39m[31mCannot read properties of undefined (reading 'data')[39m
+
+TypeError: Cannot read properties of undefined (reading 'data')
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/dist/apps/bff/webpack:/src/app/products/product.service.ts:24:44
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/operators/catchError.ts:117:35
+    at OperatorSubscriber._this._error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/operators/OperatorSubscriber.ts:79:13)
+    at OperatorSubscriber.Subscriber.error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/Subscriber.ts:91:12)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/@nestjs/axios/dist/http.service.js:65:28
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+
+[31m[Nest] 55035  - [39m11/15/2025, 10:43:43 PM [31m  ERROR[39m [38;5;3m[ExceptionsHandler] [39m[31mCannot read properties of undefined (reading 'data')[39m
+
+TypeError: Cannot read properties of undefined (reading 'data')
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/dist/apps/bff/webpack:/src/app/alstyle/alstyle.service.ts:25:44
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/operators/catchError.ts:117:35
+    at OperatorSubscriber._this._error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/operators/OperatorSubscriber.ts:79:13)
+    at OperatorSubscriber.Subscriber.error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/Subscriber.ts:91:12)
+    at OperatorSubscriber.Subscriber._error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/Subscriber.ts:124:24)
+    at OperatorSubscriber.Subscriber.error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/Subscriber.ts:91:12)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/@nestjs/axios/dist/http.service.js:65:28
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+
+[31m[Nest] 55035  - [39m11/15/2025, 10:43:43 PM [31m  ERROR[39m [38;5;3m[ExceptionsHandler] [39m[31mCannot read properties of undefined (reading 'data')[39m
+TypeError: Cannot read properties of undefined (reading 'data')
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/dist/apps/bff/webpack:/src/app/alstyle/alstyle.service.ts:45:44
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/operators/catchError.ts:117:35
+    at OperatorSubscriber._this._error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/operators/OperatorSubscriber.ts:79:13)
+    at OperatorSubscriber.Subscriber.error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/Subscriber.ts:91:12)
+    at OperatorSubscriber.Subscriber._error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/Subscriber.ts:124:24)
+    at OperatorSubscriber.Subscriber.error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/Subscriber.ts:91:12)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/@nestjs/axios/dist/http.service.js:65:28
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+
+[31m[Nest] 55035  - [39m11/15/2025, 10:43:43 PM [31m  ERROR[39m [38;5;3m[ExceptionsHandler] [39m[31mCannot read properties of undefined (reading 'data')[39m
+TypeError: Cannot read properties of undefined (reading 'data')
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/dist/apps/bff/webpack:/src/app/alstyle/alstyle.service.ts:25:44
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/operators/catchError.ts:117:35
+    at OperatorSubscriber._this._error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/operators/OperatorSubscriber.ts:79:13)
+    at OperatorSubscriber.Subscriber.error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/Subscriber.ts:91:12)
+    at OperatorSubscriber.Subscriber._error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/Subscriber.ts:124:24)
+    at OperatorSubscriber.Subscriber.error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/Subscriber.ts:91:12)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/@nestjs/axios/dist/http.service.js:65:28
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+
+[31m[Nest] 55035  - [39m11/15/2025, 10:43:43 PM [31m  ERROR[39m [38;5;3m[ExceptionsHandler] [39m[31mCannot read properties of undefined (reading 'data')[39m
+
+TypeError: Cannot read properties of undefined (reading 'data')
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/dist/apps/bff/webpack:/src/app/alstyle/alstyle.service.ts:45:44
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/operators/catchError.ts:117:35
+    at OperatorSubscriber._this._error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/operators/OperatorSubscriber.ts:79:13)
+    at OperatorSubscriber.Subscriber.error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/Subscriber.ts:91:12)
+    at OperatorSubscriber.Subscriber._error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/Subscriber.ts:124:24)
+    at OperatorSubscriber.Subscriber.error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/Subscriber.ts:91:12)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/@nestjs/axios/dist/http.service.js:65:28
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+
+[31m[Nest] 55035  - [39m11/15/2025, 10:43:50 PM [31m  ERROR[39m [38;5;3m[ExceptionsHandler] [39m[31mCannot read properties of undefined (reading 'data')[39m
+TypeError: Cannot read properties of undefined (reading 'data')
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/dist/apps/bff/webpack:/src/app/categories/category.service.ts:24:44
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/operators/catchError.ts:117:35
+    at OperatorSubscriber._this._error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/operators/OperatorSubscriber.ts:79:13)
+    at OperatorSubscriber.Subscriber.error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/Subscriber.ts:91:12)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/@nestjs/axios/dist/http.service.js:65:28
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+
+[31m[Nest] 55035  - [39m11/15/2025, 10:43:50 PM [31m  ERROR[39m [38;5;3m[ExceptionsHandler] [39m[31mCannot read properties of undefined (reading 'data')[39m
+TypeError: Cannot read properties of undefined (reading 'data')
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/dist/apps/bff/webpack:/src/app/uploader/uploader.service.ts:26:44
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/operators/catchError.ts:117:35
+    at OperatorSubscriber._this._error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/operators/OperatorSubscriber.ts:79:13)
+    at OperatorSubscriber.Subscriber.error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/Subscriber.ts:91:12)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/@nestjs/axios/dist/http.service.js:65:28
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+
+[31m[Nest] 55035  - [39m11/15/2025, 10:43:50 PM [31m  ERROR[39m [38;5;3m[ExceptionsHandler] [39m[31mCannot read properties of undefined (reading 'data')[39m
+TypeError: Cannot read properties of undefined (reading 'data')
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/dist/apps/bff/webpack:/src/app/products/product.service.ts:24:44
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/operators/catchError.ts:117:35
+    at OperatorSubscriber._this._error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/operators/OperatorSubscriber.ts:79:13)
+    at OperatorSubscriber.Subscriber.error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/Subscriber.ts:91:12)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/@nestjs/axios/dist/http.service.js:65:28
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+
+[31m[Nest] 55035  - [39m11/15/2025, 10:43:50 PM [31m  ERROR[39m [38;5;3m[ExceptionsHandler] [39m[31mCannot read properties of undefined (reading 'data')[39m
+
+TypeError: Cannot read properties of undefined (reading 'data')
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/dist/apps/bff/webpack:/src/app/categories/category.service.ts:24:44
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/operators/catchError.ts:117:35
+    at OperatorSubscriber._this._error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/operators/OperatorSubscriber.ts:79:13)
+    at OperatorSubscriber.Subscriber.error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/Subscriber.ts:91:12)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/@nestjs/axios/dist/http.service.js:65:28
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+
+[31m[Nest] 55035  - [39m11/15/2025, 10:43:50 PM [31m  ERROR[39m [38;5;3m[ExceptionsHandler] [39m[31mCannot read properties of undefined (reading 'data')[39m
+TypeError: Cannot read properties of undefined (reading 'data')
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/dist/apps/bff/webpack:/src/app/uploader/uploader.service.ts:26:44
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/operators/catchError.ts:117:35
+    at OperatorSubscriber._this._error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/operators/OperatorSubscriber.ts:79:13)
+    at OperatorSubscriber.Subscriber.error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/Subscriber.ts:91:12)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/@nestjs/axios/dist/http.service.js:65:28
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+
+[31m[Nest] 55035  - [39m11/15/2025, 10:43:50 PM [31m  ERROR[39m [38;5;3m[ExceptionsHandler] [39m[31mCannot read properties of undefined (reading 'data')[39m
+
+TypeError: Cannot read properties of undefined (reading 'data')
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/dist/apps/bff/webpack:/src/app/products/product.service.ts:24:44
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/operators/catchError.ts:117:35
+    at OperatorSubscriber._this._error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/operators/OperatorSubscriber.ts:79:13)
+    at OperatorSubscriber.Subscriber.error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/Subscriber.ts:91:12)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/@nestjs/axios/dist/http.service.js:65:28
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+
+[31m[Nest] 55035  - [39m11/15/2025, 10:43:52 PM [31m  ERROR[39m [38;5;3m[ExceptionsHandler] [39m[31mCannot read properties of undefined (reading 'data')[39m
+TypeError: Cannot read properties of undefined (reading 'data')
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/dist/apps/bff/webpack:/src/app/categories/category.service.ts:24:44
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/operators/catchError.ts:117:35
+    at OperatorSubscriber._this._error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/operators/OperatorSubscriber.ts:79:13)
+    at OperatorSubscriber.Subscriber.error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/Subscriber.ts:91:12)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/@nestjs/axios/dist/http.service.js:65:28
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+
+[31m[Nest] 55035  - [39m11/15/2025, 10:43:52 PM [31m  ERROR[39m [38;5;3m[ExceptionsHandler] [39m[31mCannot read properties of undefined (reading 'data')[39m
+
+TypeError: Cannot read properties of undefined (reading 'data')
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/dist/apps/bff/webpack:/src/app/products/product.service.ts:24:44
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/operators/catchError.ts:117:35
+    at OperatorSubscriber._this._error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/operators/OperatorSubscriber.ts:79:13)
+    at OperatorSubscriber.Subscriber.error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/Subscriber.ts:91:12)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/@nestjs/axios/dist/http.service.js:65:28
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+
+[31m[Nest] 55035  - [39m11/15/2025, 10:43:52 PM [31m  ERROR[39m [38;5;3m[ExceptionsHandler] [39m[31mCannot read properties of undefined (reading 'data')[39m
+TypeError: Cannot read properties of undefined (reading 'data')
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/dist/apps/bff/webpack:/src/app/products/product.service.ts:24:44
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/operators/catchError.ts:117:35
+    at OperatorSubscriber._this._error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/operators/OperatorSubscriber.ts:79:13)
+    at OperatorSubscriber.Subscriber.error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/Subscriber.ts:91:12)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/@nestjs/axios/dist/http.service.js:65:28
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+
+[31m[Nest] 55035  - [39m11/15/2025, 10:43:52 PM [31m  ERROR[39m [38;5;3m[ExceptionsHandler] [39m[31mCannot read properties of undefined (reading 'data')[39m
+TypeError: Cannot read properties of undefined (reading 'data')
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/dist/apps/bff/webpack:/src/app/categories/category.service.ts:24:44
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/operators/catchError.ts:117:35
+    at OperatorSubscriber._this._error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/operators/OperatorSubscriber.ts:79:13)
+    at OperatorSubscriber.Subscriber.error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/Subscriber.ts:91:12)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/@nestjs/axios/dist/http.service.js:65:28
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+
+[31m[Nest] 55035  - [39m11/15/2025, 10:43:52 PM [31m  ERROR[39m [38;5;3m[ExceptionsHandler] [39m[31mCannot read properties of undefined (reading 'data')[39m
+
+TypeError: Cannot read properties of undefined (reading 'data')
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/dist/apps/bff/webpack:/src/app/products/product.service.ts:24:44
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/operators/catchError.ts:117:35
+    at OperatorSubscriber._this._error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/operators/OperatorSubscriber.ts:79:13)
+    at OperatorSubscriber.Subscriber.error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/Subscriber.ts:91:12)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/@nestjs/axios/dist/http.service.js:65:28
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+
+[31m[Nest] 55035  - [39m11/15/2025, 10:43:52 PM [31m  ERROR[39m [38;5;3m[ExceptionsHandler] [39m[31mCannot read properties of undefined (reading 'data')[39m
+TypeError: Cannot read properties of undefined (reading 'data')
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/dist/apps/bff/webpack:/src/app/products/product.service.ts:24:44
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/operators/catchError.ts:117:35
+    at OperatorSubscriber._this._error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/operators/OperatorSubscriber.ts:79:13)
+    at OperatorSubscriber.Subscriber.error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/Subscriber.ts:91:12)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/@nestjs/axios/dist/http.service.js:65:28
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+
+[31m[Nest] 55035  - [39m11/15/2025, 10:43:54 PM [31m  ERROR[39m [38;5;3m[ExceptionsHandler] [39m[31mCannot read properties of undefined (reading 'data')[39m
+
+TypeError: Cannot read properties of undefined (reading 'data')
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/dist/apps/bff/webpack:/src/app/alstyle/alstyle.service.ts:45:44
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/operators/catchError.ts:117:35
+    at OperatorSubscriber._this._error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/operators/OperatorSubscriber.ts:79:13)
+    at OperatorSubscriber.Subscriber.error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/Subscriber.ts:91:12)
+    at OperatorSubscriber.Subscriber._error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/Subscriber.ts:124:24)
+    at OperatorSubscriber.Subscriber.error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/Subscriber.ts:91:12)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/@nestjs/axios/dist/http.service.js:65:28
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+
+[31m[Nest] 55035  - [39m11/15/2025, 10:43:54 PM [31m  ERROR[39m [38;5;3m[ExceptionsHandler] [39m[31mCannot read properties of undefined (reading 'data')[39m
+
+TypeError: Cannot read properties of undefined (reading 'data')
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/dist/apps/bff/webpack:/src/app/alstyle/alstyle.service.ts:25:44
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/operators/catchError.ts:117:35
+    at OperatorSubscriber._this._error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/operators/OperatorSubscriber.ts:79:13)
+    at OperatorSubscriber.Subscriber.error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/Subscriber.ts:91:12)
+    at OperatorSubscriber.Subscriber._error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/Subscriber.ts:124:24)
+    at OperatorSubscriber.Subscriber.error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/Subscriber.ts:91:12)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/@nestjs/axios/dist/http.service.js:65:28
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+
+[31m[Nest] 55035  - [39m11/15/2025, 10:43:54 PM [31m  ERROR[39m [38;5;3m[ExceptionsHandler] [39m[31mCannot read properties of undefined (reading 'data')[39m
+TypeError: Cannot read properties of undefined (reading 'data')
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/dist/apps/bff/webpack:/src/app/alstyle/alstyle.service.ts:45:44
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/operators/catchError.ts:117:35
+    at OperatorSubscriber._this._error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/operators/OperatorSubscriber.ts:79:13)
+    at OperatorSubscriber.Subscriber.error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/Subscriber.ts:91:12)
+    at OperatorSubscriber.Subscriber._error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/Subscriber.ts:124:24)
+    at OperatorSubscriber.Subscriber.error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/Subscriber.ts:91:12)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/@nestjs/axios/dist/http.service.js:65:28
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+
+[31m[Nest] 55035  - [39m11/15/2025, 10:43:54 PM [31m  ERROR[39m [38;5;3m[ExceptionsHandler] [39m[31mCannot read properties of undefined (reading 'data')[39m
+TypeError: Cannot read properties of undefined (reading 'data')
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/dist/apps/bff/webpack:/src/app/alstyle/alstyle.service.ts:25:44
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/operators/catchError.ts:117:35
+    at OperatorSubscriber._this._error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/operators/OperatorSubscriber.ts:79:13)
+    at OperatorSubscriber.Subscriber.error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/Subscriber.ts:91:12)
+    at OperatorSubscriber.Subscriber._error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/Subscriber.ts:124:24)
+    at OperatorSubscriber.Subscriber.error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/Subscriber.ts:91:12)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/@nestjs/axios/dist/http.service.js:65:28
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+
+[31m[Nest] 55035  - [39m11/15/2025, 10:44:01 PM [31m  ERROR[39m [38;5;3m[ExceptionsHandler] [39m[31mCannot read properties of undefined (reading 'data')[39m
+TypeError: Cannot read properties of undefined (reading 'data')
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/dist/apps/bff/webpack:/src/app/categories/category.service.ts:24:44
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/operators/catchError.ts:117:35
+    at OperatorSubscriber._this._error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/operators/OperatorSubscriber.ts:79:13)
+    at OperatorSubscriber.Subscriber.error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/Subscriber.ts:91:12)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/@nestjs/axios/dist/http.service.js:65:28
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+
+[31m[Nest] 55035  - [39m11/15/2025, 10:44:01 PM [31m  ERROR[39m [38;5;3m[ExceptionsHandler] [39m[31mCannot read properties of undefined (reading 'data')[39m
+TypeError: Cannot read properties of undefined (reading 'data')
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/dist/apps/bff/webpack:/src/app/uploader/uploader.service.ts:26:44
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/operators/catchError.ts:117:35
+    at OperatorSubscriber._this._error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/operators/OperatorSubscriber.ts:79:13)
+    at OperatorSubscriber.Subscriber.error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/Subscriber.ts:91:12)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/@nestjs/axios/dist/http.service.js:65:28
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+
+[31m[Nest] 55035  - [39m11/15/2025, 10:44:01 PM [31m  ERROR[39m [38;5;3m[ExceptionsHandler] [39m[31mCannot read properties of undefined (reading 'data')[39m
+TypeError: Cannot read properties of undefined (reading 'data')
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/dist/apps/bff/webpack:/src/app/products/product.service.ts:24:44
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/operators/catchError.ts:117:35
+    at OperatorSubscriber._this._error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/operators/OperatorSubscriber.ts:79:13)
+    at OperatorSubscriber.Subscriber.error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/Subscriber.ts:91:12)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/@nestjs/axios/dist/http.service.js:65:28
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+
+[31m[Nest] 55035  - [39m11/15/2025, 10:44:01 PM [31m  ERROR[39m [38;5;3m[ExceptionsHandler] [39m[31mCannot read properties of undefined (reading 'data')[39m
+TypeError: Cannot read properties of undefined (reading 'data')
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/dist/apps/bff/webpack:/src/app/categories/category.service.ts:24:44
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/operators/catchError.ts:117:35
+    at OperatorSubscriber._this._error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/operators/OperatorSubscriber.ts:79:13)
+    at OperatorSubscriber.Subscriber.error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/Subscriber.ts:91:12)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/@nestjs/axios/dist/http.service.js:65:28
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+
+[31m[Nest] 55035  - [39m11/15/2025, 10:44:01 PM [31m  ERROR[39m [38;5;3m[ExceptionsHandler] [39m[31mCannot read properties of undefined (reading 'data')[39m
+
+TypeError: Cannot read properties of undefined (reading 'data')
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/dist/apps/bff/webpack:/src/app/uploader/uploader.service.ts:26:44
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/operators/catchError.ts:117:35
+    at OperatorSubscriber._this._error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/operators/OperatorSubscriber.ts:79:13)
+    at OperatorSubscriber.Subscriber.error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/Subscriber.ts:91:12)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/@nestjs/axios/dist/http.service.js:65:28
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+
+[31m[Nest] 55035  - [39m11/15/2025, 10:44:01 PM [31m  ERROR[39m [38;5;3m[ExceptionsHandler] [39m[31mCannot read properties of undefined (reading 'data')[39m
+TypeError: Cannot read properties of undefined (reading 'data')
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/dist/apps/bff/webpack:/src/app/products/product.service.ts:24:44
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/operators/catchError.ts:117:35
+    at OperatorSubscriber._this._error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/operators/OperatorSubscriber.ts:79:13)
+    at OperatorSubscriber.Subscriber.error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/Subscriber.ts:91:12)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/@nestjs/axios/dist/http.service.js:65:28
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+
+[31m[Nest] 55035  - [39m11/15/2025, 10:44:02 PM [31m  ERROR[39m [38;5;3m[ExceptionsHandler] [39m[31mCannot read properties of undefined (reading 'data')[39m
+TypeError: Cannot read properties of undefined (reading 'data')
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/dist/apps/bff/webpack:/src/app/categories/category.service.ts:24:44
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/operators/catchError.ts:117:35
+    at OperatorSubscriber._this._error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/operators/OperatorSubscriber.ts:79:13)
+    at OperatorSubscriber.Subscriber.error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/Subscriber.ts:91:12)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/@nestjs/axios/dist/http.service.js:65:28
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+
+[31m[Nest] 55035  - [39m11/15/2025, 10:44:02 PM [31m  ERROR[39m [38;5;3m[ExceptionsHandler] [39m[31mCannot read properties of undefined (reading 'data')[39m
+TypeError: Cannot read properties of undefined (reading 'data')
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/dist/apps/bff/webpack:/src/app/products/product.service.ts:24:44
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/operators/catchError.ts:117:35
+    at OperatorSubscriber._this._error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/operators/OperatorSubscriber.ts:79:13)
+    at OperatorSubscriber.Subscriber.error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/Subscriber.ts:91:12)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/@nestjs/axios/dist/http.service.js:65:28
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+
+[31m[Nest] 55035  - [39m11/15/2025, 10:44:02 PM [31m  ERROR[39m [38;5;3m[ExceptionsHandler] [39m[31mCannot read properties of undefined (reading 'data')[39m
+TypeError: Cannot read properties of undefined (reading 'data')
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/dist/apps/bff/webpack:/src/app/products/product.service.ts:24:44
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/operators/catchError.ts:117:35
+    at OperatorSubscriber._this._error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/operators/OperatorSubscriber.ts:79:13)
+    at OperatorSubscriber.Subscriber.error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/Subscriber.ts:91:12)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/@nestjs/axios/dist/http.service.js:65:28
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+
+[31m[Nest] 55035  - [39m11/15/2025, 10:44:02 PM [31m  ERROR[39m [38;5;3m[ExceptionsHandler] [39m[31mCannot read properties of undefined (reading 'data')[39m
+
+TypeError: Cannot read properties of undefined (reading 'data')
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/dist/apps/bff/webpack:/src/app/categories/category.service.ts:24:44
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/operators/catchError.ts:117:35
+    at OperatorSubscriber._this._error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/operators/OperatorSubscriber.ts:79:13)
+    at OperatorSubscriber.Subscriber.error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/Subscriber.ts:91:12)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/@nestjs/axios/dist/http.service.js:65:28
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+
+[31m[Nest] 55035  - [39m11/15/2025, 10:44:02 PM [31m  ERROR[39m [38;5;3m[ExceptionsHandler] [39m[31mCannot read properties of undefined (reading 'data')[39m
+TypeError: Cannot read properties of undefined (reading 'data')
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/dist/apps/bff/webpack:/src/app/products/product.service.ts:24:44
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/operators/catchError.ts:117:35
+    at OperatorSubscriber._this._error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/operators/OperatorSubscriber.ts:79:13)
+    at OperatorSubscriber.Subscriber.error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/Subscriber.ts:91:12)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/@nestjs/axios/dist/http.service.js:65:28
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+
+[31m[Nest] 55035  - [39m11/15/2025, 10:44:02 PM [31m  ERROR[39m [38;5;3m[ExceptionsHandler] [39m[31mCannot read properties of undefined (reading 'data')[39m
+
+TypeError: Cannot read properties of undefined (reading 'data')
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/dist/apps/bff/webpack:/src/app/products/product.service.ts:24:44
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/operators/catchError.ts:117:35
+    at OperatorSubscriber._this._error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/operators/OperatorSubscriber.ts:79:13)
+    at OperatorSubscriber.Subscriber.error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/Subscriber.ts:91:12)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/@nestjs/axios/dist/http.service.js:65:28
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+
+[31m[Nest] 55035  - [39m11/15/2025, 10:44:07 PM [31m  ERROR[39m [38;5;3m[ExceptionsHandler] [39m[31mCannot read properties of undefined (reading 'data')[39m
+
+TypeError: Cannot read properties of undefined (reading 'data')
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/dist/apps/bff/webpack:/src/app/categories/category.service.ts:24:44
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/operators/catchError.ts:117:35
+    at OperatorSubscriber._this._error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/operators/OperatorSubscriber.ts:79:13)
+    at OperatorSubscriber.Subscriber.error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/Subscriber.ts:91:12)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/@nestjs/axios/dist/http.service.js:65:28
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+
+[31m[Nest] 55035  - [39m11/15/2025, 10:44:07 PM [31m  ERROR[39m [38;5;3m[ExceptionsHandler] [39m[31mCannot read properties of undefined (reading 'data')[39m
+TypeError: Cannot read properties of undefined (reading 'data')
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/dist/apps/bff/webpack:/src/app/uploader/uploader.service.ts:26:44
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/operators/catchError.ts:117:35
+    at OperatorSubscriber._this._error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/operators/OperatorSubscriber.ts:79:13)
+    at OperatorSubscriber.Subscriber.error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/Subscriber.ts:91:12)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/@nestjs/axios/dist/http.service.js:65:28
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+
+[31m[Nest] 55035  - [39m11/15/2025, 10:44:07 PM [31m  ERROR[39m [38;5;3m[ExceptionsHandler] [39m[31mCannot read properties of undefined (reading 'data')[39m
+
+TypeError: Cannot read properties of undefined (reading 'data')
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/dist/apps/bff/webpack:/src/app/products/product.service.ts:24:44
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/operators/catchError.ts:117:35
+    at OperatorSubscriber._this._error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/operators/OperatorSubscriber.ts:79:13)
+    at OperatorSubscriber.Subscriber.error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/Subscriber.ts:91:12)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/@nestjs/axios/dist/http.service.js:65:28
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+
+[31m[Nest] 55035  - [39m11/15/2025, 10:44:07 PM [31m  ERROR[39m [38;5;3m[ExceptionsHandler] [39m[31mCannot read properties of undefined (reading 'data')[39m
+
+TypeError: Cannot read properties of undefined (reading 'data')
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/dist/apps/bff/webpack:/src/app/categories/category.service.ts:24:44
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/operators/catchError.ts:117:35
+    at OperatorSubscriber._this._error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/operators/OperatorSubscriber.ts:79:13)
+    at OperatorSubscriber.Subscriber.error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/Subscriber.ts:91:12)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/@nestjs/axios/dist/http.service.js:65:28
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+
+[31m[Nest] 55035  - [39m11/15/2025, 10:44:07 PM [31m  ERROR[39m [38;5;3m[ExceptionsHandler] [39m[31mCannot read properties of undefined (reading 'data')[39m
+
+TypeError: Cannot read properties of undefined (reading 'data')
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/dist/apps/bff/webpack:/src/app/uploader/uploader.service.ts:26:44
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/operators/catchError.ts:117:35
+    at OperatorSubscriber._this._error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/operators/OperatorSubscriber.ts:79:13)
+    at OperatorSubscriber.Subscriber.error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/Subscriber.ts:91:12)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/@nestjs/axios/dist/http.service.js:65:28
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+
+[31m[Nest] 55035  - [39m11/15/2025, 10:44:07 PM [31m  ERROR[39m [38;5;3m[ExceptionsHandler] [39m[31mCannot read properties of undefined (reading 'data')[39m
+
+TypeError: Cannot read properties of undefined (reading 'data')
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/dist/apps/bff/webpack:/src/app/products/product.service.ts:24:44
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/operators/catchError.ts:117:35
+    at OperatorSubscriber._this._error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/operators/OperatorSubscriber.ts:79:13)
+    at OperatorSubscriber.Subscriber.error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/Subscriber.ts:91:12)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/@nestjs/axios/dist/http.service.js:65:28
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+

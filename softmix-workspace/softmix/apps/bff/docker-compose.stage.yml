@@ -1,0 +1,16 @@
+version: '3.9'
+services:
+  diary-olgin.bff:
+    image: ghcr.io/artidy/diary-olgin.bff:latest
+    restart: always
+    container_name: diary-olgin.bff.service
+    ports:
+      - "5551:5551"
+    env_file:
+      - .bff.env
+    networks:
+      - diary-olgin.network
+
+networks:
+  diary-olgin.network:
+    driver: bridge

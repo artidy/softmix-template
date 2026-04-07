@@ -1,0 +1,17 @@
+### Аутентификация и авторизация пользователя
+POST http://localhost:3333/api/auth/login
+Content-Type: application/json
+
+{
+  "login": "admin",
+  "password": "123456789"
+}
+
+### Обновление токена доступа
+POST http://localhost:3333/api/auth/refresh
+Authorization: Bearer
+
+
+### Выход из системы
+POST http://localhost:3333/api/auth/logout/
+Authorization: Bearer

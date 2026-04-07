@@ -1,0 +1,37 @@
+version: '3.9'
+services:
+  mongodb:
+    image: mongo:7
+    restart: always
+    container_name: softmix.mongodb
+    env_file:
+      - ../../environments/.users.env
+    ports:
+      - '27017:27017'
+    volumes:
+      - ./db:/data/db
+    networks:
+      - network
+    healthcheck:
+      test: echo 'db.runCommand("ping").ok' | mongosh localhost:27017 --quiet
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  mongodb-express:
+    image: mongo-express:1.0.0-alpha.4
+    restart: always
+    container_name: softmix.express
+    env_file:
+      - ../../environments/.users.env
+    ports:
+      - '1085:8081'
+    networks:
+      - network
+    command: ["node", "--unhandled-rejections=strict", "app.js"]
+    depends_on:
+      - mongodb
+
+networks:
+  network:
+    driver: bridge

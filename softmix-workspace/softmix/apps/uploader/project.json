@@ -1,0 +1,73 @@
+{
+  "name": "uploader",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/uploader/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nx/webpack:webpack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "target": "node",
+        "compiler": "tsc",
+        "outputPath": "dist/apps/uploader",
+        "main": "apps/uploader/src/main.ts",
+        "tsConfig": "apps/uploader/tsconfig.app.json",
+        "assets": ["apps/uploader/src/assets"],
+        "isolatedConfig": true,
+        "webpackConfig": "apps/uploader/webpack.config.js",
+        "generatePackageJson": true
+      },
+      "configurations": {
+        "development": {},
+        "production": {}
+      }
+    },
+    "serve": {
+      "executor": "@nx/js:node",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "uploader:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "uploader:build:development"
+        },
+        "production": {
+          "buildTarget": "uploader:build:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/uploader/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "apps/uploader/jest.config.ts",
+        "passWithNoTests": true
+      },
+      "configurations": {
+        "ci": {
+          "ci": true,
+          "codeCoverage": true
+        }
+      }
+    },
+    "createImage": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          "rimraf ./dist/apps/uploader && nx run uploader:build && docker build --file ./apps/uploader/Dockerfile --tag ghcr.io/artidy/softmix.uploader:latest . && docker push ghcr.io/artidy/softmix.uploader:latest"
+        ]
+      }
+    }
+  },
+  "tags": []
+}

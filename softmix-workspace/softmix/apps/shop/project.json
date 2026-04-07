@@ -1,0 +1,73 @@
+{
+  "name": "shop",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/shop/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nx/webpack:webpack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "target": "node",
+        "compiler": "tsc",
+        "outputPath": "dist/apps/shop",
+        "main": "apps/shop/src/main.ts",
+        "tsConfig": "apps/shop/tsconfig.app.json",
+        "assets": ["apps/shop/src/assets"],
+        "isolatedConfig": true,
+        "webpackConfig": "apps/shop/webpack.config.js",
+        "generatePackageJson": true
+      },
+      "configurations": {
+        "development": {},
+        "production": {}
+      }
+    },
+    "serve": {
+      "executor": "@nx/js:node",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "shop:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "shop:build:development"
+        },
+        "production": {
+          "buildTarget": "shop:build:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/shop/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "apps/shop/jest.config.ts",
+        "passWithNoTests": true
+      },
+      "configurations": {
+        "ci": {
+          "ci": true,
+          "codeCoverage": true
+        }
+      }
+    },
+    "createImage": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          "rimraf ./dist/apps/shop && nx run shop:build && docker build --file ./apps/shop/Dockerfile --tag ghcr.io/artidy/softmix.shop:latest . && docker push ghcr.io/artidy/softmix.shop:latest"
+        ]
+      }
+    }
+  },
+  "tags": []
+}

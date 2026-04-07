@@ -1,0 +1,63 @@
+import { HttpException, Injectable } from '@nestjs/common';
+import { HttpService } from '@nestjs/axios';
+import { ConfigService } from '@nestjs/config';
+import { catchError, firstValueFrom, throttleTime } from 'rxjs';
+import { AlStyleRoutes, ProductsQuery } from '@project-lib/shared-types';
+
+@Injectable()
+export class AlstyleService {
+  private readonly serviceAddress: string;
+  private readonly token: string;
+
+  constructor(
+    private readonly httpService: HttpService,
+    private readonly configService: ConfigService
+  ) {
+    this.serviceAddress = this.configService.get<string>('bff.alStyleUrl');
+    this.token = this.configService.get<string>('bff.alStyleToken');
+  }
+
+  public async getCategories()  {
+    const { data } = await firstValueFrom(
+      this.httpService.get(
+        `${this.serviceAddress}${AlStyleRoutes.Categories}?access-token=${this.token}`
+      ).pipe(throttleTime(5000), catchError((e) => {
+        throw new HttpException(e.response.data, e.response.status);
+      }))
+    )
+
+    return data;
+  }
+
+  public async getProducts(categoryId: number, query: ProductsQuery)  {
+    const { data } = await firstValueFrom(
+      this.httpService.get(
+        `${this.serviceAddress}${AlStyleRoutes.Products}?access-token=${this.token}`,
+        {
+          params: {
+            category: categoryId,
+            limit: query.limit,
+            offset: query.offset,
+            additional_fields: 'images'
+          }
+        }
+      ).pipe(throttleTime(5000), catchError((e) => {
+        throw new HttpException(e.response.data, e.response.status);
+      }))
+    )
+
+    return data;
+  }
+
+  public async getImages(productId)  {
+    const { data } = await firstValueFrom(
+      this.httpService.get(
+        `${this.serviceAddress}${AlStyleRoutes.Images}?access-token=${this.token}&article=${productId}`
+      ).pipe(throttleTime(5000), catchError((e) => {
+        throw new HttpException(e.response.data, e.response.status);
+      }))
+    )
+
+    return data;
+  }
+}

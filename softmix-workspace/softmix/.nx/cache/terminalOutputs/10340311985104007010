@@ -1,0 +1,112 @@
+
+ [36m>[39m [0m[7m[1m[36m NX [39m[22m[27m[0m  [36mRunning target [1mbuild[22m for project shop and [1m1[22m task it depends on:[39m
+
+ 
+
+[2m> [22m[2mnx run[22m shop:build:production
+
+chunk (runtime: main) [1m[32mmain.js[39m[22m (main) 73 KiB [1m[33m[entry][39m[22m [1m[32m[rendered][39m[22m
+webpack compiled [1m[32msuccessfully[39m[22m (183b7a9371539a77)
+
+ 
+
+ [32m>[39m [0m[7m[1m[32m NX [39m[22m[27m[0m  [32mSuccessfully ran target [1mbuild[22m for project shop and [1m1[22m task it depends on[39m
+
+   [2mNx read the output from the cache instead of running the command for 1 out of 2 tasks.[22m
+
+
+ [33m>[39m [0m[7m[1m[33m NX [39m[22m[27m[0m  [33mNx Cloud Problems[39m
+
+   - This workspace is more than three days old and is not connected. Workspaces must be connected within 3 days of creation. Claim your workspace at https://cloud.nx.app
+
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 280B done
+#1 WARN: FromPlatformFlagConstDisallowed: FROM --platform flag should not use constant value "linux/amd64" (line 1)
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/node:21-alpine3.17
+#2 ...
+
+#3 [auth] library/node:pull token for registry-1.docker.io
+#3 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/node:21-alpine3.17
+#2 DONE 1.7s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 2B done
+#4 DONE 0.0s
+
+#5 [1/6] FROM docker.io/library/node:21-alpine3.17@sha256:3c63a56bb358fe10657085d47590a0a68ee666db1ed44dfc90462c2288289884
+#5 DONE 0.0s
+
+#6 [internal] load build context
+#6 transferring context: 279.21kB done
+#6 DONE 0.0s
+
+#7 [2/6] WORKDIR /opt/softmix
+#7 CACHED
+
+#8 [3/6] COPY ./dist/apps/shop/package.json .
+#8 CACHED
+
+#9 [4/6] RUN npm install --omit=dev
+#9 CACHED
+
+#10 [5/6] RUN npm install pg -E
+#10 4.141 
+#10 4.141 added 13 packages, and audited 266 packages in 4s
+#10 4.141 
+#10 4.141 39 packages are looking for funding
+#10 4.141   run `npm fund` for details
+#10 4.169 
+#10 4.169 9 vulnerabilities (1 low, 2 moderate, 6 high)
+#10 4.169 
+#10 4.169 To address issues that do not require attention, run:
+#10 4.169   npm audit fix
+#10 4.169 
+#10 4.169 To address all issues, run:
+#10 4.169   npm audit fix --force
+#10 4.169 
+#10 4.169 Run `npm audit` for details.
+#10 DONE 4.2s
+
+#11 [6/6] COPY ./dist/apps/shop .
+#11 DONE 0.0s
+
+#12 exporting to image
+#12 exporting layers 0.0s done
+#12 writing image sha256:ac494c23b204a4deea16d29f13ebfcfeab247ec33384b0e3a251a4fda56724a2 done
+#12 naming to ghcr.io/artidy/softmix.shop:latest done
+#12 DONE 0.0s
+
+View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/jmq8eebk5oba5ctnjy82pxr5d
+
+ [33m1 warning found (use docker --debug to expand):
+[0m - FromPlatformFlagConstDisallowed: FROM --platform flag should not use constant value "linux/amd64" (line 1)
+The push refers to repository [ghcr.io/artidy/softmix.shop]
+6c475317c50b: Preparing
+aba2bdc5ec22: Preparing
+613184aa4474: Preparing
+fa90fade5730: Preparing
+ffad0bf9787c: Preparing
+606bae91b09a: Preparing
+b26b96b420df: Preparing
+7927b0b6607c: Preparing
+617df26c9e2b: Preparing
+606bae91b09a: Waiting
+7927b0b6607c: Waiting
+617df26c9e2b: Waiting
+b26b96b420df: Waiting
+613184aa4474: Layer already exists
+fa90fade5730: Layer already exists
+ffad0bf9787c: Layer already exists
+606bae91b09a: Layer already exists
+b26b96b420df: Layer already exists
+7927b0b6607c: Layer already exists
+617df26c9e2b: Layer already exists
+6c475317c50b: Pushed
+aba2bdc5ec22: Pushed
+latest: digest: sha256:b6d05f3bdba73981f8d20bc85126d79d754db488724ad1c01604c61cc2316b96 size: 2203

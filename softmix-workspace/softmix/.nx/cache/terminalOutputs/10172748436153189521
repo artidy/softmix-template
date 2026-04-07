@@ -1,0 +1,138 @@
+chunk (runtime: main) [1m[32mmain.js[39m[22m (main) 67.4 KiB [1m[33m[entry][39m[22m [1m[32m[rendered][39m[22m
+webpack compiled [1m[32msuccessfully[39m[22m (e52d94b91cd6b743)
+[1m[31mStarting inspector on localhost:9229 failed: address already in use[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 7547  - [39m[31m10/15/2024, 10:42:52 PM [31m  ERROR[39m[31m [38;5;3m[ExceptionsHandler] [39m[31m[31mCannot read properties of undefined (reading 'data')[39m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31mTypeError: Cannot read properties of undefined (reading 'data')[39m[22m
+[1m[31m    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/dist/apps/bff/webpack:/src/app/users/users.service.ts:52:44[39m[22m
+[1m[31m    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/operators/catchError.ts:117:35[39m[22m
+[1m[31m    at OperatorSubscriber._this._error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/operators/OperatorSubscriber.ts:79:13)[39m[22m
+[1m[31m    at OperatorSubscriber.Subscriber.error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/Subscriber.ts:91:12)[39m[22m
+[1m[31m    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/@nestjs/axios/dist/http.service.js:65:28[39m[22m
+[1m[31m    at processTicksAndRejections (node:internal/process/task_queues:95:5)[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 7547  - [39m[31m10/15/2024, 10:43:15 PM [31m  ERROR[39m[31m [38;5;3m[ExceptionsHandler] [39m[31m[31mCannot read properties of undefined (reading 'data')[39m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31mTypeError: Cannot read properties of undefined (reading 'data')[39m[22m
+[1m[31m    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/dist/apps/bff/webpack:/src/app/users/users.service.ts:52:44[39m[22m
+[1m[31m    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/operators/catchError.ts:117:35[39m[22m
+[1m[31m    at OperatorSubscriber._this._error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/operators/OperatorSubscriber.ts:79:13)[39m[22m
+[1m[31m    at OperatorSubscriber.Subscriber.error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/Subscriber.ts:91:12)[39m[22m
+[1m[31m    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/@nestjs/axios/dist/http.service.js:65:28[39m[22m
+[1m[31m    at processTicksAndRejections (node:internal/process/task_queues:95:5)[39m[22m
+[1m[31m[39m[22m
+
+ [31m>[39m [0m[7m[1m[31m NX [39m[22m[27m[0m  [31mAn error occured while creating pruned lockfile[39m
+
+   Please open an issue at `https://github.com/nrwl/nx/issues/new?template=1-bug.yml` and provide a reproduction.
+   To prevent the build from breaking we are returning the root lock file.
+   If you run `npm install --package-lock-only` in your output folder it will regenerate the correct pruned lockfile.
+   
+Original error: Target project does not exist: npm:mime-db@1.52.0
+
+
+   Error: Target project does not exist: npm:mime-db@1.52.0
+    at validateCommonDependencyRules (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:323:15)
+    at validateDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:313:5)
+    at ProjectGraphBuilder.addDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:190:9)
+    at ProjectGraphBuilder.addStaticDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:89:14)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:81:17
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:80:9
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+
+chunk (runtime: main) [1m[32mmain.js[39m[22m (main) 67.5 KiB [1m[33m[entry][39m[22m [1m[32m[rendered][39m[22m
+webpack compiled [1m[32msuccessfully[39m[22m (db2a810f3a1445bc)
+[1m[31mStarting inspector on localhost:9229 failed: address already in use[39m[22m
+[1m[31m[39m[22m
+
+ [31m>[39m [0m[7m[1m[31m NX [39m[22m[27m[0m  [31mAn error occured while creating pruned lockfile[39m
+
+   Please open an issue at `https://github.com/nrwl/nx/issues/new?template=1-bug.yml` and provide a reproduction.
+   To prevent the build from breaking we are returning the root lock file.
+   If you run `npm install --package-lock-only` in your output folder it will regenerate the correct pruned lockfile.
+   
+Original error: Target project does not exist: npm:mime-db@1.52.0
+
+
+   Error: Target project does not exist: npm:mime-db@1.52.0
+    at validateCommonDependencyRules (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:323:15)
+    at validateDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:313:5)
+    at ProjectGraphBuilder.addDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:190:9)
+    at ProjectGraphBuilder.addStaticDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:89:14)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:81:17
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:80:9
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+
+chunk (runtime: main) [1m[32mmain.js[39m[22m (main) 67.7 KiB [1m[33m[entry][39m[22m [1m[32m[rendered][39m[22m
+webpack compiled [1m[32msuccessfully[39m[22m (e5b08fe4d0bbf638)
+[1m[31mStarting inspector on localhost:9229 failed: address already in use[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 8813  - [39m[31m10/15/2024, 10:52:14 PM [31m  ERROR[39m[31m [31mКод ошибки: 401, описание: Unauthorized[39m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 8813  - [39m[31m10/15/2024, 10:52:14 PM [31m  ERROR[39m[31m [31mКод ошибки: 401, описание: Unauthorized[39m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 8813  - [39m[31m10/15/2024, 11:05:18 PM [31m  ERROR[39m[31m [31mКод ошибки: 401, описание: Unauthorized[39m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 8813  - [39m[31m10/15/2024, 11:05:18 PM [31m  ERROR[39m[31m [31mКод ошибки: 401, описание: Unauthorized[39m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 8813  - [39m[31m10/15/2024, 11:18:16 PM [31m  ERROR[39m[31m [31mКод ошибки: 401, описание: Unauthorized[39m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 8813  - [39m[31m10/15/2024, 11:18:16 PM [31m  ERROR[39m[31m [31mКод ошибки: 401, описание: Unauthorized[39m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 8813  - [39m[31m10/15/2024, 11:23:51 PM [31m  ERROR[39m[31m [31mКод ошибки: 401, описание: Unauthorized[39m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 8813  - [39m[31m10/15/2024, 11:23:51 PM [31m  ERROR[39m[31m [31mКод ошибки: 401, описание: Unauthorized[39m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 8813  - [39m[31m10/15/2024, 11:30:29 PM [31m  ERROR[39m[31m [31mКод ошибки: 401, описание: Unauthorized[39m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 8813  - [39m[31m10/15/2024, 11:30:29 PM [31m  ERROR[39m[31m [31mКод ошибки: 401, описание: Unauthorized[39m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 8813  - [39m[31m10/15/2024, 11:31:52 PM [31m  ERROR[39m[31m [31mКод ошибки: 401, описание: Unauthorized[39m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 8813  - [39m[31m10/15/2024, 11:31:52 PM [31m  ERROR[39m[31m [31mКод ошибки: 401, описание: Unauthorized[39m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 8813  - [39m[31m10/15/2024, 11:33:08 PM [31m  ERROR[39m[31m [31mКод ошибки: 401, описание: Unauthorized[39m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 8813  - [39m[31m10/15/2024, 11:33:08 PM [31m  ERROR[39m[31m [31mКод ошибки: 401, описание: Unauthorized[39m[31m[39m[22m
+[1m[31m[39m[22m
+
+ [31m>[39m [0m[7m[1m[31m NX [39m[22m[27m[0m  [31mAn error occured while creating pruned lockfile[39m
+
+   Please open an issue at `https://github.com/nrwl/nx/issues/new?template=1-bug.yml` and provide a reproduction.
+   To prevent the build from breaking we are returning the root lock file.
+   If you run `npm install --package-lock-only` in your output folder it will regenerate the correct pruned lockfile.
+   
+Original error: Target project does not exist: npm:mime-db@1.52.0
+
+
+   Error: Target project does not exist: npm:mime-db@1.52.0
+    at validateCommonDependencyRules (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:323:15)
+    at validateDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:313:5)
+    at ProjectGraphBuilder.addDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:190:9)
+    at ProjectGraphBuilder.addStaticDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:89:14)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:81:17
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:80:9
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+
+chunk (runtime: main) [1m[32mmain.js[39m[22m (main) 67.8 KiB [1m[33m[entry][39m[22m [1m[32m[rendered][39m[22m
+webpack compiled [1m[32msuccessfully[39m[22m (2eb7b7bfe2701b91)
+[1m[31mStarting inspector on localhost:9229 failed: address already in use[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 10912  - [39m[31m10/16/2024, 12:16:19 AM [31m  ERROR[39m[31m [31mКод ошибки: 401, описание: Unauthorized[39m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 10912  - [39m[31m10/16/2024, 12:16:19 AM [31m  ERROR[39m[31m [31mКод ошибки: 401, описание: Unauthorized[39m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 10912  - [39m[31m10/16/2024, 12:17:34 AM [31m  ERROR[39m[31m [31mКод ошибки: 401, описание: Unauthorized[39m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 10912  - [39m[31m10/16/2024, 12:17:34 AM [31m  ERROR[39m[31m [31mКод ошибки: 401, описание: Unauthorized[39m[31m[39m[22m
+[1m[31m[39m[22m

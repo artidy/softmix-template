@@ -1,0 +1,400 @@
+chunk (runtime: main) [1m[32mmain.js[39m[22m (main) 64.1 KiB [1m[33m[entry][39m[22m [1m[32m[rendered][39m[22m
+webpack compiled [1m[32msuccessfully[39m[22m (4de2f0796a1c4696)
+[1m[31mDebugger listening on ws://localhost:9229/43768b75-8867-4723-818c-85075fb92565[39m[22m
+[1m[31mDebugger listening on ws://localhost:9229/43768b75-8867-4723-818c-85075fb92565[39m[22m
+[1m[31mFor help, see: https://nodejs.org/en/docs/inspector[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 9222  - [39m[31m09/29/2024, 4:04:34 PM [31m  ERROR[39m[31m [31mКод ошибки: 404, описание: Cannot GET /favicon.ico[39m[31m[39m[22m
+[1m[31m[39m[22m
+
+ [31m>[39m [0m[7m[1m[31m NX [39m[22m[27m[0m  [31mAn error occured while creating pruned lockfile[39m
+
+   Please open an issue at `https://github.com/nrwl/nx/issues/new?template=1-bug.yml` and provide a reproduction.
+   To prevent the build from breaking we are returning the root lock file.
+   If you run `npm install --package-lock-only` in your output folder it will regenerate the correct pruned lockfile.
+   
+Original error: Target project does not exist: npm:mime-db@1.52.0
+
+
+   Error: Target project does not exist: npm:mime-db@1.52.0
+    at validateCommonDependencyRules (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:323:15)
+    at validateDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:313:5)
+    at ProjectGraphBuilder.addDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:190:9)
+    at ProjectGraphBuilder.addStaticDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:89:14)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:81:17
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:80:9
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+
+chunk (runtime: main) [1m[32mmain.js[39m[22m (main) 64.2 KiB [1m[33m[entry][39m[22m [1m[32m[rendered][39m[22m
+webpack compiled [1m[32msuccessfully[39m[22m (538923d31a1e8dcc)
+[1m[31mDebugger listening on ws://localhost:9229/4a7c29c1-fad9-4a18-9f0e-934d86e10725[39m[22m
+[1m[31mDebugger listening on ws://localhost:9229/4a7c29c1-fad9-4a18-9f0e-934d86e10725[39m[22m
+[1m[31mFor help, see: https://nodejs.org/en/docs/inspector[39m[22m
+[1m[31m[39m[22m
+
+ [31m>[39m [0m[7m[1m[31m NX [39m[22m[27m[0m  [31mAn error occured while creating pruned lockfile[39m
+
+   Please open an issue at `https://github.com/nrwl/nx/issues/new?template=1-bug.yml` and provide a reproduction.
+   To prevent the build from breaking we are returning the root lock file.
+   If you run `npm install --package-lock-only` in your output folder it will regenerate the correct pruned lockfile.
+   
+Original error: Target project does not exist: npm:mime-db@1.52.0
+
+
+   Error: Target project does not exist: npm:mime-db@1.52.0
+    at validateCommonDependencyRules (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:323:15)
+    at validateDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:313:5)
+    at ProjectGraphBuilder.addDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:190:9)
+    at ProjectGraphBuilder.addStaticDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:89:14)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:81:17
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:80:9
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+
+chunk (runtime: main) [1m[32mmain.js[39m[22m (main) 64.1 KiB [1m[33m[entry][39m[22m [1m[32m[rendered][39m[22m
+webpack compiled [1m[32msuccessfully[39m[22m (f570debede9b6ed4)
+[1m[31mDebugger listening on ws://localhost:9229/9a8eb86b-645f-4efd-a9ab-589a3d9c215b[39m[22m
+[1m[31mDebugger listening on ws://localhost:9229/9a8eb86b-645f-4efd-a9ab-589a3d9c215b[39m[22m
+[1m[31mFor help, see: https://nodejs.org/en/docs/inspector[39m[22m
+[1m[31m[39m[22m
+
+ [31m>[39m [0m[7m[1m[31m NX [39m[22m[27m[0m  [31mAn error occured while creating pruned lockfile[39m
+
+   Please open an issue at `https://github.com/nrwl/nx/issues/new?template=1-bug.yml` and provide a reproduction.
+   To prevent the build from breaking we are returning the root lock file.
+   If you run `npm install --package-lock-only` in your output folder it will regenerate the correct pruned lockfile.
+   
+Original error: Target project does not exist: npm:mime-db@1.52.0
+
+
+   Error: Target project does not exist: npm:mime-db@1.52.0
+    at validateCommonDependencyRules (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:323:15)
+    at validateDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:313:5)
+    at ProjectGraphBuilder.addDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:190:9)
+    at ProjectGraphBuilder.addStaticDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:89:14)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:81:17
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:80:9
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+
+chunk (runtime: main) [1m[32mmain.js[39m[22m (main) 64.1 KiB [1m[33m[entry][39m[22m [1m[32m[rendered][39m[22m
+webpack compiled [1m[32msuccessfully[39m[22m (8cc5c301728b17e5)
+[1m[31mDebugger listening on ws://localhost:9229/51db75fa-7d2c-4b17-b2d9-14f0035e9185[39m[22m
+[1m[31mDebugger listening on ws://localhost:9229/51db75fa-7d2c-4b17-b2d9-14f0035e9185[39m[22m
+[1m[31mFor help, see: https://nodejs.org/en/docs/inspector[39m[22m
+[1m[31m[39m[22m
+
+ [31m>[39m [0m[7m[1m[31m NX [39m[22m[27m[0m  [31mAn error occured while creating pruned lockfile[39m
+
+   Please open an issue at `https://github.com/nrwl/nx/issues/new?template=1-bug.yml` and provide a reproduction.
+   To prevent the build from breaking we are returning the root lock file.
+   If you run `npm install --package-lock-only` in your output folder it will regenerate the correct pruned lockfile.
+   
+Original error: Target project does not exist: npm:mime-db@1.52.0
+
+
+   Error: Target project does not exist: npm:mime-db@1.52.0
+    at validateCommonDependencyRules (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:323:15)
+    at validateDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:313:5)
+    at ProjectGraphBuilder.addDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:190:9)
+    at ProjectGraphBuilder.addStaticDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:89:14)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:81:17
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:80:9
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+
+chunk (runtime: main) [1m[32mmain.js[39m[22m (main) 64.1 KiB [1m[33m[entry][39m[22m [1m[32m[rendered][39m[22m
+
+[1m[31mERROR[39m[22m in [1m./apps/bff/src/app/alstyle/alstyle.controller.ts:[32m[1m18:39[22m[39m[1m[39m[22m
+[90mTS2554: [39mExpected 0 arguments, but got 1.
+  [0m [90m 16 |[39m   [33m@[39m[33mHttpCode[39m([33mHttpStatus[39m[33m.[39m[33mOK[39m)
+   [90m 17 |[39m   [36mpublic[39m [36masync[39m getCategories([33m@[39m[33mHeaders[39m() headers) {
+  [31m[1m>[22m[39m[90m 18 |[39m     [36mreturn[39m [36mthis[39m[33m.[39mservice[33m.[39mgetCategories(headers)[33m;[39m
+   [90m    |[39m                                       [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+   [90m 19 |[39m   }
+   [90m 20 |[39m
+   [90m 21 |[39m   [33m@[39m[33mApiResponse[39m({[0m
+
+[1m[31mERROR[39m[22m in [1m./apps/bff/src/app/alstyle/alstyle.controller.ts:[32m[1m27:25[22m[39m[1m[39m[22m
+[90mTS2554: [39mExpected 3 arguments, but got 2.
+  [0m [90m 25 |[39m   [33m@[39m[33mHttpCode[39m([33mHttpStatus[39m[33m.[39m[33mOK[39m)
+   [90m 26 |[39m   [36mpublic[39m [36masync[39m getProducts([33m@[39m[33mParam[39m([32m'categoryId'[39m) categoryId[33m:[39m number[33m,[39m [33m@[39m[33mQuery[39m([32m''[39m)) {
+  [31m[1m>[22m[39m[90m 27 |[39m     [36mreturn[39m [36mthis[39m[33m.[39mservice[33m.[39mgetProducts(categoryId)[33m;[39m
+   [90m    |[39m                         [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+   [90m 28 |[39m   }
+   [90m 29 |[39m
+   [90m 30 |[39m   [33m@[39m[33mApiResponse[39m({[0m
+
+[1m[31mERROR[39m[22m in [1m./apps/bff/src/app/alstyle/alstyle.controller.ts:[32m[1m36:44[22m[39m[1m[39m[22m
+[90mTS2554: [39mExpected 1 arguments, but got 2.
+  [0m [90m 34 |[39m   [33m@[39m[33mHttpCode[39m([33mHttpStatus[39m[33m.[39m[33mOK[39m)
+   [90m 35 |[39m   [36mpublic[39m [36masync[39m getImages([33m@[39m[33mParam[39m([32m'id'[39m) id[33m:[39m number[33m,[39m [33m@[39m[33mHeaders[39m() headers) {
+  [31m[1m>[22m[39m[90m 36 |[39m     [36mreturn[39m [36mthis[39m[33m.[39mservice[33m.[39mgetImages(headers[33m,[39m id)[33m;[39m
+   [90m    |[39m                                            [31m[1m^[22m[39m[31m[1m^[22m[39m
+   [90m 37 |[39m   }
+   [90m 38 |[39m }
+   [90m 39 |[39m[0m
+
+webpack compiled with [1m[31m3 errors[39m[22m (80d410431ebc0aa7)
+
+ [31m>[39m [0m[7m[1m[31m NX [39m[22m[27m[0m  [31mAn error occured while creating pruned lockfile[39m
+
+   Please open an issue at `https://github.com/nrwl/nx/issues/new?template=1-bug.yml` and provide a reproduction.
+   To prevent the build from breaking we are returning the root lock file.
+   If you run `npm install --package-lock-only` in your output folder it will regenerate the correct pruned lockfile.
+   
+Original error: Target project does not exist: npm:mime-db@1.52.0
+
+
+   Error: Target project does not exist: npm:mime-db@1.52.0
+    at validateCommonDependencyRules (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:323:15)
+    at validateDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:313:5)
+    at ProjectGraphBuilder.addDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:190:9)
+    at ProjectGraphBuilder.addStaticDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:89:14)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:81:17
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:80:9
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+
+chunk (runtime: main) [1m[32mmain.js[39m[22m (main) 64.1 KiB [1m[33m[entry][39m[22m [1m[32m[rendered][39m[22m
+
+[1m[31mERROR[39m[22m in [1m/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/apps/bff/src/app/alstyle/alstyle.controller.ts[39m[22m
+[1m./src/app/alstyle/alstyle.controller.ts[39m[22m [1m[32m26:78-79[39m[22m
+[90m[tsl] [39m[1m[31mERROR[39m[22m[1m[31m in [39m[22m[1m[36m/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/apps/bff/src/app/alstyle/alstyle.controller.ts(26,79)[39m[22m
+[1m[31m      TS1003: Identifier expected.[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./apps/bff/src/app/alstyle/alstyle.controller.ts:[32m[1m18:39[22m[39m[1m[39m[22m
+[90mTS2554: [39mExpected 0 arguments, but got 1.
+  [0m [90m 16 |[39m   [33m@[39m[33mHttpCode[39m([33mHttpStatus[39m[33m.[39m[33mOK[39m)
+   [90m 17 |[39m   [36mpublic[39m [36masync[39m getCategories([33m@[39m[33mHeaders[39m() headers) {
+  [31m[1m>[22m[39m[90m 18 |[39m     [36mreturn[39m [36mthis[39m[33m.[39mservice[33m.[39mgetCategories(headers)[33m;[39m
+   [90m    |[39m                                       [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+   [90m 19 |[39m   }
+   [90m 20 |[39m
+   [90m 21 |[39m   [33m@[39m[33mApiResponse[39m({[0m
+
+[1m[31mERROR[39m[22m in [1m./apps/bff/src/app/alstyle/alstyle.controller.ts:[32m[1m27:25[22m[39m[1m[39m[22m
+[90mTS2554: [39mExpected 3 arguments, but got 1.
+  [0m [90m 25 |[39m   [33m@[39m[33mHttpCode[39m([33mHttpStatus[39m[33m.[39m[33mOK[39m)
+   [90m 26 |[39m   [36mpublic[39m [36masync[39m getProducts([33m@[39m[33mParam[39m([32m'categoryId'[39m) categoryId[33m:[39m number[33m,[39m [33m@[39m[33mQuery[39m([32m''[39m)) {
+  [31m[1m>[22m[39m[90m 27 |[39m     [36mreturn[39m [36mthis[39m[33m.[39mservice[33m.[39mgetProducts(categoryId)[33m;[39m
+   [90m    |[39m                         [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+   [90m 28 |[39m   }
+   [90m 29 |[39m
+   [90m 30 |[39m   [33m@[39m[33mApiResponse[39m({[0m
+
+[1m[31mERROR[39m[22m in [1m./apps/bff/src/app/alstyle/alstyle.controller.ts:[32m[1m36:44[22m[39m[1m[39m[22m
+[90mTS2554: [39mExpected 1 arguments, but got 2.
+  [0m [90m 34 |[39m   [33m@[39m[33mHttpCode[39m([33mHttpStatus[39m[33m.[39m[33mOK[39m)
+   [90m 35 |[39m   [36mpublic[39m [36masync[39m getImages([33m@[39m[33mParam[39m([32m'id'[39m) id[33m:[39m number[33m,[39m [33m@[39m[33mHeaders[39m() headers) {
+  [31m[1m>[22m[39m[90m 36 |[39m     [36mreturn[39m [36mthis[39m[33m.[39mservice[33m.[39mgetImages(headers[33m,[39m id)[33m;[39m
+   [90m    |[39m                                            [31m[1m^[22m[39m[31m[1m^[22m[39m
+   [90m 37 |[39m   }
+   [90m 38 |[39m }
+   [90m 39 |[39m[0m
+
+webpack compiled with [1m[31m4 errors[39m[22m (c8b8e36614bfd44d)
+[1m[31mBuild failed, waiting for changes to restart...[39m[22m
+
+ [31m>[39m [0m[7m[1m[31m NX [39m[22m[27m[0m  [31mAn error occured while creating pruned lockfile[39m
+
+   Please open an issue at `https://github.com/nrwl/nx/issues/new?template=1-bug.yml` and provide a reproduction.
+   To prevent the build from breaking we are returning the root lock file.
+   If you run `npm install --package-lock-only` in your output folder it will regenerate the correct pruned lockfile.
+   
+Original error: Target project does not exist: npm:mime-db@1.52.0
+
+
+   Error: Target project does not exist: npm:mime-db@1.52.0
+    at validateCommonDependencyRules (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:323:15)
+    at validateDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:313:5)
+    at ProjectGraphBuilder.addDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:190:9)
+    at ProjectGraphBuilder.addStaticDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:89:14)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:81:17
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:80:9
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+
+chunk (runtime: main) [1m[32mmain.js[39m[22m (main) 64.1 KiB [1m[33m[entry][39m[22m [1m[32m[rendered][39m[22m
+
+[1m[31mERROR[39m[22m in [1m./apps/bff/src/app/alstyle/alstyle.controller.ts:[32m[1m18:39[22m[39m[1m[39m[22m
+[90mTS2554: [39mExpected 0 arguments, but got 1.
+  [0m [90m 16 |[39m   [33m@[39m[33mHttpCode[39m([33mHttpStatus[39m[33m.[39m[33mOK[39m)
+   [90m 17 |[39m   [36mpublic[39m [36masync[39m getCategories([33m@[39m[33mHeaders[39m() headers) {
+  [31m[1m>[22m[39m[90m 18 |[39m     [36mreturn[39m [36mthis[39m[33m.[39mservice[33m.[39mgetCategories(headers)[33m;[39m
+   [90m    |[39m                                       [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+   [90m 19 |[39m   }
+   [90m 20 |[39m
+   [90m 21 |[39m   [33m@[39m[33mApiResponse[39m({[0m
+
+[1m[31mERROR[39m[22m in [1m./apps/bff/src/app/alstyle/alstyle.controller.ts:[32m[1m27:25[22m[39m[1m[39m[22m
+[90mTS2554: [39mExpected 3 arguments, but got 1.
+  [0m [90m 25 |[39m   [33m@[39m[33mHttpCode[39m([33mHttpStatus[39m[33m.[39m[33mOK[39m)
+   [90m 26 |[39m   [36mpublic[39m [36masync[39m getProducts([33m@[39m[33mParam[39m([32m'categoryId'[39m) categoryId[33m:[39m number[33m,[39m [33m@[39m[33mQuery[39m() query) {
+  [31m[1m>[22m[39m[90m 27 |[39m     [36mreturn[39m [36mthis[39m[33m.[39mservice[33m.[39mgetProducts(categoryId)[33m;[39m
+   [90m    |[39m                         [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+   [90m 28 |[39m   }
+   [90m 29 |[39m
+   [90m 30 |[39m   [33m@[39m[33mApiResponse[39m({[0m
+
+[1m[31mERROR[39m[22m in [1m./apps/bff/src/app/alstyle/alstyle.controller.ts:[32m[1m36:44[22m[39m[1m[39m[22m
+[90mTS2554: [39mExpected 1 arguments, but got 2.
+  [0m [90m 34 |[39m   [33m@[39m[33mHttpCode[39m([33mHttpStatus[39m[33m.[39m[33mOK[39m)
+   [90m 35 |[39m   [36mpublic[39m [36masync[39m getImages([33m@[39m[33mParam[39m([32m'id'[39m) id[33m:[39m number[33m,[39m [33m@[39m[33mHeaders[39m() headers) {
+  [31m[1m>[22m[39m[90m 36 |[39m     [36mreturn[39m [36mthis[39m[33m.[39mservice[33m.[39mgetImages(headers[33m,[39m id)[33m;[39m
+   [90m    |[39m                                            [31m[1m^[22m[39m[31m[1m^[22m[39m
+   [90m 37 |[39m   }
+   [90m 38 |[39m }
+   [90m 39 |[39m[0m
+
+webpack compiled with [1m[31m3 errors[39m[22m (246a7166d189b166)
+[1m[31mBuild failed, waiting for changes to restart...[39m[22m
+
+ [31m>[39m [0m[7m[1m[31m NX [39m[22m[27m[0m  [31mAn error occured while creating pruned lockfile[39m
+
+   Please open an issue at `https://github.com/nrwl/nx/issues/new?template=1-bug.yml` and provide a reproduction.
+   To prevent the build from breaking we are returning the root lock file.
+   If you run `npm install --package-lock-only` in your output folder it will regenerate the correct pruned lockfile.
+   
+Original error: Target project does not exist: npm:mime-db@1.52.0
+
+
+   Error: Target project does not exist: npm:mime-db@1.52.0
+    at validateCommonDependencyRules (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:323:15)
+    at validateDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:313:5)
+    at ProjectGraphBuilder.addDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:190:9)
+    at ProjectGraphBuilder.addStaticDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:89:14)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:81:17
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:80:9
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+
+chunk (runtime: main) [1m[32mmain.js[39m[22m (main) 65.5 KiB [1m[33m[entry][39m[22m [1m[32m[rendered][39m[22m
+
+[1m[31mERROR[39m[22m in [1m./apps/bff/src/app/alstyle/alstyle.controller.ts:[32m[1m19:39[22m[39m[1m[39m[22m
+[90mTS2554: [39mExpected 0 arguments, but got 1.
+  [0m [90m 17 |[39m   [33m@[39m[33mHttpCode[39m([33mHttpStatus[39m[33m.[39m[33mOK[39m)
+   [90m 18 |[39m   [36mpublic[39m [36masync[39m getCategories([33m@[39m[33mHeaders[39m() headers) {
+  [31m[1m>[22m[39m[90m 19 |[39m     [36mreturn[39m [36mthis[39m[33m.[39mservice[33m.[39mgetCategories(headers)[33m;[39m
+   [90m    |[39m                                       [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+   [90m 20 |[39m   }
+   [90m 21 |[39m
+   [90m 22 |[39m   [33m@[39m[33mApiResponse[39m({[0m
+
+[1m[31mERROR[39m[22m in [1m./apps/bff/src/app/alstyle/alstyle.controller.ts:[32m[1m37:44[22m[39m[1m[39m[22m
+[90mTS2554: [39mExpected 1 arguments, but got 2.
+  [0m [90m 35 |[39m   [33m@[39m[33mHttpCode[39m([33mHttpStatus[39m[33m.[39m[33mOK[39m)
+   [90m 36 |[39m   [36mpublic[39m [36masync[39m getImages([33m@[39m[33mParam[39m([32m'id'[39m) id[33m:[39m number[33m,[39m [33m@[39m[33mHeaders[39m() headers) {
+  [31m[1m>[22m[39m[90m 37 |[39m     [36mreturn[39m [36mthis[39m[33m.[39mservice[33m.[39mgetImages(headers[33m,[39m id)[33m;[39m
+   [90m    |[39m                                            [31m[1m^[22m[39m[31m[1m^[22m[39m
+   [90m 38 |[39m   }
+   [90m 39 |[39m }
+   [90m 40 |[39m[0m
+
+[1m[31mERROR[39m[22m in [1m./apps/bff/src/app/alstyle/alstyle.service.ts:[32m[1m32:55[22m[39m[1m[39m[22m
+[90mTS2304: [39mCannot find name 'ProductsQuery'.
+  [0m [90m 30 |[39m   }
+   [90m 31 |[39m
+  [31m[1m>[22m[39m[90m 32 |[39m   [36mpublic[39m [36masync[39m getProducts(categoryId[33m:[39m number[33m,[39m query[33m:[39m [33mProductsQuery[39m)  {
+   [90m    |[39m                                                       [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+   [90m 33 |[39m     [36mconst[39m { data } [33m=[39m [36mawait[39m firstValueFrom(
+   [90m 34 |[39m       [36mthis[39m[33m.[39mhttpService[33m.[39m[36mget[39m(
+   [90m 35 |[39m         [32m`${this.serviceAddress}${AlStyleRoutes.Products}`[39m[33m,[39m[0m
+
+webpack compiled with [1m[31m3 errors[39m[22m (240584fc40c77923)
+
+ [31m>[39m [0m[7m[1m[31m NX [39m[22m[27m[0m  [31mAn error occured while creating pruned lockfile[39m
+
+   Please open an issue at `https://github.com/nrwl/nx/issues/new?template=1-bug.yml` and provide a reproduction.
+   To prevent the build from breaking we are returning the root lock file.
+   If you run `npm install --package-lock-only` in your output folder it will regenerate the correct pruned lockfile.
+   
+Original error: Target project does not exist: npm:mime-db@1.52.0
+
+
+   Error: Target project does not exist: npm:mime-db@1.52.0
+    at validateCommonDependencyRules (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:323:15)
+    at validateDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:313:5)
+    at ProjectGraphBuilder.addDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:190:9)
+    at ProjectGraphBuilder.addStaticDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:89:14)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:81:17
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:80:9
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+
+chunk (runtime: main) [1m[32mmain.js[39m[22m (main) 65.6 KiB [1m[33m[entry][39m[22m [1m[32m[rendered][39m[22m
+
+[1m[31mERROR[39m[22m in [1m./apps/bff/src/app/alstyle/alstyle.controller.ts:[32m[1m19:39[22m[39m[1m[39m[22m
+[90mTS2554: [39mExpected 0 arguments, but got 1.
+  [0m [90m 17 |[39m   [33m@[39m[33mHttpCode[39m([33mHttpStatus[39m[33m.[39m[33mOK[39m)
+   [90m 18 |[39m   [36mpublic[39m [36masync[39m getCategories([33m@[39m[33mHeaders[39m() headers) {
+  [31m[1m>[22m[39m[90m 19 |[39m     [36mreturn[39m [36mthis[39m[33m.[39mservice[33m.[39mgetCategories(headers)[33m;[39m
+   [90m    |[39m                                       [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+   [90m 20 |[39m   }
+   [90m 21 |[39m
+   [90m 22 |[39m   [33m@[39m[33mApiResponse[39m({[0m
+
+[1m[31mERROR[39m[22m in [1m./apps/bff/src/app/alstyle/alstyle.controller.ts:[32m[1m37:44[22m[39m[1m[39m[22m
+[90mTS2554: [39mExpected 1 arguments, but got 2.
+  [0m [90m 35 |[39m   [33m@[39m[33mHttpCode[39m([33mHttpStatus[39m[33m.[39m[33mOK[39m)
+   [90m 36 |[39m   [36mpublic[39m [36masync[39m getImages([33m@[39m[33mParam[39m([32m'id'[39m) id[33m:[39m number[33m,[39m [33m@[39m[33mHeaders[39m() headers) {
+  [31m[1m>[22m[39m[90m 37 |[39m     [36mreturn[39m [36mthis[39m[33m.[39mservice[33m.[39mgetImages(headers[33m,[39m id)[33m;[39m
+   [90m    |[39m                                            [31m[1m^[22m[39m[31m[1m^[22m[39m
+   [90m 38 |[39m   }
+   [90m 39 |[39m }
+   [90m 40 |[39m[0m
+
+[1m[31mERROR[39m[22m in [1m./apps/bff/src/app/alstyle/alstyle.service.ts:[32m[1m32:55[22m[39m[1m[39m[22m
+[90mTS2304: [39mCannot find name 'ProductsQuery'.
+  [0m [90m 30 |[39m   }
+   [90m 31 |[39m
+  [31m[1m>[22m[39m[90m 32 |[39m   [36mpublic[39m [36masync[39m getProducts(categoryId[33m:[39m number[33m,[39m query[33m:[39m [33mProductsQuery[39m)  {
+   [90m    |[39m                                                       [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+   [90m 33 |[39m     [36mconst[39m { data } [33m=[39m [36mawait[39m firstValueFrom(
+   [90m 34 |[39m       [36mthis[39m[33m.[39mhttpService[33m.[39m[36mget[39m(
+   [90m 35 |[39m         [32m`${this.serviceAddress}${AlStyleRoutes.Products}`[39m[33m,[39m[0m
+
+webpack compiled with [1m[31m3 errors[39m[22m (3c50dd6c29db12c0)
+[1m[31mBuild failed, waiting for changes to restart...[39m[22m
+
+ [31m>[39m [0m[7m[1m[31m NX [39m[22m[27m[0m  [31mAn error occured while creating pruned lockfile[39m
+
+   Please open an issue at `https://github.com/nrwl/nx/issues/new?template=1-bug.yml` and provide a reproduction.
+   To prevent the build from breaking we are returning the root lock file.
+   If you run `npm install --package-lock-only` in your output folder it will regenerate the correct pruned lockfile.
+   
+Original error: Target project does not exist: npm:mime-db@1.52.0
+
+
+   Error: Target project does not exist: npm:mime-db@1.52.0
+    at validateCommonDependencyRules (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:323:15)
+    at validateDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:313:5)
+    at ProjectGraphBuilder.addDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:190:9)
+    at ProjectGraphBuilder.addStaticDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:89:14)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:81:17
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:80:9
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+
+chunk (runtime: main) [1m[32mmain.js[39m[22m (main) 65.3 KiB [1m[33m[entry][39m[22m [1m[32m[rendered][39m[22m
+webpack compiled [1m[32msuccessfully[39m[22m (15b683bd94f15a26)
+[1m[31mBuild failed, waiting for changes to restart...[39m[22m

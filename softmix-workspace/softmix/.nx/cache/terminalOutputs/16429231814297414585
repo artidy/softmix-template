@@ -1,0 +1,56 @@
+chunk (runtime: main) [1m[32mmain.js[39m[22m (main) 67.4 KiB [1m[33m[entry][39m[22m [1m[32m[rendered][39m[22m
+webpack compiled [1m[32msuccessfully[39m[22m (58871714e570e1a0)
+[1m[31mStarting inspector on localhost:9229 failed: address already in use[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 3059  - [39m[31m10/06/2024, 3:00:38 PM [31m  ERROR[39m[31m [38;5;3m[ExceptionsHandler] [39m[31m[31mCannot read properties of undefined (reading 'data')[39m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31mTypeError: Cannot read properties of undefined (reading 'data')[39m[22m
+[1m[31m    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/dist/apps/bff/webpack:/src/app/products/product.service.ts:65:44[39m[22m
+[1m[31m    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/operators/catchError.ts:117:35[39m[22m
+[1m[31m    at OperatorSubscriber._this._error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/operators/OperatorSubscriber.ts:79:13)[39m[22m
+[1m[31m    at OperatorSubscriber.Subscriber.error (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/rxjs/src/internal/Subscriber.ts:91:12)[39m[22m
+[1m[31m    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/@nestjs/axios/dist/http.service.js:65:28[39m[22m
+[1m[31m    at processTicksAndRejections (node:internal/process/task_queues:95:5)[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 3059  - [39m[31m10/06/2024, 4:04:58 PM [31m  ERROR[39m[31m [31mКод ошибки: 500, описание: Internal server error[39m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 3059  - [39m[31m10/06/2024, 4:10:11 PM [31m  ERROR[39m[31m [31mКод ошибки: 500, описание: Internal server error[39m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 3059  - [39m[31m10/06/2024, 4:18:09 PM [31m  ERROR[39m[31m [31mКод ошибки: 500, описание: Internal server error[39m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 3059  - [39m[31m10/06/2024, 4:36:42 PM [31m  ERROR[39m[31m [31mКод ошибки: 500, описание: Internal server error[39m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 3059  - [39m[31m10/06/2024, 6:53:40 PM [31m  ERROR[39m[31m [31mКод ошибки: 500, описание: Internal server error[39m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 3059  - [39m[31m10/06/2024, 7:17:05 PM [31m  ERROR[39m[31m [31mКод ошибки: 500, описание: Internal server error[39m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 3059  - [39m[31m10/06/2024, 7:17:14 PM [31m  ERROR[39m[31m [31mКод ошибки: 500, описание: Internal server error[39m[31m[39m[22m
+[1m[31m[39m[22m
+
+ [31m>[39m [0m[7m[1m[31m NX [39m[22m[27m[0m  [31mAn error occured while creating pruned lockfile[39m
+
+   Please open an issue at `https://github.com/nrwl/nx/issues/new?template=1-bug.yml` and provide a reproduction.
+   To prevent the build from breaking we are returning the root lock file.
+   If you run `npm install --package-lock-only` in your output folder it will regenerate the correct pruned lockfile.
+   
+Original error: Target project does not exist: npm:mime-db@1.52.0
+
+
+   Error: Target project does not exist: npm:mime-db@1.52.0
+    at validateCommonDependencyRules (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:323:15)
+    at validateDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:313:5)
+    at ProjectGraphBuilder.addDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:190:9)
+    at ProjectGraphBuilder.addStaticDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:89:14)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:81:17
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:80:9
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+
+chunk (runtime: main) [1m[32mmain.js[39m[22m (main) 67.4 KiB [1m[33m[entry][39m[22m [1m[32m[rendered][39m[22m
+webpack compiled [1m[32msuccessfully[39m[22m (1257dacd36d5e5a7)
+[1m[31mDebugger listening on ws://localhost:9229/01417e7e-bc11-4281-88f4-778a569618fd[39m[22m
+[1m[31mDebugger listening on ws://localhost:9229/01417e7e-bc11-4281-88f4-778a569618fd[39m[22m
+[1m[31mFor help, see: https://nodejs.org/en/docs/inspector[39m[22m
+[1m[31m[39m[22m

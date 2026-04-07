@@ -1,0 +1,123 @@
+
+ [36m>[39m [0m[7m[1m[36m NX [39m[22m[27m[0m  [36mRunning target [1mbuild[22m for project users and [1m1[22m task it depends on:[39m
+
+ 
+
+[2m> [22m[2mnx run[22m shared-types:build
+
+Compiling TypeScript files for project "shared-types"...
+Done compiling TypeScript files for project "shared-types".
+
+[2m> [22m[2mnx run[22m users:build:production
+
+chunk (runtime: main) [1m[32mmain.js[39m[22m (main) 79.4 KiB [1m[33m[entry][39m[22m [1m[32m[rendered][39m[22m
+webpack compiled [1m[32msuccessfully[39m[22m (e49e4484ee3e026e)
+
+ 
+
+ [32m>[39m [0m[7m[1m[32m NX [39m[22m[27m[0m  [32mSuccessfully ran target [1mbuild[22m for project users and [1m1[22m task it depends on[39m
+
+
+
+ [33m>[39m [0m[7m[1m[33m NX [39m[22m[27m[0m  [33mNx Cloud Problems[39m
+
+   - This workspace is more than three days old and is not connected. Workspaces must be connected within 3 days of creation. Claim your workspace at https://cloud.nx.app
+
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 260B done
+#1 WARN: FromPlatformFlagConstDisallowed: FROM --platform flag should not use constant value "linux/amd64" (line 1)
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/node:19-alpine3.17
+#2 ...
+
+#3 [auth] library/node:pull token for registry-1.docker.io
+#3 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/node:19-alpine3.17
+#2 DONE 1.7s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 2B done
+#4 DONE 0.0s
+
+#5 [1/5] FROM docker.io/library/node:19-alpine3.17@sha256:3152fa8e36c952a792809026b21bfa5312e8f65f60202d28cae3256228da1519
+#5 CACHED
+
+#6 [internal] load build context
+#6 transferring context: 277.50kB done
+#6 DONE 0.0s
+
+#7 [2/5] WORKDIR /opt/softmix
+#7 DONE 0.0s
+
+#8 [3/5] COPY ./dist/apps/users/package.json .
+#8 DONE 0.0s
+
+#9 [4/5] RUN npm install --omit=dev
+#9 57.48 npm WARN deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+#9 57.52 npm WARN deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
+#9 57.60 npm WARN deprecated are-we-there-yet@2.0.0: This package is no longer supported.
+#9 57.61 npm WARN deprecated gauge@3.0.2: This package is no longer supported.
+#9 58.03 npm WARN deprecated npmlog@5.0.1: This package is no longer supported.
+#9 58.04 npm WARN deprecated rimraf@3.0.2: Rimraf versions prior to v4 are no longer supported
+#9 62.55 
+#9 62.55 added 230 packages, and audited 231 packages in 1m
+#9 62.55 
+#9 62.55 25 packages are looking for funding
+#9 62.55   run `npm fund` for details
+#9 62.57 
+#9 62.57 9 vulnerabilities (1 low, 2 moderate, 6 high)
+#9 62.57 
+#9 62.57 To address issues that do not require attention, run:
+#9 62.57   npm audit fix
+#9 62.57 
+#9 62.57 To address all issues, run:
+#9 62.57   npm audit fix --force
+#9 62.57 
+#9 62.57 Run `npm audit` for details.
+#9 62.57 npm notice 
+#9 62.57 npm notice New major version of npm available! 9.6.3 -> 10.9.0
+#9 62.57 npm notice Changelog: <https://github.com/npm/cli/releases/tag/v10.9.0>
+#9 62.57 npm notice Run `npm install -g npm@10.9.0` to update!
+#9 62.57 npm notice 
+#9 DONE 62.7s
+
+#10 [5/5] COPY ./dist/apps/users .
+#10 DONE 0.0s
+
+#11 exporting to image
+#11 exporting layers
+#11 exporting layers 0.4s done
+#11 writing image sha256:900617fd91394d244c4f133c784e877be0203b3282dbd7d4e3ba3670e4d44528 done
+#11 naming to ghcr.io/artidy/softmix.users:latest
+#11 naming to ghcr.io/artidy/softmix.users:latest done
+#11 DONE 0.4s
+
+View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/j9g29rciwg2zyd0bznotlmuif
+
+ [33m1 warning found (use docker --debug to expand):
+[0m - FromPlatformFlagConstDisallowed: FROM --platform flag should not use constant value "linux/amd64" (line 1)
+The push refers to repository [ghcr.io/artidy/softmix.users]
+701cdc0417dc: Preparing
+66f690697ea7: Preparing
+1a2f2433fc57: Preparing
+5be67e9fa63c: Preparing
+b484fb8495af: Preparing
+e0b1a438e37c: Preparing
+db62e650f5f1: Preparing
+f1417ff83b31: Preparing
+db62e650f5f1: Waiting
+f1417ff83b31: Waiting
+e0b1a438e37c: Waiting
+b484fb8495af: Mounted from artidy/devandy-admin-bot.service
+5be67e9fa63c: Pushed
+1a2f2433fc57: Pushed
+701cdc0417dc: Pushed
+e0b1a438e37c: Mounted from artidy/devandy-admin-bot.service
+db62e650f5f1: Mounted from artidy/devandy-admin-bot.service
+f1417ff83b31: Mounted from artidy/devandy-admin-bot.service
+66f690697ea7: Pushed
+latest: digest: sha256:d8164c72dd250762feda3dd6d7b202dcf54ceb87eb8e948dd97313028dd782ae size: 1993

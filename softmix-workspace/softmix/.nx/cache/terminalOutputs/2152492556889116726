@@ -1,0 +1,826 @@
+chunk (runtime: main) [1m[32mmain.js[39m[22m (main) 76.5 KiB [1m[33m[entry][39m[22m [1m[32m[rendered][39m[22m
+webpack compiled [1m[32msuccessfully[39m[22m (f38e57c887f563f6)
+[1m[31mDebugger listening on ws://localhost:9229/f851f68a-92ce-44af-81fa-30e1b3e75bf1[39m[22m
+[1m[31mDebugger listening on ws://localhost:9229/f851f68a-92ce-44af-81fa-30e1b3e75bf1[39m[22m
+[1m[31mFor help, see: https://nodejs.org/en/docs/inspector[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 3148  - [39m[31m10/29/2024, 10:36:32 PM [31m  ERROR[39m[31m [38;5;3m[ExceptionsHandler] [39m[31m[31mProvided "skip" value is not a number. Please provide a numeric value.[39m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31mTypeORMError: Provided "skip" value is not a number. Please provide a numeric value.[39m[22m
+[1m[31m    at SelectQueryBuilder.skip (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/query-builder/SelectQueryBuilder.ts:1510:19)[39m[22m
+[1m[31m    at SelectQueryBuilder.applyFindOptions (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/query-builder/SelectQueryBuilder.ts:3217:22)[39m[22m
+[1m[31m    at SelectQueryBuilder.setFindOptions (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/query-builder/SelectQueryBuilder.ts:105:14)[39m[22m
+[1m[31m    at EntityManager.findAndCount (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/entity-manager/EntityManager.ts:1139:14)[39m[22m
+[1m[31m    at Repository.findAndCount (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/repository/Repository.ts:564:29)[39m[22m
+[1m[31m    at ProductService.<anonymous> (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/dist/apps/shop/webpack:/src/app/products/product.service.ts:21:53)[39m[22m
+[1m[31m    at Generator.next (<anonymous>)[39m[22m
+[1m[31m    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tslib/tslib.js:169:75[39m[22m
+[1m[31m    at new Promise (<anonymous>)[39m[22m
+[1m[31m    at Object.__awaiter (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tslib/tslib.js:165:16)[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 3148  - [39m[31m10/29/2024, 10:36:32 PM [31m  ERROR[39m[31m [38;5;3m[ExceptionsHandler] [39m[31m[31mProvided "skip" value is not a number. Please provide a numeric value.[39m[31m[39m[22m
+[1m[31mTypeORMError: Provided "skip" value is not a number. Please provide a numeric value.[39m[22m
+[1m[31m    at SelectQueryBuilder.skip (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/query-builder/SelectQueryBuilder.ts:1510:19)[39m[22m
+[1m[31m    at SelectQueryBuilder.applyFindOptions (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/query-builder/SelectQueryBuilder.ts:3217:22)[39m[22m
+[1m[31m    at SelectQueryBuilder.setFindOptions (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/query-builder/SelectQueryBuilder.ts:105:14)[39m[22m
+[1m[31m    at EntityManager.findAndCount (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/entity-manager/EntityManager.ts:1139:14)[39m[22m
+[1m[31m    at Repository.findAndCount (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/repository/Repository.ts:564:29)[39m[22m
+[1m[31m    at ProductService.<anonymous> (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/dist/apps/shop/webpack:/src/app/products/product.service.ts:21:53)[39m[22m
+[1m[31m    at Generator.next (<anonymous>)[39m[22m
+[1m[31m    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tslib/tslib.js:169:75[39m[22m
+[1m[31m    at new Promise (<anonymous>)[39m[22m
+[1m[31m    at Object.__awaiter (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tslib/tslib.js:165:16)[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 3148  - [39m[31m10/29/2024, 10:36:32 PM [31m  ERROR[39m[31m [38;5;3m[ExceptionsHandler] [39m[31m[31mProvided "skip" value is not a number. Please provide a numeric value.[39m[31m[39m[22m
+[1m[31mTypeORMError: Provided "skip" value is not a number. Please provide a numeric value.[39m[22m
+[1m[31m    at SelectQueryBuilder.skip (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/query-builder/SelectQueryBuilder.ts:1510:19)[39m[22m
+[1m[31m    at SelectQueryBuilder.applyFindOptions (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/query-builder/SelectQueryBuilder.ts:3217:22)[39m[22m
+[1m[31m    at SelectQueryBuilder.setFindOptions (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/query-builder/SelectQueryBuilder.ts:105:14)[39m[22m
+[1m[31m    at EntityManager.findAndCount (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/entity-manager/EntityManager.ts:1139:14)[39m[22m
+[1m[31m    at Repository.findAndCount (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/repository/Repository.ts:564:29)[39m[22m
+[1m[31m    at ProductService.<anonymous> (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/dist/apps/shop/webpack:/src/app/products/product.service.ts:21:53)[39m[22m
+[1m[31m    at Generator.next (<anonymous>)[39m[22m
+[1m[31m    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tslib/tslib.js:169:75[39m[22m
+[1m[31m    at new Promise (<anonymous>)[39m[22m
+[1m[31m    at Object.__awaiter (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tslib/tslib.js:165:16)[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 3148  - [39m[31m10/29/2024, 10:36:32 PM [31m  ERROR[39m[31m [38;5;3m[ExceptionsHandler] [39m[31m[31mProvided "skip" value is not a number. Please provide a numeric value.[39m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31mTypeORMError: Provided "skip" value is not a number. Please provide a numeric value.[39m[22m
+[1m[31m    at SelectQueryBuilder.skip (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/query-builder/SelectQueryBuilder.ts:1510:19)[39m[22m
+[1m[31m    at SelectQueryBuilder.applyFindOptions (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/query-builder/SelectQueryBuilder.ts:3217:22)[39m[22m
+[1m[31m    at SelectQueryBuilder.setFindOptions (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/query-builder/SelectQueryBuilder.ts:105:14)[39m[22m
+[1m[31m    at EntityManager.findAndCount (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/entity-manager/EntityManager.ts:1139:14)[39m[22m
+[1m[31m    at Repository.findAndCount (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/repository/Repository.ts:564:29)[39m[22m
+[1m[31m    at ProductService.<anonymous> (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/dist/apps/shop/webpack:/src/app/products/product.service.ts:21:53)[39m[22m
+[1m[31m    at Generator.next (<anonymous>)[39m[22m
+[1m[31m    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tslib/tslib.js:169:75[39m[22m
+[1m[31m    at new Promise (<anonymous>)[39m[22m
+[1m[31m    at Object.__awaiter (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/tslib/tslib.js:165:16)[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 3148  - [39m[31m10/29/2024, 10:42:05 PM [31m  ERROR[39m[31m [31mObject:[39m[31m[39m[22m
+[1m[31m{[39m[22m
+[1m[31m  "statusCode": 401,[39m[22m
+[1m[31m  "message": "Unauthorized",[39m[22m
+[1m[31m  "date": "2024-10-29T17:42:05.450Z",[39m[22m
+[1m[31m  "resource": "/api/users/auth/jwt/verify",[39m[22m
+[1m[31m  "sourceData": {}[39m[22m
+[1m[31m}[39m[22m
+[1m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 3148  - [39m[31m10/29/2024, 10:42:05 PM [31m  ERROR[39m[31m [31mObject:[39m[31m[39m[22m
+[1m[31m{[39m[22m
+[1m[31m  "statusCode": 401,[39m[22m
+[1m[31m  "message": "Unauthorized",[39m[22m
+[1m[31m  "date": "2024-10-29T17:42:05.451Z",[39m[22m
+[1m[31m  "resource": "/api/users/auth/jwt/verify",[39m[22m
+[1m[31m  "sourceData": {}[39m[22m
+[1m[31m}[39m[22m
+[1m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 3148  - [39m[31m10/29/2024, 10:42:05 PM [31m  ERROR[39m[31m [31mObject:[39m[31m[39m[22m
+[1m[31m{[39m[22m
+[1m[31m  "statusCode": 401,[39m[22m
+[1m[31m  "message": "Unauthorized",[39m[22m
+[1m[31m  "date": "2024-10-29T17:42:05.452Z",[39m[22m
+[1m[31m  "resource": "/api/users/auth/jwt/verify",[39m[22m
+[1m[31m  "sourceData": {}[39m[22m
+[1m[31m}[39m[22m
+[1m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 3148  - [39m[31m10/29/2024, 10:42:05 PM [31m  ERROR[39m[31m [31mObject:[39m[31m[39m[22m
+[1m[31m{[39m[22m
+[1m[31m  "statusCode": 401,[39m[22m
+[1m[31m  "message": "Unauthorized",[39m[22m
+[1m[31m  "date": "2024-10-29T17:42:05.454Z",[39m[22m
+[1m[31m  "resource": "/api/users/auth/jwt/verify",[39m[22m
+[1m[31m  "sourceData": {}[39m[22m
+[1m[31m}[39m[22m
+[1m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 3148  - [39m[31m10/29/2024, 10:42:05 PM [31m  ERROR[39m[31m [31mObject:[39m[31m[39m[22m
+[1m[31m{[39m[22m
+[1m[31m  "statusCode": 401,[39m[22m
+[1m[31m  "message": "Unauthorized",[39m[22m
+[1m[31m  "date": "2024-10-29T17:42:05.455Z",[39m[22m
+[1m[31m  "resource": "/api/users/auth/jwt/verify",[39m[22m
+[1m[31m  "sourceData": {}[39m[22m
+[1m[31m}[39m[22m
+[1m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 3148  - [39m[31m10/29/2024, 11:05:17 PM [31m  ERROR[39m[31m [31mObject:[39m[31m[39m[22m
+[1m[31m{[39m[22m
+[1m[31m  "statusCode": 401,[39m[22m
+[1m[31m  "message": "Unauthorized",[39m[22m
+[1m[31m  "date": "2024-10-29T18:05:17.951Z",[39m[22m
+[1m[31m  "resource": "/api/users/auth/jwt/verify",[39m[22m
+[1m[31m  "sourceData": {}[39m[22m
+[1m[31m}[39m[22m
+[1m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 3148  - [39m[31m10/29/2024, 11:05:17 PM [31m  ERROR[39m[31m [31mObject:[39m[31m[39m[22m
+[1m[31m{[39m[22m
+[1m[31m  "statusCode": 401,[39m[22m
+[1m[31m  "message": "Unauthorized",[39m[22m
+[1m[31m  "date": "2024-10-29T18:05:17.952Z",[39m[22m
+[1m[31m  "resource": "/api/users/auth/jwt/verify",[39m[22m
+[1m[31m  "sourceData": {}[39m[22m
+[1m[31m}[39m[22m
+[1m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 3148  - [39m[31m10/29/2024, 11:06:53 PM [31m  ERROR[39m[31m [31mObject:[39m[31m[39m[22m
+[1m[31m{[39m[22m
+[1m[31m  "statusCode": 401,[39m[22m
+[1m[31m  "message": "Unauthorized",[39m[22m
+[1m[31m  "date": "2024-10-29T18:06:53.722Z",[39m[22m
+[1m[31m  "resource": "/api/users/auth/jwt/verify",[39m[22m
+[1m[31m  "sourceData": {}[39m[22m
+[1m[31m}[39m[22m
+[1m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 3148  - [39m[31m10/29/2024, 11:06:53 PM [31m  ERROR[39m[31m [31mObject:[39m[31m[39m[22m
+[1m[31m{[39m[22m
+[1m[31m  "statusCode": 401,[39m[22m
+[1m[31m  "message": "Unauthorized",[39m[22m
+[1m[31m  "date": "2024-10-29T18:06:53.722Z",[39m[22m
+[1m[31m  "resource": "/api/users/auth/jwt/verify",[39m[22m
+[1m[31m  "sourceData": {}[39m[22m
+[1m[31m}[39m[22m
+[1m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 3148  - [39m[31m10/29/2024, 11:06:53 PM [31m  ERROR[39m[31m [31mObject:[39m[31m[39m[22m
+[1m[31m{[39m[22m
+[1m[31m  "statusCode": 401,[39m[22m
+[1m[31m  "message": "Unauthorized",[39m[22m
+[1m[31m  "date": "2024-10-29T18:06:53.723Z",[39m[22m
+[1m[31m  "resource": "/api/users/auth/jwt/verify",[39m[22m
+[1m[31m  "sourceData": {}[39m[22m
+[1m[31m}[39m[22m
+[1m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 3148  - [39m[31m10/29/2024, 11:09:36 PM [31m  ERROR[39m[31m [31mObject:[39m[31m[39m[22m
+[1m[31m{[39m[22m
+[1m[31m  "statusCode": 401,[39m[22m
+[1m[31m  "message": "Unauthorized",[39m[22m
+[1m[31m  "date": "2024-10-29T18:09:36.409Z",[39m[22m
+[1m[31m  "resource": "/api/users/auth/jwt/verify",[39m[22m
+[1m[31m  "sourceData": {}[39m[22m
+[1m[31m}[39m[22m
+[1m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 3148  - [39m[31m10/29/2024, 11:09:36 PM [31m  ERROR[39m[31m [31mObject:[39m[31m[39m[22m
+[1m[31m{[39m[22m
+[1m[31m  "statusCode": 401,[39m[22m
+[1m[31m  "message": "Unauthorized",[39m[22m
+[1m[31m  "date": "2024-10-29T18:09:36.409Z",[39m[22m
+[1m[31m  "resource": "/api/users/auth/jwt/verify",[39m[22m
+[1m[31m  "sourceData": {}[39m[22m
+[1m[31m}[39m[22m
+[1m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 3148  - [39m[31m10/29/2024, 11:09:36 PM [31m  ERROR[39m[31m [31mObject:[39m[31m[39m[22m
+[1m[31m{[39m[22m
+[1m[31m  "statusCode": 401,[39m[22m
+[1m[31m  "message": "Unauthorized",[39m[22m
+[1m[31m  "date": "2024-10-29T18:09:36.409Z",[39m[22m
+[1m[31m  "resource": "/api/users/auth/jwt/verify",[39m[22m
+[1m[31m  "sourceData": {}[39m[22m
+[1m[31m}[39m[22m
+[1m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 3148  - [39m[31m10/29/2024, 11:10:53 PM [31m  ERROR[39m[31m [31mObject:[39m[31m[39m[22m
+[1m[31m{[39m[22m
+[1m[31m  "statusCode": 401,[39m[22m
+[1m[31m  "message": "Unauthorized",[39m[22m
+[1m[31m  "date": "2024-10-29T18:10:53.855Z",[39m[22m
+[1m[31m  "resource": "/api/users/auth/jwt/verify",[39m[22m
+[1m[31m  "sourceData": {}[39m[22m
+[1m[31m}[39m[22m
+[1m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 3148  - [39m[31m10/29/2024, 11:10:53 PM [31m  ERROR[39m[31m [31mObject:[39m[31m[39m[22m
+[1m[31m{[39m[22m
+[1m[31m  "statusCode": 401,[39m[22m
+[1m[31m  "message": "Unauthorized",[39m[22m
+[1m[31m  "date": "2024-10-29T18:10:53.857Z",[39m[22m
+[1m[31m  "resource": "/api/users/auth/jwt/verify",[39m[22m
+[1m[31m  "sourceData": {}[39m[22m
+[1m[31m}[39m[22m
+[1m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 3148  - [39m[31m10/29/2024, 11:10:53 PM [31m  ERROR[39m[31m [31mObject:[39m[31m[39m[22m
+[1m[31m{[39m[22m
+[1m[31m  "statusCode": 401,[39m[22m
+[1m[31m  "message": "Unauthorized",[39m[22m
+[1m[31m  "date": "2024-10-29T18:10:53.857Z",[39m[22m
+[1m[31m  "resource": "/api/users/auth/jwt/verify",[39m[22m
+[1m[31m  "sourceData": {}[39m[22m
+[1m[31m}[39m[22m
+[1m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 3148  - [39m[31m10/29/2024, 11:48:20 PM [31m  ERROR[39m[31m [31mObject:[39m[31m[39m[22m
+[1m[31m{[39m[22m
+[1m[31m  "statusCode": 401,[39m[22m
+[1m[31m  "message": "Unauthorized",[39m[22m
+[1m[31m  "date": "2024-10-29T18:48:20.165Z",[39m[22m
+[1m[31m  "resource": "/api/users/auth/jwt/verify",[39m[22m
+[1m[31m  "sourceData": {}[39m[22m
+[1m[31m}[39m[22m
+[1m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 3148  - [39m[31m10/29/2024, 11:48:34 PM [31m  ERROR[39m[31m [38;5;3m[ExceptionsHandler] [39m[31m[31mupdate or delete on table "categories" violates foreign key constraint "FK_9a5f6868c96e0069e699f33e124" on table "products"[39m[31m[39m[22m
+[1m[31mQueryFailedError: update or delete on table "categories" violates foreign key constraint "FK_9a5f6868c96e0069e699f33e124" on table "products"[39m[22m
+[1m[31m    at PostgresQueryRunner.query (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/driver/postgres/PostgresQueryRunner.ts:331:19)[39m[22m
+[1m[31m    at processTicksAndRejections (node:internal/process/task_queues:95:5)[39m[22m
+[1m[31m    at DeleteQueryBuilder.execute (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/query-builder/DeleteQueryBuilder.ts:77:33)[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 3148  - [39m[31m10/29/2024, 11:50:02 PM [31m  ERROR[39m[31m [31mObject:[39m[31m[39m[22m
+[1m[31m{[39m[22m
+[1m[31m  "statusCode": 401,[39m[22m
+[1m[31m  "message": "Unauthorized",[39m[22m
+[1m[31m  "date": "2024-10-29T18:50:02.111Z",[39m[22m
+[1m[31m  "resource": "/api/users/auth/jwt/verify",[39m[22m
+[1m[31m  "sourceData": {}[39m[22m
+[1m[31m}[39m[22m
+[1m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 3148  - [39m[31m10/29/2024, 11:50:02 PM [31m  ERROR[39m[31m [31mObject:[39m[31m[39m[22m
+[1m[31m{[39m[22m
+[1m[31m  "statusCode": 401,[39m[22m
+[1m[31m  "message": "Unauthorized",[39m[22m
+[1m[31m  "date": "2024-10-29T18:50:02.111Z",[39m[22m
+[1m[31m  "resource": "/api/users/auth/jwt/verify",[39m[22m
+[1m[31m  "sourceData": {}[39m[22m
+[1m[31m}[39m[22m
+[1m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 3148  - [39m[31m10/29/2024, 11:50:02 PM [31m  ERROR[39m[31m [31mObject:[39m[31m[39m[22m
+[1m[31m{[39m[22m
+[1m[31m  "statusCode": 401,[39m[22m
+[1m[31m  "message": "Unauthorized",[39m[22m
+[1m[31m  "date": "2024-10-29T18:50:02.112Z",[39m[22m
+[1m[31m  "resource": "/api/users/auth/jwt/verify",[39m[22m
+[1m[31m  "sourceData": {}[39m[22m
+[1m[31m}[39m[22m
+[1m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 3148  - [39m[31m10/29/2024, 11:50:02 PM [31m  ERROR[39m[31m [31mObject:[39m[31m[39m[22m
+[1m[31m{[39m[22m
+[1m[31m  "statusCode": 401,[39m[22m
+[1m[31m  "message": "Unauthorized",[39m[22m
+[1m[31m  "date": "2024-10-29T18:50:02.113Z",[39m[22m
+[1m[31m  "resource": "/api/users/auth/jwt/verify",[39m[22m
+[1m[31m  "sourceData": {}[39m[22m
+[1m[31m}[39m[22m
+[1m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 3148  - [39m[31m10/29/2024, 11:50:02 PM [31m  ERROR[39m[31m [31mObject:[39m[31m[39m[22m
+[1m[31m{[39m[22m
+[1m[31m  "statusCode": 401,[39m[22m
+[1m[31m  "message": "Unauthorized",[39m[22m
+[1m[31m  "date": "2024-10-29T18:50:02.118Z",[39m[22m
+[1m[31m  "resource": "/api/users/auth/jwt/verify",[39m[22m
+[1m[31m  "sourceData": {}[39m[22m
+[1m[31m}[39m[22m
+[1m[31m[39m[22m
+[1m[31m[39m[22m
+
+ [31m>[39m [0m[7m[1m[31m NX [39m[22m[27m[0m  [31mAn error occured while creating pruned lockfile[39m
+
+   Please open an issue at `https://github.com/nrwl/nx/issues/new?template=1-bug.yml` and provide a reproduction.
+   To prevent the build from breaking we are returning the root lock file.
+   If you run `npm install --package-lock-only` in your output folder it will regenerate the correct pruned lockfile.
+   
+Original error: Target project does not exist: npm:mime-db@1.52.0
+
+
+   Error: Target project does not exist: npm:mime-db@1.52.0
+    at validateCommonDependencyRules (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:323:15)
+    at validateDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:313:5)
+    at ProjectGraphBuilder.addDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:190:9)
+    at ProjectGraphBuilder.addStaticDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:89:14)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:81:17
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:80:9
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+
+chunk (runtime: main) [1m[32mmain.js[39m[22m (main) 76.5 KiB [1m[33m[entry][39m[22m [1m[32m[rendered][39m[22m
+webpack compiled [1m[32msuccessfully[39m[22m (11be4d04d1971b9a)
+[1m[31mDebugger listening on ws://localhost:9229/85f06565-fbaf-467e-89f2-7de8e560070f[39m[22m
+[1m[31mDebugger listening on ws://localhost:9229/85f06565-fbaf-467e-89f2-7de8e560070f[39m[22m
+[1m[31mFor help, see: https://nodejs.org/en/docs/inspector[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 6936  - [39m[31m10/30/2024, 12:21:08 AM [31m  ERROR[39m[31m [38;5;3m[ExceptionsHandler] [39m[31m[31mupdate or delete on table "categories" violates foreign key constraint "FK_9a5f6868c96e0069e699f33e124" on table "products"[39m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31mQueryFailedError: update or delete on table "categories" violates foreign key constraint "FK_9a5f6868c96e0069e699f33e124" on table "products"[39m[22m
+[1m[31m    at PostgresQueryRunner.query (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/driver/postgres/PostgresQueryRunner.ts:331:19)[39m[22m
+[1m[31m    at processTicksAndRejections (node:internal/process/task_queues:95:5)[39m[22m
+[1m[31m    at DeleteQueryBuilder.execute (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/query-builder/DeleteQueryBuilder.ts:77:33)[39m[22m
+[1m[31m[39m[22m
+
+ [31m>[39m [0m[7m[1m[31m NX [39m[22m[27m[0m  [31mAn error occured while creating pruned lockfile[39m
+
+   Please open an issue at `https://github.com/nrwl/nx/issues/new?template=1-bug.yml` and provide a reproduction.
+   To prevent the build from breaking we are returning the root lock file.
+   If you run `npm install --package-lock-only` in your output folder it will regenerate the correct pruned lockfile.
+   
+Original error: Target project does not exist: npm:mime-db@1.52.0
+
+
+   Error: Target project does not exist: npm:mime-db@1.52.0
+    at validateCommonDependencyRules (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:323:15)
+    at validateDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:313:5)
+    at ProjectGraphBuilder.addDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:190:9)
+    at ProjectGraphBuilder.addStaticDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:89:14)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:81:17
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:80:9
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+
+chunk (runtime: main) [1m[32mmain.js[39m[22m (main) 77.1 KiB [1m[33m[entry][39m[22m [1m[32m[rendered][39m[22m
+webpack compiled [1m[32msuccessfully[39m[22m (bb68dff19d1ab30e)
+[1m[31mDebugger listening on ws://localhost:9229/65919b9e-784c-426d-8a7d-cf873ad5ec59[39m[22m
+[1m[31mDebugger listening on ws://localhost:9229/65919b9e-784c-426d-8a7d-cf873ad5ec59[39m[22m
+[1m[31mFor help, see: https://nodejs.org/en/docs/inspector[39m[22m
+[1m[31m[39m[22m
+
+ [31m>[39m [0m[7m[1m[31m NX [39m[22m[27m[0m  [31mAn error occured while creating pruned lockfile[39m
+
+   Please open an issue at `https://github.com/nrwl/nx/issues/new?template=1-bug.yml` and provide a reproduction.
+   To prevent the build from breaking we are returning the root lock file.
+   If you run `npm install --package-lock-only` in your output folder it will regenerate the correct pruned lockfile.
+   
+Original error: Target project does not exist: npm:mime-db@1.52.0
+
+
+   Error: Target project does not exist: npm:mime-db@1.52.0
+    at validateCommonDependencyRules (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:323:15)
+    at validateDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:313:5)
+    at ProjectGraphBuilder.addDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:190:9)
+    at ProjectGraphBuilder.addStaticDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:89:14)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:81:17
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:80:9
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+
+chunk (runtime: main) [1m[32mmain.js[39m[22m (main) 77.2 KiB [1m[33m[entry][39m[22m [1m[32m[rendered][39m[22m
+webpack compiled [1m[32msuccessfully[39m[22m (a9f0406d4712c6aa)
+[1m[31mStarting inspector on localhost:9229 failed: address already in use[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 7765  - [39m[31m10/30/2024, 12:42:32 AM [31m  ERROR[39m[31m [38;5;3m[TypeOrmModule] [39m[31m[31mUnable to connect to the database. Retrying (1)...[39m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31mQueryFailedError: column "owner_id" of relation "categories" contains null values[39m[22m
+[1m[31m    at PostgresQueryRunner.query (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/driver/postgres/PostgresQueryRunner.ts:331:19)[39m[22m
+[1m[31m    at processTicksAndRejections (node:internal/process/task_queues:95:5)[39m[22m
+[1m[31m    at PostgresQueryRunner.executeQueries (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/query-runner/BaseQueryRunner.ts:660:13)[39m[22m
+[1m[31m    at PostgresQueryRunner.addColumn (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/driver/postgres/PostgresQueryRunner.ts:1154:9)[39m[22m
+[1m[31m    at PostgresQueryRunner.addColumns (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/driver/postgres/PostgresQueryRunner.ts:1168:13)[39m[22m
+[1m[31m    at RdbmsSchemaBuilder.addNewColumns (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/schema-builder/RdbmsSchemaBuilder.ts:845:13)[39m[22m
+[1m[31m    at RdbmsSchemaBuilder.executeSchemaSyncOperationsInProperOrder (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/schema-builder/RdbmsSchemaBuilder.ts:227:9)[39m[22m
+[1m[31m    at RdbmsSchemaBuilder.build (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/schema-builder/RdbmsSchemaBuilder.ts:95:13)[39m[22m
+[1m[31m    at DataSource.synchronize (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/data-source/DataSource.ts:339:9)[39m[22m
+[1m[31m    at DataSource.initialize (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/data-source/DataSource.ts:277:43)[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 7765  - [39m[31m10/30/2024, 12:42:35 AM [31m  ERROR[39m[31m [38;5;3m[TypeOrmModule] [39m[31m[31mUnable to connect to the database. Retrying (2)...[39m[31m[39m[22m
+[1m[31mQueryFailedError: column "owner_id" of relation "categories" contains null values[39m[22m
+[1m[31m    at PostgresQueryRunner.query (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/driver/postgres/PostgresQueryRunner.ts:331:19)[39m[22m
+[1m[31m    at processTicksAndRejections (node:internal/process/task_queues:95:5)[39m[22m
+[1m[31m    at PostgresQueryRunner.executeQueries (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/query-runner/BaseQueryRunner.ts:660:13)[39m[22m
+[1m[31m    at PostgresQueryRunner.addColumn (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/driver/postgres/PostgresQueryRunner.ts:1154:9)[39m[22m
+[1m[31m    at PostgresQueryRunner.addColumns (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/driver/postgres/PostgresQueryRunner.ts:1168:13)[39m[22m
+[1m[31m    at RdbmsSchemaBuilder.addNewColumns (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/schema-builder/RdbmsSchemaBuilder.ts:845:13)[39m[22m
+[1m[31m    at RdbmsSchemaBuilder.executeSchemaSyncOperationsInProperOrder (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/schema-builder/RdbmsSchemaBuilder.ts:227:9)[39m[22m
+[1m[31m    at RdbmsSchemaBuilder.build (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/schema-builder/RdbmsSchemaBuilder.ts:95:13)[39m[22m
+[1m[31m    at DataSource.synchronize (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/data-source/DataSource.ts:339:9)[39m[22m
+[1m[31m    at DataSource.initialize (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/data-source/DataSource.ts:277:43)[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 7765  - [39m[31m10/30/2024, 12:42:38 AM [31m  ERROR[39m[31m [38;5;3m[TypeOrmModule] [39m[31m[31mUnable to connect to the database. Retrying (3)...[39m[31m[39m[22m
+[1m[31mQueryFailedError: column "owner_id" of relation "categories" contains null values[39m[22m
+[1m[31m    at PostgresQueryRunner.query (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/driver/postgres/PostgresQueryRunner.ts:331:19)[39m[22m
+[1m[31m    at processTicksAndRejections (node:internal/process/task_queues:95:5)[39m[22m
+[1m[31m    at PostgresQueryRunner.executeQueries (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/query-runner/BaseQueryRunner.ts:660:13)[39m[22m
+[1m[31m    at PostgresQueryRunner.addColumn (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/driver/postgres/PostgresQueryRunner.ts:1154:9)[39m[22m
+[1m[31m    at PostgresQueryRunner.addColumns (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/driver/postgres/PostgresQueryRunner.ts:1168:13)[39m[22m
+[1m[31m    at RdbmsSchemaBuilder.addNewColumns (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/schema-builder/RdbmsSchemaBuilder.ts:845:13)[39m[22m
+[1m[31m    at RdbmsSchemaBuilder.executeSchemaSyncOperationsInProperOrder (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/schema-builder/RdbmsSchemaBuilder.ts:227:9)[39m[22m
+[1m[31m    at RdbmsSchemaBuilder.build (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/schema-builder/RdbmsSchemaBuilder.ts:95:13)[39m[22m
+[1m[31m    at DataSource.synchronize (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/data-source/DataSource.ts:339:9)[39m[22m
+[1m[31m    at DataSource.initialize (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/data-source/DataSource.ts:277:43)[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 7765  - [39m[31m10/30/2024, 12:42:41 AM [31m  ERROR[39m[31m [38;5;3m[TypeOrmModule] [39m[31m[31mUnable to connect to the database. Retrying (4)...[39m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31mQueryFailedError: column "owner_id" of relation "categories" contains null values[39m[22m
+[1m[31m    at PostgresQueryRunner.query (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/driver/postgres/PostgresQueryRunner.ts:331:19)[39m[22m
+[1m[31m    at processTicksAndRejections (node:internal/process/task_queues:95:5)[39m[22m
+[1m[31m    at PostgresQueryRunner.executeQueries (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/query-runner/BaseQueryRunner.ts:660:13)[39m[22m
+[1m[31m    at PostgresQueryRunner.addColumn (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/driver/postgres/PostgresQueryRunner.ts:1154:9)[39m[22m
+[1m[31m    at PostgresQueryRunner.addColumns (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/driver/postgres/PostgresQueryRunner.ts:1168:13)[39m[22m
+[1m[31m    at RdbmsSchemaBuilder.addNewColumns (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/schema-builder/RdbmsSchemaBuilder.ts:845:13)[39m[22m
+[1m[31m    at RdbmsSchemaBuilder.executeSchemaSyncOperationsInProperOrder (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/schema-builder/RdbmsSchemaBuilder.ts:227:9)[39m[22m
+[1m[31m    at RdbmsSchemaBuilder.build (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/schema-builder/RdbmsSchemaBuilder.ts:95:13)[39m[22m
+[1m[31m    at DataSource.synchronize (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/data-source/DataSource.ts:339:9)[39m[22m
+[1m[31m    at DataSource.initialize (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/data-source/DataSource.ts:277:43)[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 7765  - [39m[31m10/30/2024, 12:42:44 AM [31m  ERROR[39m[31m [38;5;3m[TypeOrmModule] [39m[31m[31mUnable to connect to the database. Retrying (5)...[39m[31m[39m[22m
+[1m[31mQueryFailedError: column "owner_id" of relation "categories" contains null values[39m[22m
+[1m[31m    at PostgresQueryRunner.query (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/driver/postgres/PostgresQueryRunner.ts:331:19)[39m[22m
+[1m[31m    at processTicksAndRejections (node:internal/process/task_queues:95:5)[39m[22m
+[1m[31m    at PostgresQueryRunner.executeQueries (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/query-runner/BaseQueryRunner.ts:660:13)[39m[22m
+[1m[31m    at PostgresQueryRunner.addColumn (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/driver/postgres/PostgresQueryRunner.ts:1154:9)[39m[22m
+[1m[31m    at PostgresQueryRunner.addColumns (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/driver/postgres/PostgresQueryRunner.ts:1168:13)[39m[22m
+[1m[31m    at RdbmsSchemaBuilder.addNewColumns (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/schema-builder/RdbmsSchemaBuilder.ts:845:13)[39m[22m
+[1m[31m    at RdbmsSchemaBuilder.executeSchemaSyncOperationsInProperOrder (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/schema-builder/RdbmsSchemaBuilder.ts:227:9)[39m[22m
+[1m[31m    at RdbmsSchemaBuilder.build (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/schema-builder/RdbmsSchemaBuilder.ts:95:13)[39m[22m
+[1m[31m    at DataSource.synchronize (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/data-source/DataSource.ts:339:9)[39m[22m
+[1m[31m    at DataSource.initialize (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/data-source/DataSource.ts:277:43)[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 7765  - [39m[31m10/30/2024, 12:42:47 AM [31m  ERROR[39m[31m [38;5;3m[TypeOrmModule] [39m[31m[31mUnable to connect to the database. Retrying (6)...[39m[31m[39m[22m
+[1m[31mQueryFailedError: column "owner_id" of relation "categories" contains null values[39m[22m
+[1m[31m    at PostgresQueryRunner.query (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/driver/postgres/PostgresQueryRunner.ts:331:19)[39m[22m
+[1m[31m    at processTicksAndRejections (node:internal/process/task_queues:95:5)[39m[22m
+[1m[31m    at PostgresQueryRunner.executeQueries (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/query-runner/BaseQueryRunner.ts:660:13)[39m[22m
+[1m[31m    at PostgresQueryRunner.addColumn (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/driver/postgres/PostgresQueryRunner.ts:1154:9)[39m[22m
+[1m[31m    at PostgresQueryRunner.addColumns (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/driver/postgres/PostgresQueryRunner.ts:1168:13)[39m[22m
+[1m[31m    at RdbmsSchemaBuilder.addNewColumns (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/schema-builder/RdbmsSchemaBuilder.ts:845:13)[39m[22m
+[1m[31m    at RdbmsSchemaBuilder.executeSchemaSyncOperationsInProperOrder (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/schema-builder/RdbmsSchemaBuilder.ts:227:9)[39m[22m
+[1m[31m    at RdbmsSchemaBuilder.build (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/schema-builder/RdbmsSchemaBuilder.ts:95:13)[39m[22m
+[1m[31m    at DataSource.synchronize (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/data-source/DataSource.ts:339:9)[39m[22m
+[1m[31m    at DataSource.initialize (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/data-source/DataSource.ts:277:43)[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 7765  - [39m[31m10/30/2024, 12:42:50 AM [31m  ERROR[39m[31m [38;5;3m[TypeOrmModule] [39m[31m[31mUnable to connect to the database. Retrying (7)...[39m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31mQueryFailedError: column "owner_id" of relation "categories" contains null values[39m[22m
+[1m[31m    at PostgresQueryRunner.query (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/driver/postgres/PostgresQueryRunner.ts:331:19)[39m[22m
+[1m[31m    at processTicksAndRejections (node:internal/process/task_queues:95:5)[39m[22m
+[1m[31m    at PostgresQueryRunner.executeQueries (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/query-runner/BaseQueryRunner.ts:660:13)[39m[22m
+[1m[31m    at PostgresQueryRunner.addColumn (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/driver/postgres/PostgresQueryRunner.ts:1154:9)[39m[22m
+[1m[31m    at PostgresQueryRunner.addColumns (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/driver/postgres/PostgresQueryRunner.ts:1168:13)[39m[22m
+[1m[31m    at RdbmsSchemaBuilder.addNewColumns (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/schema-builder/RdbmsSchemaBuilder.ts:845:13)[39m[22m
+[1m[31m    at RdbmsSchemaBuilder.executeSchemaSyncOperationsInProperOrder (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/schema-builder/RdbmsSchemaBuilder.ts:227:9)[39m[22m
+[1m[31m    at RdbmsSchemaBuilder.build (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/schema-builder/RdbmsSchemaBuilder.ts:95:13)[39m[22m
+[1m[31m    at DataSource.synchronize (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/data-source/DataSource.ts:339:9)[39m[22m
+[1m[31m    at DataSource.initialize (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/data-source/DataSource.ts:277:43)[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 7765  - [39m[31m10/30/2024, 12:42:53 AM [31m  ERROR[39m[31m [38;5;3m[TypeOrmModule] [39m[31m[31mUnable to connect to the database. Retrying (8)...[39m[31m[39m[22m
+[1m[31mQueryFailedError: column "owner_id" of relation "categories" contains null values[39m[22m
+[1m[31m    at PostgresQueryRunner.query (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/driver/postgres/PostgresQueryRunner.ts:331:19)[39m[22m
+[1m[31m    at processTicksAndRejections (node:internal/process/task_queues:95:5)[39m[22m
+[1m[31m    at PostgresQueryRunner.executeQueries (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/query-runner/BaseQueryRunner.ts:660:13)[39m[22m
+[1m[31m    at PostgresQueryRunner.addColumn (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/driver/postgres/PostgresQueryRunner.ts:1154:9)[39m[22m
+[1m[31m    at PostgresQueryRunner.addColumns (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/driver/postgres/PostgresQueryRunner.ts:1168:13)[39m[22m
+[1m[31m    at RdbmsSchemaBuilder.addNewColumns (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/schema-builder/RdbmsSchemaBuilder.ts:845:13)[39m[22m
+[1m[31m    at RdbmsSchemaBuilder.executeSchemaSyncOperationsInProperOrder (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/schema-builder/RdbmsSchemaBuilder.ts:227:9)[39m[22m
+[1m[31m    at RdbmsSchemaBuilder.build (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/schema-builder/RdbmsSchemaBuilder.ts:95:13)[39m[22m
+[1m[31m    at DataSource.synchronize (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/data-source/DataSource.ts:339:9)[39m[22m
+[1m[31m    at DataSource.initialize (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/data-source/DataSource.ts:277:43)[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 7765  - [39m[31m10/30/2024, 12:42:56 AM [31m  ERROR[39m[31m [38;5;3m[TypeOrmModule] [39m[31m[31mUnable to connect to the database. Retrying (9)...[39m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31mQueryFailedError: column "owner_id" of relation "categories" contains null values[39m[22m
+[1m[31m    at PostgresQueryRunner.query (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/driver/postgres/PostgresQueryRunner.ts:331:19)[39m[22m
+[1m[31m    at processTicksAndRejections (node:internal/process/task_queues:95:5)[39m[22m
+[1m[31m    at PostgresQueryRunner.executeQueries (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/query-runner/BaseQueryRunner.ts:660:13)[39m[22m
+[1m[31m    at PostgresQueryRunner.addColumn (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/driver/postgres/PostgresQueryRunner.ts:1154:9)[39m[22m
+[1m[31m    at PostgresQueryRunner.addColumns (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/driver/postgres/PostgresQueryRunner.ts:1168:13)[39m[22m
+[1m[31m    at RdbmsSchemaBuilder.addNewColumns (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/schema-builder/RdbmsSchemaBuilder.ts:845:13)[39m[22m
+[1m[31m    at RdbmsSchemaBuilder.executeSchemaSyncOperationsInProperOrder (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/schema-builder/RdbmsSchemaBuilder.ts:227:9)[39m[22m
+[1m[31m    at RdbmsSchemaBuilder.build (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/schema-builder/RdbmsSchemaBuilder.ts:95:13)[39m[22m
+[1m[31m    at DataSource.synchronize (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/data-source/DataSource.ts:339:9)[39m[22m
+[1m[31m    at DataSource.initialize (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/data-source/DataSource.ts:277:43)[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 7765  - [39m[31m10/30/2024, 12:42:56 AM [31m  ERROR[39m[31m [38;5;3m[ExceptionHandler] [39m[31m[31mcolumn "owner_id" of relation "categories" contains null values[39m[31m[39m[22m
+[1m[31mQueryFailedError: column "owner_id" of relation "categories" contains null values[39m[22m
+[1m[31m    at PostgresQueryRunner.query (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/driver/postgres/PostgresQueryRunner.ts:331:19)[39m[22m
+[1m[31m    at processTicksAndRejections (node:internal/process/task_queues:95:5)[39m[22m
+[1m[31m    at PostgresQueryRunner.executeQueries (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/query-runner/BaseQueryRunner.ts:660:13)[39m[22m
+[1m[31m    at PostgresQueryRunner.addColumn (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/driver/postgres/PostgresQueryRunner.ts:1154:9)[39m[22m
+[1m[31m    at PostgresQueryRunner.addColumns (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/driver/postgres/PostgresQueryRunner.ts:1168:13)[39m[22m
+[1m[31m    at RdbmsSchemaBuilder.addNewColumns (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/schema-builder/RdbmsSchemaBuilder.ts:845:13)[39m[22m
+[1m[31m    at RdbmsSchemaBuilder.executeSchemaSyncOperationsInProperOrder (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/schema-builder/RdbmsSchemaBuilder.ts:227:9)[39m[22m
+[1m[31m    at RdbmsSchemaBuilder.build (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/schema-builder/RdbmsSchemaBuilder.ts:95:13)[39m[22m
+[1m[31m    at DataSource.synchronize (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/data-source/DataSource.ts:339:9)[39m[22m
+[1m[31m    at DataSource.initialize (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/data-source/DataSource.ts:277:43)[39m[22m
+[1m[31m[39m[22m
+
+[36m>[39m [7m[1m[36m NX [39m[22m[27m [1mProcess exited with code 1, waiting for changes to restart...[22m
+
+
+ [31m>[39m [0m[7m[1m[31m NX [39m[22m[27m[0m  [31mAn error occured while creating pruned lockfile[39m
+
+   Please open an issue at `https://github.com/nrwl/nx/issues/new?template=1-bug.yml` and provide a reproduction.
+   To prevent the build from breaking we are returning the root lock file.
+   If you run `npm install --package-lock-only` in your output folder it will regenerate the correct pruned lockfile.
+   
+Original error: Target project does not exist: npm:mime-db@1.52.0
+
+
+   Error: Target project does not exist: npm:mime-db@1.52.0
+    at validateCommonDependencyRules (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:323:15)
+    at validateDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:313:5)
+    at ProjectGraphBuilder.addDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:190:9)
+    at ProjectGraphBuilder.addStaticDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:89:14)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:81:17
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:80:9
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+
+chunk (runtime: main) [1m[32mmain.js[39m[22m (main) 77.2 KiB [1m[33m[entry][39m[22m [1m[32m[rendered][39m[22m
+webpack compiled [1m[32msuccessfully[39m[22m (59ae2f8ecd768e44)
+[1m[31mStarting inspector on localhost:9229 failed: address already in use[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 7798  - [39m[31m10/30/2024, 12:43:35 AM [31m  ERROR[39m[31m [38;5;3m[TypeOrmModule] [39m[31m[31mUnable to connect to the database. Retrying (1)...[39m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31mQueryFailedError: column "owner_id" of relation "categories" contains null values[39m[22m
+[1m[31m    at PostgresQueryRunner.query (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/driver/postgres/PostgresQueryRunner.ts:331:19)[39m[22m
+[1m[31m    at processTicksAndRejections (node:internal/process/task_queues:95:5)[39m[22m
+[1m[31m    at PostgresQueryRunner.executeQueries (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/query-runner/BaseQueryRunner.ts:660:13)[39m[22m
+[1m[31m    at PostgresQueryRunner.addColumn (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/driver/postgres/PostgresQueryRunner.ts:1154:9)[39m[22m
+[1m[31m    at PostgresQueryRunner.addColumns (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/driver/postgres/PostgresQueryRunner.ts:1168:13)[39m[22m
+[1m[31m    at RdbmsSchemaBuilder.addNewColumns (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/schema-builder/RdbmsSchemaBuilder.ts:845:13)[39m[22m
+[1m[31m    at RdbmsSchemaBuilder.executeSchemaSyncOperationsInProperOrder (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/schema-builder/RdbmsSchemaBuilder.ts:227:9)[39m[22m
+[1m[31m    at RdbmsSchemaBuilder.build (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/schema-builder/RdbmsSchemaBuilder.ts:95:13)[39m[22m
+[1m[31m    at DataSource.synchronize (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/data-source/DataSource.ts:339:9)[39m[22m
+[1m[31m    at DataSource.initialize (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/data-source/DataSource.ts:277:43)[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 7798  - [39m[31m10/30/2024, 12:43:38 AM [31m  ERROR[39m[31m [38;5;3m[TypeOrmModule] [39m[31m[31mUnable to connect to the database. Retrying (2)...[39m[31m[39m[22m
+[1m[31mQueryFailedError: column "owner_id" of relation "categories" contains null values[39m[22m
+[1m[31m    at PostgresQueryRunner.query (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/driver/postgres/PostgresQueryRunner.ts:331:19)[39m[22m
+[1m[31m    at processTicksAndRejections (node:internal/process/task_queues:95:5)[39m[22m
+[1m[31m    at PostgresQueryRunner.executeQueries (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/query-runner/BaseQueryRunner.ts:660:13)[39m[22m
+[1m[31m    at PostgresQueryRunner.addColumn (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/driver/postgres/PostgresQueryRunner.ts:1154:9)[39m[22m
+[1m[31m    at PostgresQueryRunner.addColumns (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/driver/postgres/PostgresQueryRunner.ts:1168:13)[39m[22m
+[1m[31m    at RdbmsSchemaBuilder.addNewColumns (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/schema-builder/RdbmsSchemaBuilder.ts:845:13)[39m[22m
+[1m[31m    at RdbmsSchemaBuilder.executeSchemaSyncOperationsInProperOrder (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/schema-builder/RdbmsSchemaBuilder.ts:227:9)[39m[22m
+[1m[31m    at RdbmsSchemaBuilder.build (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/schema-builder/RdbmsSchemaBuilder.ts:95:13)[39m[22m
+[1m[31m    at DataSource.synchronize (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/data-source/DataSource.ts:339:9)[39m[22m
+[1m[31m    at DataSource.initialize (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/data-source/DataSource.ts:277:43)[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 7798  - [39m[31m10/30/2024, 12:43:41 AM [31m  ERROR[39m[31m [38;5;3m[TypeOrmModule] [39m[31m[31mUnable to connect to the database. Retrying (3)...[39m[31m[39m[22m
+[1m[31mQueryFailedError: column "owner_id" of relation "categories" contains null values[39m[22m
+[1m[31m    at PostgresQueryRunner.query (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/driver/postgres/PostgresQueryRunner.ts:331:19)[39m[22m
+[1m[31m    at processTicksAndRejections (node:internal/process/task_queues:95:5)[39m[22m
+[1m[31m    at PostgresQueryRunner.executeQueries (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/query-runner/BaseQueryRunner.ts:660:13)[39m[22m
+[1m[31m    at PostgresQueryRunner.addColumn (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/driver/postgres/PostgresQueryRunner.ts:1154:9)[39m[22m
+[1m[31m    at PostgresQueryRunner.addColumns (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/driver/postgres/PostgresQueryRunner.ts:1168:13)[39m[22m
+[1m[31m    at RdbmsSchemaBuilder.addNewColumns (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/schema-builder/RdbmsSchemaBuilder.ts:845:13)[39m[22m
+[1m[31m    at RdbmsSchemaBuilder.executeSchemaSyncOperationsInProperOrder (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/schema-builder/RdbmsSchemaBuilder.ts:227:9)[39m[22m
+[1m[31m    at RdbmsSchemaBuilder.build (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/schema-builder/RdbmsSchemaBuilder.ts:95:13)[39m[22m
+[1m[31m    at DataSource.synchronize (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/data-source/DataSource.ts:339:9)[39m[22m
+[1m[31m    at DataSource.initialize (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/data-source/DataSource.ts:277:43)[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 7798  - [39m[31m10/30/2024, 12:43:44 AM [31m  ERROR[39m[31m [38;5;3m[TypeOrmModule] [39m[31m[31mUnable to connect to the database. Retrying (4)...[39m[31m[39m[22m
+[1m[31mQueryFailedError: column "owner_id" of relation "categories" contains null values[39m[22m
+[1m[31m    at PostgresQueryRunner.query (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/driver/postgres/PostgresQueryRunner.ts:331:19)[39m[22m
+[1m[31m    at processTicksAndRejections (node:internal/process/task_queues:95:5)[39m[22m
+[1m[31m    at PostgresQueryRunner.executeQueries (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/query-runner/BaseQueryRunner.ts:660:13)[39m[22m
+[1m[31m    at PostgresQueryRunner.addColumn (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/driver/postgres/PostgresQueryRunner.ts:1154:9)[39m[22m
+[1m[31m    at PostgresQueryRunner.addColumns (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/driver/postgres/PostgresQueryRunner.ts:1168:13)[39m[22m
+[1m[31m    at RdbmsSchemaBuilder.addNewColumns (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/schema-builder/RdbmsSchemaBuilder.ts:845:13)[39m[22m
+[1m[31m    at RdbmsSchemaBuilder.executeSchemaSyncOperationsInProperOrder (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/schema-builder/RdbmsSchemaBuilder.ts:227:9)[39m[22m
+[1m[31m    at RdbmsSchemaBuilder.build (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/schema-builder/RdbmsSchemaBuilder.ts:95:13)[39m[22m
+[1m[31m    at DataSource.synchronize (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/data-source/DataSource.ts:339:9)[39m[22m
+[1m[31m    at DataSource.initialize (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/data-source/DataSource.ts:277:43)[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 7798  - [39m[31m10/30/2024, 12:43:47 AM [31m  ERROR[39m[31m [38;5;3m[TypeOrmModule] [39m[31m[31mUnable to connect to the database. Retrying (5)...[39m[31m[39m[22m
+[1m[31mQueryFailedError: column "owner_id" of relation "categories" contains null values[39m[22m
+[1m[31m    at PostgresQueryRunner.query (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/driver/postgres/PostgresQueryRunner.ts:331:19)[39m[22m
+[1m[31m    at processTicksAndRejections (node:internal/process/task_queues:95:5)[39m[22m
+[1m[31m    at PostgresQueryRunner.executeQueries (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/query-runner/BaseQueryRunner.ts:660:13)[39m[22m
+[1m[31m    at PostgresQueryRunner.addColumn (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/driver/postgres/PostgresQueryRunner.ts:1154:9)[39m[22m
+[1m[31m    at PostgresQueryRunner.addColumns (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/driver/postgres/PostgresQueryRunner.ts:1168:13)[39m[22m
+[1m[31m    at RdbmsSchemaBuilder.addNewColumns (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/schema-builder/RdbmsSchemaBuilder.ts:845:13)[39m[22m
+[1m[31m    at RdbmsSchemaBuilder.executeSchemaSyncOperationsInProperOrder (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/schema-builder/RdbmsSchemaBuilder.ts:227:9)[39m[22m
+[1m[31m    at RdbmsSchemaBuilder.build (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/schema-builder/RdbmsSchemaBuilder.ts:95:13)[39m[22m
+[1m[31m    at DataSource.synchronize (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/data-source/DataSource.ts:339:9)[39m[22m
+[1m[31m    at DataSource.initialize (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/data-source/DataSource.ts:277:43)[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 7798  - [39m[31m10/30/2024, 12:43:50 AM [31m  ERROR[39m[31m [38;5;3m[TypeOrmModule] [39m[31m[31mUnable to connect to the database. Retrying (6)...[39m[31m[39m[22m
+[1m[31mQueryFailedError: column "owner_id" of relation "categories" contains null values[39m[22m
+[1m[31m    at PostgresQueryRunner.query (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/driver/postgres/PostgresQueryRunner.ts:331:19)[39m[22m
+[1m[31m    at processTicksAndRejections (node:internal/process/task_queues:95:5)[39m[22m
+[1m[31m    at PostgresQueryRunner.executeQueries (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/query-runner/BaseQueryRunner.ts:660:13)[39m[22m
+[1m[31m    at PostgresQueryRunner.addColumn (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/driver/postgres/PostgresQueryRunner.ts:1154:9)[39m[22m
+[1m[31m    at PostgresQueryRunner.addColumns (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/driver/postgres/PostgresQueryRunner.ts:1168:13)[39m[22m
+[1m[31m    at RdbmsSchemaBuilder.addNewColumns (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/schema-builder/RdbmsSchemaBuilder.ts:845:13)[39m[22m
+[1m[31m    at RdbmsSchemaBuilder.executeSchemaSyncOperationsInProperOrder (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/schema-builder/RdbmsSchemaBuilder.ts:227:9)[39m[22m
+[1m[31m    at RdbmsSchemaBuilder.build (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/schema-builder/RdbmsSchemaBuilder.ts:95:13)[39m[22m
+[1m[31m    at DataSource.synchronize (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/data-source/DataSource.ts:339:9)[39m[22m
+[1m[31m    at DataSource.initialize (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/data-source/DataSource.ts:277:43)[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 7798  - [39m[31m10/30/2024, 12:43:53 AM [31m  ERROR[39m[31m [38;5;3m[TypeOrmModule] [39m[31m[31mUnable to connect to the database. Retrying (7)...[39m[31m[39m[22m
+[1m[31mQueryFailedError: column "owner_id" of relation "categories" contains null values[39m[22m
+[1m[31m    at PostgresQueryRunner.query (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/driver/postgres/PostgresQueryRunner.ts:331:19)[39m[22m
+[1m[31m    at processTicksAndRejections (node:internal/process/task_queues:95:5)[39m[22m
+[1m[31m    at PostgresQueryRunner.executeQueries (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/query-runner/BaseQueryRunner.ts:660:13)[39m[22m
+[1m[31m    at PostgresQueryRunner.addColumn (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/driver/postgres/PostgresQueryRunner.ts:1154:9)[39m[22m
+[1m[31m    at PostgresQueryRunner.addColumns (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/driver/postgres/PostgresQueryRunner.ts:1168:13)[39m[22m
+[1m[31m    at RdbmsSchemaBuilder.addNewColumns (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/schema-builder/RdbmsSchemaBuilder.ts:845:13)[39m[22m
+[1m[31m    at RdbmsSchemaBuilder.executeSchemaSyncOperationsInProperOrder (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/schema-builder/RdbmsSchemaBuilder.ts:227:9)[39m[22m
+[1m[31m    at RdbmsSchemaBuilder.build (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/schema-builder/RdbmsSchemaBuilder.ts:95:13)[39m[22m
+[1m[31m    at DataSource.synchronize (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/data-source/DataSource.ts:339:9)[39m[22m
+[1m[31m    at DataSource.initialize (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/data-source/DataSource.ts:277:43)[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 7798  - [39m[31m10/30/2024, 12:43:56 AM [31m  ERROR[39m[31m [38;5;3m[TypeOrmModule] [39m[31m[31mUnable to connect to the database. Retrying (8)...[39m[31m[39m[22m
+[1m[31mQueryFailedError: column "owner_id" of relation "categories" contains null values[39m[22m
+[1m[31m    at PostgresQueryRunner.query (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/driver/postgres/PostgresQueryRunner.ts:331:19)[39m[22m
+[1m[31m    at processTicksAndRejections (node:internal/process/task_queues:95:5)[39m[22m
+[1m[31m    at PostgresQueryRunner.executeQueries (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/query-runner/BaseQueryRunner.ts:660:13)[39m[22m
+[1m[31m    at PostgresQueryRunner.addColumn (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/driver/postgres/PostgresQueryRunner.ts:1154:9)[39m[22m
+[1m[31m    at PostgresQueryRunner.addColumns (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/driver/postgres/PostgresQueryRunner.ts:1168:13)[39m[22m
+[1m[31m    at RdbmsSchemaBuilder.addNewColumns (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/schema-builder/RdbmsSchemaBuilder.ts:845:13)[39m[22m
+[1m[31m    at RdbmsSchemaBuilder.executeSchemaSyncOperationsInProperOrder (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/schema-builder/RdbmsSchemaBuilder.ts:227:9)[39m[22m
+[1m[31m    at RdbmsSchemaBuilder.build (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/schema-builder/RdbmsSchemaBuilder.ts:95:13)[39m[22m
+[1m[31m    at DataSource.synchronize (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/data-source/DataSource.ts:339:9)[39m[22m
+[1m[31m    at DataSource.initialize (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/data-source/DataSource.ts:277:43)[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 7798  - [39m[31m10/30/2024, 12:43:59 AM [31m  ERROR[39m[31m [38;5;3m[TypeOrmModule] [39m[31m[31mUnable to connect to the database. Retrying (9)...[39m[31m[39m[22m
+[1m[31mQueryFailedError: column "owner_id" of relation "categories" contains null values[39m[22m
+[1m[31m    at PostgresQueryRunner.query (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/driver/postgres/PostgresQueryRunner.ts:331:19)[39m[22m
+[1m[31m    at processTicksAndRejections (node:internal/process/task_queues:95:5)[39m[22m
+[1m[31m    at PostgresQueryRunner.executeQueries (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/query-runner/BaseQueryRunner.ts:660:13)[39m[22m
+[1m[31m    at PostgresQueryRunner.addColumn (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/driver/postgres/PostgresQueryRunner.ts:1154:9)[39m[22m
+[1m[31m    at PostgresQueryRunner.addColumns (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/driver/postgres/PostgresQueryRunner.ts:1168:13)[39m[22m
+[1m[31m    at RdbmsSchemaBuilder.addNewColumns (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/schema-builder/RdbmsSchemaBuilder.ts:845:13)[39m[22m
+[1m[31m    at RdbmsSchemaBuilder.executeSchemaSyncOperationsInProperOrder (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/schema-builder/RdbmsSchemaBuilder.ts:227:9)[39m[22m
+[1m[31m    at RdbmsSchemaBuilder.build (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/schema-builder/RdbmsSchemaBuilder.ts:95:13)[39m[22m
+[1m[31m    at DataSource.synchronize (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/data-source/DataSource.ts:339:9)[39m[22m
+[1m[31m    at DataSource.initialize (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/data-source/DataSource.ts:277:43)[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 7798  - [39m[31m10/30/2024, 12:43:59 AM [31m  ERROR[39m[31m [38;5;3m[ExceptionHandler] [39m[31m[31mcolumn "owner_id" of relation "categories" contains null values[39m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31mQueryFailedError: column "owner_id" of relation "categories" contains null values[39m[22m
+[1m[31m    at PostgresQueryRunner.query (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/driver/postgres/PostgresQueryRunner.ts:331:19)[39m[22m
+[1m[31m    at processTicksAndRejections (node:internal/process/task_queues:95:5)[39m[22m
+[1m[31m    at PostgresQueryRunner.executeQueries (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/query-runner/BaseQueryRunner.ts:660:13)[39m[22m
+[1m[31m    at PostgresQueryRunner.addColumn (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/driver/postgres/PostgresQueryRunner.ts:1154:9)[39m[22m
+[1m[31m    at PostgresQueryRunner.addColumns (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/driver/postgres/PostgresQueryRunner.ts:1168:13)[39m[22m
+[1m[31m    at RdbmsSchemaBuilder.addNewColumns (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/schema-builder/RdbmsSchemaBuilder.ts:845:13)[39m[22m
+[1m[31m    at RdbmsSchemaBuilder.executeSchemaSyncOperationsInProperOrder (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/schema-builder/RdbmsSchemaBuilder.ts:227:9)[39m[22m
+[1m[31m    at RdbmsSchemaBuilder.build (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/schema-builder/RdbmsSchemaBuilder.ts:95:13)[39m[22m
+[1m[31m    at DataSource.synchronize (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/data-source/DataSource.ts:339:9)[39m[22m
+[1m[31m    at DataSource.initialize (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/data-source/DataSource.ts:277:43)[39m[22m
+[1m[31m[39m[22m
+
+[36m>[39m [7m[1m[36m NX [39m[22m[27m [1mProcess exited with code 1, waiting for changes to restart...[22m
+
+
+ [31m>[39m [0m[7m[1m[31m NX [39m[22m[27m[0m  [31mAn error occured while creating pruned lockfile[39m
+
+   Please open an issue at `https://github.com/nrwl/nx/issues/new?template=1-bug.yml` and provide a reproduction.
+   To prevent the build from breaking we are returning the root lock file.
+   If you run `npm install --package-lock-only` in your output folder it will regenerate the correct pruned lockfile.
+   
+Original error: Target project does not exist: npm:mime-db@1.52.0
+
+
+   Error: Target project does not exist: npm:mime-db@1.52.0
+    at validateCommonDependencyRules (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:323:15)
+    at validateDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:313:5)
+    at ProjectGraphBuilder.addDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:190:9)
+    at ProjectGraphBuilder.addStaticDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:89:14)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:81:17
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:80:9
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+
+chunk (runtime: main) [1m[32mmain.js[39m[22m (main) 77.2 KiB [1m[33m[entry][39m[22m [1m[32m[rendered][39m[22m
+webpack compiled [1m[32msuccessfully[39m[22m (e4577b20127b4770)
+[1m[31mStarting inspector on localhost:9229 failed: address already in use[39m[22m
+[1m[31m[39m[22m
+
+ [31m>[39m [0m[7m[1m[31m NX [39m[22m[27m[0m  [31mAn error occured while creating pruned lockfile[39m
+
+   Please open an issue at `https://github.com/nrwl/nx/issues/new?template=1-bug.yml` and provide a reproduction.
+   To prevent the build from breaking we are returning the root lock file.
+   If you run `npm install --package-lock-only` in your output folder it will regenerate the correct pruned lockfile.
+   
+Original error: Target project does not exist: npm:mime-db@1.52.0
+
+
+   Error: Target project does not exist: npm:mime-db@1.52.0
+    at validateCommonDependencyRules (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:323:15)
+    at validateDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:313:5)
+    at ProjectGraphBuilder.addDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:190:9)
+    at ProjectGraphBuilder.addStaticDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:89:14)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:81:17
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:80:9
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+
+chunk (runtime: main) [1m[32mmain.js[39m[22m (main) 77.5 KiB [1m[33m[entry][39m[22m [1m[32m[rendered][39m[22m
+webpack compiled [1m[32msuccessfully[39m[22m (b65d8e8e08089870)
+[1m[31mStarting inspector on localhost:9229 failed: address already in use[39m[22m
+[1m[31m[39m[22m
+
+ [31m>[39m [0m[7m[1m[31m NX [39m[22m[27m[0m  [31mAn error occured while creating pruned lockfile[39m
+
+   Please open an issue at `https://github.com/nrwl/nx/issues/new?template=1-bug.yml` and provide a reproduction.
+   To prevent the build from breaking we are returning the root lock file.
+   If you run `npm install --package-lock-only` in your output folder it will regenerate the correct pruned lockfile.
+   
+Original error: Target project does not exist: npm:mime-db@1.52.0
+
+
+   Error: Target project does not exist: npm:mime-db@1.52.0
+    at validateCommonDependencyRules (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:323:15)
+    at validateDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:313:5)
+    at ProjectGraphBuilder.addDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:190:9)
+    at ProjectGraphBuilder.addStaticDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:89:14)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:81:17
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:80:9
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+
+chunk (runtime: main) [1m[32mmain.js[39m[22m (main) 77.4 KiB [1m[33m[entry][39m[22m [1m[32m[rendered][39m[22m
+webpack compiled [1m[32msuccessfully[39m[22m (42a7abc432fd80aa)
+[1m[31mStarting inspector on localhost:9229 failed: address already in use[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 7920  - [39m[31m10/30/2024, 12:49:26 AM [31m  ERROR[39m[31m [38;5;3m[ExceptionsHandler] [39m[31m[31mupdate or delete on table "categories" violates foreign key constraint "FK_9a5f6868c96e0069e699f33e124" on table "products"[39m[31m[39m[22m
+[1m[31mQueryFailedError: update or delete on table "categories" violates foreign key constraint "FK_9a5f6868c96e0069e699f33e124" on table "products"[39m[22m
+[1m[31m    at PostgresQueryRunner.query (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/driver/postgres/PostgresQueryRunner.ts:331:19)[39m[22m
+[1m[31m    at processTicksAndRejections (node:internal/process/task_queues:95:5)[39m[22m
+[1m[31m    at DeleteQueryBuilder.execute (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/query-builder/DeleteQueryBuilder.ts:77:33)[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 7920  - [39m[31m10/30/2024, 1:07:05 AM [31m  ERROR[39m[31m [38;5;3m[ExceptionsHandler] [39m[31m[31minvalid input syntax for type uuid: "undefined"[39m[31m[39m[22m
+[1m[31mQueryFailedError: invalid input syntax for type uuid: "undefined"[39m[22m
+[1m[31m    at PostgresQueryRunner.query (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/driver/postgres/PostgresQueryRunner.ts:331:19)[39m[22m
+[1m[31m    at processTicksAndRejections (node:internal/process/task_queues:95:5)[39m[22m
+[1m[31m    at SelectQueryBuilder.loadRawResults (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/query-builder/SelectQueryBuilder.ts:3805:25)[39m[22m
+[1m[31m    at SelectQueryBuilder.executeEntitiesAndRawResults (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/query-builder/SelectQueryBuilder.ts:3551:26)[39m[22m
+[1m[31m    at SelectQueryBuilder.getRawAndEntities (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/query-builder/SelectQueryBuilder.ts:1670:29)[39m[22m
+[1m[31m    at SelectQueryBuilder.getOne (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/query-builder/SelectQueryBuilder.ts:1697:25)[39m[22m
+[1m[31m[39m[22m
+
+ [31m>[39m [0m[7m[1m[31m NX [39m[22m[27m[0m  [31mAn error occured while creating pruned lockfile[39m
+
+   Please open an issue at `https://github.com/nrwl/nx/issues/new?template=1-bug.yml` and provide a reproduction.
+   To prevent the build from breaking we are returning the root lock file.
+   If you run `npm install --package-lock-only` in your output folder it will regenerate the correct pruned lockfile.
+   
+Original error: Target project does not exist: npm:mime-db@1.52.0
+
+
+   Error: Target project does not exist: npm:mime-db@1.52.0
+    at validateCommonDependencyRules (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:323:15)
+    at validateDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:313:5)
+    at ProjectGraphBuilder.addDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:190:9)
+    at ProjectGraphBuilder.addStaticDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:89:14)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:81:17
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:80:9
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+
+chunk (runtime: main) [1m[32mmain.js[39m[22m (main) 77.9 KiB [1m[33m[entry][39m[22m [1m[32m[rendered][39m[22m
+webpack compiled [1m[32msuccessfully[39m[22m (dd0ac55952739f26)
+
+ [31m>[39m [0m[7m[1m[31m NX [39m[22m[27m[0m  [31mAn error occured while creating pruned lockfile[39m
+
+   Please open an issue at `https://github.com/nrwl/nx/issues/new?template=1-bug.yml` and provide a reproduction.
+   To prevent the build from breaking we are returning the root lock file.
+   If you run `npm install --package-lock-only` in your output folder it will regenerate the correct pruned lockfile.
+   
+Original error: Target project does not exist: npm:mime-db@1.52.0
+
+
+   Error: Target project does not exist: npm:mime-db@1.52.0
+    at validateCommonDependencyRules (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:323:15)
+    at validateDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:313:5)
+    at ProjectGraphBuilder.addDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:190:9)
+    at ProjectGraphBuilder.addStaticDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:89:14)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:81:17
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:80:9
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+
+chunk (runtime: main) [1m[32mmain.js[39m[22m (main) 78.4 KiB [1m[33m[entry][39m[22m [1m[32m[rendered][39m[22m
+webpack compiled [1m[32msuccessfully[39m[22m (6e16199e9156483c)
+[1m[31mStarting inspector on localhost:9229 failed: address already in use[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 8498  - [39m[31m10/30/2024, 1:15:23 AM [31m  ERROR[39m[31m [38;5;3m[ExceptionsHandler] [39m[31m[31minvalid input syntax for type uuid: "undefined"[39m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31mQueryFailedError: invalid input syntax for type uuid: "undefined"[39m[22m
+[1m[31m    at PostgresQueryRunner.query (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/driver/postgres/PostgresQueryRunner.ts:331:19)[39m[22m
+[1m[31m    at processTicksAndRejections (node:internal/process/task_queues:95:5)[39m[22m
+[1m[31m    at SelectQueryBuilder.loadRawResults (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/query-builder/SelectQueryBuilder.ts:3805:25)[39m[22m
+[1m[31m    at SelectQueryBuilder.executeEntitiesAndRawResults (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/query-builder/SelectQueryBuilder.ts:3551:26)[39m[22m
+[1m[31m    at SelectQueryBuilder.getRawAndEntities (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/query-builder/SelectQueryBuilder.ts:1670:29)[39m[22m
+[1m[31m    at SelectQueryBuilder.getOne (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/src/query-builder/SelectQueryBuilder.ts:1697:25)[39m[22m
+[1m[31m[39m[22m

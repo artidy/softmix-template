@@ -1,0 +1,16 @@
+version: '3.9'
+services:
+  softmix.frontend:
+    image: ghcr.io/artidy/softmix.frontend:latest
+    restart: always
+    container_name: softmix.frontend.service
+    ports:
+      - "4200:80"
+    env_file:
+      - .frontend.env
+    networks:
+      - softmix.network
+
+networks:
+  softmix.network:
+    driver: bridge

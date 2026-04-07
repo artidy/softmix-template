@@ -1,0 +1,80 @@
+
+ [36m>[39m [0m[7m[1m[36m NX [39m[22m[27m[0m  [36mRunning target [1mbuild[22m for project bff and [1m1[22m task it depends on:[39m
+
+ 
+
+[2m> [22m[2mnx run[22m bff:build:production  [2m[local cache][22m
+
+chunk (runtime: main) [1m[32mmain.js[39m[22m (main) 97.4 KiB [1m[33m[entry][39m[22m [1m[32m[rendered][39m[22m
+webpack compiled [1m[32msuccessfully[39m[22m (e68a32991a028c4b)
+
+ 
+
+ [32m>[39m [0m[7m[1m[32m NX [39m[22m[27m[0m  [32mSuccessfully ran target [1mbuild[22m for project bff and [1m1[22m task it depends on[39m
+
+   [2mNx read the output from the cache instead of running the command for 2 out of 2 tasks.[22m
+
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 219B done
+#1 WARN: FromPlatformFlagConstDisallowed: FROM --platform flag should not use constant value "linux/amd64" (line 1)
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/node:21-alpine3.17
+#2 DONE 0.8s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [1/5] FROM docker.io/library/node:21-alpine3.17@sha256:3c63a56bb358fe10657085d47590a0a68ee666db1ed44dfc90462c2288289884
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 360B done
+#5 DONE 0.0s
+
+#6 [2/5] WORKDIR /opt/softmix
+#6 CACHED
+
+#7 [3/5] COPY ./dist/apps/bff/package.json .
+#7 CACHED
+
+#8 [4/5] RUN npm install --omit=dev
+#8 CACHED
+
+#9 [5/5] COPY ./dist/apps/bff .
+#9 CACHED
+
+#10 exporting to image
+#10 exporting layers done
+#10 writing image sha256:6d1c4302276209afed9d614b3255fa6ed356eb83cf6395f15f0b626b8bbf3919 done
+#10 naming to ghcr.io/artidy/softmix.bff:latest done
+#10 DONE 0.0s
+
+ [33m1 warning found (use docker --debug to expand):
+[0m - FromPlatformFlagConstDisallowed: FROM --platform flag should not use constant value "linux/amd64" (line 1)
+
+View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/d6xjxqskch6akce447n1ipzqa
+The push refers to repository [ghcr.io/artidy/softmix.bff]
+cd423ab96a02: Preparing
+4a1edfbb2ce4: Preparing
+1cd8dab60211: Preparing
+ffad0bf9787c: Preparing
+606bae91b09a: Preparing
+b26b96b420df: Preparing
+7927b0b6607c: Preparing
+617df26c9e2b: Preparing
+b26b96b420df: Waiting
+7927b0b6607c: Waiting
+617df26c9e2b: Waiting
+1cd8dab60211: Layer already exists
+cd423ab96a02: Layer already exists
+606bae91b09a: Layer already exists
+4a1edfbb2ce4: Layer already exists
+ffad0bf9787c: Layer already exists
+617df26c9e2b: Layer already exists
+b26b96b420df: Layer already exists
+7927b0b6607c: Layer already exists
+latest: digest: sha256:94c5dee683f637170d977099bf9b5a32a75d862dcb3a75f6fef784e4bc8c762c size: 1993

@@ -1,0 +1,29 @@
+### Регистрация нового пользователя
+POST http://localhost:3333/api/users
+Content-Type: application/json
+
+{
+  "name": "Andrey",
+  "login": "user",
+  "password": "123456789",
+  "role": "user"
+}
+
+### Получение списка всех пользователей
+GET http://localhost:3333/api/users
+
+### Получение информации о пользователе по идентификатору
+GET http://localhost:3333/api/users/6408f5d7aed6607c6cf408d4
+
+### Обновление информации пользователя
+PATCH http://localhost:3333/api/users/6408f5d7aed6607c6cf408d4
+Content-Type: application/json
+Authorization: Bearer
+
+{
+  "role": "admin"
+}
+
+### Удаление пользователя
+DELETE http://localhost:3333/api/users/6408f5d7aed6607c6cf408d4
+Authorization: Bearer

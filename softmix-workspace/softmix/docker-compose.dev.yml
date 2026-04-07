@@ -1,0 +1,36 @@
+services:
+  softmix.postgres:
+    image: postgres:16-alpine
+    restart: always
+    container_name: softmix.postgres
+    env_file:
+      - environments/.shop.env
+    ports:
+      - "127.0.0.1:5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U admin -d softmix-shop"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+    volumes:
+      - softmix.volume:/data/db-postgres
+
+  softmix.mongodb:
+    image: mongo:7
+    restart: always
+    container_name: softmix.mongodb
+    env_file:
+      - environments/.users.env
+    ports:
+      - '127.0.0.1:27017:27017'
+    volumes:
+      - softmix.volume:/data/db
+    healthcheck:
+      test: echo 'db.runCommand("ping").ok' | mongosh localhost:27017 --quiet
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  softmix.volume: {}

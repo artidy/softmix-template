@@ -1,0 +1,259 @@
+chunk (runtime: main) [1m[32mmain.js[39m[22m (main) 55.7 KiB [1m[33m[entry][39m[22m [1m[32m[rendered][39m[22m
+webpack compiled [1m[32msuccessfully[39m[22m (0bd76d408bdc6ec0)
+[1m[31mStarting inspector on localhost:9229 failed: address already in use[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 14122  - [39m[31m10/27/2024, 10:43:39 PM [31m  ERROR[39m[31m [38;5;3m[ExceptionsHandler] [39m[31m[31mCannot read properties of undefined (reading 'toString')[39m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31mTypeError: Cannot read properties of undefined (reading 'toString')[39m[22m
+[1m[31m    at Object.transformFn (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/dist/apps/uploader/webpack:/src/app/products/rdo/product-image.rdo.ts:11:35)[39m[22m
+[1m[31m    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/src/TransformOperationExecutor.ts:412:24[39m[22m
+[1m[31m    at Array.forEach (<anonymous>)[39m[22m
+[1m[31m    at TransformOperationExecutor.applyCustomTransformations (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/src/TransformOperationExecutor.ts:411:15)[39m[22m
+[1m[31m    at TransformOperationExecutor.transform (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/src/TransformOperationExecutor.ts:334:33)[39m[22m
+[1m[31m    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/src/TransformOperationExecutor.ts:79:30[39m[22m
+[1m[31m    at Array.forEach (<anonymous>)[39m[22m
+[1m[31m    at TransformOperationExecutor.transform (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/src/TransformOperationExecutor.ts:44:24)[39m[22m
+[1m[31m    at ClassTransformer.plainToInstance (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/src/ClassTransformer.ts:77:21)[39m[22m
+[1m[31m    at plainToInstance (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/src/index.ts:84:27)[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 14122  - [39m[31m10/27/2024, 10:43:39 PM [31m  ERROR[39m[31m [38;5;3m[ExceptionsHandler] [39m[31m[31mCannot read properties of undefined (reading 'toString')[39m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31mTypeError: Cannot read properties of undefined (reading 'toString')[39m[22m
+[1m[31m    at Object.transformFn (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/dist/apps/uploader/webpack:/src/app/products/rdo/product-image.rdo.ts:11:35)[39m[22m
+[1m[31m    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/src/TransformOperationExecutor.ts:412:24[39m[22m
+[1m[31m    at Array.forEach (<anonymous>)[39m[22m
+[1m[31m    at TransformOperationExecutor.applyCustomTransformations (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/src/TransformOperationExecutor.ts:411:15)[39m[22m
+[1m[31m    at TransformOperationExecutor.transform (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/src/TransformOperationExecutor.ts:334:33)[39m[22m
+[1m[31m    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/src/TransformOperationExecutor.ts:79:30[39m[22m
+[1m[31m    at Array.forEach (<anonymous>)[39m[22m
+[1m[31m    at TransformOperationExecutor.transform (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/src/TransformOperationExecutor.ts:44:24)[39m[22m
+[1m[31m    at ClassTransformer.plainToInstance (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/src/ClassTransformer.ts:77:21)[39m[22m
+[1m[31m    at plainToInstance (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/src/index.ts:84:27)[39m[22m
+[1m[31m[39m[22m
+
+ [31m>[39m [0m[7m[1m[31m NX [39m[22m[27m[0m  [31mAn error occured while creating pruned lockfile[39m
+
+   Please open an issue at `https://github.com/nrwl/nx/issues/new?template=1-bug.yml` and provide a reproduction.
+   To prevent the build from breaking we are returning the root lock file.
+   If you run `npm install --package-lock-only` in your output folder it will regenerate the correct pruned lockfile.
+   
+Original error: Target project does not exist: npm:mime-db@1.52.0
+
+
+   Error: Target project does not exist: npm:mime-db@1.52.0
+    at validateCommonDependencyRules (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:323:15)
+    at validateDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:313:5)
+    at ProjectGraphBuilder.addDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:190:9)
+    at ProjectGraphBuilder.addStaticDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:89:14)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:81:17
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:80:9
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+
+chunk (runtime: main) [1m[32mmain.js[39m[22m (main) 55.7 KiB [1m[33m[entry][39m[22m [1m[32m[rendered][39m[22m
+webpack compiled [1m[32msuccessfully[39m[22m (2e9306015a2ab0c7)
+[1m[31mStarting inspector on localhost:9229 failed: address already in use[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 14262  - [39m[31m10/27/2024, 10:48:33 PM [31m  ERROR[39m[31m [38;5;3m[ExceptionsHandler] [39m[31m[31mCannot read properties of undefined (reading 'toString')[39m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31mTypeError: Cannot read properties of undefined (reading 'toString')[39m[22m
+[1m[31m    at Object.transformFn (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/dist/apps/uploader/webpack:/src/app/products/rdo/product-image.rdo.ts:11:35)[39m[22m
+[1m[31m    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/src/TransformOperationExecutor.ts:412:24[39m[22m
+[1m[31m    at Array.forEach (<anonymous>)[39m[22m
+[1m[31m    at TransformOperationExecutor.applyCustomTransformations (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/src/TransformOperationExecutor.ts:411:15)[39m[22m
+[1m[31m    at TransformOperationExecutor.transform (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/src/TransformOperationExecutor.ts:334:33)[39m[22m
+[1m[31m    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/src/TransformOperationExecutor.ts:79:30[39m[22m
+[1m[31m    at Array.forEach (<anonymous>)[39m[22m
+[1m[31m    at TransformOperationExecutor.transform (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/src/TransformOperationExecutor.ts:44:24)[39m[22m
+[1m[31m    at ClassTransformer.plainToInstance (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/src/ClassTransformer.ts:77:21)[39m[22m
+[1m[31m    at plainToInstance (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/src/index.ts:84:27)[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 14262  - [39m[31m10/27/2024, 10:48:33 PM [31m  ERROR[39m[31m [38;5;3m[ExceptionsHandler] [39m[31m[31mCannot read properties of undefined (reading 'toString')[39m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31mTypeError: Cannot read properties of undefined (reading 'toString')[39m[22m
+[1m[31m    at Object.transformFn (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/dist/apps/uploader/webpack:/src/app/products/rdo/product-image.rdo.ts:11:35)[39m[22m
+[1m[31m    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/src/TransformOperationExecutor.ts:412:24[39m[22m
+[1m[31m    at Array.forEach (<anonymous>)[39m[22m
+[1m[31m    at TransformOperationExecutor.applyCustomTransformations (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/src/TransformOperationExecutor.ts:411:15)[39m[22m
+[1m[31m    at TransformOperationExecutor.transform (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/src/TransformOperationExecutor.ts:334:33)[39m[22m
+[1m[31m    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/src/TransformOperationExecutor.ts:79:30[39m[22m
+[1m[31m    at Array.forEach (<anonymous>)[39m[22m
+[1m[31m    at TransformOperationExecutor.transform (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/src/TransformOperationExecutor.ts:44:24)[39m[22m
+[1m[31m    at ClassTransformer.plainToInstance (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/src/ClassTransformer.ts:77:21)[39m[22m
+[1m[31m    at plainToInstance (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/src/index.ts:84:27)[39m[22m
+[1m[31m[39m[22m
+
+ [31m>[39m [0m[7m[1m[31m NX [39m[22m[27m[0m  [31mAn error occured while creating pruned lockfile[39m
+
+   Please open an issue at `https://github.com/nrwl/nx/issues/new?template=1-bug.yml` and provide a reproduction.
+   To prevent the build from breaking we are returning the root lock file.
+   If you run `npm install --package-lock-only` in your output folder it will regenerate the correct pruned lockfile.
+   
+Original error: Target project does not exist: npm:mime-db@1.52.0
+
+
+   Error: Target project does not exist: npm:mime-db@1.52.0
+    at validateCommonDependencyRules (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:323:15)
+    at validateDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:313:5)
+    at ProjectGraphBuilder.addDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:190:9)
+    at ProjectGraphBuilder.addStaticDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:89:14)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:81:17
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:80:9
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+
+chunk (runtime: main) [1m[32mmain.js[39m[22m (main) 55.8 KiB [1m[33m[entry][39m[22m [1m[32m[rendered][39m[22m
+webpack compiled [1m[32msuccessfully[39m[22m (0b8d83799d2f736e)
+[1m[31mStarting inspector on localhost:9229 failed: address already in use[39m[22m
+[1m[31m[39m[22m
+
+ [31m>[39m [0m[7m[1m[31m NX [39m[22m[27m[0m  [31mAn error occured while creating pruned lockfile[39m
+
+   Please open an issue at `https://github.com/nrwl/nx/issues/new?template=1-bug.yml` and provide a reproduction.
+   To prevent the build from breaking we are returning the root lock file.
+   If you run `npm install --package-lock-only` in your output folder it will regenerate the correct pruned lockfile.
+   
+Original error: Target project does not exist: npm:mime-db@1.52.0
+
+
+   Error: Target project does not exist: npm:mime-db@1.52.0
+    at validateCommonDependencyRules (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:323:15)
+    at validateDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:313:5)
+    at ProjectGraphBuilder.addDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:190:9)
+    at ProjectGraphBuilder.addStaticDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:89:14)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:81:17
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:80:9
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+
+chunk (runtime: main) [1m[32mmain.js[39m[22m (main) 55.8 KiB [1m[33m[entry][39m[22m [1m[32m[rendered][39m[22m
+webpack compiled [1m[32msuccessfully[39m[22m (84a9c9758ae57848)
+[1m[31mStarting inspector on localhost:9229 failed: address already in use[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 14344  - [39m[31m10/27/2024, 10:52:18 PM [31m  ERROR[39m[31m [38;5;3m[ExceptionsHandler] [39m[31m[31mCannot read properties of undefined (reading 'toString')[39m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31mTypeError: Cannot read properties of undefined (reading 'toString')[39m[22m
+[1m[31m    at Object.transformFn (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/dist/apps/uploader/webpack:/src/app/products/rdo/product-image.rdo.ts:11:35)[39m[22m
+[1m[31m    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/src/TransformOperationExecutor.ts:412:24[39m[22m
+[1m[31m    at Array.forEach (<anonymous>)[39m[22m
+[1m[31m    at TransformOperationExecutor.applyCustomTransformations (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/src/TransformOperationExecutor.ts:411:15)[39m[22m
+[1m[31m    at TransformOperationExecutor.transform (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/src/TransformOperationExecutor.ts:334:33)[39m[22m
+[1m[31m    at ClassTransformer.plainToInstance (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/src/ClassTransformer.ts:77:21)[39m[22m
+[1m[31m    at plainToInstance (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/src/index.ts:84:27)[39m[22m
+[1m[31m    at fillObject (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/dist/apps/uploader/webpack:/libs/core/src/lib/helpers.ts:28:25)[39m[22m
+[1m[31m    at ProductImageController.<anonymous> (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/dist/apps/uploader/webpack:/src/app/products/product-image.controller.ts:57:22)[39m[22m
+[1m[31m    at Generator.next (<anonymous>)[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 14344  - [39m[31m10/27/2024, 11:02:59 PM [31m  ERROR[39m[31m [31mКод ошибки: 404, описание: Cannot GET //assets/img/products/68a1106d-531e-43fc-a723-e10a383f9f88.jpeg[39m[31m[39m[22m
+[1m[31m[39m[22m
+
+ [31m>[39m [0m[7m[1m[31m NX [39m[22m[27m[0m  [31mAn error occured while creating pruned lockfile[39m
+
+   Please open an issue at `https://github.com/nrwl/nx/issues/new?template=1-bug.yml` and provide a reproduction.
+   To prevent the build from breaking we are returning the root lock file.
+   If you run `npm install --package-lock-only` in your output folder it will regenerate the correct pruned lockfile.
+   
+Original error: Target project does not exist: npm:mime-db@1.52.0
+
+
+   Error: Target project does not exist: npm:mime-db@1.52.0
+    at validateCommonDependencyRules (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:323:15)
+    at validateDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:313:5)
+    at ProjectGraphBuilder.addDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:190:9)
+    at ProjectGraphBuilder.addStaticDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:89:14)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:81:17
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:80:9
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+
+chunk (runtime: main) [1m[32mmain.js[39m[22m (main) 55.7 KiB [1m[33m[entry][39m[22m [1m[32m[rendered][39m[22m
+webpack compiled [1m[32msuccessfully[39m[22m (ef33a596ee6fb0d3)
+[1m[31mStarting inspector on localhost:9229 failed: address already in use[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 14729  - [39m[31m10/27/2024, 11:05:18 PM [31m  ERROR[39m[31m [38;5;3m[ExceptionsHandler] [39m[31m[31mCannot read properties of undefined (reading 'toString')[39m[31m[39m[22m
+[1m[31m[39m[22m
+[1m[31mTypeError: Cannot read properties of undefined (reading 'toString')[39m[22m
+[1m[31m    at Object.transformFn (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/dist/apps/uploader/webpack:/src/app/products/rdo/product-image.rdo.ts:11:35)[39m[22m
+[1m[31m    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/src/TransformOperationExecutor.ts:412:24[39m[22m
+[1m[31m    at Array.forEach (<anonymous>)[39m[22m
+[1m[31m    at TransformOperationExecutor.applyCustomTransformations (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/src/TransformOperationExecutor.ts:411:15)[39m[22m
+[1m[31m    at TransformOperationExecutor.transform (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/src/TransformOperationExecutor.ts:334:33)[39m[22m
+[1m[31m    at ClassTransformer.plainToInstance (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/src/ClassTransformer.ts:77:21)[39m[22m
+[1m[31m    at plainToInstance (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/src/index.ts:84:27)[39m[22m
+[1m[31m    at fillObject (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/dist/apps/uploader/webpack:/libs/core/src/lib/helpers.ts:28:25)[39m[22m
+[1m[31m    at ProductImageController.<anonymous> (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/dist/apps/uploader/webpack:/src/app/products/product-image.controller.ts:55:22)[39m[22m
+[1m[31m    at Generator.next (<anonymous>)[39m[22m
+[1m[31m[39m[22m
+
+ [31m>[39m [0m[7m[1m[31m NX [39m[22m[27m[0m  [31mAn error occured while creating pruned lockfile[39m
+
+   Please open an issue at `https://github.com/nrwl/nx/issues/new?template=1-bug.yml` and provide a reproduction.
+   To prevent the build from breaking we are returning the root lock file.
+   If you run `npm install --package-lock-only` in your output folder it will regenerate the correct pruned lockfile.
+   
+Original error: Target project does not exist: npm:mime-db@1.52.0
+
+
+   Error: Target project does not exist: npm:mime-db@1.52.0
+    at validateCommonDependencyRules (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:323:15)
+    at validateDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:313:5)
+    at ProjectGraphBuilder.addDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:190:9)
+    at ProjectGraphBuilder.addStaticDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:89:14)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:81:17
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:80:9
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+
+chunk (runtime: main) [1m[32mmain.js[39m[22m (main) 55.8 KiB [1m[33m[entry][39m[22m [1m[32m[rendered][39m[22m
+webpack compiled [1m[32msuccessfully[39m[22m (a2777990f06e49c3)
+[1m[31mStarting inspector on localhost:9229 failed: address already in use[39m[22m
+[1m[31m[39m[22m
+[1m[31m[31m[Nest] 14831  - [39m[31m10/27/2024, 11:09:50 PM [31m  ERROR[39m[31m [38;5;3m[ExceptionsHandler] [39m[31m[31mCannot read properties of undefined (reading 'toString')[39m[31m[39m[22m
+[1m[31mTypeError: Cannot read properties of undefined (reading 'toString')[39m[22m
+[1m[31m    at Object.transformFn (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/dist/apps/uploader/webpack:/src/app/products/rdo/product-image.rdo.ts:11:35)[39m[22m
+[1m[31m    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/src/TransformOperationExecutor.ts:412:24[39m[22m
+[1m[31m    at Array.forEach (<anonymous>)[39m[22m
+[1m[31m    at TransformOperationExecutor.applyCustomTransformations (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/src/TransformOperationExecutor.ts:411:15)[39m[22m
+[1m[31m    at TransformOperationExecutor.transform (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/src/TransformOperationExecutor.ts:334:33)[39m[22m
+[1m[31m    at ClassTransformer.plainToInstance (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/src/ClassTransformer.ts:77:21)[39m[22m
+[1m[31m    at plainToInstance (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/src/index.ts:84:27)[39m[22m
+[1m[31m    at fillObject (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/dist/apps/uploader/webpack:/libs/core/src/lib/helpers.ts:28:25)[39m[22m
+[1m[31m    at ProductImageController.<anonymous> (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/dist/apps/uploader/webpack:/src/app/products/product-image.controller.ts:55:22)[39m[22m
+[1m[31m    at Generator.next (<anonymous>)[39m[22m
+[1m[31m[39m[22m
+
+ [31m>[39m [0m[7m[1m[31m NX [39m[22m[27m[0m  [31mAn error occured while creating pruned lockfile[39m
+
+   Please open an issue at `https://github.com/nrwl/nx/issues/new?template=1-bug.yml` and provide a reproduction.
+   To prevent the build from breaking we are returning the root lock file.
+   If you run `npm install --package-lock-only` in your output folder it will regenerate the correct pruned lockfile.
+   
+Original error: Target project does not exist: npm:mime-db@1.52.0
+
+
+   Error: Target project does not exist: npm:mime-db@1.52.0
+    at validateCommonDependencyRules (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:323:15)
+    at validateDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:313:5)
+    at ProjectGraphBuilder.addDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:190:9)
+    at ProjectGraphBuilder.addStaticDependency (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/project-graph/project-graph-builder.js:89:14)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:81:17
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+    at /Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:80:9
+    at Array.forEach (<anonymous>)
+    at traverseNode (/Users/andreypechennikov/projects/softmix/softmix-workspace/softmix/node_modules/nx/src/plugins/js/lock-file/project-graph-pruning.js:78:36)
+
+chunk (runtime: main) [1m[32mmain.js[39m[22m (main) 54.5 KiB [1m[33m[entry][39m[22m [1m[32m[rendered][39m[22m
+webpack compiled [1m[32msuccessfully[39m[22m (f46fa8745072c178)
+[1m[31mStarting inspector on localhost:9229 failed: address already in use[39m[22m
+[1m[31m[39m[22m
