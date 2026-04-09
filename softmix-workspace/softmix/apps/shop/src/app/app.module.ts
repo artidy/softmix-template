@@ -11,6 +11,7 @@ import { getTypeOrmConfig, postgresConfig } from '../config/postgres.config';
 import { CategoryModule } from './categories/category.module';
 import { ProductModule } from './products/product.module';
 import { SettingsModule } from './settings/settings.module';
+import { ExternalServicesModule } from './external-services/external-services.module';
 
 @Module({
   imports: [
@@ -30,6 +31,7 @@ import { SettingsModule } from './settings/settings.module';
     CategoryModule,
     ProductModule,
     SettingsModule,
+    ExternalServicesModule,
   ]
 })
 export class AppModule {}

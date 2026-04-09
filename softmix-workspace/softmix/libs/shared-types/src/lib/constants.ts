@@ -16,6 +16,8 @@ enum UrlPaths {
   Products = 'products',
   Uploader = 'uploader',
   Settings = 'settings',
+  ExternalServices = 'external-services',
+  ServiceProxy = 'service-proxy',
 }
 
 enum AlStyleRoutes {

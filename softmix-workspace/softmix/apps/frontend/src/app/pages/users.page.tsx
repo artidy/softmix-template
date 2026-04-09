@@ -73,7 +73,7 @@ function UsersPage(): ReactElement {
       <div>
         <h1>Пользователи</h1>
         <div className="table-actions">
-          <button className="btn btn-add" onClick={openCreateModal}>Добавить</button>
+          <button className="btn btn-add" onClick={openCreateModal}><i className="fa fa-plus"></i> Добавить</button>
           <div>
             <table className="styled-table">
               <thead>

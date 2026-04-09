@@ -9,12 +9,15 @@ import DownloadsPage from './pages/downloads.page';
 import ProductDetailsPage from './pages/product-details.page';
 import AboutPage from './pages/about.page';
 import PrivateRoute from './components/private-route/private-route';
+import AdminRoute from './components/private-route/admin-route';
 import LoginPage from './pages/login.page';
 import RegisterPage from './pages/register.page';
 import ContactsPage from './pages/contacts.page';
 import ProfilePage from './pages/profile.page';
 import UsersPage from './pages/users.page';
 import SettingsPage from './pages/settings.page';
+import ExternalServicesPage from './pages/external-services.page';
+import ImportPage from './pages/import.page';
 import AdminLayoutPage from './pages/admin-layout.page';
 
 export function App(): ReactElement {
@@ -34,14 +37,16 @@ export function App(): ReactElement {
         <Route path={AppRoute.Login} element={<LoginPage />} />
         <Route path={AppRoute.Register} element={<RegisterPage />} />
         <Route path={AppRoute.Profile} element={<ProfilePage />} />
-        <Route path={AppRoute.Admin} element={
-          <PrivateRoute>
-            <AdminLayoutPage />
-          </PrivateRoute>
-        }>
-          <Route path={AppRoute.Users} element={<UsersPage />} />
-          <Route path={AppRoute.Settings} element={<SettingsPage />} />
-        </Route>
+      </Route>
+      <Route path={AppRoute.Admin} element={
+        <PrivateRoute>
+          <AdminLayoutPage />
+        </PrivateRoute>
+      }>
+        <Route path={AppRoute.Users} element={<AdminRoute><UsersPage /></AdminRoute>} />
+        <Route path={AppRoute.Settings} element={<AdminRoute><SettingsPage /></AdminRoute>} />
+        <Route path={AppRoute.Services} element={<AdminRoute><ExternalServicesPage /></AdminRoute>} />
+        <Route path={AppRoute.Import} element={<ImportPage />} />
       </Route>
     </Routes>
   );

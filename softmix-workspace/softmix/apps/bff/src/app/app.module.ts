@@ -15,6 +15,8 @@ import { UploaderModule } from './uploader/uploader.module';
 import { CartModule } from './cart/cart.module';
 import { AuthModule } from './auth/auth.module';
 import { SettingsModule } from './settings/settings.module';
+import { ExternalServicesModule } from './external-services/external-services.module';
+import { ServiceProxyModule } from './service-proxy/service-proxy.module';
 
 @Module({
   imports: [
@@ -34,6 +36,8 @@ import { SettingsModule } from './settings/settings.module';
     CartModule,
     AuthModule,
     SettingsModule,
+    ExternalServicesModule,
+    ServiceProxyModule,
   ]
 })
 export class AppModule implements NestModule {

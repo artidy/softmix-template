@@ -1,4 +1,4 @@
-import { IsString, validateSync } from 'class-validator';
+import { IsOptional, IsString, validateSync } from 'class-validator';
 import { plainToInstance } from 'class-transformer';
 import { EnvValidationMessage } from '@project-lib/core';
 
@@ -18,11 +18,13 @@ class EnvironmentsConfig {
   })
   public UPLOADER_URL: string;
 
+  @IsOptional()
   @IsString({
     message: EnvValidationMessage.URLServiceNotRequired
   })
   public AL_STYLE_URL: string;
 
+  @IsOptional()
   @IsString({
     message: EnvValidationMessage.URLServiceNotRequired
   })

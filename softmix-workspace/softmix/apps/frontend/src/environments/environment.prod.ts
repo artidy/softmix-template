@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  backendBffUrl: 'https://softmix.kz/api',
+  backendBffUrl: 'http://localhost:5555/api',
 };

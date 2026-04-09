@@ -15,6 +15,8 @@ enum AppRoute {
   Cart = '/cart',
   Users = '/admin/users',
   Settings = '/admin/settings',
+  Services = '/admin/services',
+  Import = '/admin/import',
   Admin = '/admin',
 }
 
@@ -26,6 +28,7 @@ enum NameSpace {
   Cart = 'CART',
   Main = 'MAIN',
   Settings = 'SETTINGS',
+  ExternalServices = 'EXTERNAL_SERVICES',
 }
 
 enum Message {

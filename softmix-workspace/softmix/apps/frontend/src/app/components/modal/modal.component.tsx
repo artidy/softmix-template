@@ -59,7 +59,7 @@ function ModalComponent({isOpen, onCloseHandler, children}: ModalProps): ReactEl
         role={'dialog'}
         style={{ display: isOpen ? 'block' : '' }}
       >
-        <div className="modal-dialog modal-md" role="document">
+        <div className="modal-dialog modal-lg" role="document">
           <div className="modal-content">
             <div className="modal-header">
               <button type="button" className="close" data-bs-dismiss="modal" aria-label="Close" onClick={onCloseHandler}>

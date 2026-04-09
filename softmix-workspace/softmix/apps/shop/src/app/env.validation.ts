@@ -1,4 +1,4 @@
-import { IsBoolean, IsNumber, IsString, Max, Min, validateSync } from 'class-validator';
+import { IsBoolean, IsNumber, IsString, Length, Max, Min, validateSync } from 'class-validator';
 import { plainToInstance } from 'class-transformer';
 import { EnvValidationMessage } from '@project-lib/core';
 import { Port } from '@project-lib/shared-types';
@@ -40,6 +40,10 @@ class EnvironmentsConfig {
     message: EnvValidationMessage.PgAdminServerModeNotRequired
   })
   public PGADMIN_CONFIG_SERVER_MODE: boolean;
+
+  @IsString({ message: 'ENCRYPTION_KEY обязателен' })
+  @Length(64, 64, { message: 'ENCRYPTION_KEY должен быть 64 hex символа (32 байта)' })
+  public ENCRYPTION_KEY: string;
 }
 
 export function validateEnvironments(config: Record<string, unknown>) {

@@ -11,3 +11,4 @@ export * from './lib/queries/period.query';
 export * from './lib/queries/products.query';
 export * from './lib/queries/search.query';
 export * from './lib/site-settings.interface';
+export * from './lib/external-service.interface';
