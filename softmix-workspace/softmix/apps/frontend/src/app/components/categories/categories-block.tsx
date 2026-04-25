@@ -9,41 +9,41 @@ type CategoriesBlockProps = {
   currentCategoryId: string;
   ownerIds: string[];
   isAuth: boolean;
+  canManage: boolean;
   onOpenModalAddCategoryHandler: (id: string, position: number) => MouseEventHandler;
   onOpenModalUpdateHandler: (category: Category) => MouseEventHandler;
   onActionDelete: (category: Category) => MouseEventHandler;
-}
+};
 
-function CategoriesBlock(
-  {
-    categories,
-    allCategories,
-    currentCategoryId,
-    ownerIds,
-    onOpenModalAddCategoryHandler,
-    onOpenModalUpdateHandler,
-    isAuth,
-    onActionDelete,
-  }: CategoriesBlockProps): ReactElement {
-  const categoryContent = categories.map((category: Category) =>
-    <CategoryBlock
-      key={category.id}
-      category={category}
-      ownerIds={ownerIds}
-      categories={allCategories}
-      currentCategoryId={currentCategoryId}
-      onOpenModalAddCategoryHandler={onOpenModalAddCategoryHandler}
-      isAuth={isAuth}
-      onActionDelete={onActionDelete}
-      onOpenModalUpdateHandler={onOpenModalUpdateHandler}
-    />
-  )
-
+function CategoriesBlock({
+  categories,
+  allCategories,
+  currentCategoryId,
+  ownerIds,
+  onOpenModalAddCategoryHandler,
+  onOpenModalUpdateHandler,
+  isAuth,
+  canManage,
+  onActionDelete,
+}: CategoriesBlockProps): ReactElement {
   return (
-    <ul className="children">
-      {categoryContent}
+    <ul className="cat-children">
+      {categories.map((category: Category) => (
+        <CategoryBlock
+          key={category.id}
+          category={category}
+          ownerIds={ownerIds}
+          categories={allCategories}
+          currentCategoryId={currentCategoryId}
+          onOpenModalAddCategoryHandler={onOpenModalAddCategoryHandler}
+          isAuth={isAuth}
+          canManage={canManage}
+          onActionDelete={onActionDelete}
+          onOpenModalUpdateHandler={onOpenModalUpdateHandler}
+        />
+      ))}
     </ul>
-  )
+  );
 }
 
 export default memo(CategoriesBlock);

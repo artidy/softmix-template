@@ -92,8 +92,17 @@ function UsersPage(): ReactElement {
           </div>
         </div>
       </div>
-      <Modal isOpen={isCreateMode || !!editUser || isUserEditLoading} onCloseHandler={closeModal} children={isUserEditLoading ?
-        <LoaderComponent /> : <AddUserComponent user={editUser} createMode={isCreateMode} callback={closeModal} />} />
+      <Modal
+        isOpen={isCreateMode || !!editUser || isUserEditLoading}
+        onCloseHandler={closeModal}
+        title={isCreateMode ? 'Новый пользователь' : 'Редактировать пользователя'}
+        size="md"
+        children={
+          isUserEditLoading
+            ? <LoaderComponent />
+            : <AddUserComponent user={editUser} createMode={isCreateMode} callback={closeModal} />
+        }
+      />
     </section>
   )
 }

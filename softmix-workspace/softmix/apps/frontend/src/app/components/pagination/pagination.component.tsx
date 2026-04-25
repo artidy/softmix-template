@@ -7,55 +7,87 @@ import { AppRoute } from '../../const';
 import { convertSearchParams, getQueryString } from '../../services/helpers';
 
 type PaginationComponentProps = {
-  appRoute: AppRoute
+  appRoute: AppRoute;
   pagination: Pagination;
-}
+};
 
-function PaginationComponent({appRoute, pagination}: PaginationComponentProps): ReactElement {
-  const [searchParams] = useSearchParams();
-  const queryParams = convertSearchParams(searchParams);
-  const pages = [];
+const SIBLINGS = 1; // сколько страниц показывать слева/справа от текущей
+const BOUNDARIES = 1; // сколько страниц всегда показывать у начала и конца
 
-  for (let page = 1; page <= pagination.totalPages; page++) {
-    pages.push(page);
+function buildPageList(current: number, total: number): (number | 'dots')[] {
+  if (total <= 7) {
+    return Array.from({ length: total }, (_, i) => i + 1);
   }
 
-  const paginationContent = pages.map((pageNumber) => {
-    let queryString = getQueryString(queryParams, ['page', 'limit']);
-    queryString += queryString === '' ? '?' : '&';
+  const pages = new Set<number>();
+  for (let i = 1; i <= BOUNDARIES; i++) pages.add(i);
+  for (let i = total - BOUNDARIES + 1; i <= total; i++) pages.add(i);
+  for (let i = current - SIBLINGS; i <= current + SIBLINGS; i++) {
+    if (i >= 1 && i <= total) pages.add(i);
+  }
 
-    return (<li key={pageNumber} className={`${pageNumber === pagination.page ? 'active' : ''}`}>
-      <Link
-        to={`${appRoute}${queryString}page=${pageNumber}&limit=${DEFAULT_LIMIT}`}
-      >
-        {pageNumber}
-      </Link>
-    </li>)
-  });
+  const sorted = Array.from(pages).sort((a, b) => a - b);
+  const result: (number | 'dots')[] = [];
+  for (let i = 0; i < sorted.length; i++) {
+    if (i > 0 && sorted[i] - sorted[i - 1] > 1) {
+      result.push('dots');
+    }
+    result.push(sorted[i]);
+  }
+  return result;
+}
+
+function PaginationComponent({ appRoute, pagination }: PaginationComponentProps): ReactElement | null {
+  const [searchParams] = useSearchParams();
+  const queryParams = convertSearchParams(searchParams);
+
+  if (!pagination.totalPages || pagination.totalPages <= 1) {
+    return null;
+  }
+
+  const baseQs = getQueryString(queryParams, ['page', 'limit']);
+  const separator = baseQs === '' ? '?' : '&';
+  const pageHref = (page: number) =>
+    `${appRoute}${baseQs}${separator}page=${page}&limit=${DEFAULT_LIMIT}`;
+
+  const pages = buildPageList(pagination.page, pagination.totalPages);
 
   return (
     <div className="ltn__pagination-area text-center">
       <div className="ltn__pagination ltn__pagination-2">
         <ul>
-          { pagination.prev ?
+          {pagination.prev && (
             <li>
-              <Link to={pagination.prev}>
-                <i className="icon-arrow-left"/>
+              <Link to={pagination.prev} aria-label="Предыдущая страница">
+                <i className="icon-arrow-left" />
               </Link>
-            </li> : null
-          }
-          {paginationContent}
-          { pagination.next ?
+            </li>
+          )}
+          {pages.map((page, idx) => {
+            if (page === 'dots') {
+              return (
+                <li key={`dots-${idx}`} className="is-dots">
+                  <span>…</span>
+                </li>
+              );
+            }
+            return (
+              <li key={page} className={page === pagination.page ? 'active' : ''}>
+                <Link to={pageHref(page)}>{page}</Link>
+              </li>
+            );
+          })}
+          {pagination.next && (
             <li>
-              <Link to={pagination.next}>
-                <i className="icon-arrow-right"/>
+              <Link to={pagination.next} aria-label="Следующая страница">
+                <i className="icon-arrow-right" />
               </Link>
-            </li> : null
-          }
+            </li>
+          )}
         </ul>
       </div>
     </div>
-  )
+  );
 }
 
 export default memo(PaginationComponent);

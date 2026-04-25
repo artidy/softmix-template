@@ -19,7 +19,11 @@ export class ProductService {
     const { data } = await firstValueFrom(
       this.httpService.get(
         `${this.serviceAddress}/${UrlPaths.Products}`,
-        {headers, params: query}
+        {
+          headers,
+          params: query,
+          paramsSerializer: { indexes: null },
+        }
       ).pipe(catchError((e) => {
         throw new HttpException(e.response.data, e.response.status);
       }))

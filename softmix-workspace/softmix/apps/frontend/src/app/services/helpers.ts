@@ -99,16 +99,24 @@ const getFormatCode = (value: string) => {
 
 const getQueryString = (queryParams: QueryParams, excludeParams: string[] = []) => {
   const queryKeys = Object.keys(queryParams);
-  let result = '';
+  const parts: string[] = [];
 
   for (const queryKey of queryKeys) {
     if (excludeParams.includes(queryKey)) continue;
+    const value = queryParams[queryKey];
+    if (value === undefined || value === null) continue;
 
-    result += result === '' ? '?' : '&';
-    result += `${queryKey}=${queryParams[queryKey]}`;
+    if (Array.isArray(value)) {
+      for (const item of value) {
+        if (item === undefined || item === null) continue;
+        parts.push(`${encodeURIComponent(queryKey)}=${encodeURIComponent(String(item))}`);
+      }
+    } else {
+      parts.push(`${encodeURIComponent(queryKey)}=${encodeURIComponent(String(value))}`);
+    }
   }
 
-  return result;
+  return parts.length > 0 ? `?${parts.join('&')}` : '';
 }
 
 const convertSearchParams = (searchParams: URLSearchParams) => {

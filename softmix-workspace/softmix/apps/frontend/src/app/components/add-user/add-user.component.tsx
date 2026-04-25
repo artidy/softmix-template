@@ -1,4 +1,4 @@
-import { FormEvent, useState } from 'react';
+import { FormEvent, ReactElement, useState } from 'react';
 
 import { useAppDispatch } from '../../hooks';
 import { addUserApi, updateUserApi } from '../../store/user-data/api-actions';
@@ -7,145 +7,156 @@ import { UpdateUser, User, UserRole } from '../../types/user';
 
 type AddUserComponentProps = {
   createMode: boolean;
-  user: User;
+  user: User | null;
   callback: () => void;
-}
+};
 
-function AddUserComponent({createMode, user, callback}: AddUserComponentProps) {
+const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+function AddUserComponent({ createMode, user, callback }: AddUserComponentProps): ReactElement {
   const dispatch = useAppDispatch();
-  const [name, setName] = useState<string>(createMode ? '' : user.name);
-  const [login, setEmail] = useState<string>(createMode ? '' : user.login);
+  const [name, setName] = useState<string>(createMode ? '' : user?.name ?? '');
+  const [login, setLogin] = useState<string>(createMode ? '' : user?.login ?? '');
+  const [email, setEmail] = useState<string>(createMode ? '' : user?.email ?? '');
   const [password, setPassword] = useState<string>('');
-  const [role, setRole] = useState<UserRole>(createMode ? UserRole.User : user.role);
-  const [readOnly, setReadOnly] = useState<boolean>(!createMode);
+  const [role, setRole] = useState<UserRole>(createMode ? UserRole.User : user?.role ?? UserRole.User);
+  const [errors, setErrors] = useState<Record<string, string>>({});
 
-  const setEditMode = () => {
-    setReadOnly(!readOnly);
-
-    if (!readOnly) {
-      cancelHandler();
+  const validate = (): boolean => {
+    const next: Record<string, string> = {};
+    if (!name.trim() || name.trim().length < 2) next.name = 'Имя должно содержать минимум 2 символа';
+    if (createMode) {
+      if (!login.trim() || login.trim().length < 3) next.login = 'Логин минимум 3 символа';
+      if (!password || password.length < 6) next.password = 'Пароль минимум 6 символов';
+    } else if (password && password.length < 6) {
+      next.password = 'Пароль минимум 6 символов';
     }
-  }
-
-  const handleSubmitCreate = (evt: FormEvent<HTMLFormElement>) => {
-    evt.preventDefault();
-
-    dispatch(addUserApi({
-      name,
-      login,
-      password,
-      role,
-    }));
+    if (email && !EMAIL_REGEX.test(email.trim())) next.email = 'Некорректный email';
+    setErrors(next);
+    return Object.keys(next).length === 0;
   };
 
-  const handleSubmitUpdate = (evt: FormEvent<HTMLFormElement>) => {
+  const onSubmit = (evt: FormEvent<HTMLFormElement>) => {
     evt.preventDefault();
+    if (!validate()) return;
 
-    const updatedUser: UpdateUser = {
-      id: user.id,
+    if (createMode) {
+      dispatch(
+        addUserApi({
+          name: name.trim(),
+          login: login.trim(),
+          email: email.trim() || undefined,
+          password,
+          role,
+        }),
+      );
+      return;
     }
 
-    if (name !== user.name) {
-      updatedUser.name = name;
+    if (!user) return;
+    const update: UpdateUser = { id: user.id };
+    if (name !== user.name) update.name = name.trim();
+    if (password) update.password = password;
+    if (role !== user.role) update.role = role;
+    if (Object.keys(update).length > 1) {
+      dispatch(updateUserApi(update));
+    } else {
+      callback();
     }
-
-    if (password) {
-      updatedUser.password = password;
-    }
-
-    if (role !== user.role) {
-      updatedUser.role = role;
-    }
-
-    dispatch(updateUserApi(updatedUser));
   };
 
-  const cancelHandler = () => {
-    callback();
-  }
-
-  const rolesBlock = USER_ROLES.map((userRole) => {
-    return (
-      <label key={userRole.role} className={`role-btn${userRole.role === role ? ' active' : ''}`}>
-        <input
-          className="visually-hidden"
-          type="radio"
-          name="role"
-          value={userRole.role}
-          readOnly={readOnly}
-          onChange={(evt) => setRole(evt.target.value as UserRole)}
-          checked={userRole.role === role}
-        />
-        <span className="role-btn__btn">{userRole.title}</span>
-      </label>
-    )
-  });
+  const cls = (key: string) => `form-control${errors[key] ? ' is-invalid' : ''}`;
 
   return (
-    <form method="post" action="#" onSubmit={createMode ? handleSubmitCreate : handleSubmitUpdate}>
-      <div>
-        <div>
-          <div>
-            <label>
-              <span>Имя</span>
-              <span>
-                <input
-                  type="text"
-                  name="name"
-                  id="name"
-                  autoComplete="new-name"
-                  value={name}
-                  readOnly={readOnly}
-                  onChange={(evt) => setName(evt.target.value)}
-                  required
-                />
-              </span>
-            </label>
+    <form className="app-form" onSubmit={onSubmit}>
+      <div className="form-section">
+        <h6 className="form-section__title">Профиль</h6>
+        <div className="row g-3">
+          <div className="col-md-6">
+            <label className="form-label">Имя*</label>
+            <input
+              type="text"
+              className={cls('name')}
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              autoComplete="off"
+              autoFocus={createMode}
+            />
+            {errors.name && <div className="invalid-feedback">{errors.name}</div>}
           </div>
-          <div>
-            <label>
-              <span>Логин</span>
-              <span>
-                <input
-                  type="text"
-                  name="login"
-                  id="login"
-                  autoComplete="new-login"
-                  value={login}
-                  readOnly={readOnly}
-                  onChange={(evt) => setEmail(evt.target.value)}
-                  required
-                />
-              </span>
-            </label>
+          <div className="col-md-6">
+            <label className="form-label">Логин{createMode ? '*' : ''}</label>
+            <input
+              type="text"
+              className={cls('login')}
+              value={login}
+              onChange={(e) => setLogin(e.target.value)}
+              readOnly={!createMode}
+              autoComplete="off"
+            />
+            {errors.login && <div className="invalid-feedback">{errors.login}</div>}
           </div>
-          <div>
-            <label>
-              <span>Пароль</span>
-              <span>
-                <input
-                  type="password"
-                  name="password"
-                  id="password"
-                  autoComplete="new-password"
-                  value={password}
-                  readOnly={readOnly}
-                  onChange={(evt) => setPassword(evt.target.value)}
-                  required
-                />
-              </span>
-            </label>
+          <div className="col-md-6">
+            <label className="form-label">Email</label>
+            <input
+              type="email"
+              className={cls('email')}
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              readOnly={!createMode}
+              autoComplete="off"
+            />
+            {errors.email && <div className="invalid-feedback">{errors.email}</div>}
           </div>
-        </div>
-        <div>
-          <h2>Выберите роль</h2>
-          <div>
-            {rolesBlock}
+          <div className="col-md-6">
+            <label className="form-label">
+              Пароль{createMode ? '*' : ''}
+              {!createMode && <small className="text-muted ms-1">(оставьте пустым, чтобы не менять)</small>}
+            </label>
+            <input
+              type="password"
+              className={cls('password')}
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              autoComplete="new-password"
+            />
+            {errors.password && <div className="invalid-feedback">{errors.password}</div>}
           </div>
         </div>
       </div>
+
+      <div className="form-section">
+        <h6 className="form-section__title">Роль</h6>
+        <div className="d-flex gap-2 flex-wrap">
+          {USER_ROLES.map((r) => (
+            <label
+              key={r.role}
+              className={`role-pill${r.role === role ? ' is-active' : ''}`}
+            >
+              <input
+                type="radio"
+                name="role"
+                value={r.role}
+                checked={r.role === role}
+                onChange={(e) => setRole(e.target.value as UserRole)}
+                className="visually-hidden"
+              />
+              <span>{r.title}</span>
+            </label>
+          ))}
+        </div>
+      </div>
+
+      <div className="app-form__footer">
+        <button type="button" className="btn btn-outline-secondary" onClick={callback}>
+          Отмена
+        </button>
+        <button type="submit" className="btn btn-primary">
+          {createMode ? 'Создать' : 'Сохранить'}
+        </button>
+      </div>
     </form>
-  )
+  );
 }
 
 export default AddUserComponent;

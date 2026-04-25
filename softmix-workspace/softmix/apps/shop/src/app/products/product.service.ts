@@ -1,5 +1,5 @@
 import { Injectable, Logger } from '@nestjs/common';
-import { Repository } from 'typeorm';
+import { In, Repository } from 'typeorm';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Product, ProductsPaginationApi } from '@project-lib/shared-types';
 
@@ -16,24 +16,64 @@ export class ProductService {
   ) {}
 
   public async findAll(query: ProductQuery): Promise<ProductsPaginationApi> {
-    const {isHot, categoryId, isNew} = query;
+    const { isHot, categoryId, categoryIds, sortBy } = query;
     const page = Number(query.page) || 1;
     const limit = Number(query.limit) || 20;
     const skip = (page - 1) * limit;
-    const [products, total] = await this.repository.findAndCount(
-      { where: { isHot, categoryId },
-        take: limit,
-        skip: skip,
-        relations: ['category'], // Load category to avoid N+1 query problem
-        order: {
-          createdAt: 'ASC'
-        }
-      });
 
-    return {
-      products,
-      total,
+    const ids = this.resolveCategoryIds(categoryIds, categoryId);
+    const where: Record<string, unknown> = {};
+    if (isHot !== undefined) where.isHot = isHot;
+    if (ids && ids.length === 1) where.categoryId = ids[0];
+    else if (ids && ids.length > 1) where.categoryId = In(ids);
+
+    const [products, total] = await this.repository.findAndCount({
+      where,
+      take: limit,
+      skip,
+      relations: ['category'],
+      order: this.buildOrder(sortBy),
+    });
+
+    return { products, total };
+  }
+
+  private buildOrder(sortBy: string | undefined): Record<string, 'ASC' | 'DESC'> {
+    switch (sortBy) {
+      case 'newest':
+        return { createdAt: 'DESC' };
+      case 'price_asc':
+        return { price: 'ASC' };
+      case 'price_desc':
+        return { price: 'DESC' };
+      case 'title_asc':
+        return { title: 'ASC' };
+      case 'discount':
+        return { discount: 'DESC' };
+      case 'oldest':
+      default:
+        return { createdAt: 'ASC' };
     }
+  }
+
+  private resolveCategoryIds(
+    categoryIds: string[] | string | undefined,
+    categoryId: string | undefined,
+  ): string[] | null {
+    const collected: string[] = [];
+
+    if (Array.isArray(categoryIds)) {
+      collected.push(...categoryIds);
+    } else if (typeof categoryIds === 'string' && categoryIds.length > 0) {
+      collected.push(categoryIds);
+    }
+
+    if (categoryId) {
+      collected.push(categoryId);
+    }
+
+    const unique = Array.from(new Set(collected.filter(Boolean)));
+    return unique.length > 0 ? unique : null;
   }
 
   public async findById(id: string): Promise<Product> {

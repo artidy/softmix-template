@@ -26,9 +26,11 @@ export interface ProductsQueryParams {
 
 export interface QueryParams {
   categoryId?: string;
+  categoryIds?: string[];
   page?: number;
   limit?: number;
   offset?: number;
+  sortBy?: string;
 }
 
 export interface ProductsPagination {

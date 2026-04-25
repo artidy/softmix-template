@@ -1,4 +1,4 @@
-import { ChangeEvent, memo, MouseEvent, MouseEventHandler, ReactElement, useState } from 'react';
+import { ChangeEvent, FormEvent, memo, MouseEventHandler, ReactElement, useState } from 'react';
 import { ProductUpdate } from '@project-lib/shared-types';
 
 import { useAppDispatch, useAppSelector } from '../../hooks';
@@ -6,158 +6,166 @@ import { getCategories } from '../../store/categories-data/selectors';
 import { updateProductApi } from '../../store/products-data/api-actions';
 import { Product } from '../../types/product';
 
-type ProductAddComponentProp = {
+type ProductEditComponentProps = {
   product: Product;
   onCloseHandler: MouseEventHandler;
-}
+};
 
-function ProductEditComponent({product, onCloseHandler}: ProductAddComponentProp): ReactElement {
+function ProductEditComponent({ product, onCloseHandler }: ProductEditComponentProps): ReactElement {
   const dispatch = useAppDispatch();
   const categories = useAppSelector(getCategories);
   const [title, setTitle] = useState(product.title);
   const [description, setDescription] = useState(product.description);
-  const [price, setPrice] = useState(product.price);
-  const [discount, setDiscount] = useState(product.discount);
+  const [price, setPrice] = useState<number>(product.price);
+  const [pricePrev, setPricePrev] = useState<number>(product.pricePrev ?? 0);
+  const [discount, setDiscount] = useState<number>(product.discount);
   const [categoryId, setCategoryId] = useState(product.categoryId);
   const [isHot, setIsHot] = useState(product.isHot);
+  const [errors, setErrors] = useState<Record<string, string>>({});
 
-  const onEditHandler = (evt: MouseEvent<HTMLButtonElement>) => {
+  const validate = (): boolean => {
+    const next: Record<string, string> = {};
+    if (!title.trim()) next.title = 'Введите название';
+    if (!categoryId) next.categoryId = 'Выберите категорию';
+    if (!price || price <= 0) next.price = 'Цена должна быть больше нуля';
+    if (pricePrev < 0) next.pricePrev = 'Не может быть отрицательной';
+    if (discount < 0 || discount > 100) next.discount = 'От 0 до 100';
+    setErrors(next);
+    return Object.keys(next).length === 0;
+  };
+
+  const onSubmit = (evt: FormEvent<HTMLFormElement>) => {
     evt.preventDefault();
+    if (!validate()) return;
 
-    const editProduct: ProductUpdate = {
-      id: product.id,
-    };
+    const update: ProductUpdate = { id: product.id };
+    if (title !== product.title) update.title = title;
+    if (description !== product.description) update.description = description;
+    if (price !== product.price) update.price = price;
+    if (pricePrev !== product.pricePrev) update.pricePrev = pricePrev;
+    if (categoryId !== product.categoryId) update.categoryId = categoryId;
+    if (discount !== product.discount) update.discount = discount;
+    if (isHot !== product.isHot) update.isHot = isHot;
 
-    if (title !== product.title) {
-      editProduct.title = title;
+    if (Object.keys(update).length > 1) {
+      dispatch(updateProductApi(update));
     }
 
-    if (description !== product.description) {
-      editProduct.description = description;
-    }
+    onCloseHandler({} as React.MouseEvent);
+  };
 
-    if (description !== product.description) {
-      editProduct.description = description;
-    }
-
-    if (price !== product.price) {
-      editProduct.price = price;
-    }
-
-    if (categoryId !== product.categoryId) {
-      editProduct.categoryId = categoryId;
-    }
-
-    if (discount !== product.discount) {
-      editProduct.discount = discount;
-    }
-
-    if (isHot !== product.isHot) {
-      editProduct.isHot = isHot;
-    }
-
-    const updatedFieldsCount = Object.keys(editProduct).length;
-
-    if (updatedFieldsCount > 1) {
-      dispatch(updateProductApi(editProduct));
-    }
-
-    onCloseHandler(null);
-  }
-
-  const onChangeTitleHandler = (evt: ChangeEvent<HTMLInputElement>) => {
-    setTitle(evt.target.value);
-  }
-
-  const onChangeDescriptionHandler = (evt: ChangeEvent<HTMLTextAreaElement>) => {
-    setDescription(evt.target.value);
-  }
-
-  const onChangePriceHandler = (evt: ChangeEvent<HTMLInputElement>) => {
-    setPrice(+evt.target.value);
-  }
-
-  const onChangeDiscountHandler = (evt: ChangeEvent<HTMLInputElement>) => {
-    setDiscount(+evt.target.value);
-  }
-
-  const onChangeCategoryIdHandler = (evt: ChangeEvent<HTMLSelectElement>) => {
-    setCategoryId(evt.target.value);
-  }
-
-  const onChangeIsHotHandler = (evt: ChangeEvent<HTMLInputElement>) => {
-    setIsHot(Boolean(evt.target.value));
-  }
-
-  const categoriesContent = categories.map((category) =>
-    <option key={category.id} value={category.id}>{category.title}</option>)
+  const cls = (key: string) => `form-control${errors[key] ? ' is-invalid' : ''}`;
 
   return (
-    <>
-      <h5>Редактирование товара</h5>
-      <div className="row m-2 product">
-        <label>Категория</label>
-        <select className="nice-select mb-3 w-100" value={categoryId} onChange={onChangeCategoryIdHandler}>
-          {categoriesContent}
-        </select>
-        <label>Наименование товара</label>
-        <input
-          type="text"
-          name="title"
-          placeholder="введите наименование"
-          value={title}
-          onChange={onChangeTitleHandler}
-        />
-        <label>Описание товара</label>
-        <textarea
-          name="description"
-          placeholder="введите описание"
-          value={description}
-          onChange={onChangeDescriptionHandler}
-        />
-        <div className="col-md-6">
-          <label>Цена товара</label>
-          <input
-            type="number"
-            name="price"
-            placeholder="введите цену"
-            value={price}
-            onChange={onChangePriceHandler}
-          />
+    <form className="app-form" onSubmit={onSubmit}>
+      <div className="form-section">
+        <h6 className="form-section__title">Основное</h6>
+        <div className="row g-3">
+          <div className="col-12">
+            <label className="form-label">Название*</label>
+            <input
+              type="text"
+              className={cls('title')}
+              value={title}
+              onChange={(e: ChangeEvent<HTMLInputElement>) => setTitle(e.target.value)}
+            />
+            {errors.title && <div className="invalid-feedback">{errors.title}</div>}
+          </div>
+          <div className="col-12">
+            <label className="form-label">Описание</label>
+            <textarea
+              className={cls('description')}
+              rows={4}
+              value={description}
+              onChange={(e: ChangeEvent<HTMLTextAreaElement>) => setDescription(e.target.value)}
+            />
+          </div>
+          <div className="col-12">
+            <label className="form-label">Категория*</label>
+            <select
+              className={`form-select${errors.categoryId ? ' is-invalid' : ''}`}
+              value={categoryId}
+              onChange={(e: ChangeEvent<HTMLSelectElement>) => setCategoryId(e.target.value)}
+            >
+              <option value="">— Выберите категорию —</option>
+              {categories.map((c) => (
+                <option key={c.id} value={c.id}>
+                  {c.title}
+                </option>
+              ))}
+            </select>
+            {errors.categoryId && <div className="invalid-feedback">{errors.categoryId}</div>}
+          </div>
         </div>
-        <div className="col-md-6 mb-2">
-          <label>Скидка на товар</label>
-          <input
-            type="number"
-            name="discount"
-            placeholder="введите скидку"
-            value={discount}
-            onChange={onChangeDiscountHandler}
-          />
+      </div>
+
+      <div className="form-section">
+        <h6 className="form-section__title">Цены</h6>
+        <div className="row g-3">
+          <div className="col-md-4">
+            <label className="form-label">Цена, ₸*</label>
+            <input
+              type="number"
+              min={0}
+              className={cls('price')}
+              value={price}
+              onChange={(e) => setPrice(Number(e.target.value))}
+            />
+            {errors.price && <div className="invalid-feedback">{errors.price}</div>}
+          </div>
+          <div className="col-md-4">
+            <label className="form-label">Старая цена, ₸</label>
+            <input
+              type="number"
+              min={0}
+              className={cls('pricePrev')}
+              value={pricePrev}
+              onChange={(e) => setPricePrev(Number(e.target.value))}
+            />
+            {errors.pricePrev && <div className="invalid-feedback">{errors.pricePrev}</div>}
+          </div>
+          <div className="col-md-4">
+            <label className="form-label">Скидка, %</label>
+            <input
+              type="number"
+              min={0}
+              max={100}
+              className={cls('discount')}
+              value={discount}
+              onChange={(e) => setDiscount(Number(e.target.value))}
+            />
+            {errors.discount && <div className="invalid-feedback">{errors.discount}</div>}
+          </div>
         </div>
-        <div className="col-md-12">
-          <label>Популярный товар</label>
+      </div>
+
+      <div className="form-section">
+        <h6 className="form-section__title">Дополнительно</h6>
+        <div className="form-check form-switch">
           <input
-            className="ml-2"
             type="checkbox"
-            name="is-hot"
-            placeholder="Скидка"
-            value={String(isHot)}
+            role="switch"
+            className="form-check-input"
+            id="product-edit-isHot"
             checked={isHot}
-            onChange={onChangeIsHotHandler}
+            onChange={(e) => setIsHot(e.target.checked)}
           />
+          <label className="form-check-label" htmlFor="product-edit-isHot">
+            Популярный товар (отображается с бейджем «Hot»)
+          </label>
         </div>
       </div>
-      <div className="btn-wrapper">
-        <button className="theme-btn-1 btn btn-effect-1" onClick={onEditHandler}>
-          Добавить
+
+      <div className="app-form__footer">
+        <button type="button" className="btn btn-outline-secondary" onClick={onCloseHandler}>
+          Отмена
         </button>
-        <button className="theme-btn-2 btn btn-effect-2" onClick={onCloseHandler}>
-          Отменить
+        <button type="submit" className="btn btn-primary">
+          Сохранить
         </button>
       </div>
-    </>
-  )
+    </form>
+  );
 }
 
 export default memo(ProductEditComponent);

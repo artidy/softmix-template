@@ -3,22 +3,27 @@ import { FormEventHandler, memo, MouseEventHandler, ReactElement } from 'react';
 type DeleteControlFormComponentProps = {
   onDeleteHandler: FormEventHandler;
   onCancelHandler: MouseEventHandler;
-}
+};
 
-function DeleteControlFormComponent({onDeleteHandler, onCancelHandler}: DeleteControlFormComponentProps): ReactElement {
+function DeleteControlFormComponent({
+  onDeleteHandler,
+  onCancelHandler,
+}: DeleteControlFormComponentProps): ReactElement {
   return (
-    <form method="post" action="#" onSubmit={onDeleteHandler}>
-      <h5>Вы действительно хотите удалить?</h5>
-      <div className="btn-wrapper">
-        <button className="theme-btn-1 btn btn-effect-1" type="submit">
-          Удалить
+    <form className="app-form" onSubmit={onDeleteHandler}>
+      <p className="mb-0">
+        Это действие нельзя отменить. Удалить выбранный объект?
+      </p>
+      <div className="app-form__footer">
+        <button type="button" className="btn btn-outline-secondary" onClick={onCancelHandler}>
+          Отмена
         </button>
-        <button className="theme-btn-2 btn btn-effect-2" onClick={onCancelHandler}>
-          Отменить
+        <button type="submit" className="btn btn-danger">
+          <i className="fa fa-trash me-1"></i> Удалить
         </button>
       </div>
     </form>
-  )
+  );
 }
 
 export default memo(DeleteControlFormComponent);
