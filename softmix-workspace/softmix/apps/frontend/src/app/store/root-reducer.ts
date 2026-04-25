@@ -7,6 +7,7 @@ import { productsData } from './products-data/products-data';
 import { downloadsData } from './downloads-data/downloads-data';
 import { mainData } from './main-data/main-data';
 import { cartSlice } from './cart-data/cart-slice';
+import { ordersSlice } from './orders-data/orders-slice';
 import { settingsData } from './settings-data/settings-data';
 import { externalServicesData } from './external-services-data/external-services-data';
 
@@ -17,6 +18,7 @@ export const rootReducer = combineReducers({
   [NameSpace.Downloads]: downloadsData.reducer,
   [NameSpace.Main]: mainData.reducer,
   [NameSpace.Cart]: cartSlice.reducer,
+  [NameSpace.Orders]: ordersSlice.reducer,
   [NameSpace.Settings]: settingsData.reducer,
   [NameSpace.ExternalServices]: externalServicesData.reducer,
 });

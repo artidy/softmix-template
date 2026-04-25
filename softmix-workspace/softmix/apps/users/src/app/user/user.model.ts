@@ -38,6 +38,12 @@ class UserModel extends Document<string> implements User {
   public email?: string;
 
   @Prop({
+    required: false,
+    default: false
+  })
+  public emailVerified?: boolean;
+
+  @Prop({
     required: false
   })
   public phone?: string;

@@ -1,5 +1,5 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { IsNotEmpty, Length } from 'class-validator';
+import { IsEmail, IsNotEmpty, Length } from 'class-validator';
 import { PasswordLength, TitleLength, UserRole } from '@project-lib/shared-types';
 import { DtoValidationMessage } from '@project-lib/core';
 
@@ -22,8 +22,17 @@ export class RegisterUserDto {
     required: true,
     example: 'ivan_user'
   })
-  @IsNotEmpty({message: `Поле логин ${DtoValidationMessage.IsEmpty}`})
+  @IsNotEmpty({ message: `Поле логин ${DtoValidationMessage.IsEmpty}` })
   login: string;
+
+  @ApiProperty({
+    description: 'Email пользователя (обязательное поле для верификации).',
+    required: true,
+    example: 'ivan@example.kz'
+  })
+  @IsNotEmpty({ message: `Поле email ${DtoValidationMessage.IsEmpty}` })
+  @IsEmail({}, { message: DtoValidationMessage.IncorrectEmail })
+  email: string;
 
   @ApiProperty({
     description: 'Пароль пользователя.',
@@ -39,6 +48,5 @@ export class RegisterUserDto {
   )
   password: string;
 
-  // Роль автоматически устанавливается как UserRole.User
   role: UserRole = UserRole.User;
 }

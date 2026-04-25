@@ -1,4 +1,4 @@
-import { IsNumber, IsString, Max, Min, validateSync } from 'class-validator';
+import { IsNumber, IsString, Length, Max, Min, validateSync } from 'class-validator';
 import { plainToInstance } from 'class-transformer';
 import { EnvValidationMessage } from '@project-lib/core';
 import { Port } from '@project-lib/shared-types';
@@ -55,6 +55,10 @@ class EnvironmentsConfig {
     message: EnvValidationMessage.JWTRefreshSecretExpTimeNotRequired
   })
   public EXP_REFRESH_SECRET_TIME: string;
+
+  @IsString({ message: 'ENCRYPTION_KEY обязателен' })
+  @Length(64, 64, { message: 'ENCRYPTION_KEY должен быть 64 hex символа (32 байта). Сгенерируйте через: openssl rand -hex 32' })
+  public ENCRYPTION_KEY: string;
 }
 
 export function validateEnvironments(config: Record<string, unknown>) {

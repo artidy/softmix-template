@@ -7,6 +7,7 @@ export interface User {
   role: UserRole;
   passwordHash?: string;
   email?: string;
+  emailVerified?: boolean;
   phone?: string;
   address?: string;
   createdAt: Date;

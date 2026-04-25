@@ -10,6 +10,7 @@ export class UserEntity implements User {
   public role: UserRole;
   public passwordHash: string;
   public email?: string;
+  public emailVerified?: boolean;
   public phone?: string;
   public address?: string;
   public createdAt: Date;
@@ -41,6 +42,7 @@ export class UserEntity implements User {
     this.role = entity.role;
     this.passwordHash = entity.passwordHash;
     this.email = entity.email;
+    this.emailVerified = entity.emailVerified ?? false;
     this.phone = entity.phone;
     this.address = entity.address;
   }

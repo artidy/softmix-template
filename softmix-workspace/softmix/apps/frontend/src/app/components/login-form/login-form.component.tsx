@@ -35,8 +35,8 @@ function LoginFormComponent(): ReactElement {
               <form className="ltn__form-box contact-form-box" method="post" action="#" onSubmit={handleSubmit}>
                 <input
                   type="text"
-                  name="email"
-                  placeholder="Email*"
+                  name="login"
+                  placeholder="Логин или email*"
                   value={userLogin}
                   onChange={(evt) => setEmail(evt.target.value)}
                   required

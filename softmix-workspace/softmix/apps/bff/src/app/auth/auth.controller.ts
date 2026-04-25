@@ -1,5 +1,6 @@
-import { Body, Controller, Delete, Get, Headers, HttpCode, HttpStatus, Post } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Headers, HttpCode, HttpStatus, Post, Query, Res } from '@nestjs/common';
 import { ApiResponse, ApiTags } from '@nestjs/swagger';
+import { Response } from 'express';
 import { LoginUser, UrlPaths } from '@project-lib/shared-types';
 
 import { AuthService } from './auth.service';
@@ -47,5 +48,20 @@ export class AuthController {
   @HttpCode(HttpStatus.NO_CONTENT)
   public async logout(@Headers() headers) {
     await this.authService.logout(headers);
+  }
+
+  @Get('verify-email')
+  public async verifyEmail(@Query('token') token: string, @Res() res: Response): Promise<void> {
+    const { redirectUrl } = await this.authService.verifyEmail(token);
+    res.redirect(redirectUrl);
+  }
+
+  @Post('resend-verification')
+  @HttpCode(HttpStatus.OK)
+  public async resendVerification(
+    @Body() body: { identifier?: string },
+    @Headers() headers: Record<string, string>,
+  ) {
+    return this.authService.resendVerification(body, headers);
   }
 }

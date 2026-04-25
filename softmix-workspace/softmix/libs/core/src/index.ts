@@ -31,3 +31,5 @@ export * from './lib/helpers';
 export * from './lib/bootstrap';
 export * from './lib/queries/products-params.query';
 export * from './lib/queries/search-code.query';
+export * from './lib/encryption/encryption.service';
+export * from './lib/encryption/encryption.module';

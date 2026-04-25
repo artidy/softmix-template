@@ -13,12 +13,14 @@ import "./styles.css";
 import App from './app/app';
 import { store } from './app/store';
 import { verify } from './app/store/user-data/api-actions';
+import { getCart } from './app/store/cart-data/api-actions';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 
 store.dispatch(verify());
+store.dispatch(getCart());
 
 root.render(
   <StrictMode>

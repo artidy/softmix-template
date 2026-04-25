@@ -52,3 +52,5 @@ export type MainData = {
 
 export type State = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;
+
+export type { OrdersState } from './order';

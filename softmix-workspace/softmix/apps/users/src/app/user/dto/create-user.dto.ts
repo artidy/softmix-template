@@ -1,5 +1,5 @@
-import { ApiProperty } from '@nestjs/swagger';
-import { IsEnum, IsNotEmpty, Length } from 'class-validator';
+import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
+import { IsEmail, IsEnum, IsNotEmpty, IsOptional, Length } from 'class-validator';
 import { PasswordLength, TitleLength, UserRole } from '@project-lib/shared-types';
 import { DtoValidationMessage } from '@project-lib/core';
 
@@ -24,6 +24,14 @@ export class CreateUserDto {
   })
   @IsNotEmpty({message: `Поле логин ${DtoValidationMessage.IsEmpty}`})
   login: string;
+
+  @ApiPropertyOptional({
+    description: 'Email пользователя.',
+    example: 'ivan@example.kz'
+  })
+  @IsOptional()
+  @IsEmail({}, { message: DtoValidationMessage.IncorrectEmail })
+  email?: string;
 
   @ApiProperty({
     description: 'Пароль пользователя.',

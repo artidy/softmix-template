@@ -13,6 +13,10 @@ import { UsersModule } from './users/users.module';
 import { AlstyleModule } from './alstyle/alstyle.module';
 import { UploaderModule } from './uploader/uploader.module';
 import { CartModule } from './cart/cart.module';
+import { OrdersModule } from './orders/orders.module';
+import { PaymentsModule } from './payments/payments.module';
+import { PaymentSettingsBffModule } from './payment-settings/payment-settings.module';
+import { MailSettingsBffModule } from './mail-settings/mail-settings.module';
 import { AuthModule } from './auth/auth.module';
 import { SettingsModule } from './settings/settings.module';
 import { ExternalServicesModule } from './external-services/external-services.module';
@@ -34,6 +38,10 @@ import { ServiceProxyModule } from './service-proxy/service-proxy.module';
     UsersModule,
     AlstyleModule,
     CartModule,
+    OrdersModule,
+    PaymentsModule,
+    PaymentSettingsBffModule,
+    MailSettingsBffModule,
     AuthModule,
     SettingsModule,
     ExternalServicesModule,

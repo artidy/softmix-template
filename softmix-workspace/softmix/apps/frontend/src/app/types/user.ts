@@ -16,6 +16,9 @@ export type User = {
   login: string;
   role: UserRole;
   passwordHash?: string;
+  email?: string;
+  phone?: string;
+  address?: string;
   createdAt: Date;
 }
 
@@ -29,6 +32,7 @@ export type LoginUser = {
 export type CreateUser = {
   name: string;
   login: string;
+  email?: string;
   password: string;
   role: UserRole;
 }

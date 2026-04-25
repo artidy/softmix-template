@@ -1,4 +1,7 @@
 export * from './lib/cart.interface';
+export * from './lib/order.interface';
+export * from './lib/payment-settings.interface';
+export * from './lib/mail-settings.interface';
 export * from './lib/category.interface';
 export * from './lib/category-alstyle.interface';
 export * from './lib/constants';

@@ -19,6 +19,7 @@ import {
 import { dropTokens, getActiveToken, saveTokens } from '../../services/token';
 import { userAdapt, usersAdapt } from '../../services/adapters/user.adapter';
 import { TokenData } from '../../types/token';
+import { mergeGuestCart } from '../cart-data/api-actions';
 
 export const verify = createAsyncThunk<void, undefined, AsyncThunkConfig>(
   `${NameSpace.Users}/${UrlPaths.Users}/${UrlPaths.Auth}/${UrlPaths.Verify}`,
@@ -51,6 +52,7 @@ export const login = createAsyncThunk<void, LoginUser, AsyncThunkConfig>(
       const {data} = await api.post<TokenData>(`${UrlPaths.Auth}/${UrlPaths.Login}`, authData);
       saveTokens(data.accessToken, data.refreshToken, data.expiresIn);
       dispatch(verify());
+      dispatch(mergeGuestCart());
     } catch(e) {
       let message = Message.UnknownMessage;
 
@@ -63,30 +65,38 @@ export const login = createAsyncThunk<void, LoginUser, AsyncThunkConfig>(
   }
 );
 
-export const register = createAsyncThunk<void, CreateUser, AsyncThunkConfig>(
+export const register = createAsyncThunk<boolean, CreateUser, AsyncThunkConfig>(
   `${NameSpace.Users}/${UrlPaths.Register}/public`,
-  async (userData, { dispatch, extra: { api } }) => {
+  async (userData, { extra: { api } }) => {
     try {
-      const {data} = await api.post<UserApi>(`${UrlPaths.Auth}/${UrlPaths.Register}`, userData);
-
-      // Auto login after successful registration
-      const loginData: LoginUser = {
-        login: userData.login,
-        password: userData.password
-      };
-
-      const {data: tokenData} = await api.post<TokenData>(`${UrlPaths.Auth}/${UrlPaths.Login}`, loginData);
-      saveTokens(tokenData.accessToken, tokenData.refreshToken, tokenData.expiresIn);
-      dispatch(verify());
-
-      toast.success('Регистрация успешна! Добро пожаловать!');
-    } catch(e) {
+      await api.post<UserApi>(`${UrlPaths.Auth}/${UrlPaths.Register}`, userData);
+      toast.success('Регистрация успешна! Проверьте email — мы отправили ссылку для подтверждения.');
+      return true;
+    } catch (e) {
       let message = Message.UnknownMessage;
-
       if (isAxiosError(e)) {
-        message = e.response?.data.message;
+        message = e.response?.data?.message || message;
       }
+      toast.error(message);
+      return false;
+    }
+  }
+);
 
+export const resendVerification = createAsyncThunk<void, string, AsyncThunkConfig>(
+  `${NameSpace.Users}/resendVerification`,
+  async (identifier, { extra: { api } }) => {
+    try {
+      const { data } = await api.post<{ message: string }>(
+        `${UrlPaths.Auth}/resend-verification`,
+        { identifier },
+      );
+      toast.info(data.message);
+    } catch (e) {
+      let message = Message.UnknownMessage;
+      if (isAxiosError(e)) {
+        message = e.response?.data?.message || message;
+      }
       toast.error(message);
     }
   }

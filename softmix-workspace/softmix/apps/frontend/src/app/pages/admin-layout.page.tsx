@@ -34,7 +34,10 @@ function AdminLayoutPage(): ReactElement {
       { path: AppRoute.Users, title: 'Пользователи', icon: 'icon-user' },
       { path: AppRoute.Settings, title: 'Настройки сайта', icon: 'icon-settings' },
       { path: AppRoute.Services, title: 'Внешние сервисы', icon: 'icon-globe' },
+      { path: AppRoute.AdminPaymentSettings, title: 'Платёжные системы', icon: 'icon-credit-card' },
+      { path: AppRoute.AdminMailSettings, title: 'Настройки почты', icon: 'icon-envelope' },
     ] : []),
+    { path: AppRoute.AdminOrders, title: 'Заказы', icon: 'icon-shopping-cart' },
     { path: AppRoute.Import, title: 'Импорт товаров', icon: 'icon-cloud-download' },
   ];
 
@@ -73,17 +76,21 @@ function AdminLayoutPage(): ReactElement {
         {/* Sidebar */}
         <aside className={`admin-sidebar ${mobileMenuOpen ? '' : 'd-none d-lg-block'}`}>
           <nav className="admin-sidebar__nav">
-            {menuItems.map((item) => (
-              <Link
-                key={item.path}
-                className={`admin-sidebar__link${location.pathname === item.path ? ' admin-sidebar__link--active' : ''}`}
-                to={item.path}
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                <i className={item.icon}></i>
-                <span>{item.title}</span>
-              </Link>
-            ))}
+            {menuItems.map((item) => {
+              const isActive =
+                location.pathname === item.path || location.pathname.startsWith(`${item.path}/`);
+              return (
+                <Link
+                  key={item.path}
+                  className={`admin-sidebar__link${isActive ? ' admin-sidebar__link--active' : ''}`}
+                  to={item.path}
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  <i className={item.icon}></i>
+                  <span>{item.title}</span>
+                </Link>
+              );
+            })}
             <div className="admin-sidebar__divider"></div>
             <Link className="admin-sidebar__link" to={AppRoute.Profile}
               onClick={() => setMobileMenuOpen(false)}

@@ -1,18 +1,19 @@
-import { memo, MouseEvent, MouseEventHandler, ReactElement, useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { memo, MouseEventHandler, ReactElement, useEffect, useState } from 'react';
 import { debounce } from 'lodash';
 
 import './header.css';
 
 import { AppRoute } from '../../const';
-import { useAppDispatch, useAppSelector } from '../../hooks';
+import { useAppSelector } from '../../hooks';
 import { getIsAuth } from '../../store/user-data/selectors';
+import { getCartTotalItems } from '../../store/cart-data/selectors';
 import { getSettings } from '../../store/settings-data/selectors';
 import LogoComponent from '../logo/logo.component';
 import SearchPanelComponent from '../search/search-panel.component';
 import BtnMobileComponent from '../btn-mobile/btn-mobile.component';
 import MenuComponent from '../menu/menu.component';
 import BtnAuthComponent from '../btn-auth/btn-auth.component';
+import CartMenuComponent from '../cart/cart-menu.component';
 
 type HeaderComponentProps = {
   isOpenMenu: boolean;
@@ -22,8 +23,13 @@ type HeaderComponentProps = {
 function HeaderComponent({isOpenMenu, onToggleMobileMenu}: HeaderComponentProps): ReactElement {
   const userIsAuth = useAppSelector(getIsAuth);
   const settings = useAppSelector(getSettings);
+  const cartCount = useAppSelector(getCartTotalItems);
   const [currentHeight, setCurrentHeight] = useState(0);
+  const [isCartOpen, setIsCartOpen] = useState(false);
   const startStickyHeight = 250;
+
+  const openCart = () => setIsCartOpen(true);
+  const closeCart = () => setIsCartOpen(false);
 
   const onActivateStickyHeader = () => {
     setCurrentHeight(window.scrollY);
@@ -60,6 +66,30 @@ function HeaderComponent({isOpenMenu, onToggleMobileMenu}: HeaderComponentProps)
                   </div>
                 </div>
                 <SearchPanelComponent className="header-search-2"/>
+                <button
+                  type="button"
+                  className="header-cart-btn"
+                  onClick={openCart}
+                  aria-label="Корзина"
+                >
+                  <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth={2}
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden="true"
+              >
+                <circle cx="9" cy="21" r="1"></circle>
+                <circle cx="20" cy="21" r="1"></circle>
+                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+              </svg>
+                  {cartCount > 0 && <span className="header-cart-btn__badge">{cartCount}</span>}
+                </button>
                 <BtnAuthComponent userIsAuth={userIsAuth}/>
               </div>
             </div>
@@ -102,11 +132,36 @@ function HeaderComponent({isOpenMenu, onToggleMobileMenu}: HeaderComponentProps)
                 alt="Logo"
               />
             </div>
+            <button
+              type="button"
+              className="header-cart-btn header-cart-btn--mobile"
+              onClick={openCart}
+              aria-label="Корзина"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth={2}
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden="true"
+              >
+                <circle cx="9" cy="21" r="1"></circle>
+                <circle cx="20" cy="21" r="1"></circle>
+                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+              </svg>
+              {cartCount > 0 && <span className="header-cart-btn__badge">{cartCount}</span>}
+            </button>
             <BtnMobileComponent userIsAuth={userIsAuth} onClickToggle={onToggleMobileMenu}/>
             <SearchPanelComponent className="col-12 header-search-2"/>
           </div>
         </div>
       </div>
+      <CartMenuComponent isOpen={isCartOpen} onClose={closeCart}/>
     </header>
   )
 }

@@ -1,4 +1,4 @@
-import { Inject, Injectable } from '@nestjs/common';
+import { ForbiddenException, Inject, Injectable } from '@nestjs/common';
 import { ConfigType } from '@nestjs/config';
 import { JwtService } from '@nestjs/jwt';
 import { randomUUID } from 'crypto';
@@ -28,7 +28,7 @@ export class AuthService {
   ) {}
 
   public async verifyUser({login, password}: LoginUserDto) {
-    const existUser = await this.userRepository.findByLogin(login);
+    const existUser = await this.userRepository.findByLoginOrEmail(login);
 
     if (!existUser) {
       throw new UserNotRegisteredException(login);
@@ -38,6 +38,14 @@ export class AuthService {
 
     if (! await userEntity.comparePassword(password)) {
       throw new UserPasswordWrongException();
+    }
+
+    if (existUser.email && existUser.emailVerified === false) {
+      throw new ForbiddenException({
+        statusCode: 403,
+        code: 'EMAIL_NOT_VERIFIED',
+        message: 'Подтвердите email — мы отправили вам письмо со ссылкой',
+      });
     }
 
     return userEntity.toObject();

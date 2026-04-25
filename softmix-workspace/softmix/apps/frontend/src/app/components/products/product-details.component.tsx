@@ -1,9 +1,11 @@
-import { memo, ReactElement, useEffect } from 'react';
+import { ChangeEvent, memo, ReactElement, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import { getCategoryApi } from '../../store/categories-data/api-actions';
 import { useAppDispatch, useAppSelector } from '../../hooks';
 import { getCategoryEdit, isLoading } from '../../store/categories-data/selectors';
+import { addToCart } from '../../store/cart-data/api-actions';
+import { formatPrice } from '../../utils/format';
 
 type ProductDetailsComponentProps = {
   id: string;
@@ -20,12 +22,28 @@ function ProductDetailsComponent(
   const dispatch = useAppDispatch();
   const category = useAppSelector(getCategoryEdit);
   const categoryIsLoading = useAppSelector(isLoading);
+  const [quantity, setQuantity] = useState(1);
 
   useEffect(() => {
     dispatch(getCategoryApi(categoryId));
   }, []);
 
-  const prevPriceContent = prevPrice > 0 ? <del>{prevPrice} тг</del> : null;
+  const onAddToCart = () => {
+    const safeQty = Math.max(1, quantity);
+    dispatch(addToCart({
+      productId: id,
+      title,
+      price,
+      quantity: safeQty,
+      imageUrl: imgUrl,
+    }));
+  };
+
+  const onChangeQuantity = (evt: ChangeEvent<HTMLInputElement>) => {
+    setQuantity(Math.max(1, Number(evt.target.value) || 1));
+  };
+
+  const prevPriceContent = prevPrice > 0 ? <del className="ms-2 text-muted">{formatPrice(prevPrice)}</del> : null;
   const categoryContent = categoryIsLoading || !category ? null : (
     <div className="modal-product-meta ltn__product-details-menu-1 mb-30">
       <ul>
@@ -58,7 +76,7 @@ function ProductDetailsComponent(
               <ul>
                 <li>
                   <div className="product-price">
-                    <span>{price} тг</span>
+                    <span>{formatPrice(price)}</span>
                     {prevPriceContent}
                   </div>
                 </li>
@@ -66,6 +84,19 @@ function ProductDetailsComponent(
             </div>
             <div className="modal-product-brief">
               <p>{description}</p>
+            </div>
+            <div className="d-flex gap-2 align-items-center mb-3">
+              <input
+                type="number"
+                min={1}
+                value={quantity}
+                onChange={onChangeQuantity}
+                style={{ width: 90 }}
+                className="form-control"
+              />
+              <button type="button" className="btn btn-primary" onClick={onAddToCart}>
+                <i className="icon-cart me-1"></i> В корзину
+              </button>
             </div>
             <div className="ltn__social-media mb-30">
               <ul>

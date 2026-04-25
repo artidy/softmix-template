@@ -11,8 +11,19 @@ enum AppRoute {
   Contacts = '/contacts',
   Login = '/login',
   Register = '/register',
+  VerifyEmail = '/verify-email',
   Profile = '/profile',
   Cart = '/cart',
+  Checkout = '/checkout',
+  CheckoutSuccess = '/checkout/success',
+  PaymentSuccess = '/checkout/payment-success',
+  PaymentFailed = '/checkout/payment-failed',
+  Orders = '/profile/orders',
+  OrderDetails = '/profile/orders/:id',
+  AdminOrders = '/admin/orders',
+  AdminOrderDetails = '/admin/orders/:id',
+  AdminPaymentSettings = '/admin/payment-settings',
+  AdminMailSettings = '/admin/mail-settings',
   Users = '/admin/users',
   Settings = '/admin/settings',
   Services = '/admin/services',
@@ -29,6 +40,7 @@ enum NameSpace {
   Main = 'MAIN',
   Settings = 'SETTINGS',
   ExternalServices = 'EXTERNAL_SERVICES',
+  Orders = 'ORDERS',
 }
 
 enum Message {

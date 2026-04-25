@@ -1,54 +1,100 @@
 import { FormEvent, memo, ReactElement, useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import { register } from '../../store/user-data/api-actions';
+import { register, resendVerification } from '../../store/user-data/api-actions';
 import { useAppDispatch } from '../../hooks';
 import { AppRoute } from '../../const';
 import { UserRole } from '@project-lib/shared-types';
+
+const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 function RegisterFormComponent(): ReactElement {
   const dispatch = useAppDispatch();
   const [name, setName] = useState<string>('');
   const [userLogin, setLogin] = useState<string>('');
+  const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
   const [confirmPassword, setConfirmPassword] = useState<string>('');
   const [error, setError] = useState<string>('');
+  const [submitted, setSubmitted] = useState(false);
+  const [submittedEmail, setSubmittedEmail] = useState('');
 
-  const handleSubmit = (evt: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (evt: FormEvent<HTMLFormElement>) => {
     evt.preventDefault();
     setError('');
 
-    // Validate passwords match
     if (password !== confirmPassword) {
       setError('Пароли не совпадают');
       return;
     }
-
-    // Validate password length
     if (password.length < 6) {
       setError('Пароль должен содержать минимум 6 символов');
       return;
     }
-
-    // Validate name length
     if (name.length < 2) {
       setError('Имя должно содержать минимум 2 символа');
       return;
     }
-
-    // Validate login length
     if (userLogin.length < 3) {
       setError('Логин должен содержать минимум 3 символа');
       return;
     }
+    const trimmedEmail = email.trim();
+    if (!EMAIL_REGEX.test(trimmedEmail)) {
+      setError('Некорректный email');
+      return;
+    }
 
-    dispatch(register({
+    const success = await dispatch(register({
       name,
       login: userLogin,
+      email: trimmedEmail,
       password,
-      role: UserRole.User
-    }));
+      role: UserRole.User,
+    })).unwrap();
+
+    if (success) {
+      setSubmitted(true);
+      setSubmittedEmail(trimmedEmail);
+    }
   };
+
+  const handleResend = () => {
+    if (submittedEmail) {
+      dispatch(resendVerification(submittedEmail));
+    }
+  };
+
+  if (submitted) {
+    return (
+      <div className="ltn__login-area pb-85">
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-6 offset-lg-3">
+              <div className="account-login-inner text-center">
+                <h2>Проверьте почту</h2>
+                <p>
+                  Мы отправили письмо с подтверждением на <strong>{submittedEmail}</strong>.
+                  Перейдите по ссылке из письма, чтобы активировать аккаунт.
+                </p>
+                <p className="text-muted">
+                  Не пришло письмо? Проверьте папку «Спам».
+                </p>
+                <div className="d-flex flex-column gap-2 mt-4">
+                  <button type="button" className="btn btn-outline-primary" onClick={handleResend}>
+                    Отправить ссылку повторно
+                  </button>
+                  <Link to={AppRoute.Login} className="btn btn-link">
+                    Перейти ко входу
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="ltn__login-area pb-85">
@@ -89,6 +135,14 @@ function RegisterFormComponent(): ReactElement {
                   minLength={3}
                 />
                 <input
+                  type="email"
+                  name="email"
+                  placeholder="Email*"
+                  value={email}
+                  onChange={(evt) => setEmail(evt.target.value)}
+                  required
+                />
+                <input
                   type="password"
                   name="password"
                   placeholder="Пароль*"
@@ -122,7 +176,7 @@ function RegisterFormComponent(): ReactElement {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 export default memo(RegisterFormComponent);

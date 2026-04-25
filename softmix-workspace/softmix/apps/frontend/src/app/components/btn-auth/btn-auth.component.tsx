@@ -15,7 +15,7 @@ function BtnAuthComponent({userIsAuth, className}: BtnAuthComponentProps): React
   const classText = `${className ? className + ' ' : ''}theme-btn-1 btn btn-effect-1 btn-auth`;
 
   return (
-    <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+    <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
       {userIsAuth && canManageProducts && (
         <Link to={AppRoute.Admin} className="btn-admin-panel" title="Панель управления">
           <i className="icon-settings"></i>

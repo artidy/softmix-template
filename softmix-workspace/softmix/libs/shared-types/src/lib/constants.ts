@@ -18,6 +18,8 @@ enum UrlPaths {
   Settings = 'settings',
   ExternalServices = 'external-services',
   ServiceProxy = 'service-proxy',
+  Orders = 'orders',
+  Cart = 'cart',
 }
 
 enum AlStyleRoutes {
