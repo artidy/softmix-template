@@ -1,4 +1,4 @@
-import { ChangeEvent, ReactElement, useEffect } from 'react';
+import { ChangeEvent, FormEvent, ReactElement, useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
 import { useAppDispatch, useAppSelector } from '../hooks';
@@ -12,6 +12,8 @@ import {
 } from '../store/cart-data/api-actions';
 import BreadcrumbComponent from '../components/breadcrumb/breadcrumb.component';
 import Loader from '../components/loader/loader.component';
+import Modal from '../components/modal/modal.component';
+import DeleteControlFormComponent from '../components/delete-control-form/delete-control-form.component';
 import { formatPrice } from '../utils/format';
 
 function CartPage(): ReactElement {
@@ -19,6 +21,7 @@ function CartPage(): ReactElement {
   const navigate = useNavigate();
   const cart = useAppSelector(getCart);
   const isLoading = useAppSelector(getCartLoading);
+  const [isClearConfirmOpen, setIsClearConfirmOpen] = useState(false);
 
   useEffect(() => {
     dispatch(fetchCart());
@@ -34,9 +37,17 @@ function CartPage(): ReactElement {
   };
 
   const handleClear = () => {
-    if (window.confirm('Очистить корзину?')) {
-      dispatch(clearCart());
-    }
+    setIsClearConfirmOpen(true);
+  };
+
+  const closeClearConfirm = () => {
+    setIsClearConfirmOpen(false);
+  };
+
+  const confirmClear = (evt: FormEvent) => {
+    evt.preventDefault();
+    dispatch(clearCart());
+    setIsClearConfirmOpen(false);
   };
 
   const handleCheckout = () => {
@@ -173,6 +184,20 @@ function CartPage(): ReactElement {
           )}
         </div>
       </div>
+      <Modal
+        isOpen={isClearConfirmOpen}
+        onCloseHandler={closeClearConfirm}
+        title="Очистка корзины"
+        size="sm"
+        children={
+          <DeleteControlFormComponent
+            message="Удалить из корзины все товары?"
+            confirmLabel="Очистить"
+            onDeleteHandler={confirmClear}
+            onCancelHandler={closeClearConfirm}
+          />
+        }
+      />
     </>
   );
 }

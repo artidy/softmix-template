@@ -34,6 +34,12 @@ export const getCart = createAsyncThunk<void, undefined, AsyncThunkConfig>(
       const { data } = await api.get<CartApi>('/cart');
       dispatch(setCart(cartAdapt(data)));
     } catch (e) {
+      // Сессия истекла — показываем гостевую корзину без сообщения об ошибке.
+      if (isAxiosError(e) && e.response?.status === 401) {
+        dispatch(setCart(cartAdapt(getGuestCart())));
+        return;
+      }
+
       let message = Message.UnknownMessage;
       if (isAxiosError(e)) {
         message = e.response?.data.message || message;

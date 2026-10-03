@@ -41,6 +41,10 @@ export class EmailVerificationRepository {
     ).exec();
   }
 
+  public async deleteByUserId(userId: string): Promise<void> {
+    await this.model.deleteMany({ userId }).exec();
+  }
+
   private toRecord(doc: EmailVerificationModel): EmailVerificationRecord {
     return {
       id: doc._id.toString(),

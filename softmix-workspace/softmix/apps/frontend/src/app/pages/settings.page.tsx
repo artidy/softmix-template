@@ -1,6 +1,5 @@
 import { ChangeEvent, ReactElement, useEffect, useRef, useState } from 'react';
 import { toast } from 'react-toastify';
-import { isAxiosError } from 'axios';
 import { SiteSettings, UrlPaths } from '@project-lib/shared-types';
 
 import { useAppDispatch, useAppSelector } from '../hooks';
@@ -58,13 +57,16 @@ function SettingsPage(): ReactElement {
     if (!logoFile) return logoUrl;
     const formData = new FormData();
     formData.append('file', logoFile);
-    const response = await api.post(
-      `${UrlPaths.Uploader}/${UrlPaths.Products}/site-logo`,
-      formData,
-      { headers: { 'Content-Type': 'multipart/form-data' } }
-    );
-    if (isAxiosError(response)) return null;
-    return `${UPLOADER_URL}assets/img/products/${response.data.name}`;
+    try {
+      const response = await api.post(
+        `${UrlPaths.Uploader}/${UrlPaths.Products}/site-logo`,
+        formData,
+        { headers: { 'Content-Type': 'multipart/form-data' } }
+      );
+      return `${UPLOADER_URL}assets/img/products/${response.data.name}`;
+    } catch {
+      return null;
+    }
   };
 
   const saveSettings = async (newLogoUrl: string) => {
@@ -72,10 +74,13 @@ function SettingsPage(): ReactElement {
       logoUrl: newLogoUrl, phone, email, address, companyDescription,
       copyright, socialFacebook, socialInstagram, socialTwitter, socialPinterest,
     };
-    const response = await api.put<SiteSettings>(`${UrlPaths.Settings}`, data);
-    if (isAxiosError(response)) return false;
-    dispatch(setSettings(response.data));
-    return true;
+    try {
+      const response = await api.put<SiteSettings>(`${UrlPaths.Settings}`, data);
+      dispatch(setSettings(response.data));
+      return true;
+    } catch {
+      return false;
+    }
   };
 
   const handleSubmit = async () => {

@@ -12,31 +12,28 @@ export const getSettingsApi = createAsyncThunk<void, undefined, AsyncThunkConfig
   async (_arg, { dispatch, extra: { api } }) => {
     dispatch(setLoading(true));
 
-    const response = await api.get<SiteSettings>(`${UrlPaths.Settings}`);
-
-    if (!isAxiosError(response)) {
-      dispatch(setSettings(response.data));
+    try {
+      const { data } = await api.get<SiteSettings>(`${UrlPaths.Settings}`);
+      dispatch(setSettings(data));
+    } finally {
+      dispatch(setLoading(false));
     }
-
-    dispatch(setLoading(false));
   }
 );
 
 export const updateSettingsApi = createAsyncThunk<void, Partial<SiteSettings>, AsyncThunkConfig>(
   `${NameSpace.Settings}/update`,
   async (updateData, { dispatch, extra: { api } }) => {
-    const response = await api.put<SiteSettings>(`${UrlPaths.Settings}`, updateData);
-
-    if (isAxiosError(response)) {
+    try {
+      const { data } = await api.put<SiteSettings>(`${UrlPaths.Settings}`, updateData);
+      dispatch(setSettings(data));
+      toast.success(Message.UpdateElement);
+    } catch (e) {
       let message = Message.UnknownMessage;
-      if (response.response?.data?.message) {
-        message = response.response.data.message;
+      if (isAxiosError(e)) {
+        message = e.response?.data?.message || message;
       }
       toast.error(message);
-      return;
     }
-
-    dispatch(setSettings(response.data));
-    toast.success(Message.UpdateElement);
   }
 );

@@ -13641,3 +13641,9 @@ input.cart-plus-minus-box {
   font-size: 22px;
   color: var(--ltn__secondary-color, #0d6efd);
 }
+
+/* Подсказки в полях с подписью — светлые, чтобы не путать их с введённым значением. */
+input.form-control::placeholder,
+textarea.form-control::placeholder {
+  color: #999999;
+}

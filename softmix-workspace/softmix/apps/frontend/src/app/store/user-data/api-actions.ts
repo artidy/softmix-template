@@ -174,7 +174,7 @@ export const deleteUserApi = createAsyncThunk<void, string, AsyncThunkConfig>(
       await api.delete<void>(`${UrlPaths.Users}/${userId}`);
       dispatch(deleteUser(userId));
 
-      toast.success(Message.DeleteElement);
+      toast.success('Пользователь удалён');
     } catch(e) {
       let message = Message.UnknownMessage;
 

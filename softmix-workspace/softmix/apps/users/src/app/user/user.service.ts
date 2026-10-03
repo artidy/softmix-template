@@ -5,12 +5,20 @@ import { UserRepository } from './user.repository';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UserEntity } from './user.entity';
 import { UpdateUserDto } from './dto/update-user.dto';
+import { RefreshTokenService } from '../refresh-token/refresh-token.service';
+import { EmailVerificationService } from '../email-verification/email-verification.service';
+import { CartService } from '../cart/cart.service';
 
 @Injectable()
 export class UserService implements OnModuleInit {
   private readonly logger = new Logger(UserService.name);
 
-  constructor(private readonly userRepository: UserRepository) {}
+  constructor(
+    private readonly userRepository: UserRepository,
+    private readonly refreshTokenService: RefreshTokenService,
+    private readonly emailVerificationService: EmailVerificationService,
+    private readonly cartService: CartService,
+  ) {}
 
   public async onModuleInit(): Promise<void> {
     try {
@@ -98,6 +106,13 @@ export class UserService implements OnModuleInit {
   }
 
   public async delete(id: string) {
+    // Вместе с пользователем убираем его сессии входа, ключи подтверждения почты и корзину.
+    // Заказы остаются: это история продаж.
+    await Promise.all([
+      this.refreshTokenService.deleteUserSessions(id),
+      this.emailVerificationService.deleteForUser(id),
+      this.cartService.deleteCart(id),
+    ]);
     await this.userRepository.destroy(id);
   }
 }

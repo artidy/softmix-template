@@ -1,4 +1,4 @@
-import { MouseEvent, ReactElement, useEffect } from 'react';
+import { FormEvent, MouseEvent, ReactElement, useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
 
 import { useAppDispatch, useAppSelector } from '../hooks';
@@ -9,6 +9,7 @@ import { formatDate } from '../services/helpers';
 import Modal from '../components/modal/modal.component';
 import LoaderComponent from '../components/loader/loader.component';
 import AddUserComponent from '../components/add-user/add-user.component';
+import DeleteControlFormComponent from '../components/delete-control-form/delete-control-form.component';
 
 function UsersPage(): ReactElement {
   const dispatch = useAppDispatch();
@@ -17,6 +18,7 @@ function UsersPage(): ReactElement {
   const isUserEditLoading = useAppSelector(getIsUserEditLoading);
   const editUser = useAppSelector(getUserEdit);
   const isCreateMode = useAppSelector(getIsCreateMode);
+  const [userToDelete, setUserToDelete] = useState<{ id: string; login: string } | null>(null);
 
   useEffect(() => {
     dispatch(getApiUsers());
@@ -26,7 +28,7 @@ function UsersPage(): ReactElement {
     }
   }, []);
 
-  const deleteHandler = (userId: string) => {
+  const deleteHandler = (userId: string, login: string) => {
     return (evt: MouseEvent) => {
       evt.preventDefault();
 
@@ -36,8 +38,22 @@ function UsersPage(): ReactElement {
         return;
       }
 
-      dispatch(deleteUserApi(userId));
+      setUserToDelete({ id: userId, login });
     }
+  }
+
+  const closeDeleteModal = () => {
+    setUserToDelete(null);
+  }
+
+  const confirmDelete = (evt: FormEvent) => {
+    evt.preventDefault();
+
+    if (userToDelete) {
+      dispatch(deleteUserApi(userToDelete.id));
+    }
+
+    setUserToDelete(null);
   }
 
   const openEditModal = (id: string) => () => {
@@ -61,7 +77,11 @@ function UsersPage(): ReactElement {
         <td>{element.login}</td>
         <td>{formatDate(element.createdAt.toString())}</td>
         <td className="w-60">
-          <div className="btn-panel">
+          <div className="btn-panel" style={{ display: 'flex', gap: '5px' }}>
+            <button className="btn btn-sm btn-outline-danger" onClick={deleteHandler(element.id, element.login)}
+              title="Удалить" style={{ padding: '4px 10px', fontSize: '13px' }}>
+              <i className="fa fa-trash"></i>
+            </button>
           </div>
         </td>
       </tr>
@@ -101,6 +121,24 @@ function UsersPage(): ReactElement {
           isUserEditLoading
             ? <LoaderComponent />
             : <AddUserComponent user={editUser} createMode={isCreateMode} callback={closeModal} />
+        }
+      />
+      <Modal
+        isOpen={!!userToDelete}
+        onCloseHandler={closeDeleteModal}
+        title="Удаление пользователя"
+        size="sm"
+        children={
+          <DeleteControlFormComponent
+            message={
+              <>
+                Удалить пользователя <strong>{userToDelete?.login}</strong>? Вместе с ним удалятся его
+                сессии входа, ключи подтверждения почты и корзина. Это действие нельзя отменить.
+              </>
+            }
+            onDeleteHandler={confirmDelete}
+            onCancelHandler={closeDeleteModal}
+          />
         }
       />
     </section>

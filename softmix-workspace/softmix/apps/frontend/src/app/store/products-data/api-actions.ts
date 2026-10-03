@@ -64,8 +64,14 @@ export const getProductApi = createAsyncThunk<void, string, AsyncThunkConfig>(
       const {data} = await api.get<ProductApi>(`${UrlPaths.Products}/${id}`);
 
       if (data.imageUrl === '') {
-        const { data: ownerImage } = await api.get<FileApi>(`${UrlPaths.Uploader}/${UrlPaths.Products}/${id}`);
-        data.imageUrl = ownerImage.url;
+        try {
+          const { data: ownerImage } = await api.get<FileApi>(
+            `${UrlPaths.Uploader}/${UrlPaths.Products}/${id}`
+          );
+          data.imageUrl = ownerImage.url;
+        } catch {
+          // Картинки у товара нет — открываем карточку без неё.
+        }
       }
       
       dispatch(setProductEdit(productAdapt(data)));

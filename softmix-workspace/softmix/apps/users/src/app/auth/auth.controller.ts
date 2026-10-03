@@ -4,6 +4,7 @@ import {
   Controller,
   Delete,
   Get,
+  Headers,
   HttpCode,
   HttpStatus,
   Logger,
@@ -14,7 +15,6 @@ import {
   UseGuards,
 } from '@nestjs/common';
 import { Response } from 'express';
-import { ConfigService } from '@nestjs/config';
 import { fillObject, HttpExceptionFilter, UserDecorator } from '@project-lib/core';
 import { UrlPaths, UserRequest } from '@project-lib/shared-types';
 
@@ -41,7 +41,6 @@ export class AuthController {
     private readonly authService: AuthService,
     private readonly userService: UserService,
     private readonly emailVerificationService: EmailVerificationService,
-    private readonly configService: ConfigService,
   ) {}
 
   @Post(UrlPaths.Register)
@@ -55,11 +54,11 @@ export class AuthController {
     status: HttpStatus.CONFLICT,
     description: 'Пользователь с таким логином или email уже существует.',
   })
-  public async register(@Body() dto: RegisterUserDto) {
+  public async register(@Body() dto: RegisterUserDto, @Headers('origin') origin?: string) {
     const user = await this.userService.create(dto);
 
     this.emailVerificationService
-      .issueAndSend(user)
+      .issueAndSend(user, origin)
       .catch((error) => this.logger.error('Не удалось отправить письмо верификации', error as Error));
 
     return {
@@ -122,22 +121,19 @@ export class AuthController {
     description: 'Редирект на фронт со статусом верификации',
   })
   public async verifyEmail(@Query('token') token: string, @Res() res: Response): Promise<void> {
-    const publicUrl =
-      this.configService.get<string>('mail.shopUrl') || 'http://localhost:4200';
-    const trimmed = publicUrl.replace(/\/$/, '');
-
+    // Путь относительный: браузер вернётся на тот же сайт, где открыли ссылку из письма.
     if (!token) {
-      return res.redirect(`${trimmed}/verify-email?status=failed&reason=NOT_FOUND`);
+      return res.redirect('/verify-email?status=failed&reason=NOT_FOUND');
     }
 
     const result = await this.emailVerificationService.verifyToken(token);
 
     if (result.ok === true) {
       await this.userService.setEmailVerified(result.userId);
-      return res.redirect(`${trimmed}/verify-email?status=success`);
+      return res.redirect('/verify-email?status=success');
     }
 
-    return res.redirect(`${trimmed}/verify-email?status=failed&reason=${result.reason}`);
+    return res.redirect(`/verify-email?status=failed&reason=${result.reason}`);
   }
 
   @Post('resend-verification')
@@ -146,7 +142,10 @@ export class AuthController {
     status: HttpStatus.OK,
     description: 'Письмо отправлено повторно (если такой пользователь существует и не верифицирован).',
   })
-  public async resendVerification(@Body() dto: ResendVerificationDto): Promise<{ message: string }> {
+  public async resendVerification(
+    @Body() dto: ResendVerificationDto,
+    @Headers('origin') origin?: string,
+  ): Promise<{ message: string }> {
     const message = 'Если такой пользователь существует и его email не подтверждён, мы отправили письмо повторно.';
 
     const identifier = (dto.identifier ?? '').trim();
@@ -158,7 +157,7 @@ export class AuthController {
 
     if (user && user.email && user.emailVerified === false) {
       this.emailVerificationService
-        .issueAndSend(user)
+        .issueAndSend(user, origin)
         .catch((error) => this.logger.error('Не удалось отправить письмо повторно', error as Error));
     }
 

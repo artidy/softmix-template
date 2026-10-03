@@ -1,4 +1,4 @@
-import { MouseEvent, ReactElement, useEffect, useState } from 'react';
+import { FormEvent, MouseEvent, ReactElement, useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
 import { isAxiosError } from 'axios';
 import { AuthType, ExternalService, ExternalServiceHeader, UrlPaths } from '@project-lib/shared-types';
@@ -27,6 +27,7 @@ import { Message } from '../const';
 import { api } from '../store';
 import Modal from '../components/modal/modal.component';
 import LoaderComponent from '../components/loader/loader.component';
+import DeleteControlFormComponent from '../components/delete-control-form/delete-control-form.component';
 
 const AUTH_TYPE_LABELS: Record<AuthType, string> = {
   [AuthType.None]: 'Без авторизации',
@@ -270,6 +271,7 @@ function ExternalServicesPage(): ReactElement {
   const editService = useAppSelector(getServiceEdit);
   const isEditLoading = useAppSelector(getIsEditLoading);
   const isCreateMode = useAppSelector(getIsCreateMode);
+  const [serviceToDelete, setServiceToDelete] = useState<{ id: string; name: string } | null>(null);
 
   useEffect(() => {
     dispatch(getExternalServicesApi());
@@ -281,9 +283,19 @@ function ExternalServicesPage(): ReactElement {
 
   const deleteHandler = (id: string, name: string) => (evt: MouseEvent) => {
     evt.preventDefault();
-    if (window.confirm(`Удалить сервис "${name}"?`)) {
-      dispatch(deleteExternalServiceApi(id));
+    setServiceToDelete({ id, name });
+  };
+
+  const closeDeleteModal = () => {
+    setServiceToDelete(null);
+  };
+
+  const confirmDelete = (evt: FormEvent) => {
+    evt.preventDefault();
+    if (serviceToDelete) {
+      dispatch(deleteExternalServiceApi(serviceToDelete.id));
     }
+    setServiceToDelete(null);
   };
 
   const openEditModal = (id: string) => () => {
@@ -379,6 +391,23 @@ function ExternalServicesPage(): ReactElement {
         children={isEditLoading ?
           <LoaderComponent /> :
           <ServiceForm service={editService} createMode={isCreateMode} onClose={closeModal} />
+        }
+      />
+      <Modal
+        isOpen={!!serviceToDelete}
+        onCloseHandler={closeDeleteModal}
+        title="Удаление сервиса"
+        size="sm"
+        children={
+          <DeleteControlFormComponent
+            message={
+              <>
+                Удалить сервис <strong>{serviceToDelete?.name}</strong>? Это действие нельзя отменить.
+              </>
+            }
+            onDeleteHandler={confirmDelete}
+            onCancelHandler={closeDeleteModal}
+          />
         }
       />
     </section>

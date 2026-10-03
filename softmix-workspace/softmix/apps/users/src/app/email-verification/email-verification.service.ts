@@ -23,7 +23,7 @@ export class EmailVerificationService {
     private readonly mailSettingsService: MailSettingsService,
   ) {}
 
-  public async issueAndSend(user: User): Promise<void> {
+  public async issueAndSend(user: User, requestOrigin?: string): Promise<void> {
     if (!user._id || !user.email) return;
 
     await this.repository.invalidateActiveForUser(user._id);
@@ -32,7 +32,7 @@ export class EmailVerificationService {
     const expiresAt = new Date(Date.now() + TOKEN_TTL_MS);
     await this.repository.create({ userId: user._id, token, expiresAt });
 
-    const url = await this.buildUrl(token);
+    const url = await this.buildUrl(token, requestOrigin);
 
     try {
       await this.mailService.sendEmailVerification(user.email, user.name, url);
@@ -57,10 +57,27 @@ export class EmailVerificationService {
     return { ok: true, userId: record.userId };
   }
 
-  private async buildUrl(token: string): Promise<string> {
+  public async deleteForUser(userId: string): Promise<void> {
+    await this.repository.deleteByUserId(userId);
+  }
+
+  private async buildUrl(token: string, requestOrigin?: string): Promise<string> {
     const settings = await this.mailSettingsService.getDecrypted();
-    const publicUrl = settings?.shopUrl || FALLBACK_SHOP_URL;
+    // URL из админки важнее Origin: этот заголовок может подделать любой клиент.
+    const publicUrl = settings?.shopUrl || toHttpOrigin(requestOrigin) || FALLBACK_SHOP_URL;
     const trimmed = publicUrl.replace(/\/$/, '');
     return `${trimmed}/api/auth/verify-email?token=${token}`;
+  }
+}
+
+function toHttpOrigin(value?: string): string | undefined {
+  if (!value) {
+    return undefined;
+  }
+  try {
+    const url = new URL(value);
+    return url.protocol === 'http:' || url.protocol === 'https:' ? url.origin : undefined;
+  } catch {
+    return undefined;
   }
 }

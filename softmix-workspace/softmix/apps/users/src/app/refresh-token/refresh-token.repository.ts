@@ -29,4 +29,9 @@ export class RefreshTokenRepository {
     return this.refreshTokenModel
       .deleteMany({ expiresIn: { $lt: new Date()}})
   }
+
+  public async deleteByUserId(userId: string) {
+    return this.refreshTokenModel
+      .deleteMany({ userId });
+  }
 }
