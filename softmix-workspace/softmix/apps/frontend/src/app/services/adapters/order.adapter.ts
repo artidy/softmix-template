@@ -1,11 +1,12 @@
 import { OrderApi } from '@project-lib/shared-types';
 import { Order } from '../../types/order';
+import { cartItemsAdapt } from './cart.adapter';
 
 export const orderAdapt = (order: OrderApi): Order => ({
   id: order.id,
   orderNumber: order.orderNumber,
   userId: order.userId,
-  items: order.items,
+  items: cartItemsAdapt(order.items),
   totalItems: order.totalItems,
   totalPrice: order.totalPrice,
   currency: order.currency,

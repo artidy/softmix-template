@@ -85,9 +85,11 @@ const REQUEST_TIMEOUT = 5000;
 const TOKEN = 'token';
 const REFRESH_TOKEN = 'refresh-token';
 const EXPIRES_IN = 'expires-in';
-// Нейтральная картинка для товаров без фото (старая заглушка шаблона осталась для уже сохранённых корзин).
+// Нейтральная картинка для товаров без фото.
 // В корне сайта, а не в /assets: на сервере /assets/* отдаёт uploader, а этого файла у него нет.
 const DEFAULT_PRODUCT_IMG = '/no-photo.svg';
+// Прежние заглушки: их пути сохранились в корзинах и заказах, вместо них показываем текущую.
+const LEGACY_PRODUCT_IMGS = ['assets/img/product/1.png', '/assets/img/no-photo.svg'];
 
 export {
   AppRoute,
@@ -101,4 +103,5 @@ export {
   REFRESH_TOKEN,
   EXPIRES_IN,
   DEFAULT_PRODUCT_IMG,
+  LEGACY_PRODUCT_IMGS,
 }

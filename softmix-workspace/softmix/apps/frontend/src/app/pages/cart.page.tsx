@@ -13,6 +13,7 @@ import { Button, buttonVariants } from '../ui/button';
 import { Card } from '../ui/card';
 import { ConfirmDialog } from '../ui/confirm-dialog';
 import { EmptyState, PageLoader } from '../ui/feedback';
+import { FadeImage } from '../ui/fade-image';
 import { Container } from '../ui/layout';
 import { PageHeader } from '../ui/page-header';
 import { QuantityStepper } from '../ui/quantity-stepper';
@@ -87,7 +88,7 @@ function CartPage() {
                         to={`${AppRoute.Shop}/${item.productId}`}
                         className="grid size-16 shrink-0 place-items-center overflow-hidden rounded-xl border bg-white p-1.5 sm:size-24 sm:p-2"
                       >
-                        <img src={item.imageUrl || DEFAULT_PRODUCT_IMG} alt="" loading="lazy" className="size-full object-contain" />
+                        <FadeImage src={item.imageUrl || DEFAULT_PRODUCT_IMG} fallbackSrc={DEFAULT_PRODUCT_IMG} alt="" loading="lazy" className="size-full object-contain" />
                       </Link>
                       <div className="flex min-w-0 flex-1 flex-col gap-3 sm:flex-row sm:items-center sm:gap-6">
                         <div className="min-w-0 flex-1">

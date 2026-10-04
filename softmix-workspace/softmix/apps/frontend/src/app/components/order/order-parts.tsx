@@ -16,6 +16,7 @@ import {
 } from '../../utils/order-labels';
 import { Badge } from '../../ui/badge';
 import { Card } from '../../ui/card';
+import { FadeImage } from '../../ui/fade-image';
 
 export function OrderStatusBadge({ order, className }: { order: Order; className?: string }) {
   return (
@@ -49,7 +50,7 @@ export function OrderItemsCard({ order }: { order: Order }) {
               to={`${AppRoute.Shop}/${item.productId}`}
               className="grid size-16 shrink-0 place-items-center overflow-hidden rounded-xl border bg-white p-1.5"
             >
-              <img src={item.imageUrl || DEFAULT_PRODUCT_IMG} alt="" loading="lazy" className="size-full object-contain" />
+              <FadeImage src={item.imageUrl || DEFAULT_PRODUCT_IMG} fallbackSrc={DEFAULT_PRODUCT_IMG} alt="" loading="lazy" className="size-full object-contain" />
             </Link>
             <div className="min-w-0 flex-1">
               <Link

@@ -17,6 +17,7 @@ import { formatPhoneInput, formatPrice, isValidEmail, isValidKzPhone, phoneToE16
 import { Button } from '../ui/button';
 import { Card } from '../ui/card';
 import { PageLoader } from '../ui/feedback';
+import { FadeImage } from '../ui/fade-image';
 import { Field, Input, Textarea } from '../ui/form';
 import { Container } from '../ui/layout';
 import { PageHeader } from '../ui/page-header';
@@ -343,7 +344,7 @@ function CheckoutPage() {
               {cart.items.map((item) => (
                 <li key={item.productId} className="flex items-center gap-3">
                   <span className="grid size-12 shrink-0 place-items-center overflow-hidden rounded-lg border bg-white p-1">
-                    <img src={item.imageUrl || DEFAULT_PRODUCT_IMG} alt="" loading="lazy" className="size-full object-contain" />
+                    <FadeImage src={item.imageUrl || DEFAULT_PRODUCT_IMG} fallbackSrc={DEFAULT_PRODUCT_IMG} alt="" loading="lazy" className="size-full object-contain" />
                   </span>
                   <span className="min-w-0 flex-1">
                     <span className="line-clamp-2 text-sm leading-snug">{item.title}</span>

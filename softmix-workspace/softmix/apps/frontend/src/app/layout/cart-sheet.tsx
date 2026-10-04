@@ -9,6 +9,7 @@ import { formatPrice } from '../utils/format';
 import { buttonVariants } from '../ui/button';
 import { Dialog, SheetContent } from '../ui/dialog';
 import { EmptyState } from '../ui/feedback';
+import { FadeImage } from '../ui/fade-image';
 import { QuantityStepper } from '../ui/quantity-stepper';
 
 type CartSheetProps = {
@@ -70,7 +71,7 @@ export function CartSheet({ open, onOpenChange }: CartSheetProps) {
                   onClick={close}
                   className="grid size-18 shrink-0 place-items-center overflow-hidden rounded-xl border bg-white p-1.5"
                 >
-                  <img src={item.imageUrl || DEFAULT_PRODUCT_IMG} alt="" loading="lazy" className="size-full object-contain" />
+                  <FadeImage src={item.imageUrl || DEFAULT_PRODUCT_IMG} fallbackSrc={DEFAULT_PRODUCT_IMG} alt="" loading="lazy" className="size-full object-contain" />
                 </Link>
                 <div className="flex min-w-0 flex-1 flex-col gap-2">
                   <Link
