@@ -5,6 +5,7 @@ import {
   Logger,
   NotFoundException,
 } from '@nestjs/common';
+import { ConfigService } from '@nestjs/config';
 import {
   OrderStatus,
   PaymentMethod,
@@ -47,6 +48,7 @@ export class PaymentService {
     private readonly freedomPay: FreedomPayProvider,
     private readonly mockProvider: MockPaymentProvider,
     private readonly notificationService: NotificationService,
+    private readonly configService: ConfigService,
   ) {}
 
   public static isOnlineMethod(method: PaymentMethod): boolean {
@@ -176,10 +178,14 @@ export class PaymentService {
   }
 
   private async selectProvider(method: PaymentMethod): Promise<PaymentProvider> {
-    if (method === PaymentMethod.FreedomPay) {
-      return (await this.freedomPay.isConfigured()) ? this.freedomPay : this.mockProvider;
+    if (method === PaymentMethod.FreedomPay && (await this.freedomPay.isConfigured())) {
+      return this.freedomPay;
     }
-    return this.mockProvider;
+    // Заглушка принимает «оплату» без подписи банка — только при явном PAYMENT_MOCK_ENABLED=true (разработка).
+    if (this.configService.get<boolean>('payments.mockEnabled')) {
+      return this.mockProvider;
+    }
+    throw new BadRequestException('Онлайн-оплата этим способом пока недоступна');
   }
 
   private async buildUrls(orderNumber: string, method: PaymentMethod): Promise<{

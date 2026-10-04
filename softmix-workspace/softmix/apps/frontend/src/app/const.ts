@@ -85,8 +85,8 @@ const REQUEST_TIMEOUT = 5000;
 const TOKEN = 'token';
 const REFRESH_TOKEN = 'refresh-token';
 const EXPIRES_IN = 'expires-in';
-const DEFAULT_PRODUCT_IMG = 'assets/img/product/1.png';
-const UPLOADER_URL = 'http://localhost:7777/';
+// Нейтральная картинка для товаров без фото (старая заглушка шаблона осталась для уже сохранённых корзин).
+const DEFAULT_PRODUCT_IMG = '/assets/img/no-photo.svg';
 
 export {
   AppRoute,
@@ -100,5 +100,4 @@ export {
   REFRESH_TOKEN,
   EXPIRES_IN,
   DEFAULT_PRODUCT_IMG,
-  UPLOADER_URL,
 }

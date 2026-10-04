@@ -1,43 +1,53 @@
-import { Outlet, useLocation } from 'react-router-dom';
-import { ReactElement, useEffect, useState } from 'react';
+import { Suspense, useEffect, useLayoutEffect } from 'react';
+import { Outlet, useLocation } from 'react-router';
 
-import { useAppDispatch, useAppSelector } from '../hooks';
-import { getIsAdmin, getIsAuth, getIsUnknown } from '../store/user-data/selectors';
+import { useAppDispatch } from '../hooks';
 import { getSettingsApi } from '../store/settings-data/api-actions';
-import HeaderComponent from '../components/header/header.component';
-import LoaderComponent from '../components/loader/loader.component';
-import CartMenuComponent from '../components/cart/cart-menu.component';
-import FooterAreaComponent from '../components/footer/footer-area.component';
-import MenuMobile from '../components/menu-mobile/menu-mobile';
+import { SiteHeader } from '../layout/site-header';
+import { SiteFooter } from '../layout/site-footer';
+import { PageLoader } from '../ui/feedback';
 
-function LayoutPage(): ReactElement {
+/**
+ * Новая страница открывается сверху. Layout-эффект срабатывает до отрисовки —
+ * иначе страница на миг показывается с прокруткой предыдущей и потом прыгает.
+ */
+function useScrollToTopOnNavigate(pathname: string): void {
+  useLayoutEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+}
+
+function LayoutPage() {
   const dispatch = useAppDispatch();
-  const isLoading = useAppSelector(getIsUnknown);
-  const routerLocation = useLocation();
-  const userIsAdmin = useAppSelector(getIsAdmin);
-  const userIsAuth = useAppSelector(getIsAuth);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { pathname } = useLocation();
+
+  useScrollToTopOnNavigate(pathname);
 
   useEffect(() => {
     dispatch(getSettingsApi());
-  }, []);
-
-  if (isLoading) {
-    return <LoaderComponent />
-  }
-
-  const onToggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen);
-  }
+  }, [dispatch]);
 
   return (
-    <div className="body-wrapper">
-      <HeaderComponent isOpenMenu={isMobileMenuOpen} onToggleMobileMenu={onToggleMobileMenu}/>
-      <MenuMobile userIsAuth={userIsAuth} menuIsOpen={isMobileMenuOpen} onClickClose={onToggleMobileMenu} />
-      <Outlet/>
-      <FooterAreaComponent />
+    <div className="flex min-h-dvh flex-col">
+      <a
+        href="#main"
+        className="sr-only z-50 rounded-lg bg-primary px-4 py-2 text-primary-foreground focus:not-sr-only focus:fixed focus:left-4 focus:top-4"
+      >
+        Перейти к содержимому
+      </a>
+      <SiteHeader />
+      <main id="main" className="flex-1">
+        {/* Страница грузится отдельным файлом — шапка и подвал при этом остаются на месте.
+            Переход между адресами плавный: новая страница мягко проявляется. */}
+        <Suspense fallback={<PageLoader />}>
+          <div key={pathname} className="animate-page-in">
+            <Outlet />
+          </div>
+        </Suspense>
+      </main>
+      <SiteFooter />
     </div>
-  )
+  );
 }
 
 export default LayoutPage;

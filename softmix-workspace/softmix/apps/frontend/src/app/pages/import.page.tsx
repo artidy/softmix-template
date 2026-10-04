@@ -1,43 +1,69 @@
-import { ChangeEvent, MouseEvent, ReactElement, useEffect, useState } from 'react';
-import { toast } from 'react-toastify';
-import { isAxiosError } from 'axios';
-import { DEFAULT_DOWNLOADS_LIMIT, ExternalService, ProductCreate, UrlPaths } from '@project-lib/shared-types';
+import { ChangeEvent, useEffect, useId, useMemo, useState } from 'react';
+import { toast } from 'sonner';
+import { Check, ChevronLeft, ChevronRight, CloudDownload, PackageSearch, SquareCheckBig, SquareDashed } from 'lucide-react';
+import { DEFAULT_DOWNLOADS_LIMIT, ProductCreate } from '@project-lib/shared-types';
 
 import { useAppDispatch, useAppSelector } from '../hooks';
+import { DEFAULT_PRODUCT_IMG } from '../const';
+import { cn } from '../lib/cn';
+import { buildCategoryOptions } from '../lib/catalog';
+import { formatNumber } from '../lib/format';
+import { useDocumentTitle } from '../lib/use-document-title';
 import {
   getCategories as getDownloadCategories,
+  getExcludedProducts,
   getIsCategoriesLoading,
-  getProducts as getDownloadProducts,
   getIsProductsLoading,
   getNewProducts,
-  getExcludedProducts,
   getPagination,
+  getProducts as getDownloadProducts,
 } from '../store/downloads-data/selectors';
-import {
-  getCategories as getLocalCategories,
-  isLoading as isLocalCategoriesLoading,
-} from '../store/categories-data/selectors';
+import { getCategories as getLocalCategories, getIsCategoriesLoading as getIsLocalCategoriesLoading } from '../store/categories-data/selectors';
 import { getExternalServices } from '../store/external-services-data/selectors';
 import { getExternalServicesApi } from '../store/external-services-data/api-actions';
 import { getServiceCategoriesApi, getServiceProductsApi } from '../store/downloads-data/api-actions';
 import { getCategoriesApi } from '../store/categories-data/api-actions';
 import { createProductManyApi } from '../store/products-data/api-actions';
-import {
-  setCategories,
-  setProducts,
-  addNewProduct,
-  deleteNewProduct,
-  setNewProducts,
-} from '../store/downloads-data/downloads-data';
-import { setCategories as setLocalCategories } from '../store/categories-data/categories-data';
-import { Message, DEFAULT_PRODUCT_IMG } from '../const';
-import LoaderComponent from '../components/loader/loader.component';
-import Modal from '../components/modal/modal.component';
+import { addNewProduct, deleteNewProduct, setCategories, setNewProducts, setProducts } from '../store/downloads-data/downloads-data';
+import { Product } from '../types/product';
+import { formatPrice } from '../utils/format';
+import { AdminPageHeader } from '../components/admin/admin-page-header';
+import { Button } from '../ui/button';
+import { Card } from '../ui/card';
+import { Dialog, DialogContent } from '../ui/dialog';
+import { EmptyState, PageLoader, Skeleton } from '../ui/feedback';
+import { Field, Select } from '../ui/form';
 
-import '../components/downloads/downloads.css';
+/** Окно из 10 номеров страниц вокруг текущей. */
+function getPageWindow(current: number, total: number): number[] {
+  const size = Math.min(total, 10);
+  let start = 1;
+  if (total > 10) {
+    if (current <= 5) {
+      start = 1;
+    }
+    else if (current >= total - 4) {
+      start = total - 9;
+    }
+    else {
+      start = current - 5;
+    }
+  }
+  return Array.from({ length: size }, (_, index) => start + index);
+}
 
-function ImportPage(): ReactElement {
+function Stat({ label, value }: { label: string; value: string | number }) {
+  return (
+    <div>
+      <dt className="text-xs text-muted-foreground">{label}</dt>
+      <dd className="text-lg font-semibold tabular-nums">{value}</dd>
+    </div>
+  );
+}
+
+function ImportPage() {
   const dispatch = useAppDispatch();
+  const id = useId();
 
   const services = useAppSelector(getExternalServices);
   const downloadCategories = useAppSelector(getDownloadCategories);
@@ -48,17 +74,21 @@ function ImportPage(): ReactElement {
   const excludedProducts = useAppSelector(getExcludedProducts);
   const pagination = useAppSelector(getPagination);
   const localCategories = useAppSelector(getLocalCategories);
-  const localCategoriesLoading = useAppSelector(isLocalCategoriesLoading);
+  const isLocalCategoriesLoading = useAppSelector(getIsLocalCategoriesLoading);
 
   const [selectedService, setSelectedService] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('');
-  const [modalOpen, setModalOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const [localCategoryId, setLocalCategoryId] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
 
-  const activeServices = services.filter((s) => s.isActive);
-  const filteredProducts = downloadProducts.filter((p) => !excludedProducts.includes(p.downloadId));
-  const selectedIds = new Set(newProducts.map((p) => p.id));
+  useDocumentTitle('Импорт товаров — панель управления');
+
+  const activeServices = services.filter((service) => service.isActive);
+  // Уже импортированные товары не показываем повторно.
+  const filteredProducts = downloadProducts.filter((product) => !excludedProducts.includes(product.downloadId));
+  const selectedIds = new Set(newProducts.map((product) => product.id));
+  const localOptions = useMemo(() => buildCategoryOptions(localCategories), [localCategories]);
 
   useEffect(() => {
     dispatch(getExternalServicesApi());
@@ -67,10 +97,10 @@ function ImportPage(): ReactElement {
       dispatch(setProducts([]));
       dispatch(setNewProducts([]));
     };
-  }, []);
+  }, [dispatch]);
 
-  const handleServiceChange = (e: ChangeEvent<HTMLSelectElement>) => {
-    const name = e.target.value;
+  const handleServiceChange = (evt: ChangeEvent<HTMLSelectElement>) => {
+    const name = evt.target.value;
     setSelectedService(name);
     setSelectedCategory('');
     setCurrentPage(1);
@@ -84,33 +114,37 @@ function ImportPage(): ReactElement {
     }
   };
 
-  const handleCategoryChange = (e: ChangeEvent<HTMLSelectElement>) => {
-    const catId = e.target.value;
-    setSelectedCategory(catId);
+  const handleCategoryChange = (evt: ChangeEvent<HTMLSelectElement>) => {
+    const categoryId = evt.target.value;
+    setSelectedCategory(categoryId);
     setCurrentPage(1);
     dispatch(setNewProducts([]));
 
-    if (catId && selectedService) {
-      dispatch(getServiceProductsApi({
-        serviceName: selectedService,
-        categoryId: catId,
-        page: 1,
-        limit: DEFAULT_DOWNLOADS_LIMIT,
-      }));
+    if (categoryId && selectedService) {
+      dispatch(
+        getServiceProductsApi({
+          serviceName: selectedService,
+          categoryId,
+          page: 1,
+          limit: DEFAULT_DOWNLOADS_LIMIT,
+        }),
+      );
     }
   };
 
   const loadPage = (page: number) => {
     setCurrentPage(page);
-    dispatch(getServiceProductsApi({
-      serviceName: selectedService,
-      categoryId: selectedCategory,
-      page,
-      limit: DEFAULT_DOWNLOADS_LIMIT,
-    }));
+    dispatch(
+      getServiceProductsApi({
+        serviceName: selectedService,
+        categoryId: selectedCategory,
+        page,
+        limit: DEFAULT_DOWNLOADS_LIMIT,
+      }),
+    );
   };
 
-  const toggleProduct = (product: any) => {
+  const toggleProduct = (product: Product) => {
     if (selectedIds.has(product.id)) {
       dispatch(deleteNewProduct(product.id));
     } else {
@@ -126,17 +160,13 @@ function ImportPage(): ReactElement {
     }
   };
 
-  const deselectAll = () => {
-    dispatch(setNewProducts([]));
-  };
-
   const openImportModal = () => {
     if (newProducts.length === 0) {
       toast.error('Выберите товары для импорта');
       return;
     }
     dispatch(getCategoriesApi());
-    setModalOpen(true);
+    setIsModalOpen(true);
   };
 
   const handleImport = () => {
@@ -158,239 +188,206 @@ function ImportPage(): ReactElement {
     }));
 
     dispatch(createProductManyApi(products));
-    setModalOpen(false);
-  };
-
-  const selectStyle = {
-    display: 'block' as const,
-    width: '100%',
-    padding: '8px 15px',
-    border: '2px solid #e5eaee',
-    height: '50px',
-    fontSize: '14px',
-    borderRadius: '8px',
-    backgroundColor: '#fff',
+    setIsModalOpen(false);
   };
 
   return (
-    <section>
-      <h1>Импорт товаров</h1>
-      <p style={{ color: '#666', marginBottom: '25px' }}>
-        Загрузка товаров от дистрибьюторов через подключённые внешние сервисы
-      </p>
+    <>
+      <AdminPageHeader title="Импорт товаров" description="Загрузка товаров от дистрибьюторов через подключённые внешние сервисы" />
 
-      {/* Шаг 1: Выбор сервиса и категории */}
-      <div className="row" style={{ marginBottom: '25px' }}>
-        <div className="col-md-4">
-          <label style={{ fontWeight: 600, marginBottom: '8px', display: 'block' }}>1. Выберите сервис</label>
-          <select value={selectedService} onChange={handleServiceChange} style={selectStyle}>
-            <option value="">-- Выберите сервис --</option>
-            {activeServices.map((s) => (
-              <option key={s.id} value={s.name}>{s.name} {s.description ? `(${s.description})` : ''}</option>
-            ))}
-          </select>
-          {activeServices.length === 0 && (
-            <p style={{ color: '#999', fontSize: '12px', marginTop: '5px' }}>
-              Нет активных сервисов. Добавьте в разделе "Внешние сервисы"
-            </p>
-          )}
-        </div>
-
-        <div className="col-md-4">
-          <label style={{ fontWeight: 600, marginBottom: '8px', display: 'block' }}>2. Выберите категорию</label>
-          {isCategoriesLoading ? (
-            <div style={{ padding: '12px', color: '#999' }}>Загрузка категорий...</div>
-          ) : (
-            <select value={selectedCategory} onChange={handleCategoryChange} style={selectStyle}
-              disabled={!selectedService || downloadCategories.length === 0}>
-              <option value="">-- Выберите категорию --</option>
-              {downloadCategories.map((cat) => (
-                <option key={cat.id} value={cat.id}>{cat.title}</option>
+      <Card className="mb-6 p-4 sm:p-5">
+        <div className="grid gap-4 lg:grid-cols-[1fr_1fr_auto] lg:items-end">
+          <Field
+            label="1. Сервис"
+            htmlFor={`${id}-service`}
+            hint={activeServices.length === 0 ? 'Нет активных сервисов. Добавьте в разделе «Внешние сервисы».' : undefined}
+          >
+            <Select id={`${id}-service`} value={selectedService} onChange={handleServiceChange}>
+              <option value="">— Выберите сервис —</option>
+              {activeServices.map((service) => (
+                <option key={service.id} value={service.name}>
+                  {service.name} {service.description ? `(${service.description})` : ''}
+                </option>
               ))}
-            </select>
-          )}
-        </div>
-
-        <div className="col-md-4">
-          <label style={{ fontWeight: 600, marginBottom: '8px', display: 'block' }}>3. Действия</label>
-          <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
-            <button className="btn btn-add" onClick={selectAll}
-              disabled={filteredProducts.length === 0}
-              style={{ fontSize: '13px', padding: '8px 16px' }}>
-              <i className="fa fa-check-square-o"></i> Выбрать все
-            </button>
-            <button className="btn" onClick={deselectAll}
-              disabled={newProducts.length === 0}
-              style={{ fontSize: '13px', padding: '8px 16px', border: '1px solid #dce1e8', borderRadius: '8px', background: '#fff' }}>
-              <i className="fa fa-square-o"></i> Снять выбор
-            </button>
-            <button className="btn btn-add" onClick={openImportModal}
-              disabled={newProducts.length === 0}
-              style={{ fontSize: '13px', padding: '8px 16px' }}>
-              <i className="fa fa-cloud-download"></i> Импорт ({newProducts.length})
-            </button>
+            </Select>
+          </Field>
+          <Field label="2. Категория" htmlFor={`${id}-category`}>
+            {isCategoriesLoading ? (
+              <Skeleton className="h-10" />
+            ) : (
+              <Select
+                id={`${id}-category`}
+                value={selectedCategory}
+                onChange={handleCategoryChange}
+                disabled={!selectedService || downloadCategories.length === 0}
+              >
+                <option value="">— Выберите категорию —</option>
+                {downloadCategories.map((category) => (
+                  <option key={category.id} value={category.id}>
+                    {category.title}
+                  </option>
+                ))}
+              </Select>
+            )}
+          </Field>
+          <div className="grid gap-1.5">
+            <span className="text-sm font-medium">3. Действия</span>
+            <div className="flex flex-wrap gap-2">
+              <Button variant="outline" onClick={selectAll} disabled={filteredProducts.length === 0}>
+                <SquareCheckBig />
+                Выбрать все
+              </Button>
+              <Button variant="outline" onClick={() => dispatch(setNewProducts([]))} disabled={newProducts.length === 0}>
+                <SquareDashed />
+                Снять выбор
+              </Button>
+              <Button onClick={openImportModal} disabled={newProducts.length === 0}>
+                <CloudDownload />
+                Импорт ({newProducts.length})
+              </Button>
+            </div>
           </div>
         </div>
-      </div>
 
-      {/* Статистика */}
-      {selectedCategory && !isProductsLoading && (
-        <div style={{
-          display: 'flex', gap: '20px', marginBottom: '20px', padding: '12px 18px',
-          background: '#f8f9fb', borderRadius: '10px', fontSize: '14px', color: '#555',
-        }}>
-          <span>Всего: <strong>{pagination.total}</strong></span>
-          <span>На странице: <strong>{filteredProducts.length}</strong></span>
-          <span>Выбрано: <strong style={{ color: 'var(--ltn__secondary-color)' }}>{newProducts.length}</strong></span>
-          <span>Страница: <strong>{currentPage}</strong> / {pagination.totalPages}</span>
-        </div>
-      )}
+        {selectedCategory && !isProductsLoading && (
+          <dl className="mt-5 grid grid-cols-2 gap-4 border-t pt-4 sm:grid-cols-4">
+            <Stat label="Всего" value={formatNumber(pagination.total)} />
+            <Stat label="На странице" value={filteredProducts.length} />
+            <Stat label="Выбрано" value={newProducts.length} />
+            <Stat label="Страница" value={`${currentPage} / ${pagination.totalPages}`} />
+          </dl>
+        )}
+      </Card>
 
-      {/* Товары */}
-      {isProductsLoading ? (
-        <LoaderComponent />
-      ) : filteredProducts.length > 0 ? (
-        <div className="row">
-          {filteredProducts.map((product) => (
-            <div key={product.id} className="col-xl-3 col-lg-4 col-sm-6 col-12" style={{ marginBottom: '20px' }}>
-              <div
-                className={`ltn__product-item text-center${selectedIds.has(product.id) ? ' downloads-chosen' : ''}`}
-                onClick={() => toggleProduct(product)}
-                style={{
-                  cursor: 'pointer',
-                  borderRadius: '12px',
-                  border: selectedIds.has(product.id) ? '2px solid var(--ltn__secondary-color)' : '2px solid transparent',
-                  boxShadow: '0 2px 12px rgba(0,0,0,0.06)',
-                  transition: 'all 0.2s',
-                  overflow: 'hidden',
-                  background: '#fff',
-                }}
-              >
-                {selectedIds.has(product.id) && (
-                  <div style={{
-                    position: 'absolute', top: '10px', right: '10px', zIndex: 2,
-                    width: '26px', height: '26px', borderRadius: '50%',
-                    background: 'var(--ltn__secondary-color)', color: '#fff',
-                    display: 'flex', alignItems: 'center', justifyContent: 'center',
-                    fontSize: '14px', fontWeight: 700,
-                  }}>
-                    &#10003;
-                  </div>
-                )}
-                <div className="product-img" style={{ padding: '15px', height: '180px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                  <img
-                    src={product.imageUrl || DEFAULT_PRODUCT_IMG}
-                    alt={product.title}
-                    referrerPolicy="no-referrer"
-                    style={{ maxWidth: '100%', maxHeight: '150px', objectFit: 'contain' }}
-                  />
-                </div>
-                <div className="product-info" style={{ padding: '0 15px 15px' }}>
-                  <h2 className="product-title" style={{ fontSize: '13px', lineHeight: '1.4', minHeight: '36px', margin: '0 0 8px' }}>
-                    {product.title}
-                  </h2>
-                  <div className="product-price">
-                    <span style={{ fontWeight: 700, color: 'var(--ltn__primary-color-2)' }}>
-                      {product.price} ₸
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
+      {isProductsLoading && filteredProducts.length === 0 ? (
+        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
+          {Array.from({ length: 10 }, (_, index) => (
+            <Skeleton key={index} className="aspect-[3/4] rounded-2xl" />
           ))}
         </div>
-      ) : selectedCategory ? (
-        <p style={{ textAlign: 'center', padding: '40px', color: '#999' }}>
-          Нет товаров в этой категории
-        </p>
-      ) : null}
+      ) : filteredProducts.length > 0 ? (
+        // При листании прежние товары остаются приглушёнными, пока не придут новые.
+        <div
+          className={cn(
+            'grid grid-cols-2 gap-3 transition-opacity duration-300 sm:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5',
+            isProductsLoading && 'pointer-events-none opacity-45',
+          )}
+          aria-busy={isProductsLoading || undefined}
+        >
+          {filteredProducts.map((product, index) => {
+            const isSelected = selectedIds.has(product.id);
 
-      {/* Пагинация */}
-      {pagination.totalPages > 1 && (
-        <div style={{ display: 'flex', justifyContent: 'center', gap: '4px', marginTop: '20px', flexWrap: 'wrap' }}>
-          <button
-            onClick={() => loadPage(currentPage - 1)}
-            disabled={currentPage <= 1}
-            style={{
-              padding: '8px 14px', border: '1px solid #dce1e8', borderRadius: '8px',
-              background: '#fff', cursor: currentPage <= 1 ? 'not-allowed' : 'pointer',
-              opacity: currentPage <= 1 ? 0.5 : 1,
-            }}
-          >
-            &larr;
-          </button>
-          {Array.from({ length: Math.min(pagination.totalPages, 10) }, (_, i) => {
-            let page: number;
-            if (pagination.totalPages <= 10) {
-              page = i + 1;
-            } else if (currentPage <= 5) {
-              page = i + 1;
-            } else if (currentPage >= pagination.totalPages - 4) {
-              page = pagination.totalPages - 9 + i;
-            } else {
-              page = currentPage - 5 + i;
-            }
             return (
               <button
-                key={page}
-                onClick={() => loadPage(page)}
-                style={{
-                  padding: '8px 14px', border: '1px solid #dce1e8', borderRadius: '8px',
-                  background: page === currentPage ? 'var(--ltn__secondary-color)' : '#fff',
-                  color: page === currentPage ? '#fff' : '#333',
-                  cursor: 'pointer', fontWeight: page === currentPage ? 700 : 400,
-                }}
+                key={product.id}
+                type="button"
+                onClick={() => toggleProduct(product)}
+                aria-pressed={isSelected}
+                style={{ animationDelay: `${Math.min(index, 14) * 25}ms` }}
+                className={cn(
+                  'relative flex animate-fade-up flex-col rounded-2xl border bg-card p-2 text-left shadow-card transition-[box-shadow,border-color]',
+                  'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring',
+                  isSelected ? 'border-primary ring-2 ring-primary/30' : 'hover:border-primary/30',
+                )}
               >
-                {page}
+                <span
+                  className={cn(
+                    'absolute right-3 top-3 z-10 grid size-6 place-items-center rounded-full border-2 transition-colors',
+                    isSelected ? 'border-primary bg-primary text-primary-foreground' : 'border-border bg-background/90',
+                  )}
+                  aria-hidden="true"
+                >
+                  {isSelected && <Check className="size-3.5" strokeWidth={3} />}
+                </span>
+                <span className="grid aspect-square place-items-center overflow-hidden rounded-xl bg-white p-3">
+                  <img
+                    src={product.imageUrl || DEFAULT_PRODUCT_IMG}
+                    alt=""
+                    loading="lazy"
+                    referrerPolicy="no-referrer"
+                    className="max-h-full max-w-full object-contain"
+                  />
+                </span>
+                <span className="line-clamp-2 min-h-10 px-1.5 pt-3 text-sm leading-5">{product.title}</span>
+                <span className="px-1.5 pb-1.5 pt-1 font-semibold tabular-nums text-primary">{formatPrice(product.price)}</span>
               </button>
             );
           })}
-          <button
-            onClick={() => loadPage(currentPage + 1)}
-            disabled={currentPage >= pagination.totalPages}
-            style={{
-              padding: '8px 14px', border: '1px solid #dce1e8', borderRadius: '8px',
-              background: '#fff', cursor: currentPage >= pagination.totalPages ? 'not-allowed' : 'pointer',
-              opacity: currentPage >= pagination.totalPages ? 0.5 : 1,
-            }}
-          >
-            &rarr;
-          </button>
         </div>
+      ) : selectedCategory ? (
+        <EmptyState icon={<PackageSearch />} title="Нет товаров в этой категории" className="rounded-2xl border bg-card" />
+      ) : (
+        <EmptyState
+          icon={<CloudDownload />}
+          title="Выберите сервис и категорию"
+          description="Товары дистрибьютора появятся здесь — отметьте нужные и нажмите «Импорт»."
+          className="rounded-2xl border bg-card"
+        />
       )}
 
-      {/* Модалка выбора локальной категории */}
-      <Modal
-        isOpen={modalOpen}
-        onCloseHandler={() => setModalOpen(false)}
-        children={
-          localCategoriesLoading ? (
-            <LoaderComponent />
+      {pagination.totalPages > 1 && filteredProducts.length > 0 && (
+        <nav aria-label="Страницы" className="mt-6 flex flex-wrap justify-center gap-1">
+          <Button variant="outline" size="icon-sm" onClick={() => loadPage(currentPage - 1)} disabled={currentPage <= 1} aria-label="Предыдущая страница">
+            <ChevronLeft />
+          </Button>
+          {getPageWindow(currentPage, pagination.totalPages).map((page) => (
+            <Button
+              key={page}
+              variant={page === currentPage ? 'primary' : 'ghost'}
+              size="icon-sm"
+              className="min-w-8 tabular-nums"
+              onClick={() => loadPage(page)}
+              aria-current={page === currentPage ? 'page' : undefined}
+            >
+              {page}
+            </Button>
+          ))}
+          <Button
+            variant="outline"
+            size="icon-sm"
+            onClick={() => loadPage(currentPage + 1)}
+            disabled={currentPage >= pagination.totalPages}
+            aria-label="Следующая страница"
+          >
+            <ChevronRight />
+          </Button>
+        </nav>
+      )}
+
+      <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
+        <DialogContent
+          title={`Импорт ${newProducts.length} товаров`}
+          description="Выберите категорию на сайте, в которую будут добавлены товары"
+          size="md"
+        >
+          {isLocalCategoriesLoading && localCategories.length === 0 ? (
+            <PageLoader />
           ) : (
-            <div className="ltn__form-box">
-              <h4 className="title-2">Импорт {newProducts.length} товаров</h4>
-              <p style={{ color: '#666', marginBottom: '15px' }}>
-                Выберите категорию на сайте, в которую будут добавлены товары
-              </p>
-              <select value={localCategoryId} onChange={(e) => setLocalCategoryId(e.target.value)} style={selectStyle}>
-                <option value="">-- Выберите категорию --</option>
-                {localCategories.map((cat) => (
-                  <option key={cat.id} value={cat.id}>{cat.title}</option>
-                ))}
-              </select>
-              <div style={{ display: 'flex', gap: '10px', marginTop: '20px' }}>
-                <button className="theme-btn-1 btn" type="button" onClick={handleImport}>
-                  <i className="fa fa-cloud-download"></i> Импортировать
-                </button>
-                <button className="theme-btn-2 btn" type="button" onClick={() => setModalOpen(false)}>
-                  <i className="fa fa-times"></i> Отмена
-                </button>
+            <div className="grid gap-5">
+              <Field label="Категория на сайте" htmlFor={`${id}-local`}>
+                <Select id={`${id}-local`} value={localCategoryId} onChange={(evt) => setLocalCategoryId(evt.target.value)}>
+                  <option value="">— Выберите категорию —</option>
+                  {localOptions.map((option) => (
+                    <option key={option.id} value={option.id}>
+                      {option.label}
+                    </option>
+                  ))}
+                </Select>
+              </Field>
+              <div className="flex flex-col-reverse gap-2 sm:flex-row sm:justify-end">
+                <Button variant="outline" onClick={() => setIsModalOpen(false)}>
+                  Отмена
+                </Button>
+                <Button onClick={handleImport}>
+                  <CloudDownload />
+                  Импортировать
+                </Button>
               </div>
             </div>
-          )
-        }
-      />
-    </section>
+          )}
+        </DialogContent>
+      </Dialog>
+    </>
   );
 }
 

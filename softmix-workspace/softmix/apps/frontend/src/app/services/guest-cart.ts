@@ -7,12 +7,12 @@ type GuestCart = {
 };
 
 function read(): GuestCart {
-  if (typeof window === 'undefined') return { items: [] };
+  if (typeof window === 'undefined') {return { items: [] };}
   try {
     const raw = window.localStorage.getItem(STORAGE_KEY);
-    if (!raw) return { items: [] };
+    if (!raw) {return { items: [] };}
     const parsed = JSON.parse(raw) as GuestCart;
-    if (!parsed || !Array.isArray(parsed.items)) return { items: [] };
+    if (!parsed || !Array.isArray(parsed.items)) {return { items: [] };}
     return { items: parsed.items };
   } catch {
     return { items: [] };
@@ -20,7 +20,9 @@ function read(): GuestCart {
 }
 
 function write(cart: GuestCart): void {
-  if (typeof window === 'undefined') return;
+  if (typeof window === 'undefined') {
+    return;
+  }
   window.localStorage.setItem(STORAGE_KEY, JSON.stringify(cart));
 }
 
@@ -86,7 +88,9 @@ export function removeItem(productId: string): CartApi {
 }
 
 export function clearGuestCart(): void {
-  if (typeof window === 'undefined') return;
+  if (typeof window === 'undefined') {
+    return;
+  }
   window.localStorage.removeItem(STORAGE_KEY);
 }
 

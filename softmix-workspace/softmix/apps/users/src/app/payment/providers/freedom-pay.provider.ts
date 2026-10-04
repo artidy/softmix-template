@@ -181,12 +181,27 @@ export class FreedomPayProvider implements PaymentProvider {
 
   private parseXmlResponse(xml: string): Record<string, string> {
     const result: Record<string, string> = {};
-    const tagRegex = /<([a-zA-Z0-9_]+)>([\s\S]*?)<\/\1>/g;
+    // Берём только конечные теги <pg_x>значение</pg_x>. Раньше обёртка <response>…</response>
+    // съедалась целиком, и pg_status с pg_redirect_url не находились — оплата не запускалась.
+    const tagRegex = /<([a-zA-Z0-9_]+)>((?:<!\[CDATA\[[\s\S]*?\]\]>)|[^<]*)<\/\1>/g;
     let match: RegExpExecArray | null;
     while ((match = tagRegex.exec(xml)) !== null) {
-      result[match[1]] = match[2].trim();
+      result[match[1]] = this.readXmlValue(match[2].trim());
     }
     return result;
+  }
+
+  private readXmlValue(value: string): string {
+    const cdata = /^<!\[CDATA\[([\s\S]*)\]\]>$/.exec(value);
+    if (cdata) {
+      return cdata[1];
+    }
+    return value
+      .replace(/&lt;/g, '<')
+      .replace(/&gt;/g, '>')
+      .replace(/&quot;/g, '"')
+      .replace(/&apos;/g, "'")
+      .replace(/&amp;/g, '&');
   }
 
   private toXml(rootTag: string, params: Record<string, string>): string {

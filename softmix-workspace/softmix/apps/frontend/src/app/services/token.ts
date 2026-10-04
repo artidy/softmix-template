@@ -6,8 +6,10 @@ export const getToken = (tokenType: string) => {
   return token ?? '';
 };
 
-export const getExpiresIn = () => {
-  return +localStorage.getItem(EXPIRES_IN) ?? null;
+export const getExpiresIn = (): number | null => {
+  const value = localStorage.getItem(EXPIRES_IN);
+
+  return value ? Number(value) : null;
 };
 
 export const getActiveToken = () => {

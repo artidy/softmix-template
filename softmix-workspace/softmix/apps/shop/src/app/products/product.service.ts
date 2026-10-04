@@ -1,5 +1,5 @@
 import { Injectable, Logger } from '@nestjs/common';
-import { In, Repository } from 'typeorm';
+import { ILike, In, Repository } from 'typeorm';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Product, ProductsPaginationApi } from '@project-lib/shared-types';
 
@@ -7,6 +7,11 @@ import { CreateProductDto } from './dto/create-product.dto';
 import { UpdateProductDto } from './dto/update-product.dto';
 import { ProductEntity } from './product.entity';
 import ProductQuery from './queries/product.query';
+
+/** Экранирует спецсимволы LIKE, чтобы «%» и «_» в запросе искались как обычные символы. */
+function escapeLike(value: string): string {
+  return value.replace(/[\\%_]/g, '\\$&');
+}
 
 @Injectable()
 export class ProductService {
@@ -16,14 +21,17 @@ export class ProductService {
   ) {}
 
   public async findAll(query: ProductQuery): Promise<ProductsPaginationApi> {
-    const { isHot, categoryId, categoryIds, sortBy } = query;
+    const { isHot, categoryId, categoryIds, sortBy, search } = query;
     const page = Number(query.page) || 1;
     const limit = Number(query.limit) || 20;
     const skip = (page - 1) * limit;
 
     const ids = this.resolveCategoryIds(categoryIds, categoryId);
     const where: Record<string, unknown> = {};
-    if (isHot !== undefined) where.isHot = isHot;
+    // Из строки запроса приходят строки: «false» тоже должен работать как фильтр.
+    if (isHot !== undefined) where.isHot = String(isHot) === 'true';
+    const term = typeof search === 'string' ? search.trim() : '';
+    if (term) where.title = ILike(`%${escapeLike(term)}%`);
     if (ids && ids.length === 1) where.categoryId = ids[0];
     else if (ids && ids.length > 1) where.categoryId = In(ids);
 

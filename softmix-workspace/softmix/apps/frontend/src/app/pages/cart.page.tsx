@@ -1,202 +1,168 @@
-import { ChangeEvent, FormEvent, ReactElement, useEffect, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { Link } from 'react-router';
+import { ArrowLeft, ShoppingCart, Trash2 } from 'lucide-react';
 
-import { useAppDispatch, useAppSelector } from '../hooks';
 import { AppRoute, DEFAULT_PRODUCT_IMG } from '../const';
+import { formatNumber, pluralize } from '../lib/format';
+import { useDocumentTitle } from '../lib/use-document-title';
+import { useAppDispatch, useAppSelector } from '../hooks';
 import { getCart, getCartLoading } from '../store/cart-data/selectors';
-import {
-  clearCart,
-  getCart as fetchCart,
-  removeFromCart,
-  updateCartItem,
-} from '../store/cart-data/api-actions';
-import BreadcrumbComponent from '../components/breadcrumb/breadcrumb.component';
-import Loader from '../components/loader/loader.component';
-import Modal from '../components/modal/modal.component';
-import DeleteControlFormComponent from '../components/delete-control-form/delete-control-form.component';
+import { clearCart, getCart as fetchCart, removeFromCart, updateCartItem } from '../store/cart-data/api-actions';
 import { formatPrice } from '../utils/format';
+import { Button, buttonVariants } from '../ui/button';
+import { Card } from '../ui/card';
+import { ConfirmDialog } from '../ui/confirm-dialog';
+import { EmptyState, PageLoader } from '../ui/feedback';
+import { Container } from '../ui/layout';
+import { PageHeader } from '../ui/page-header';
+import { QuantityStepper } from '../ui/quantity-stepper';
 
-function CartPage(): ReactElement {
+function CartPage() {
   const dispatch = useAppDispatch();
-  const navigate = useNavigate();
   const cart = useAppSelector(getCart);
   const isLoading = useAppSelector(getCartLoading);
   const [isClearConfirmOpen, setIsClearConfirmOpen] = useState(false);
+
+  useDocumentTitle('Корзина');
 
   useEffect(() => {
     dispatch(fetchCart());
   }, [dispatch]);
 
-  const handleQuantityChange = (productId: string) => (evt: ChangeEvent<HTMLInputElement>) => {
-    const quantity = Math.max(1, Number(evt.target.value) || 1);
-    dispatch(updateCartItem({ productId, dto: { quantity } }));
+  const items = cart?.items ?? [];
+  const totalItems = cart?.totalItems ?? 0;
+
+  const handleQuantityChange = (productId: string, quantity: number) => {
+    dispatch(updateCartItem({ productId, dto: { quantity: Math.max(1, quantity) } }));
   };
 
-  const handleRemove = (productId: string) => () => {
-    dispatch(removeFromCart(productId));
-  };
-
-  const handleClear = () => {
-    setIsClearConfirmOpen(true);
-  };
-
-  const closeClearConfirm = () => {
-    setIsClearConfirmOpen(false);
-  };
-
-  const confirmClear = (evt: FormEvent) => {
-    evt.preventDefault();
+  const confirmClear = () => {
     dispatch(clearCart());
     setIsClearConfirmOpen(false);
   };
 
-  const handleCheckout = () => {
-    navigate(AppRoute.Checkout);
-  };
+  const header = (
+    <PageHeader
+      title="Корзина"
+      breadcrumbs={[{ label: 'Главная', to: AppRoute.Main }, { label: 'Корзина' }]}
+      description={
+        items.length > 0 ? `${formatNumber(totalItems)} ${pluralize(totalItems, ['товар', 'товара', 'товаров'])}` : undefined
+      }
+    />
+  );
 
   if (isLoading && !cart) {
-    return <Loader />;
+    return (
+      <>
+        {header}
+        <PageLoader />
+      </>
+    );
   }
-
-  const items = cart?.items ?? [];
-  const isEmpty = items.length === 0;
 
   return (
     <>
-      <BreadcrumbComponent
-        title="Корзина"
-        links={[{ title: 'Главная', href: AppRoute.Main }]}
-        pageName="Корзина"
-      />
-      <div className="liton__shoping-cart-area mb-105">
-        <div className="container">
-          {isEmpty ? (
-            <div className="row">
-              <div className="col-lg-12 text-center py-5">
-                <h3>Ваша корзина пуста</h3>
-                <p>Добавьте товары из каталога — мы их сохраним даже без регистрации.</p>
-                <Link to={AppRoute.Shop} className="theme-btn-1 btn btn-effect-1 mt-3">
-                  Перейти в каталог
-                </Link>
-              </div>
-            </div>
-          ) : (
-            <div className="row g-4">
-              <div className="col-lg-8">
-                <div className="cart-list">
-                  <div className="cart-list__head d-none d-md-flex">
-                    <div className="cart-list__col cart-list__col--product">Товар</div>
-                    <div className="cart-list__col cart-list__col--price">Цена</div>
-                    <div className="cart-list__col cart-list__col--qty">Количество</div>
-                    <div className="cart-list__col cart-list__col--sum">Сумма</div>
-                    <div className="cart-list__col cart-list__col--remove"></div>
-                  </div>
-
-                  {items.map((item) => (
-                    <div className="cart-list__row" key={item.productId}>
-                      <div className="cart-list__col cart-list__col--product">
-                        <Link
-                          to={`${AppRoute.Shop}/${item.productId}`}
-                          className="cart-list__img"
-                        >
-                          <img
-                            src={item.imageUrl || DEFAULT_PRODUCT_IMG}
-                            alt={item.title}
-                          />
-                        </Link>
-                        <Link
-                          to={`${AppRoute.Shop}/${item.productId}`}
-                          className="cart-list__title"
-                        >
-                          {item.title}
-                        </Link>
-                      </div>
-                      <div className="cart-list__col cart-list__col--price">
-                        <span className="cart-list__label d-md-none">Цена:</span>
-                        {formatPrice(item.price)}
-                      </div>
-                      <div className="cart-list__col cart-list__col--qty">
-                        <span className="cart-list__label d-md-none">Кол-во:</span>
-                        <input
-                          type="number"
-                          min={1}
-                          className="form-control form-control-sm"
-                          value={item.quantity}
-                          onChange={handleQuantityChange(item.productId)}
-                          style={{ width: 80 }}
-                        />
-                      </div>
-                      <div className="cart-list__col cart-list__col--sum">
-                        <span className="cart-list__label d-md-none">Сумма:</span>
-                        <strong>{formatPrice(item.price * item.quantity)}</strong>
-                      </div>
-                      <div className="cart-list__col cart-list__col--remove">
-                        <button
-                          type="button"
-                          className="btn-close"
-                          onClick={handleRemove(item.productId)}
-                          aria-label="Удалить"
-                        />
-                      </div>
-                    </div>
-                  ))}
-                </div>
-
-                <div className="d-flex justify-content-between align-items-center mt-3 flex-wrap gap-2">
-                  <button
-                    type="button"
-                    className="btn btn-outline-secondary"
-                    onClick={handleClear}
-                  >
-                    Очистить корзину
-                  </button>
-                  <Link to={AppRoute.Shop} className="btn btn-outline-primary">
-                    Продолжить покупки
-                  </Link>
-                </div>
-              </div>
-
-              <div className="col-lg-4">
-                <div className="card cart-summary">
-                  <div className="card-body">
-                    <h4 className="card-title">Итого</h4>
-                    <div className="d-flex justify-content-between mb-2">
-                      <span className="text-muted">Товаров</span>
-                      <span>{cart?.totalItems ?? 0}</span>
-                    </div>
-                    <div className="d-flex justify-content-between mb-3">
-                      <span className="text-muted">Сумма</span>
-                      <strong className="cart-summary__total">
-                        {formatPrice(cart?.totalPrice ?? 0)}
-                      </strong>
-                    </div>
-                    <button
-                      type="button"
-                      className="btn btn-primary w-100"
-                      onClick={handleCheckout}
-                    >
-                      Оформить заказ
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          )}
-        </div>
-      </div>
-      <Modal
-        isOpen={isClearConfirmOpen}
-        onCloseHandler={closeClearConfirm}
-        title="Очистка корзины"
-        size="sm"
-        children={
-          <DeleteControlFormComponent
-            message="Удалить из корзины все товары?"
-            confirmLabel="Очистить"
-            onDeleteHandler={confirmClear}
-            onCancelHandler={closeClearConfirm}
+      {header}
+      <Container className="py-8 lg:py-10">
+        {items.length === 0 ? (
+          <EmptyState
+            icon={<ShoppingCart />}
+            title="Ваша корзина пуста"
+            description="Добавьте товары из каталога — мы их сохраним даже без регистрации."
+            action={
+              <Link to={AppRoute.Shop} className={buttonVariants()}>
+                Перейти в каталог
+              </Link>
+            }
+            className="rounded-2xl border bg-card"
           />
-        }
+        ) : (
+          <div className="grid grid-cols-1 items-start gap-6 lg:grid-cols-[minmax(0,1fr)_22rem] lg:gap-8">
+            <div>
+              <Card>
+                <ul className="divide-y">
+                  {items.map((item) => (
+                    <li key={item.productId} className="flex gap-3 p-4 sm:gap-4 sm:p-5">
+                      <Link
+                        to={`${AppRoute.Shop}/${item.productId}`}
+                        className="grid size-16 shrink-0 place-items-center overflow-hidden rounded-xl border bg-white p-1.5 sm:size-24 sm:p-2"
+                      >
+                        <img src={item.imageUrl || DEFAULT_PRODUCT_IMG} alt="" loading="lazy" className="size-full object-contain" />
+                      </Link>
+                      <div className="flex min-w-0 flex-1 flex-col gap-3 sm:flex-row sm:items-center sm:gap-6">
+                        <div className="min-w-0 flex-1">
+                          <Link
+                            to={`${AppRoute.Shop}/${item.productId}`}
+                            className="line-clamp-2 font-medium leading-snug transition-colors hover:text-primary"
+                          >
+                            {item.title}
+                          </Link>
+                          <p className="mt-1 text-sm tabular-nums text-muted-foreground">{formatPrice(item.price)} за шт.</p>
+                        </div>
+                        {/* На узком экране сумма переносится под счётчик, а не вылезает за край. */}
+                        <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-2 sm:flex-nowrap sm:justify-end">
+                          <QuantityStepper
+                            value={item.quantity}
+                            onChange={(quantity) => handleQuantityChange(item.productId, quantity)}
+                          />
+                          <span className="text-right font-semibold tabular-nums sm:min-w-28">
+                            {formatPrice(item.price * item.quantity)}
+                          </span>
+                        </div>
+                      </div>
+                      <button
+                        type="button"
+                        className="self-start rounded-md p-1.5 text-muted-foreground transition-colors hover:bg-destructive/10 hover:text-destructive sm:self-center"
+                        onClick={() => dispatch(removeFromCart(item.productId))}
+                        aria-label={`Удалить «${item.title}» из корзины`}
+                        title="Удалить"
+                      >
+                        <Trash2 className="size-4" />
+                      </button>
+                    </li>
+                  ))}
+                </ul>
+              </Card>
+
+              <div className="mt-4 flex flex-wrap items-center justify-between gap-2">
+                <Link to={AppRoute.Shop} className={buttonVariants({ variant: 'ghost' })}>
+                  <ArrowLeft />
+                  Продолжить покупки
+                </Link>
+                <Button variant="ghost" className="text-destructive hover:bg-destructive/10 hover:text-destructive" onClick={() => setIsClearConfirmOpen(true)}>
+                  <Trash2 />
+                  Очистить корзину
+                </Button>
+              </div>
+            </div>
+
+            <Card className="p-6 lg:sticky lg:top-24">
+              <h2 className="text-lg font-semibold">Итого</h2>
+              <dl className="mt-4 grid gap-3 text-sm">
+                <div className="flex justify-between gap-4">
+                  <dt className="text-muted-foreground">Товаров</dt>
+                  <dd className="tabular-nums">{formatNumber(totalItems)}</dd>
+                </div>
+                <div className="flex items-baseline justify-between gap-4 border-t pt-3">
+                  <dt className="text-muted-foreground">Сумма</dt>
+                  <dd className="text-2xl font-semibold tabular-nums">{formatPrice(cart?.totalPrice ?? 0)}</dd>
+                </div>
+              </dl>
+              <Link to={AppRoute.Checkout} className={buttonVariants({ size: 'lg', className: 'mt-6 w-full' })}>
+                Оформить заказ
+              </Link>
+            </Card>
+          </div>
+        )}
+      </Container>
+
+      <ConfirmDialog
+        open={isClearConfirmOpen}
+        onOpenChange={setIsClearConfirmOpen}
+        title="Очистить корзину?"
+        description="Удалить из корзины все товары?"
+        confirmLabel="Очистить"
+        onConfirm={confirmClear}
       />
     </>
   );

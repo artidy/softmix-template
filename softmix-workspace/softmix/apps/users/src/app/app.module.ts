@@ -19,6 +19,7 @@ import { EmailVerificationModule } from './email-verification/email-verification
 import { PaymentModule } from './payment/payment.module';
 import { PaymentSettingsModule } from './payment-settings/payment-settings.module';
 import { userConfig } from '../config/user.config';
+import { paymentsConfig } from '../config/payments.config';
 
 @Module({
   imports: [
@@ -26,7 +27,7 @@ import { userConfig } from '../config/user.config';
       cache: true,
       isGlobal: true,
       envFilePath: ENV_FILE_PATH,
-      load: [mongodbConfig, jwtConfig, userConfig, notificationsConfig],
+      load: [mongodbConfig, jwtConfig, userConfig, notificationsConfig, paymentsConfig],
       validate: validateEnvironments,
     }),
     MongooseModule.forRootAsync(

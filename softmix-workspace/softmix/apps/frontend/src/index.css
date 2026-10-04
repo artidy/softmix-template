@@ -1,0 +1,258 @@
+@import 'tailwindcss';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: 'Inter Variable', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue',
+    Arial, sans-serif;
+
+  --shadow-card: 0 1px 2px 0 rgb(15 23 42 / 0.04), 0 8px 24px -14px rgb(15 23 42 / 0.14);
+  --shadow-elevated: 0 2px 6px 0 rgb(15 23 42 / 0.05), 0 24px 48px -20px rgb(15 23 42 / 0.28);
+
+  --animate-fade-in: fade-in 160ms ease-out;
+  --animate-fade-out: fade-out 140ms ease-in;
+  --animate-dialog-in: dialog-in 180ms cubic-bezier(0.16, 1, 0.3, 1);
+  --animate-dialog-out: dialog-out 140ms ease-in;
+  --animate-sheet-in-right: sheet-in-right 260ms cubic-bezier(0.16, 1, 0.3, 1);
+  --animate-sheet-out-right: sheet-out-right 200ms ease-in;
+  --animate-sheet-in-left: sheet-in-left 260ms cubic-bezier(0.16, 1, 0.3, 1);
+  --animate-sheet-out-left: sheet-out-left 200ms ease-in;
+  --animate-pop-in: pop-in 140ms cubic-bezier(0.16, 1, 0.3, 1);
+  /* Появление новой страницы и карточек: короткий подъём с проявлением, без резких скачков. */
+  --animate-page-in: page-in 320ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  --animate-fade-up: fade-up 440ms cubic-bezier(0.22, 1, 0.36, 1) both;
+
+  @keyframes page-in {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+  }
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(14px);
+    }
+  }
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+  }
+  @keyframes fade-out {
+    to {
+      opacity: 0;
+    }
+  }
+  @keyframes dialog-in {
+    from {
+      opacity: 0;
+      transform: scale(0.96);
+    }
+  }
+  @keyframes dialog-out {
+    to {
+      opacity: 0;
+      transform: scale(0.97);
+    }
+  }
+  @keyframes sheet-in-right {
+    from {
+      transform: translateX(100%);
+    }
+  }
+  @keyframes sheet-out-right {
+    to {
+      transform: translateX(100%);
+    }
+  }
+  @keyframes sheet-in-left {
+    from {
+      transform: translateX(-100%);
+    }
+  }
+  @keyframes sheet-out-left {
+    to {
+      transform: translateX(-100%);
+    }
+  }
+  @keyframes pop-in {
+    from {
+      opacity: 0;
+      transform: translateY(-4px) scale(0.98);
+    }
+  }
+}
+
+/* Цвета бренда взяты из логотипа: бирюзовый (primary) и фиолетовый (highlight). */
+:root {
+  --background: #ffffff;
+  --foreground: #0d1526;
+  --card: #ffffff;
+  --card-foreground: #0d1526;
+  --popover: #ffffff;
+  --popover-foreground: #0d1526;
+  --muted: #f4f6f9;
+  --muted-foreground: #5a6577;
+  --border: #e4e8ef;
+  --input: #d5dbe5;
+  --primary: #0b7a87;
+  --primary-hover: #09656f;
+  --primary-foreground: #ffffff;
+  --primary-soft: #e5f5f6;
+  --highlight: #7c3aed;
+  --highlight-foreground: #ffffff;
+  --highlight-soft: #f1ebfe;
+  --secondary: #eef1f5;
+  --secondary-foreground: #0d1526;
+  --accent: #f1f4f8;
+  --accent-foreground: #0d1526;
+  --destructive: #dc2626;
+  --destructive-foreground: #ffffff;
+  --success: #15803d;
+  --success-soft: #e8f6ec;
+  --warning: #b45309;
+  --warning-soft: #fdf3e2;
+  --ring: #0b7a87;
+}
+
+.dark {
+  --background: #090d16;
+  --foreground: #e6eaf1;
+  --card: #0e141f;
+  --card-foreground: #e6eaf1;
+  --popover: #0f1622;
+  --popover-foreground: #e6eaf1;
+  --muted: #0f1520;
+  --muted-foreground: #95a1b5;
+  --border: #1c2536;
+  --input: #29344a;
+  --primary: #2bc0d0;
+  --primary-hover: #52d0dd;
+  --primary-foreground: #03171b;
+  --primary-soft: #0c2a31;
+  --highlight: #a78bfa;
+  --highlight-foreground: #140b2e;
+  --highlight-soft: #221a3d;
+  --secondary: #172033;
+  --secondary-foreground: #e6eaf1;
+  --accent: #162033;
+  --accent-foreground: #e6eaf1;
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --success: #22c55e;
+  --success-soft: #0d2a1a;
+  --warning: #f59e0b;
+  --warning-soft: #2e2208;
+  --ring: #2bc0d0;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary-soft: var(--primary-soft);
+  --color-highlight: var(--highlight);
+  --color-highlight-foreground: var(--highlight-foreground);
+  --color-highlight-soft: var(--highlight-soft);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-success: var(--success);
+  --color-success-soft: var(--success-soft);
+  --color-warning: var(--warning);
+  --color-warning-soft: var(--warning-soft);
+  --color-ring: var(--ring);
+}
+
+@layer base {
+  *,
+  ::before,
+  ::after {
+    border-color: var(--color-border);
+  }
+
+  html {
+    -webkit-tap-highlight-color: transparent;
+    scrollbar-gutter: stable;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    font-feature-settings: 'cv11', 'ss01';
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  ::selection {
+    background-color: color-mix(in oklab, var(--primary) 24%, transparent);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-ring);
+    outline-offset: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    ::before,
+    ::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+/*
+ * Пока открыто окно или меню, Radix блокирует прокрутку и сам добавляет к body отступ
+ * на ширину полосы прокрутки. Зарезервированное место (scrollbar-gutter: stable) на это время
+ * снимаем — иначе отступ получался двойным и страница сдвигалась, а затемнение не доходило
+ * до правого края, оставляя светлую полоску.
+ */
+html:has(body[data-scroll-locked]) {
+  scrollbar-gutter: auto;
+}
+
+/* Тонкая сетка для фона героя и промо-блоков. */
+@utility bg-grid {
+  background-image:
+    linear-gradient(to right, color-mix(in oklab, var(--foreground) 6%, transparent) 1px, transparent 1px),
+    linear-gradient(to bottom, color-mix(in oklab, var(--foreground) 6%, transparent) 1px, transparent 1px);
+  background-size: 44px 44px;
+}
+
+@utility scrollbar-none {
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}

@@ -1,34 +1,27 @@
 import { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
 import { Provider } from 'react-redux';
-import * as ReactDOM from 'react-dom/client';
-import { BrowserRouter } from 'react-router-dom';
-import { ToastContainer } from 'react-toastify';
+import { BrowserRouter } from 'react-router';
 
-import "bootstrap/dist/css/bootstrap.min.css";
-import 'react-toastify/dist/ReactToastify.css';
-import "slick-carousel/slick/slick.css";
-import "./plugins.css";
-import "./styles.css";
+import '@fontsource-variable/inter';
+import './index.css';
 
 import App from './app/app';
 import { store } from './app/store';
 import { verify } from './app/store/user-data/api-actions';
 import { getCart } from './app/store/cart-data/api-actions';
-
-const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
-);
+import { Toaster } from './app/ui/toaster';
 
 store.dispatch(verify());
 store.dispatch(getCart());
 
-root.render(
+createRoot(document.getElementById('root') as HTMLElement).render(
   <StrictMode>
     <Provider store={store}>
       <BrowserRouter>
-        <ToastContainer/>
-        <App/>
+        <App />
+        <Toaster />
       </BrowserRouter>
     </Provider>
-  </StrictMode>
+  </StrictMode>,
 );

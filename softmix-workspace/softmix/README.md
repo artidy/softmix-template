@@ -256,16 +256,41 @@ nx run-many -t createImage
 
 ## Тестирование
 
+Три уровня проверок:
+
+| Что | Чем | Где лежат |
+|-----|-----|-----------|
+| Логика и компоненты фронтенда | Vitest + Testing Library (jsdom) | `apps/frontend/src/**/*.test.ts(x)` |
+| Сервисы бэкенда и библиотеки | Jest | `apps/*/src/**/*.spec.ts`, `libs/*/src/**/*.spec.ts` |
+| Сквозные сценарии в браузере | Playwright | `apps/frontend/e2e/*.spec.ts` |
+
 ```bash
-# Запуск всех тестов
+# Всё, что проверяет CI перед деплоем: типы и линт фронтенда + все модульные тесты
+npm run check
+
+# Только модульные тесты (фронтенд, сервисы, библиотеки)
 npm run test:all
 
-# Запуск тестов с coverage
+# Тесты одного проекта
+nx test frontend
+nx test users
+
+# Покрытие
 npm run test:coverage
 
-# Тесты конкретного приложения
-nx test users
+# Сквозные тесты — против запущенных контейнеров (docker-compose.dev.yml, http://localhost:4200)
+npm run test:e2e
+# против другого адреса
+E2E_BASE_URL=https://stage.example.kz npm run test:e2e
 ```
+
+Модульные тесты не ходят в сеть: ответы API подменяются (`apps/frontend/src/test/mock-http.ts`).
+Сквозные тесты не создают аккаунты и не отправляют писем — только просмотр, корзина гостя и проверки форм.
+Для запуска Playwright используется установленный Google Chrome; без него —
+`npx playwright install chromium` и `E2E_BROWSER_CHANNEL=chromium`.
+
+В GitHub Actions задача «Тесты и проверки» запускается на каждый push в `main` и на pull request'ы;
+сборка образов и деплой стартуют только после её успеха.
 
 ## Lint и форматирование
 
@@ -290,8 +315,10 @@ npm run format:check
 | `npm run start:services` | Запуск только микросервисов |
 | `npm run build:all` | Сборка всех приложений |
 | `npm run build:prod` | Production сборка |
-| `npm run test:all` | Запуск всех тестов |
+| `npm run check` | Проверки, как в CI: типы, линт фронтенда, все модульные тесты |
+| `npm run test:all` | Все модульные тесты |
 | `npm run test:coverage` | Тесты с coverage |
+| `npm run test:e2e` | Сквозные тесты Playwright против запущенного сайта |
 | `npm run lint:all` | ESLint проверка |
 | `npm run format` | Форматирование кода |
 | `npm run format:check` | Проверка форматирования |

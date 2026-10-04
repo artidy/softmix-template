@@ -1,21 +1,27 @@
-import { ReactElement, useEffect } from 'react';
-import { Link, useSearchParams } from 'react-router-dom';
+import { useEffect } from 'react';
+import { Link, Navigate, useSearchParams } from 'react-router';
+import { CircleCheck } from 'lucide-react';
 
 import { useAppDispatch, useAppSelector } from '../hooks';
 import { AppRoute } from '../const';
+import { useDocumentTitle } from '../lib/use-document-title';
 import { fetchOrderById } from '../store/orders-data/api-actions';
 import { getCurrentOrder, getOrdersLoading } from '../store/orders-data/selectors';
-import BreadcrumbComponent from '../components/breadcrumb/breadcrumb.component';
-import Loader from '../components/loader/loader.component';
 import { formatPrice } from '../utils/format';
-import { ORDER_STATUS_LABEL, PAYMENT_LABEL } from '../utils/order-labels';
+import { ORDER_STATUS_BADGE, ORDER_STATUS_LABEL, PAYMENT_LABEL } from '../utils/order-labels';
+import { OrderFacts, OrderResult } from '../components/order/order-result';
+import { Badge } from '../ui/badge';
+import { buttonVariants } from '../ui/button';
+import { PageLoader } from '../ui/feedback';
 
-function CheckoutSuccessPage(): ReactElement {
+function CheckoutSuccessPage() {
   const dispatch = useAppDispatch();
   const [params] = useSearchParams();
   const orderId = params.get('id');
   const order = useAppSelector(getCurrentOrder);
   const isLoading = useAppSelector(getOrdersLoading);
+
+  useDocumentTitle('Заказ оформлен');
 
   useEffect(() => {
     if (orderId && (!order || order.id !== orderId)) {
@@ -23,48 +29,49 @@ function CheckoutSuccessPage(): ReactElement {
     }
   }, [dispatch, orderId, order]);
 
-  if (isLoading || !order) {
-    return <Loader />;
+  if (!orderId) {
+    return <Navigate to={AppRoute.Orders} replace />;
+  }
+
+  if (isLoading || !order || order.id !== orderId) {
+    return <PageLoader />;
   }
 
   return (
-    <>
-      <BreadcrumbComponent
-        title="Заказ оформлен"
-        links={[{ title: 'Главная', href: AppRoute.Main }]}
-        pageName="Спасибо!"
+    <OrderResult
+      tone="success"
+      icon={<CircleCheck />}
+      title="Спасибо, заказ принят!"
+      lead={
+        <>
+          Номер заказа: <span className="font-semibold text-foreground">{order.orderNumber}</span>
+        </>
+      }
+      actions={
+        <>
+          <Link to={AppRoute.Orders} className={buttonVariants()}>
+            Мои заказы
+          </Link>
+          <Link to={AppRoute.Shop} className={buttonVariants({ variant: 'outline' })}>
+            Продолжить покупки
+          </Link>
+        </>
+      }
+    >
+      <OrderFacts
+        items={[
+          {
+            label: 'Текущий статус',
+            value: <Badge variant={ORDER_STATUS_BADGE[order.status]}>{ORDER_STATUS_LABEL[order.status]}</Badge>,
+          },
+          { label: 'Способ оплаты', value: PAYMENT_LABEL[order.payment.method] },
+          { label: 'Сумма к оплате', value: <span className="text-base tabular-nums">{formatPrice(order.totalPrice)}</span> },
+        ]}
       />
-      <div className="container my-5">
-        <div className="row justify-content-center">
-          <div className="col-lg-8 text-center">
-            <h2>Спасибо, заказ принят!</h2>
-            <p className="lead">
-              Номер заказа: <strong>{order.orderNumber}</strong>
-            </p>
-            <p>
-              Текущий статус: <strong>{ORDER_STATUS_LABEL[order.status]}</strong>
-              <br />
-              Способ оплаты: {PAYMENT_LABEL[order.payment.method]}
-            </p>
-            <p>
-              Сумма к оплате: <strong>{formatPrice(order.totalPrice)}</strong>
-            </p>
-            <p className="text-muted">
-              Подробности отправлены на {order.contact.email}. Менеджер свяжется с вами по номеру{' '}
-              {order.contact.phone}.
-            </p>
-            <div className="d-flex gap-2 justify-content-center mt-4">
-              <Link to={AppRoute.Orders} className="theme-btn-1 btn btn-effect-1">
-                Мои заказы
-              </Link>
-              <Link to={AppRoute.Shop} className="btn btn-outline-secondary">
-                Продолжить покупки
-              </Link>
-            </div>
-          </div>
-        </div>
-      </div>
-    </>
+      <p className="mt-4 text-center text-sm text-muted-foreground">
+        Подробности отправлены на {order.contact.email}. Менеджер свяжется с вами по номеру {order.contact.phone}.
+      </p>
+    </OrderResult>
   );
 }
 

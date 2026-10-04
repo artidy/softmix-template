@@ -1,28 +1,32 @@
-import { ReactElement, useEffect } from 'react';
-import { Link, useParams } from 'react-router-dom';
-import { DeliveryType, PaymentMethod, PaymentStatus } from '@project-lib/shared-types';
+import { useEffect, useState } from 'react';
+import { Link, useParams } from 'react-router';
+import { ArrowLeft } from 'lucide-react';
+import { PaymentMethod, PaymentStatus } from '@project-lib/shared-types';
 
 import { useAppDispatch, useAppSelector } from '../hooks';
-import { AppRoute, DEFAULT_PRODUCT_IMG } from '../const';
+import { AppRoute } from '../const';
+import { useDocumentTitle } from '../lib/use-document-title';
 import { fetchOrderById } from '../store/orders-data/api-actions';
 import { initPayment } from '../store/orders-data/payment-actions';
 import { getCurrentOrder, getOrdersLoading } from '../store/orders-data/selectors';
-import BreadcrumbComponent from '../components/breadcrumb/breadcrumb.component';
-import Loader from '../components/loader/loader.component';
-import { formatDate, formatPrice } from '../utils/format';
-import {
-  DELIVERY_LABEL,
-  ORDER_STATUS_BADGE,
-  ORDER_STATUS_LABEL,
-  PAYMENT_LABEL,
-  PAYMENT_STATUS_LABEL,
-} from '../utils/order-labels';
+import { formatDate } from '../utils/format';
+import { OrderItemsCard, OrderSideInfo, OrderStatusBadge, OrderTimeline } from '../components/order/order-parts';
+import { Button, buttonVariants } from '../ui/button';
+import { Card } from '../ui/card';
+import { PageLoader } from '../ui/feedback';
+import { Container } from '../ui/layout';
+import { PageHeader } from '../ui/page-header';
 
-function OrderDetailsPage(): ReactElement {
+const ONLINE_METHODS: PaymentMethod[] = [PaymentMethod.FreedomPay, PaymentMethod.KaspiPay, PaymentMethod.HalykEpay];
+
+function OrderDetailsPage() {
   const dispatch = useAppDispatch();
   const { id } = useParams();
   const order = useAppSelector(getCurrentOrder);
   const isLoading = useAppSelector(getOrdersLoading);
+  const [isPaying, setIsPaying] = useState(false);
+
+  useDocumentTitle(order && order.id === id ? `Заказ ${order.orderNumber}` : 'Заказ');
 
   useEffect(() => {
     if (id) {
@@ -30,142 +34,63 @@ function OrderDetailsPage(): ReactElement {
     }
   }, [dispatch, id]);
 
-  if (isLoading || !order) {
-    return <Loader />;
+  if (isLoading || !order || order.id !== id) {
+    return <PageLoader />;
   }
 
-  const a = order.delivery.address;
-  const addressLine =
-    order.delivery.type === DeliveryType.Pickup
-      ? 'Самовывоз'
-      : a
-      ? [a.region, a.city, a.street, a.house, a.apartment, a.postalCode].filter(Boolean).join(', ')
-      : '';
+  const canPay = ONLINE_METHODS.includes(order.payment.method) && order.payment.status !== PaymentStatus.Paid;
+
+  const handlePay = async () => {
+    setIsPaying(true);
+    const result = await dispatch(initPayment(order.id)).unwrap();
+    if (result?.redirectUrl) {
+      window.location.href = result.redirectUrl;
+      return;
+    }
+    setIsPaying(false);
+  };
 
   return (
     <>
-      <BreadcrumbComponent
+      <PageHeader
         title={`Заказ ${order.orderNumber}`}
-        links={[
-          { title: 'Главная', href: AppRoute.Main },
-          { title: 'Мои заказы', href: AppRoute.Orders },
+        description={`от ${formatDate(order.createdAt)}`}
+        breadcrumbs={[
+          { label: 'Главная', to: AppRoute.Main },
+          { label: 'Мои заказы', to: AppRoute.Orders },
+          { label: order.orderNumber },
         ]}
-        pageName={order.orderNumber}
+        actions={<OrderStatusBadge order={order} className="px-3 py-1 text-sm" />}
       />
-      <div className="container my-5">
-        <div className="d-flex align-items-center justify-content-between mb-4 flex-wrap gap-2">
-          <div>
-            <h3 className="mb-1">Заказ {order.orderNumber}</h3>
-            <p className="text-muted mb-0">от {formatDate(order.createdAt)}</p>
-          </div>
-          <span className={`badge ${ORDER_STATUS_BADGE[order.status]} fs-6`}>
-            {ORDER_STATUS_LABEL[order.status]}
-          </span>
+      <Container className="grid grid-cols-1 items-start gap-6 py-8 lg:grid-cols-[minmax(0,1fr)_22rem] lg:gap-8 lg:py-10">
+        <div className="grid gap-6">
+          <OrderItemsCard order={order} />
+          {order.comment && (
+            <Card className="p-5">
+              <h2 className="font-semibold">Комментарий к заказу</h2>
+              <p className="mt-2 whitespace-pre-line text-sm text-muted-foreground">{order.comment}</p>
+            </Card>
+          )}
+          <OrderTimeline order={order} />
         </div>
 
-        <div className="row">
-          <div className="col-lg-8">
-            <table className="table">
-              <thead>
-                <tr>
-                  <th></th>
-                  <th>Товар</th>
-                  <th>Цена</th>
-                  <th>Кол-во</th>
-                  <th>Сумма</th>
-                </tr>
-              </thead>
-              <tbody>
-                {order.items.map((item) => (
-                  <tr key={item.productId}>
-                    <td style={{ width: 80 }}>
-                      <img
-                        src={item.imageUrl || DEFAULT_PRODUCT_IMG}
-                        alt={item.title}
-                        style={{ width: 60, height: 60, objectFit: 'cover' }}
-                      />
-                    </td>
-                    <td>{item.title}</td>
-                    <td>{formatPrice(item.price)}</td>
-                    <td>{item.quantity}</td>
-                    <td>{formatPrice(item.price * item.quantity)}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-
-            <h5 className="mt-4">История статусов</h5>
-            <ul className="list-group">
-              {order.statusHistory.map((entry, idx) => (
-                <li key={idx} className="list-group-item d-flex justify-content-between">
-                  <span>
-                    <strong>{ORDER_STATUS_LABEL[entry.status]}</strong>
-                    {entry.comment && <span className="text-muted"> — {entry.comment}</span>}
-                  </span>
-                  <span className="text-muted">{formatDate(entry.changedAt)}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="col-lg-4">
-            <div className="border rounded p-3 mb-3">
-              <h6>Контакты</h6>
-              <div>{order.contact.name}</div>
-              <div>{order.contact.phone}</div>
-              <div>{order.contact.email}</div>
-            </div>
-
-            <div className="border rounded p-3 mb-3">
-              <h6>Доставка</h6>
-              <div>{DELIVERY_LABEL[order.delivery.type]}</div>
-              {addressLine && <div className="text-muted small">{addressLine}</div>}
-              {order.delivery.cost ? (
-                <div className="mt-1">Стоимость: {formatPrice(order.delivery.cost)}</div>
-              ) : null}
-              {order.delivery.trackingNumber && (
-                <div className="mt-1">Трек: {order.delivery.trackingNumber}</div>
-              )}
-            </div>
-
-            <div className="border rounded p-3 mb-3">
-              <h6>Оплата</h6>
-              <div>{PAYMENT_LABEL[order.payment.method]}</div>
-              <div className="text-muted small">{PAYMENT_STATUS_LABEL[order.payment.status]}</div>
-              {[PaymentMethod.FreedomPay, PaymentMethod.KaspiPay, PaymentMethod.HalykEpay].includes(
-                order.payment.method,
-              ) &&
-                order.payment.status !== PaymentStatus.Paid && (
-                  <button
-                    type="button"
-                    className="btn btn-primary mt-2 w-100"
-                    onClick={async () => {
-                      const result = await dispatch(initPayment(order.id)).unwrap();
-                      if (result?.redirectUrl) {
-                        window.location.href = result.redirectUrl;
-                      }
-                    }}
-                  >
-                    Оплатить сейчас
-                  </button>
-                )}
-            </div>
-
-            <div className="border rounded p-3">
-              <h6>Итого</h6>
-              <div className="fs-5">
-                <strong>{formatPrice(order.totalPrice)}</strong>
-              </div>
-            </div>
-
-            <div className="mt-4">
-              <Link to={AppRoute.Orders} className="btn btn-outline-secondary">
-                ← К списку заказов
-              </Link>
-            </div>
-          </div>
+        <div className="grid gap-4 lg:sticky lg:top-24">
+          <OrderSideInfo
+            order={order}
+            paymentAction={
+              canPay && (
+                <Button className="w-full" onClick={handlePay} loading={isPaying}>
+                  Оплатить сейчас
+                </Button>
+              )
+            }
+          />
+          <Link to={AppRoute.Orders} className={buttonVariants({ variant: 'ghost', className: 'justify-self-start' })}>
+            <ArrowLeft />
+            К списку заказов
+          </Link>
         </div>
-      </div>
+      </Container>
     </>
   );
 }

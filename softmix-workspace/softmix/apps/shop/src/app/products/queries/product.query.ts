@@ -8,6 +8,7 @@ interface ProductQuery {
   categoryId?: string;
   categoryIds?: string[];
   sortBy?: SortBy;
+  search?: string;
 }
 
 export default ProductQuery;

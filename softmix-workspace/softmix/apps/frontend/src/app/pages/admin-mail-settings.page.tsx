@@ -1,11 +1,18 @@
-import { ChangeEvent, FormEvent, ReactElement, useEffect, useState } from 'react';
-import { toast } from 'react-toastify';
+import { ChangeEvent, FormEvent, useCallback, useEffect, useId, useState } from 'react';
+import { toast } from 'sonner';
 import { isAxiosError } from 'axios';
+import { MailWarning, Send } from 'lucide-react';
 import { MailSettingsApi, UpdateMailSettingsDto } from '@project-lib/shared-types';
 
-import { api } from '../store';
-import Loader from '../components/loader/loader.component';
+import { http } from '../services/http';
+import { useDocumentTitle } from '../lib/use-document-title';
 import { formatDate } from '../utils/format';
+import { AdminPageHeader } from '../components/admin/admin-page-header';
+import { Button } from '../ui/button';
+import { Card } from '../ui/card';
+import { EmptyState, PageLoader } from '../ui/feedback';
+import { Field, Input, PasswordInput } from '../ui/form';
+import { Switch } from '../ui/switch';
 
 const MASKED = '******';
 
@@ -37,18 +44,39 @@ function toForm(record: MailSettingsApi): FormState {
   };
 }
 
+/** Отправляем только изменённые поля; логин и пароль — только если ввели новые. */
 function diff(form: FormState, original: MailSettingsApi): UpdateMailSettingsDto {
   const dto: UpdateMailSettingsDto = {};
-  if (form.enabled !== original.enabled) dto.enabled = form.enabled;
-  if (form.host !== original.host) dto.host = form.host;
-  if (Number(form.port) !== original.port) dto.port = Number(form.port);
-  if (form.secure !== original.secure) dto.secure = form.secure;
-  if (form.user && form.user !== MASKED) dto.user = form.user;
-  if (form.password && form.password !== MASKED) dto.password = form.password;
-  if (form.fromAddress !== original.fromAddress) dto.fromAddress = form.fromAddress;
-  if (form.adminEmail !== original.adminEmail) dto.adminEmail = form.adminEmail;
-  if (form.shopName !== original.shopName) dto.shopName = form.shopName;
-  if (form.shopUrl !== original.shopUrl) dto.shopUrl = form.shopUrl;
+  if (form.enabled !== original.enabled) {
+    dto.enabled = form.enabled;
+  }
+  if (form.host !== original.host) {
+    dto.host = form.host;
+  }
+  if (Number(form.port) !== original.port) {
+    dto.port = Number(form.port);
+  }
+  if (form.secure !== original.secure) {
+    dto.secure = form.secure;
+  }
+  if (form.user && form.user !== MASKED) {
+    dto.user = form.user;
+  }
+  if (form.password && form.password !== MASKED) {
+    dto.password = form.password;
+  }
+  if (form.fromAddress !== original.fromAddress) {
+    dto.fromAddress = form.fromAddress;
+  }
+  if (form.adminEmail !== original.adminEmail) {
+    dto.adminEmail = form.adminEmail;
+  }
+  if (form.shopName !== original.shopName) {
+    dto.shopName = form.shopName;
+  }
+  if (form.shopUrl !== original.shopUrl) {
+    dto.shopUrl = form.shopUrl;
+  }
   return dto;
 }
 
@@ -70,35 +98,52 @@ const PRESETS: { id: string; title: string; values: Partial<FormState> }[] = [
   },
 ];
 
-function AdminMailSettingsPage(): ReactElement {
+function errorMessage(e: unknown, fallback: string): string {
+  return isAxiosError(e) ? e.response?.data?.message || fallback : fallback;
+}
+
+function AdminMailSettingsPage() {
+  const id = useId();
   const [record, setRecord] = useState<MailSettingsApi | null>(null);
   const [form, setForm] = useState<FormState | null>(null);
   const [saving, setSaving] = useState(false);
   const [testing, setTesting] = useState(false);
   const [testEmail, setTestEmail] = useState('');
+  const [loadError, setLoadError] = useState(false);
 
-  const load = () => {
-    api
+  useDocumentTitle('Настройки почты — панель управления');
+
+  const load = useCallback(() => {
+    setLoadError(false);
+    http
       .get<MailSettingsApi>('/mail-settings')
       .then(({ data }) => {
         setRecord(data);
         setForm(toForm(data));
       })
       .catch((e) => {
-        let message = 'Не удалось загрузить настройки';
-        if (isAxiosError(e)) {
-          message = e.response?.data?.message || message;
-        }
-        toast.error(message);
+        setLoadError(true);
+        toast.error(errorMessage(e, 'Не удалось загрузить настройки'));
       });
-  };
+  }, []);
 
   useEffect(() => {
     load();
-  }, []);
+  }, [load]);
+
+  if (loadError) {
+    return (
+      <EmptyState
+        icon={<MailWarning />}
+        title="Не удалось загрузить настройки почты"
+        action={<Button onClick={load}>Повторить</Button>}
+        className="rounded-2xl border bg-card"
+      />
+    );
+  }
 
   if (!record || !form) {
-    return <Loader />;
+    return <PageLoader />;
   }
 
   const handleField =
@@ -108,18 +153,17 @@ function AdminMailSettingsPage(): ReactElement {
         evt.target.type === 'checkbox'
           ? evt.target.checked
           : evt.target.type === 'number'
-          ? Number(evt.target.value)
-          : evt.target.value;
+            ? Number(evt.target.value)
+            : evt.target.value;
       setForm((prev) => (prev ? { ...prev, [key]: value as FormState[K] } : prev));
     };
 
-  const applyPreset = (preset: typeof PRESETS[number]) => {
-    setForm((prev) => (prev ? { ...prev, ...preset.values } as FormState : prev));
+  const applyPreset = (preset: (typeof PRESETS)[number]) => {
+    setForm((prev) => (prev ? ({ ...prev, ...preset.values } as FormState) : prev));
   };
 
   const handleSubmit = async (evt: FormEvent<HTMLFormElement>) => {
     evt.preventDefault();
-    if (!form || !record) return;
     const dto = diff(form, record);
     if (Object.keys(dto).length === 0) {
       toast.info('Нет изменений');
@@ -127,22 +171,19 @@ function AdminMailSettingsPage(): ReactElement {
     }
     try {
       setSaving(true);
-      const { data } = await api.put<MailSettingsApi>('/mail-settings', dto);
+      const { data } = await http.put<MailSettingsApi>('/mail-settings', dto);
       setRecord(data);
       setForm(toForm(data));
       toast.success('Настройки SMTP сохранены');
     } catch (e) {
-      let message = 'Не удалось сохранить';
-      if (isAxiosError(e)) {
-        message = e.response?.data?.message || message;
-      }
-      toast.error(message);
+      toast.error(errorMessage(e, 'Не удалось сохранить'));
     } finally {
       setSaving(false);
     }
   };
 
-  const handleTest = async () => {
+  const handleTest = async (evt: FormEvent<HTMLFormElement>) => {
+    evt.preventDefault();
     const target = testEmail.trim() || record.adminEmail;
     if (!target) {
       toast.error('Укажите email для тестового письма или сохраните email админа в настройках');
@@ -150,211 +191,120 @@ function AdminMailSettingsPage(): ReactElement {
     }
     try {
       setTesting(true);
-      const { data } = await api.post<{ ok: true; sentTo: string }>(
-        '/mail-settings/test',
-        { to: target },
-      );
+      const { data } = await http.post<{ ok: true; sentTo: string }>('/mail-settings/test', { to: target });
       toast.success(`Письмо отправлено на ${data.sentTo}`);
     } catch (e) {
-      let message = 'Не удалось отправить тестовое письмо';
-      if (isAxiosError(e)) {
-        message = e.response?.data?.message || message;
-      }
-      toast.error(message);
+      toast.error(errorMessage(e, 'Не удалось отправить тестовое письмо'));
     } finally {
       setTesting(false);
     }
   };
 
-  return (
-    <section>
-      <h1>Настройки почты</h1>
-      <p className="text-muted">
-        SMTP-настройки хранятся зашифрованными в БД. Если SMTP не задан или выключатель «Включена» в положении off — письма не отправляются.
-      </p>
+  const savedHint = <span className="text-success">Значение задано. Введите новое, чтобы заменить.</span>;
 
-      <div className="mb-3">
-        <span className="me-2 text-muted">Пресеты:</span>
+  return (
+    <>
+      <AdminPageHeader
+        title="Настройки почты"
+        description="SMTP-настройки хранятся зашифрованными в БД. Если SMTP не задан или выключатель «Включена отправка» выключен — письма не отправляются."
+      />
+
+      <div className="mb-4 flex flex-wrap items-center gap-2">
+        <span className="text-sm text-muted-foreground">Пресеты:</span>
         {PRESETS.map((preset) => (
-          <button
-            key={preset.id}
-            type="button"
-            className="btn btn-sm btn-outline-secondary me-2"
-            onClick={() => applyPreset(preset)}
-          >
+          <Button key={preset.id} variant="outline" size="sm" onClick={() => applyPreset(preset)}>
             {preset.title}
-          </button>
+          </Button>
         ))}
       </div>
 
-      <form onSubmit={handleSubmit} className="card mb-3">
-        <div className="card-body">
-          <div className="d-flex justify-content-between align-items-center mb-3 flex-wrap gap-2">
-            <h4 className="mb-0">SMTP-сервер</h4>
-            <div className="form-check form-switch">
-              <input
-                type="checkbox"
-                role="switch"
-                className="form-check-input"
-                id="mail-enabled"
-                checked={form.enabled}
-                onChange={handleField('enabled')}
-              />
-              <label className="form-check-label" htmlFor="mail-enabled">
-                Включена отправка
-              </label>
-            </div>
+      <form onSubmit={handleSubmit} className="grid gap-6">
+        <Card className="p-5 sm:p-6">
+          <div className="mb-5 flex flex-wrap items-center justify-between gap-3">
+            <h2 className="font-semibold">SMTP-сервер</h2>
+            <Switch id={`${id}-enabled`} checked={form.enabled} onChange={handleField('enabled')} label="Включена отправка" />
           </div>
-
-          <div className="row g-3">
-            <div className="col-md-6">
-              <label className="form-label">Host</label>
-              <input
-                type="text"
-                className="form-control"
-                value={form.host}
-                onChange={handleField('host')}
-                placeholder="smtp.yandex.kz"
-              />
-            </div>
-            <div className="col-md-3">
-              <label className="form-label">Port</label>
-              <input
-                type="number"
-                className="form-control"
-                value={form.port}
-                onChange={handleField('port')}
-              />
-            </div>
-            <div className="col-md-3 d-flex align-items-end">
-              <div className="form-check form-switch">
-                <input
-                  type="checkbox"
-                  role="switch"
-                  className="form-check-input"
-                  id="mail-secure"
-                  checked={form.secure}
-                  onChange={handleField('secure')}
-                />
-                <label className="form-check-label" htmlFor="mail-secure">
-                  SSL (порт 465)
-                </label>
-              </div>
-            </div>
-            <div className="col-md-6">
-              <label className="form-label">Логин</label>
-              <input
-                type="text"
-                className="form-control"
+          <div className="grid gap-4 sm:grid-cols-[minmax(0,1fr)_8rem_auto] sm:items-end">
+            <Field label="Host" htmlFor={`${id}-host`}>
+              <Input id={`${id}-host`} value={form.host} onChange={handleField('host')} placeholder="smtp.yandex.kz" />
+            </Field>
+            <Field label="Port" htmlFor={`${id}-port`}>
+              <Input id={`${id}-port`} type="number" value={form.port} onChange={handleField('port')} />
+            </Field>
+            <Switch id={`${id}-secure`} checked={form.secure} onChange={handleField('secure')} label="SSL (порт 465)" className="h-10" />
+          </div>
+          <div className="mt-4 grid gap-4 sm:grid-cols-2">
+            <Field label="Логин" htmlFor={`${id}-user`} hint={record.hasUser ? savedHint : undefined}>
+              <Input
+                id={`${id}-user`}
                 value={form.user}
                 onChange={handleField('user')}
                 placeholder={record.hasUser ? MASKED : 'без авторизации'}
                 autoComplete="off"
               />
-              {record.hasUser && (
-                <small className="text-success">Значение задано. Введите новое, чтобы заменить.</small>
-              )}
-            </div>
-            <div className="col-md-6">
-              <label className="form-label">Пароль</label>
-              <input
-                type="password"
-                className="form-control"
+            </Field>
+            <Field label="Пароль" htmlFor={`${id}-password`} hint={record.hasPassword ? savedHint : undefined}>
+              <PasswordInput
+                id={`${id}-password`}
                 value={form.password}
                 onChange={handleField('password')}
                 placeholder={record.hasPassword ? MASKED : ''}
-                autoComplete="off"
+                autoComplete="new-password"
               />
-              {record.hasPassword && (
-                <small className="text-success">Значение задано. Введите новое, чтобы заменить.</small>
-              )}
-            </div>
+            </Field>
           </div>
+        </Card>
 
-          <h4 className="mt-4">Параметры писем</h4>
-          <div className="row g-3">
-            <div className="col-md-6">
-              <label className="form-label">Адрес отправителя (From)</label>
-              <input
-                type="email"
-                className="form-control"
-                value={form.fromAddress}
-                onChange={handleField('fromAddress')}
-                placeholder="no-reply@softmix.kz"
-              />
-            </div>
-            <div className="col-md-6">
-              <label className="form-label">Email админа (для уведомлений)</label>
-              <input
-                type="email"
-                className="form-control"
-                value={form.adminEmail}
-                onChange={handleField('adminEmail')}
-                placeholder="admin@softmix.kz"
-              />
-            </div>
-            <div className="col-md-6">
-              <label className="form-label">Название магазина</label>
-              <input
-                type="text"
-                className="form-control"
-                value={form.shopName}
-                onChange={handleField('shopName')}
-              />
-            </div>
-            <div className="col-md-6">
-              <label className="form-label">Публичный URL сайта</label>
-              <input
-                type="text"
-                className="form-control"
-                value={form.shopUrl}
-                onChange={handleField('shopUrl')}
-                placeholder="https://softmix.kz"
-              />
-              <small className="text-muted">
-                Используется для ссылок в письмах и callback'ов платёжных систем.
-              </small>
-            </div>
+        <Card className="p-5 sm:p-6">
+          <h2 className="mb-5 font-semibold">Параметры писем</h2>
+          <div className="grid gap-4 sm:grid-cols-2">
+            <Field label="Адрес отправителя (From)" htmlFor={`${id}-from`}>
+              <Input id={`${id}-from`} type="email" value={form.fromAddress} onChange={handleField('fromAddress')} placeholder="no-reply@softmix.kz" />
+            </Field>
+            <Field label="Email админа (для уведомлений)" htmlFor={`${id}-admin`}>
+              <Input id={`${id}-admin`} type="email" value={form.adminEmail} onChange={handleField('adminEmail')} placeholder="admin@softmix.kz" />
+            </Field>
+            <Field label="Название магазина" htmlFor={`${id}-shop`}>
+              <Input id={`${id}-shop`} value={form.shopName} onChange={handleField('shopName')} />
+            </Field>
+            <Field
+              label="Публичный URL сайта"
+              htmlFor={`${id}-url`}
+              hint="Используется для ссылок в письмах и callback'ов платёжных систем."
+            >
+              <Input id={`${id}-url`} value={form.shopUrl} onChange={handleField('shopUrl')} placeholder="https://softmix.kz" />
+            </Field>
           </div>
-
-          <div className="d-flex justify-content-between align-items-center mt-3 flex-wrap gap-2">
-            <small className="text-muted">
-              {record.updatedAt ? `Обновлено: ${formatDate(record.updatedAt)}` : ''}
-            </small>
-            <button type="submit" className="btn btn-primary" disabled={saving}>
-              {saving ? 'Сохраняем…' : 'Сохранить'}
-            </button>
+          <div className="mt-6 flex flex-wrap items-center justify-between gap-3 border-t pt-5">
+            <span className="text-sm text-muted-foreground">{record.updatedAt ? `Обновлено: ${formatDate(record.updatedAt)}` : ''}</span>
+            <Button type="submit" loading={saving}>
+              Сохранить
+            </Button>
           </div>
-        </div>
+        </Card>
       </form>
 
-      <div className="card">
-        <div className="card-body">
-          <h4>Тестовое письмо</h4>
-          <p className="text-muted small mb-2">
-            Отправить тестовое письмо для проверки настроек. Используются текущие сохранённые значения.
-          </p>
-          <div className="d-flex gap-2 flex-wrap">
-            <input
-              type="email"
-              className="form-control"
-              style={{ width: 320, maxWidth: '100%' }}
-              value={testEmail}
-              onChange={(e) => setTestEmail(e.target.value)}
-              placeholder={record.adminEmail || 'куда отправить'}
-            />
-            <button
-              type="button"
-              className="btn btn-outline-primary"
-              onClick={handleTest}
-              disabled={testing}
-            >
-              {testing ? 'Отправляем…' : 'Отправить тестовое письмо'}
-            </button>
-          </div>
-        </div>
-      </div>
-    </section>
+      <Card className="mt-6 p-5 sm:p-6">
+        <h2 className="font-semibold">Тестовое письмо</h2>
+        <p className="mt-1 text-sm text-muted-foreground">
+          Отправить тестовое письмо для проверки настроек. Используются текущие сохранённые значения.
+        </p>
+        <form onSubmit={handleTest} className="mt-4 flex flex-wrap gap-2">
+          <Input
+            type="email"
+            className="w-80 max-w-full"
+            value={testEmail}
+            onChange={(evt) => setTestEmail(evt.target.value)}
+            placeholder={record.adminEmail || 'куда отправить'}
+            aria-label="Email для тестового письма"
+          />
+          <Button type="submit" variant="outline" loading={testing}>
+            {!testing && <Send />}
+            Отправить тестовое письмо
+          </Button>
+        </form>
+      </Card>
+    </>
   );
 }
 

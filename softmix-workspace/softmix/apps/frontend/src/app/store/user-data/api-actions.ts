@@ -1,5 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { toast } from 'react-toastify';
+import { toast } from 'sonner';
 import { isAxiosError } from 'axios';
 import { UrlPaths } from '@project-lib/shared-types';
 
@@ -194,7 +194,6 @@ export const getEditUserApi = createAsyncThunk<void, string, AsyncThunkConfig>(
       const {data} = await api.get<UserApi>(`${UrlPaths.Users}/${userId}`);
 
       dispatch(setUserEdit(userAdapt(data)));
-      dispatch(setEditUserLoading(false));
     } catch(e) {
       let message = Message.UnknownMessage;
 
@@ -202,6 +201,9 @@ export const getEditUserApi = createAsyncThunk<void, string, AsyncThunkConfig>(
         message = e.response?.data.message;
       }
       toast.error(message);
+    } finally {
+      // Иначе после ошибки окно редактирования так и висело бы с загрузчиком.
+      dispatch(setEditUserLoading(false));
     }
   }
 );

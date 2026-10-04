@@ -25,7 +25,7 @@
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "jestConfig": "shared-types/jest.config.ts",
+        "jestConfig": "libs/shared-types/jest.config.ts",
         "passWithNoTests": true
       },
       "configurations": {

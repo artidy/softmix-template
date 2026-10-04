@@ -3,13 +3,46 @@ name: Build & Deploy
 on:
   push:
     branches: [main]
+  # На pull request'ах — только проверки, без сборки образов и деплоя.
+  pull_request:
 
 env:
   REGISTRY: ghcr.io
   IMAGE_PREFIX: ghcr.io/${{ github.repository_owner }}/softmix
 
 jobs:
+  # Сломанный код не должен попасть на сервер: деплой ждёт, пока пройдут проверки.
+  check:
+    name: Тесты и проверки
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: softmix-workspace/softmix
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: softmix-workspace/softmix/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Проверка типов фронтенда
+        run: npx nx run frontend:typecheck
+
+      - name: Линт фронтенда
+        run: npx nx run frontend:lint
+
+      - name: Модульные тесты (фронтенд, сервисы, библиотеки)
+        run: npx nx run-many -t test --all
+
   build:
+    needs: check
+    if: github.event_name == 'push'
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -23,7 +56,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
           cache: npm
           cache-dependency-path: softmix-workspace/softmix/package-lock.json
 

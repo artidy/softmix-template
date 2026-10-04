@@ -1,18 +1,29 @@
 import { configureStore } from '@reduxjs/toolkit';
+import { AxiosInstance } from 'axios';
 
 import { rootReducer } from './root-reducer';
-import { createAPI } from '../services/api';
-import { REQUEST_TIMEOUT } from '../const';
-import { environment } from '../../environments/environment';
+import { shopApi } from './shop-api';
+import { http } from '../services/http';
 
-export const api = createAPI(environment.backendBffUrl, REQUEST_TIMEOUT);
+// Старые страницы ещё берут клиент отсюда; новый код импортирует его из services/http.
+export const api = http;
 
-export const store = configureStore({
-  reducer: rootReducer,
-  middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware({
-      thunk: {
-        extraArgument: { api }
-      },
-    }),
-});
+export type RootState = ReturnType<typeof rootReducer>;
+
+/** Отдельная функция, чтобы тесты создавали чистый стор на каждый случай. */
+export function setupStore(preloadedState?: Partial<RootState>, client: AxiosInstance = http) {
+  return configureStore({
+    reducer: rootReducer,
+    preloadedState,
+    middleware: (getDefaultMiddleware) =>
+      getDefaultMiddleware({
+        thunk: {
+          extraArgument: { api: client },
+        },
+      }).concat(shopApi.middleware),
+  });
+}
+
+export const store = setupStore();
+
+export type AppStore = ReturnType<typeof setupStore>;

@@ -1,121 +1,48 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { toast } from 'react-toastify';
+import { toast } from 'sonner';
 import { isAxiosError } from 'axios';
-import {
-  FileApi,
-  ProductApi,
-  ProductCreate, ProductsPaginationApi,
-  ProductUpdate,
-  UrlPaths
-} from '@project-lib/shared-types';
+import { FileApi, ProductApi, ProductCreate, ProductUpdate, UrlPaths } from '@project-lib/shared-types';
 
 import { AsyncThunkConfig } from '../../types/thunk-config';
-import { AppRoute, Message, NameSpace, UPLOADER_URL } from '../../const';
-import {
-  setProducts,
-  setProductsPagination,
-  addNewProduct,
-  deleteProduct,
-  setProductEdit,
-  setIsCreateMode,
-  setIsEditLoading,
-  setLoading,
-  updateProduct, addNewImage, setImages,
-} from './products-data';
-import { productAdapt, productsAdapt } from '../../services/adapters/products.adapter';
+import { Message, NameSpace } from '../../const';
+import { addNewImage, setImages } from './products-data';
 import { addExcludedProduct, setNewProducts } from '../downloads-data/downloads-data';
-import { QueryParams } from '../../types/product';
-import { getQueryString } from '../../services/helpers';
-import { paginationAdapt } from '../../services/adapters/pagination.adapter';
 import { UploadFile } from '../../types/upload-file';
 import { fileAdapt, filesAdapt } from '../../services/adapters/file.adapter';
+import { shopApi } from '../shop-api';
 
-export const getProductsApi = createAsyncThunk<void, QueryParams, AsyncThunkConfig>(
-  `${NameSpace.Products}/${UrlPaths.Products}`,
-  async (queryParams, { dispatch, extra: { api} }) => {
-    try {
-      dispatch(setLoading(true));
-
-      const {data} = await api.get<ProductsPaginationApi>(`${UrlPaths.Products}${getQueryString(queryParams)}`);
-      const count = data.products.length;
-
-      dispatch(setProducts(productsAdapt(data.products)));
-      dispatch(setProductsPagination(paginationAdapt(AppRoute.Shop, queryParams, data.total, count)));
-    } catch(e) {
-      let message = Message.UnknownMessage;
-
-      if (isAxiosError(e)) {
-        message = e.response?.data.message;
-      }
-
-      toast.error(message);
-    }
-
-    dispatch(setLoading(false));
+function getErrorMessage(e: unknown): string {
+  if (isAxiosError(e)) {
+    return e.response?.data?.message ?? Message.UnknownMessage;
   }
-);
+  return Message.UnknownMessage;
+}
 
-export const getProductApi = createAsyncThunk<void, string, AsyncThunkConfig>(
-  `${NameSpace.Products}/${UrlPaths.Products}/:id`,
-  async (id, { dispatch, extra: { api} }) => {
-    try {
-      dispatch(setIsEditLoading(true));
+// Товары живут в кэше RTK Query: после изменений просим списки и карточки обновиться.
+const refreshProductLists = () => shopApi.util.invalidateTags(['Product']);
 
-      const {data} = await api.get<ProductApi>(`${UrlPaths.Products}/${id}`);
-
-      if (data.imageUrl === '') {
-        try {
-          const { data: ownerImage } = await api.get<FileApi>(
-            `${UrlPaths.Uploader}/${UrlPaths.Products}/${id}`
-          );
-          data.imageUrl = ownerImage.url;
-        } catch {
-          // Картинки у товара нет — открываем карточку без неё.
-        }
-      }
-      
-      dispatch(setProductEdit(productAdapt(data)));
-    } catch(e) {
-      let message = Message.UnknownMessage;
-
-      if (isAxiosError(e)) {
-        message = e.response?.data.message;
-      }
-
-      toast.error(message);
-    } finally {
-      dispatch(setIsEditLoading(false));
-    }
-  }
-);
-
-export const createProductApi = createAsyncThunk<void, ProductCreate, AsyncThunkConfig>(
-  `${NameSpace.Products}/${UrlPaths.Products}`,
+/** Возвращает true, если товар создан. */
+export const createProductApi = createAsyncThunk<boolean, ProductCreate, AsyncThunkConfig>(
+  `${NameSpace.Products}/createProduct`,
   async (element, { dispatch, extra: { api } }) => {
     try {
-      const { data } = await api.post<ProductApi>(`${UrlPaths.Products}`, element);
+      await api.post<ProductApi>(UrlPaths.Products, element);
 
-      dispatch(addNewProduct(productAdapt(data)));
-      dispatch(setIsCreateMode(false));
-
+      dispatch(refreshProductLists());
       toast.success(Message.AddNewElement);
-    } catch(e) {
-      let message = Message.UnknownMessage;
-
-      if (isAxiosError(e)) {
-        message = e.response?.data.message;
-      }
-
-      toast.error(message);
+      return true;
+    } catch (e) {
+      toast.error(getErrorMessage(e));
+      return false;
     }
-  }
+  },
 );
 
 export const createProductManyApi = createAsyncThunk<void, ProductCreate[], AsyncThunkConfig>(
-  `${NameSpace.Products}/${UrlPaths.Products}`,
+  `${NameSpace.Products}/createProductMany`,
   async (element, { dispatch, extra: { api } }) => {
     try {
-      const {data} = await api.post<ProductApi[]>(`${UrlPaths.Products}/many`, element);
+      const { data } = await api.post<ProductApi[]>(`${UrlPaths.Products}/many`, element);
 
       dispatch(setNewProducts([]));
 
@@ -123,106 +50,77 @@ export const createProductManyApi = createAsyncThunk<void, ProductCreate[], Asyn
         dispatch(addExcludedProduct(product.id));
       }
 
+      dispatch(refreshProductLists());
       toast.success(Message.AddNewElement);
-    } catch(e) {
-      let message = Message.UnknownMessage;
-
-      if (isAxiosError(e)) {
-        message = e.response?.data.message;
-      }
-
-      toast.error(message);
+    } catch (e) {
+      toast.error(getErrorMessage(e));
     }
-  }
+  },
 );
 
-export const updateProductApi = createAsyncThunk<void, ProductUpdate, AsyncThunkConfig>(
-  `${NameSpace.Products}/${UrlPaths.Products}/:id`,
+/** Возвращает true, если изменения сохранены. */
+export const updateProductApi = createAsyncThunk<boolean, ProductUpdate, AsyncThunkConfig>(
+  `${NameSpace.Products}/updateProduct`,
   async (element, { dispatch, extra: { api } }) => {
     try {
-      const { data } = await api.patch<ProductApi>(`${UrlPaths.Products}/${element.id}`, element);
+      await api.patch<ProductApi>(`${UrlPaths.Products}/${element.id}`, element);
 
-      dispatch(updateProduct(productAdapt(data)));
-      dispatch(setProductEdit(null));
-
+      dispatch(refreshProductLists());
       toast.success(Message.UpdateElement);
-    } catch(e) {
-      let message = Message.UnknownMessage;
-
-      if (isAxiosError(e)) {
-        message = e.response?.data.message;
-      }
-
-      toast.error(message);
+      return true;
+    } catch (e) {
+      toast.error(getErrorMessage(e));
+      return false;
     }
-  }
+  },
 );
 
-export const deleteProductApi = createAsyncThunk<void, string, AsyncThunkConfig>(
-  `${NameSpace.Products}/${UrlPaths.Products}/:id`,
+/** Возвращает true, если товар удалён. */
+export const deleteProductApi = createAsyncThunk<boolean, string, AsyncThunkConfig>(
+  `${NameSpace.Products}/deleteProduct`,
   async (id, { dispatch, extra: { api } }) => {
     try {
-      dispatch(setLoading(true));
       await api.delete<void>(`${UrlPaths.Products}/${id}`);
 
-      dispatch(deleteProduct(id));
-
+      dispatch(refreshProductLists());
       toast.success(Message.DeleteElement);
-    } catch(e) {
-      let message = Message.UnknownMessage;
-
-      if (isAxiosError(e)) {
-        message = e.response?.data.message;
-      }
-
-      toast.error(message);
+      return true;
+    } catch (e) {
+      toast.error(getErrorMessage(e));
+      return false;
     }
-
-    dispatch(setLoading(false));
-  }
+  },
 );
 
 export const getImagesApi = createAsyncThunk<void, undefined, AsyncThunkConfig>(
-  `${NameSpace.Products}/${UrlPaths.Uploader}`,
+  `${NameSpace.Products}/getImages`,
   async (_arg, { dispatch, extra: { api } }) => {
     try {
-      const {data} = await api.get<FileApi[]>(`${UrlPaths.Uploader}/${UrlPaths.Products}`
-      );
+      const { data } = await api.get<FileApi[]>(`${UrlPaths.Uploader}/${UrlPaths.Products}`);
       dispatch(setImages(filesAdapt(data)));
-    } catch(e) {
-      let message = Message.UnknownMessage;
-
-      if (isAxiosError(e)) {
-        message = e.response?.data.message;
-      }
-
-      toast.error(message);
+    } catch (e) {
+      toast.error(getErrorMessage(e));
     }
-  }
+  },
 );
 
 export const uploadImage = createAsyncThunk<void, UploadFile, AsyncThunkConfig>(
-  `${NameSpace.Products}/${UrlPaths.Uploader}`,
+  `${NameSpace.Products}/uploadImage`,
   async (uploadFile, { dispatch, extra: { api } }) => {
     const formData = new FormData();
     formData.append('ownerId', uploadFile.ownerId);
     formData.append('file', uploadFile.file);
 
     try {
-      const {data} = await api.post<FileApi>(
-        `${UrlPaths.Uploader}/${UrlPaths.Products}/${uploadFile.ownerId}`,
-        formData,
-        { headers: { 'Content-Type': 'multipart/form-data',  timeout: 600000 }}
-      );
+      const { data } = await api.post<FileApi>(`${UrlPaths.Uploader}/${UrlPaths.Products}/${uploadFile.ownerId}`, formData, {
+        headers: { 'Content-Type': 'multipart/form-data' },
+        // Большие фото грузятся дольше обычного таймаута запросов.
+        timeout: 600000,
+      });
       dispatch(addNewImage(fileAdapt(data)));
-    } catch(e) {
-      let message = Message.UnknownMessage;
-
-      if (isAxiosError(e)) {
-        message = e.response?.data.message;
-      }
-
-      toast.error(message);
+      toast.success('Фото загружено');
+    } catch (e) {
+      toast.error(getErrorMessage(e));
     }
-  }
+  },
 );

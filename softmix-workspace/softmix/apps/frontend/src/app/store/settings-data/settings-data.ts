@@ -2,6 +2,7 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { SiteSettings } from '@project-lib/shared-types';
 
 import { NameSpace } from '../../const';
+import { readCachedLogo } from './logo-cache';
 
 export type SettingsState = {
   settings: SiteSettings | null;
@@ -9,7 +10,7 @@ export type SettingsState = {
 };
 
 const DEFAULT_SETTINGS: SiteSettings = {
-  logoUrl: 'assets/img/logo.png',
+  logoUrl: readCachedLogo() ?? 'assets/img/logo.png',
   phone: '78-72-06',
   email: 'support@softmix.kz',
   address: 'Астана, ул. Достык 20 БЦ "Санкт-Петербург" офис 401',

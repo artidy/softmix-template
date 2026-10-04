@@ -1,18 +1,27 @@
 {
   "extends": ["plugin:@nx/react", "../../.eslintrc.json"],
-  "ignorePatterns": ["!**/*"],
+  "ignorePatterns": ["!**/*", "e2e/**", "playwright.config.ts", "vite.config.ts"],
+  "parserOptions": {
+    "project": ["apps/frontend/tsconfig.app.json", "apps/frontend/tsconfig.spec.json"]
+  },
   "overrides": [
     {
-      "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
-      "rules": {}
-    },
-    {
       "files": ["*.ts", "*.tsx"],
-      "rules": {}
+      "rules": {
+        "@typescript-eslint/explicit-function-return-type": "off",
+        "@typescript-eslint/promise-function-async": "off",
+        "@typescript-eslint/no-floating-promises": "off",
+        "@typescript-eslint/no-misused-promises": ["error", { "checksVoidReturn": { "attributes": false } }],
+        "react-hooks/rules-of-hooks": "error",
+        "react-hooks/exhaustive-deps": "warn"
+      }
     },
     {
-      "files": ["*.js", "*.jsx"],
-      "rules": {}
+      "files": ["*.test.ts", "*.test.tsx", "src/test/**"],
+      "rules": {
+        "@typescript-eslint/no-empty-function": "off",
+        "@typescript-eslint/no-non-null-assertion": "off"
+      }
     }
   ]
 }

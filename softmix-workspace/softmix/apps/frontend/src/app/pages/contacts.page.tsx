@@ -1,67 +1,69 @@
-import { memo, ReactElement } from 'react';
+import { ReactNode } from 'react';
+import { Clock, Mail, MapPin, Phone } from 'lucide-react';
 
-import BreadcrumbComponent from '../components/breadcrumb/breadcrumb.component';
 import { AppRoute } from '../const';
+import { phoneHref } from '../layout/nav';
+import { useDocumentTitle } from '../lib/use-document-title';
 import { useAppSelector } from '../hooks';
 import { getSettings } from '../store/settings-data/selectors';
+import { Card } from '../ui/card';
+import { Container } from '../ui/layout';
+import { PageHeader } from '../ui/page-header';
 
-function ContactsPage(): ReactElement {
+function ContactCard({ icon, title, children }: { icon: ReactNode; title: string; children: ReactNode }) {
+  return (
+    <Card className="flex h-full flex-col p-6">
+      <span
+        className="grid size-12 place-items-center rounded-xl bg-linear-to-br from-primary-soft to-highlight-soft text-primary [&_svg]:size-6"
+        aria-hidden="true"
+      >
+        {icon}
+      </span>
+      <h2 className="mt-5 text-sm font-medium text-muted-foreground">{title}</h2>
+      <div className="mt-1.5 font-semibold leading-snug">{children}</div>
+    </Card>
+  );
+}
+
+function ContactsPage() {
   const settings = useAppSelector(getSettings);
+
+  useDocumentTitle('Контакты');
 
   return (
     <>
-      <BreadcrumbComponent
-        title="Контакты"
-        links={[
-          {title: 'Главная', href: AppRoute.Main},
-        ]}
-        pageName="Контакты"
-      />
-      <div className="ltn__contact-address-area mb-60">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-3">
-              <div className="ltn__contact-address-item ltn__contact-address-item-4 box-shadow">
-                <div className="ltn__contact-address-icon">
-                  <i className="icon-location-pin"></i>
-                </div>
-                <h3>Адрес</h3>
-                <p>{settings?.address || ''}</p>
-              </div>
-            </div>
-            <div className="col-lg-3">
-            <div className="ltn__contact-address-item ltn__contact-address-item-4 box-shadow">
-                <div className="ltn__contact-address-icon">
-                  <i className="icon-phone"></i>
-                </div>
-                <h3>Номер телефона</h3>
-                <p>{settings?.phone || ''}</p>
-              </div>
-            </div>
-            <div className="col-lg-3">
-              <div className="ltn__contact-address-item ltn__contact-address-item-4 box-shadow">
-                <div className="ltn__contact-address-icon">
-                  <i className="icon-envelope"></i>
-                </div>
-                <h3>Email</h3>
-                <p><a href={`mailto:${settings?.email || ''}`}>{settings?.email || ''}</a></p>
-              </div>
-            </div>
-            <div className="col-lg-3">
-            <div className="ltn__contact-address-item ltn__contact-address-item-4 box-shadow">
-                <div className="ltn__contact-address-icon">
-                  <i className="icon-speedometer"></i>
-                </div>
-                <h3>Время работы</h3>
-                <p>с Пн по Пт: с 9:00 до 18:00<br/>
-                  Суббота, Воскресенье - выходные</p>
-              </div>
-            </div>
-          </div>
+      <PageHeader title="Контакты" breadcrumbs={[{ label: 'Главная', to: AppRoute.Main }, { label: 'Контакты' }]} />
+      <Container className="py-10 sm:py-14">
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <ContactCard icon={<MapPin />} title="Адрес">
+            {settings?.address || '—'}
+          </ContactCard>
+          <ContactCard icon={<Phone />} title="Номер телефона">
+            {settings?.phone ? (
+              <a href={phoneHref(settings.phone)} className="transition-colors hover:text-primary">
+                {settings.phone}
+              </a>
+            ) : (
+              '—'
+            )}
+          </ContactCard>
+          <ContactCard icon={<Mail />} title="Email">
+            {settings?.email ? (
+              <a href={`mailto:${settings.email}`} className="break-all transition-colors hover:text-primary">
+                {settings.email}
+              </a>
+            ) : (
+              '—'
+            )}
+          </ContactCard>
+          <ContactCard icon={<Clock />} title="Время работы">
+            с Пн по Пт: с 9:00 до 18:00
+            <span className="mt-1 block text-sm font-normal text-muted-foreground">Суббота, Воскресенье — выходные</span>
+          </ContactCard>
         </div>
-      </div>
+      </Container>
     </>
-  )
+  );
 }
 
-export default memo(ContactsPage);
+export default ContactsPage;

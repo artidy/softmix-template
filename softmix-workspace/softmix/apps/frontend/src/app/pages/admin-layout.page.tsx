@@ -1,111 +1,177 @@
-import { ReactElement, useEffect, useState } from 'react';
-import { Link, Navigate, Outlet, useLocation } from 'react-router-dom';
+import { Suspense, useEffect, useState } from 'react';
+import { Link, Navigate, NavLink, Outlet, useLocation } from 'react-router';
+import {
+  CloudDownload,
+  CreditCard,
+  ExternalLink,
+  Mail,
+  Menu,
+  PlugZap,
+  Settings,
+  ShoppingBag,
+  UserRound,
+  Users,
+  LucideIcon,
+} from 'lucide-react';
 
 import { useAppDispatch, useAppSelector } from '../hooks';
-import { getCanManageProducts, getIsAdmin } from '../store/user-data/selectors';
-import { getUser } from '../store/user-data/selectors';
-import { getSettings } from '../store/settings-data/selectors';
+import { getCanManageProducts, getIsAdmin, getUser } from '../store/user-data/selectors';
 import { getSettingsApi } from '../store/settings-data/api-actions';
 import { AppRoute } from '../const';
+import { cn } from '../lib/cn';
+import { getInitials } from '../lib/format';
+import { Button } from '../ui/button';
+import { Dialog, SheetContent } from '../ui/dialog';
+import { PageLoader } from '../ui/feedback';
+import { Logo } from '../ui/logo';
+import { ThemeToggle } from '../ui/theme-toggle';
 
-function AdminLayoutPage(): ReactElement {
+type NavItem = { to: string; label: string; Icon: LucideIcon };
+type NavGroup = { title: string; items: NavItem[] };
+
+function SidebarNav({ groups, onNavigate }: { groups: NavGroup[]; onNavigate?: () => void }) {
+  return (
+    <nav aria-label="Разделы панели управления" className="grid gap-6">
+      {groups.map((group) => (
+        <div key={group.title}>
+          <p className="mb-2 px-3 text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground">{group.title}</p>
+          <ul className="grid gap-0.5">
+            {group.items.map(({ to, label, Icon }) => (
+              <li key={to}>
+                <NavLink
+                  to={to}
+                  onClick={onNavigate}
+                  className={({ isActive }) =>
+                    cn(
+                      'flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium transition-colors',
+                      isActive ? 'bg-primary-soft text-primary' : 'text-muted-foreground hover:bg-accent hover:text-foreground',
+                    )
+                  }
+                >
+                  <Icon className="size-4 shrink-0" aria-hidden="true" />
+                  {label}
+                </NavLink>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </nav>
+  );
+}
+
+function SidebarFooter({ onNavigate }: { onNavigate?: () => void }) {
+  const link = 'flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-foreground';
+
+  return (
+    <div className="grid gap-0.5 border-t pt-4">
+      <Link to={AppRoute.Main} onClick={onNavigate} className={link}>
+        <ExternalLink className="size-4" aria-hidden="true" />
+        На сайт
+      </Link>
+      <Link to={AppRoute.Profile} onClick={onNavigate} className={link}>
+        <UserRound className="size-4" aria-hidden="true" />
+        Профиль
+      </Link>
+    </div>
+  );
+}
+
+function AdminLayoutPage() {
   const dispatch = useAppDispatch();
+  const location = useLocation();
   const user = useAppSelector(getUser);
   const isAdmin = useAppSelector(getIsAdmin);
   const canManageProducts = useAppSelector(getCanManageProducts);
-  const settings = useAppSelector(getSettings);
-  const location = useLocation();
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
     dispatch(getSettingsApi());
-  }, []);
+  }, [dispatch]);
 
   if (!user || !canManageProducts) {
     return <Navigate to={AppRoute.Main} />;
   }
 
   if (location.pathname === AppRoute.Admin) {
-    return <Navigate to={isAdmin ? AppRoute.Users : AppRoute.Import} />;
+    return <Navigate to={isAdmin ? AppRoute.Users : AppRoute.Import} replace />;
   }
 
-  const menuItems = [
-    ...(isAdmin ? [
-      { path: AppRoute.Users, title: 'Пользователи', icon: 'icon-user' },
-      { path: AppRoute.Settings, title: 'Настройки сайта', icon: 'icon-settings' },
-      { path: AppRoute.Services, title: 'Внешние сервисы', icon: 'icon-globe' },
-      { path: AppRoute.AdminPaymentSettings, title: 'Платёжные системы', icon: 'icon-credit-card' },
-      { path: AppRoute.AdminMailSettings, title: 'Настройки почты', icon: 'icon-envelope' },
-    ] : []),
-    { path: AppRoute.AdminOrders, title: 'Заказы', icon: 'icon-shopping-cart' },
-    { path: AppRoute.Import, title: 'Импорт товаров', icon: 'icon-cloud-download' },
+  const groups: NavGroup[] = [
+    {
+      title: 'Магазин',
+      items: [
+        { to: AppRoute.AdminOrders, label: 'Заказы', Icon: ShoppingBag },
+        { to: AppRoute.Import, label: 'Импорт товаров', Icon: CloudDownload },
+      ],
+    },
+    ...(isAdmin
+      ? [
+          {
+            title: 'Администрирование',
+            items: [
+              { to: AppRoute.Users, label: 'Пользователи', Icon: Users },
+              { to: AppRoute.Settings, label: 'Настройки сайта', Icon: Settings },
+              { to: AppRoute.Services, label: 'Внешние сервисы', Icon: PlugZap },
+              { to: AppRoute.AdminPaymentSettings, label: 'Платёжные системы', Icon: CreditCard },
+              { to: AppRoute.AdminMailSettings, label: 'Настройки почты', Icon: Mail },
+            ],
+          },
+        ]
+      : []),
   ];
 
+  const closeMenu = () => setIsMenuOpen(false);
+
   return (
-    <div className="admin-layout">
-      {/* Admin Header */}
-      <header className="admin-header">
-        <div className="admin-header__left">
-          <Link to={AppRoute.Main} className="admin-header__logo">
-            <img src={settings?.logoUrl || 'assets/img/logo.png'} alt="Logo" />
+    <div className="min-h-dvh bg-muted/40 lg:grid lg:grid-cols-[16rem_minmax(0,1fr)]">
+      <aside className="hidden border-r bg-card lg:block">
+        <div className="sticky top-0 flex h-dvh flex-col gap-6 overflow-y-auto p-4">
+          <Link to={AppRoute.Main} className="flex items-center gap-3 px-2 pt-1" aria-label="Soft Mix — на сайт">
+            <Logo className="h-10" />
           </Link>
-          <div className="admin-header__title">Панель управления</div>
+          <div className="flex-1">
+            <SidebarNav groups={groups} />
+          </div>
+          <SidebarFooter />
         </div>
-        <div className="admin-header__right">
-          <span className="admin-header__user">
-            <i className="icon-user"></i> {user.name}
-          </span>
-          <Link to={AppRoute.Main} className="admin-header__link">
-            <i className="icon-home"></i> На сайт
-          </Link>
-        </div>
-      </header>
+      </aside>
 
-      {/* Mobile toggle */}
-      <div className="d-lg-none" style={{ padding: '10px 15px', background: '#1a1a2e' }}>
-        <button
-          className="theme-btn-1 btn btn-block"
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          style={{ width: '100%' }}
-        >
-          <i className="icon-menu"></i> {mobileMenuOpen ? 'Скрыть меню' : 'Показать меню'}
-        </button>
-      </div>
+      <div className="flex min-w-0 flex-col">
+        <header className="sticky top-0 z-30 flex h-16 items-center gap-3 border-b bg-background/80 px-4 backdrop-blur-xl sm:px-6 lg:px-8">
+          <Button variant="ghost" size="icon" className="lg:hidden" onClick={() => setIsMenuOpen(true)} aria-label="Открыть меню">
+            <Menu />
+          </Button>
+          <p className="font-semibold">Панель управления</p>
+          <div className="ml-auto flex items-center gap-2">
+            <ThemeToggle />
+            <span className="hidden text-sm text-muted-foreground sm:inline">{user.name || user.login}</span>
+            <span className="grid size-9 place-items-center rounded-full bg-primary-soft text-sm font-semibold text-primary" aria-hidden="true">
+              {getInitials(user.name || user.login) || <UserRound className="size-4" />}
+            </span>
+          </div>
+        </header>
 
-      <div className="admin-layout__body">
-        {/* Sidebar */}
-        <aside className={`admin-sidebar ${mobileMenuOpen ? '' : 'd-none d-lg-block'}`}>
-          <nav className="admin-sidebar__nav">
-            {menuItems.map((item) => {
-              const isActive =
-                location.pathname === item.path || location.pathname.startsWith(`${item.path}/`);
-              return (
-                <Link
-                  key={item.path}
-                  className={`admin-sidebar__link${isActive ? ' admin-sidebar__link--active' : ''}`}
-                  to={item.path}
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  <i className={item.icon}></i>
-                  <span>{item.title}</span>
-                </Link>
-              );
-            })}
-            <div className="admin-sidebar__divider"></div>
-            <Link className="admin-sidebar__link" to={AppRoute.Profile}
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              <i className="icon-logout"></i>
-              <span>Назад в профиль</span>
-            </Link>
-          </nav>
-        </aside>
-
-        {/* Content */}
-        <main className="admin-content">
-          <Outlet />
+        <main className="flex-1 px-4 py-6 sm:px-6 lg:px-8 lg:py-8">
+          <Suspense fallback={<PageLoader />}>
+            {/* Разделы сменяются плавно, без резкого скачка содержимого. */}
+            <div key={location.pathname} className="animate-page-in">
+              <Outlet />
+            </div>
+          </Suspense>
         </main>
       </div>
+
+      <Dialog open={isMenuOpen} onOpenChange={setIsMenuOpen}>
+        <SheetContent title="Панель управления" side="left">
+          <div className="flex min-h-full flex-col gap-6 p-4">
+            <div className="flex-1">
+              <SidebarNav groups={groups} onNavigate={closeMenu} />
+            </div>
+            <SidebarFooter onNavigate={closeMenu} />
+          </div>
+        </SheetContent>
+      </Dialog>
     </div>
   );
 }

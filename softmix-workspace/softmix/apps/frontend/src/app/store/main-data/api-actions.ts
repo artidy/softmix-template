@@ -1,7 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { toast } from 'react-toastify';
+import { toast } from 'sonner';
 import { isAxiosError } from 'axios';
-import { ProductApi, ProductsPaginationApi, UrlPaths } from '@project-lib/shared-types';
+import { ProductsPaginationApi, UrlPaths } from '@project-lib/shared-types';
 
 import { AsyncThunkConfig } from '../../types/thunk-config';
 import { Message, NameSpace } from '../../const';
@@ -14,7 +14,7 @@ export const getNewProductsApi = createAsyncThunk<void, undefined, AsyncThunkCon
     try {
       dispatch(setIsNewProductsLoading(true));
 
-      const {data} = await api.get<ProductsPaginationApi>(`${UrlPaths.Products}?limit=8&is_new=true&page=1`);
+      const {data} = await api.get<ProductsPaginationApi>(`${UrlPaths.Products}?limit=8&page=1&sortBy=newest`);
 
       dispatch(setNewProducts(productsAdapt(data.products)));
     } catch(e) {
@@ -37,7 +37,7 @@ export const getHotProductsApi = createAsyncThunk<void, undefined, AsyncThunkCon
     try {
       dispatch(setIsHotProductsLoading(true));
 
-      const {data} = await api.get<ProductsPaginationApi>(`${UrlPaths.Products}?limit=8&is_hot=true&page=1`);
+      const {data} = await api.get<ProductsPaginationApi>(`${UrlPaths.Products}?limit=8&page=1&isHot=true`);
 
       dispatch(setHotProducts(productsAdapt(data.products)));
     } catch(e) {

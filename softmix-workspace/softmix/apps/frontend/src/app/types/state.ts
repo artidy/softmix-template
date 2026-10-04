@@ -18,19 +18,10 @@ export type UserState = {
 export type CategoriesData = {
   categories: Category[];
   isLoading: boolean;
-  categoryEdit: Category | null;
-  isEditLoading: boolean;
-  isCreateMode: boolean;
 };
 
 export type ProductData = {
-  products: Product[];
-  pagination: Pagination;
   images: FileUrl[];
-  isLoading: boolean;
-  productEdit: Product | null;
-  isEditLoading: boolean;
-  isCreateMode: boolean;
 };
 
 export type DownloadsData = {

@@ -31,6 +31,7 @@ export interface QueryParams {
   limit?: number;
   offset?: number;
   sortBy?: string;
+  search?: string;
 }
 
 export interface ProductsPagination {

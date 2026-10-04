@@ -1,4 +1,3 @@
-import _ from 'lodash';
 import { DEFAULT_LIMIT, DEFAULT_PAGE, getPageOffset } from '@project-lib/shared-types';
 
 import { QueryParams } from '../types/product';
@@ -18,14 +17,6 @@ function toggleArrayValue(value: string, array: string[]): string[] {
   }
 
   return [...array, value];
-}
-
-function getRandomValueFromArray(list: Array<string>) {
-  return list[_.random(0, list.length - 1)];
-}
-
-function getRandomNumber(minNumber: number, maxNumber: number): number {
-  return _.random(minNumber, maxNumber, false);
 }
 
 function formatNumber(value: number): string {
@@ -102,13 +93,19 @@ const getQueryString = (queryParams: QueryParams, excludeParams: string[] = []) 
   const parts: string[] = [];
 
   for (const queryKey of queryKeys) {
-    if (excludeParams.includes(queryKey)) continue;
+    if (excludeParams.includes(queryKey)) {
+      continue;
+    }
     const value = queryParams[queryKey];
-    if (value === undefined || value === null) continue;
+    if (value === undefined || value === null) {
+      continue;
+    }
 
     if (Array.isArray(value)) {
       for (const item of value) {
-        if (item === undefined || item === null) continue;
+        if (item === undefined || item === null) {
+          continue;
+        }
         parts.push(`${encodeURIComponent(queryKey)}=${encodeURIComponent(String(item))}`);
       }
     } else {
@@ -164,8 +161,6 @@ function getImageUrl(images: FileUrl[], ownerId: string, imageUrl: string) {
 export {
   getFormatTitle,
   toggleArrayValue,
-  getRandomValueFromArray,
-  getRandomNumber,
   formatNumber,
   formatBoolean,
   formatDate,

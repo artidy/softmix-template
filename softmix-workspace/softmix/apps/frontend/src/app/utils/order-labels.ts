@@ -1,4 +1,6 @@
-import { DeliveryType, OrderStatus, PaymentMethod, PaymentStatus } from '@project-lib/shared-types';
+import { DeliveryType, OrderDelivery, OrderStatus, PaymentMethod, PaymentStatus } from '@project-lib/shared-types';
+
+import { BadgeVariant } from '../ui/badge';
 
 export const ORDER_STATUS_LABEL: Record<OrderStatus, string> = {
   [OrderStatus.Pending]: 'Принят',
@@ -9,13 +11,13 @@ export const ORDER_STATUS_LABEL: Record<OrderStatus, string> = {
   [OrderStatus.Cancelled]: 'Отменён',
 };
 
-export const ORDER_STATUS_BADGE: Record<OrderStatus, string> = {
-  [OrderStatus.Pending]: 'bg-secondary',
-  [OrderStatus.Paid]: 'bg-info',
-  [OrderStatus.Processing]: 'bg-primary',
-  [OrderStatus.Shipped]: 'bg-warning text-dark',
-  [OrderStatus.Delivered]: 'bg-success',
-  [OrderStatus.Cancelled]: 'bg-danger',
+export const ORDER_STATUS_BADGE: Record<OrderStatus, BadgeVariant> = {
+  [OrderStatus.Pending]: 'neutral',
+  [OrderStatus.Paid]: 'primary',
+  [OrderStatus.Processing]: 'highlight',
+  [OrderStatus.Shipped]: 'warning',
+  [OrderStatus.Delivered]: 'success',
+  [OrderStatus.Cancelled]: 'destructive',
 };
 
 export const DELIVERY_LABEL: Record<DeliveryType, string> = {
@@ -39,3 +41,23 @@ export const PAYMENT_STATUS_LABEL: Record<PaymentStatus, string> = {
   [PaymentStatus.Failed]: 'Ошибка',
   [PaymentStatus.Refunded]: 'Возврат',
 };
+
+export const PAYMENT_STATUS_BADGE: Record<PaymentStatus, BadgeVariant> = {
+  [PaymentStatus.Pending]: 'warning',
+  [PaymentStatus.Paid]: 'success',
+  [PaymentStatus.Failed]: 'destructive',
+  [PaymentStatus.Refunded]: 'neutral',
+};
+
+/** Адрес доставки одной строкой; для самовывоза — «Самовывоз». */
+export function formatOrderAddress(delivery: OrderDelivery): string {
+  if (delivery.type === DeliveryType.Pickup) {
+    return 'Самовывоз';
+  }
+  const address = delivery.address;
+  return address
+    ? [address.region, address.city, address.street, address.house, address.apartment, address.postalCode]
+        .filter(Boolean)
+        .join(', ')
+    : '';
+}

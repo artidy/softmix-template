@@ -1,20 +1,25 @@
-import { ReactElement, useEffect, useMemo } from 'react';
-import { Link, useSearchParams } from 'react-router-dom';
+import { useEffect, useMemo } from 'react';
+import { Link, useSearchParams } from 'react-router';
+import { CircleCheck } from 'lucide-react';
 
 import { useAppDispatch, useAppSelector } from '../hooks';
 import { AppRoute } from '../const';
+import { useDocumentTitle } from '../lib/use-document-title';
 import { fetchMyOrders, fetchOrderById } from '../store/orders-data/api-actions';
-import {
-  getCurrentOrder,
-  getOrders,
-  getOrdersLoading,
-} from '../store/orders-data/selectors';
-import BreadcrumbComponent from '../components/breadcrumb/breadcrumb.component';
-import Loader from '../components/loader/loader.component';
+import { getCurrentOrder, getOrders, getOrdersLoading } from '../store/orders-data/selectors';
 import { formatPrice } from '../utils/format';
-import { ORDER_STATUS_LABEL, PAYMENT_STATUS_LABEL } from '../utils/order-labels';
+import {
+  ORDER_STATUS_BADGE,
+  ORDER_STATUS_LABEL,
+  PAYMENT_STATUS_BADGE,
+  PAYMENT_STATUS_LABEL,
+} from '../utils/order-labels';
+import { OrderFacts, OrderResult } from '../components/order/order-result';
+import { Badge } from '../ui/badge';
+import { buttonVariants } from '../ui/button';
+import { PageLoader } from '../ui/feedback';
 
-function PaymentSuccessPage(): ReactElement {
+function PaymentSuccessPage() {
   const dispatch = useAppDispatch();
   const [params] = useSearchParams();
   const orderNumber = params.get('order');
@@ -22,6 +27,8 @@ function PaymentSuccessPage(): ReactElement {
   const orders = useAppSelector(getOrders);
   const current = useAppSelector(getCurrentOrder);
   const isLoading = useAppSelector(getOrdersLoading);
+
+  useDocumentTitle('Оплата получена');
 
   useEffect(() => {
     if (orderId) {
@@ -36,11 +43,12 @@ function PaymentSuccessPage(): ReactElement {
       return current;
     }
     if (orderNumber) {
-      return orders.find((o) => o.orderNumber === orderNumber) ?? null;
+      return orders.find((item) => item.orderNumber === orderNumber) ?? null;
     }
     return null;
   }, [current, orders, orderId, orderNumber]);
 
+  // Платёжный шлюз возвращает только номер заказа — дозагружаем заказ целиком со свежим статусом оплаты.
   useEffect(() => {
     if (order && order.id !== current?.id) {
       dispatch(fetchOrderById(order.id));
@@ -48,45 +56,49 @@ function PaymentSuccessPage(): ReactElement {
   }, [dispatch, order, current?.id]);
 
   if (isLoading || !order) {
-    return <Loader />;
+    return <PageLoader />;
   }
 
   return (
-    <>
-      <BreadcrumbComponent
-        title="Оплата"
-        links={[{ title: 'Главная', href: AppRoute.Main }]}
-        pageName="Оплата получена"
+    <OrderResult
+      tone="success"
+      icon={<CircleCheck />}
+      title="Спасибо! Платёж обрабатывается"
+      lead={
+        <>
+          Заказ <span className="font-semibold text-foreground">{order.orderNumber}</span> на сумму{' '}
+          <span className="font-semibold tabular-nums text-foreground">{formatPrice(order.totalPrice)}</span>.
+        </>
+      }
+      actions={
+        <>
+          <Link to={`${AppRoute.Orders}/${order.id}`} className={buttonVariants()}>
+            Открыть заказ
+          </Link>
+          <Link to={AppRoute.Shop} className={buttonVariants({ variant: 'outline' })}>
+            Продолжить покупки
+          </Link>
+        </>
+      }
+    >
+      <OrderFacts
+        items={[
+          {
+            label: 'Статус заказа',
+            value: <Badge variant={ORDER_STATUS_BADGE[order.status]}>{ORDER_STATUS_LABEL[order.status]}</Badge>,
+          },
+          {
+            label: 'Статус оплаты',
+            value: (
+              <Badge variant={PAYMENT_STATUS_BADGE[order.payment.status]}>{PAYMENT_STATUS_LABEL[order.payment.status]}</Badge>
+            ),
+          },
+        ]}
       />
-      <div className="container my-5">
-        <div className="row justify-content-center">
-          <div className="col-lg-8 text-center">
-            <h2>Спасибо! Платёж обрабатывается</h2>
-            <p className="lead">
-              Заказ <strong>{order.orderNumber}</strong> на сумму{' '}
-              <strong>{formatPrice(order.totalPrice)}</strong>.
-            </p>
-            <p>
-              Статус заказа: <strong>{ORDER_STATUS_LABEL[order.status]}</strong>
-              <br />
-              Статус оплаты: <strong>{PAYMENT_STATUS_LABEL[order.payment.status]}</strong>
-            </p>
-            <p className="text-muted small">
-              Если статус ещё «Ожидает оплаты», обновите страницу через минуту — банк передаёт
-              подтверждение асинхронно.
-            </p>
-            <div className="d-flex gap-2 justify-content-center mt-4">
-              <Link to={`${AppRoute.Orders}/${order.id}`} className="theme-btn-1 btn btn-effect-1">
-                Открыть заказ
-              </Link>
-              <Link to={AppRoute.Shop} className="btn btn-outline-secondary">
-                Продолжить покупки
-              </Link>
-            </div>
-          </div>
-        </div>
-      </div>
-    </>
+      <p className="mt-4 text-center text-sm text-muted-foreground">
+        Если статус ещё «Ожидает оплаты», обновите страницу через минуту — банк передаёт подтверждение асинхронно.
+      </p>
+    </OrderResult>
   );
 }
 

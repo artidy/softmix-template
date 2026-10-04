@@ -1,28 +1,30 @@
-import { Navigate } from 'react-router-dom';
+import { ReactElement } from 'react';
+import { Navigate, useLocation } from 'react-router';
 
 import { useAppSelector } from '../../hooks';
 import { getIsAuth, getIsUnknown } from '../../store/user-data/selectors';
 import { AppRoute } from '../../const';
-import Loader from '../loader/loader.component';
+import { PageLoader } from '../../ui/feedback';
 
 type PrivateRouteProps = {
-  children: JSX.Element;
+  children: ReactElement;
 };
 
-function PrivateRoute(props: PrivateRouteProps): JSX.Element {
-  const {children} = props;
+function PrivateRoute({ children }: PrivateRouteProps): ReactElement {
+  const location = useLocation();
   const isUnknown = useAppSelector(getIsUnknown);
   const isAuth = useAppSelector(getIsAuth);
 
   if (isUnknown) {
-    return <Loader />;
+    return <PageLoader />;
   }
 
   if (isAuth) {
     return children;
   }
 
-  return <Navigate to={AppRoute.Login} />;
+  // После входа вернём пользователя туда, куда он шёл.
+  return <Navigate to={AppRoute.Login} state={{ from: `${location.pathname}${location.search}` }} replace />;
 }
 
 export default PrivateRoute;

@@ -10,8 +10,10 @@ import { cartSlice } from './cart-data/cart-slice';
 import { ordersSlice } from './orders-data/orders-slice';
 import { settingsData } from './settings-data/settings-data';
 import { externalServicesData } from './external-services-data/external-services-data';
+import { shopApi } from './shop-api';
 
 export const rootReducer = combineReducers({
+  [shopApi.reducerPath]: shopApi.reducer,
   [NameSpace.Categories]: categoriesData.reducer,
   [NameSpace.Products]: productsData.reducer,
   [NameSpace.Users]: userData.reducer,

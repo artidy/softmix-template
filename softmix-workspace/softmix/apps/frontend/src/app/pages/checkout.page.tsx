@@ -1,25 +1,25 @@
-import { ChangeEvent, FormEvent, ReactElement, useEffect, useMemo, useState } from 'react';
-import { Navigate, useNavigate } from 'react-router-dom';
-import { toast } from 'react-toastify';
+import { ChangeEvent, FormEvent, ReactNode, useEffect, useId, useMemo, useState } from 'react';
+import { Navigate, useNavigate } from 'react-router';
+import { toast } from 'sonner';
 import { CheckoutDto, DeliveryType, PaymentMethod } from '@project-lib/shared-types';
 
 import { useAppDispatch, useAppSelector } from '../hooks';
-import { AppRoute } from '../const';
+import { AppRoute, DEFAULT_PRODUCT_IMG } from '../const';
+import { cn } from '../lib/cn';
+import { useDocumentTitle } from '../lib/use-document-title';
 import { getCart, getCartLoading } from '../store/cart-data/selectors';
 import { getCart as fetchCart } from '../store/cart-data/api-actions';
 import { getCheckoutLoading } from '../store/orders-data/selectors';
 import { checkoutOrder } from '../store/orders-data/api-actions';
 import { initPayment } from '../store/orders-data/payment-actions';
 import { getIsAuth, getIsUnknown, getUser } from '../store/user-data/selectors';
-import BreadcrumbComponent from '../components/breadcrumb/breadcrumb.component';
-import Loader from '../components/loader/loader.component';
-import {
-  formatPhoneInput,
-  formatPrice,
-  isValidEmail,
-  isValidKzPhone,
-  phoneToE164,
-} from '../utils/format';
+import { formatPhoneInput, formatPrice, isValidEmail, isValidKzPhone, phoneToE164 } from '../utils/format';
+import { Button } from '../ui/button';
+import { Card } from '../ui/card';
+import { PageLoader } from '../ui/feedback';
+import { Field, Input, Textarea } from '../ui/form';
+import { Container } from '../ui/layout';
+import { PageHeader } from '../ui/page-header';
 
 const DELIVERY_OPTIONS: { value: DeliveryType; label: string; cost: number }[] = [
   { value: DeliveryType.Pickup, label: 'Самовывоз', cost: 0 },
@@ -34,15 +34,51 @@ const PAYMENT_OPTIONS: { value: PaymentMethod; label: string }[] = [
   { value: PaymentMethod.FreedomPay, label: 'Картой / Kaspi / Apple Pay (Freedom Pay)' },
 ];
 
-const ONLINE_METHODS: PaymentMethod[] = [
-  PaymentMethod.FreedomPay,
-  PaymentMethod.KaspiPay,
-  PaymentMethod.HalykEpay,
-];
+const ONLINE_METHODS: PaymentMethod[] = [PaymentMethod.FreedomPay, PaymentMethod.KaspiPay, PaymentMethod.HalykEpay];
 
-function CheckoutPage(): ReactElement {
+function Section({ step, title, children }: { step: number; title: string; children: ReactNode }) {
+  return (
+    <Card className="p-5 sm:p-6">
+      <h2 className="mb-5 flex items-center gap-3 text-lg font-semibold">
+        <span className="grid size-7 place-items-center rounded-full bg-primary-soft text-sm text-primary" aria-hidden="true">
+          {step}
+        </span>
+        {title}
+      </h2>
+      {children}
+    </Card>
+  );
+}
+
+type OptionCardProps = {
+  name: string;
+  checked: boolean;
+  onSelect: () => void;
+  title: string;
+  hint?: string;
+};
+
+function OptionCard({ name, checked, onSelect, title, hint }: OptionCardProps) {
+  return (
+    <label
+      className={cn(
+        'flex cursor-pointer items-start gap-3 rounded-xl border p-4 transition-colors has-[:focus-visible]:ring-2 has-[:focus-visible]:ring-ring',
+        checked ? 'border-primary bg-primary-soft/60' : 'hover:border-foreground/25',
+      )}
+    >
+      <input type="radio" name={name} checked={checked} onChange={onSelect} className="mt-0.5 size-4 shrink-0 accent-primary" />
+      <span className="grid gap-0.5">
+        <span className="text-sm font-medium">{title}</span>
+        {hint && <span className="text-xs text-muted-foreground">{hint}</span>}
+      </span>
+    </label>
+  );
+}
+
+function CheckoutPage() {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
+  const id = useId();
 
   const cart = useAppSelector(getCart);
   const cartLoading = useAppSelector(getCartLoading);
@@ -63,30 +99,40 @@ function CheckoutPage(): ReactElement {
   const [postalCode, setPostalCode] = useState('');
   const [paymentMethod, setPaymentMethod] = useState<PaymentMethod>(PaymentMethod.CashOnDelivery);
   const [comment, setComment] = useState('');
+  // После оформления корзина очищается — в этот момент не уводим в пустую корзину.
+  const [isPlacing, setIsPlacing] = useState(false);
+
+  useDocumentTitle('Оформление заказа');
 
   useEffect(() => {
     dispatch(fetchCart());
   }, [dispatch]);
 
+  // Подставляем данные из профиля, не затирая уже введённое.
   useEffect(() => {
     if (user) {
-      if (user.name) setName((prev) => prev || user.name);
-      if (user.email) setEmail((prev) => prev || user.email);
-      if (user.phone) setPhone((prev) => (prev === '+7 ' ? formatPhoneInput(user.phone) : prev));
-      if (user.address) setStreet((prev) => prev || user.address);
+      if (user.name) {
+        setName((prev) => prev || user.name);
+      }
+      if (user.email) {
+        setEmail((prev) => prev || user.email);
+      }
+      if (user.phone) {
+        setPhone((prev) => (prev === '+7 ' ? formatPhoneInput(user.phone) : prev));
+      }
+      if (user.address) {
+        setStreet((prev) => prev || user.address);
+      }
     }
   }, [user]);
 
   const deliveryCost = useMemo(
-    () => DELIVERY_OPTIONS.find((o) => o.value === deliveryType)?.cost ?? 0,
+    () => DELIVERY_OPTIONS.find((option) => option.value === deliveryType)?.cost ?? 0,
     [deliveryType],
   );
 
-  const totalPrice = (cart?.totalPrice ?? 0) + deliveryCost;
-  const isPickup = deliveryType === DeliveryType.Pickup;
-
-  if (isUnknown || cartLoading) {
-    return <Loader />;
+  if (isUnknown || (cartLoading && !cart)) {
+    return <PageLoader />;
   }
 
   if (!isAuth) {
@@ -94,8 +140,11 @@ function CheckoutPage(): ReactElement {
   }
 
   if (!cart || cart.items.length === 0) {
-    return <Navigate to={AppRoute.Cart} replace />;
+    return isPlacing ? <PageLoader /> : <Navigate to={AppRoute.Cart} replace />;
   }
+
+  const totalPrice = cart.totalPrice + deliveryCost;
+  const isPickup = deliveryType === DeliveryType.Pickup;
 
   const handlePhoneChange = (evt: ChangeEvent<HTMLInputElement>) => {
     setPhone(formatPhoneInput(evt.target.value));
@@ -147,8 +196,12 @@ function CheckoutPage(): ReactElement {
       comment: comment.trim() || undefined,
     };
 
+    setIsPlacing(true);
     const result = await dispatch(checkoutOrder(dto)).unwrap();
-    if (!result) return;
+    if (!result) {
+      setIsPlacing(false);
+      return;
+    }
 
     if (ONLINE_METHODS.includes(paymentMethod)) {
       const initResult = await dispatch(initPayment(result.id)).unwrap();
@@ -163,231 +216,163 @@ function CheckoutPage(): ReactElement {
 
   return (
     <>
-      <BreadcrumbComponent
+      <PageHeader
         title="Оформление заказа"
-        links={[
-          { title: 'Главная', href: AppRoute.Main },
-          { title: 'Корзина', href: AppRoute.Cart },
+        breadcrumbs={[
+          { label: 'Главная', to: AppRoute.Main },
+          { label: 'Корзина', to: AppRoute.Cart },
+          { label: 'Оформление' },
         ]}
-        pageName="Оформление"
       />
-      <div className="liton__checkout-area mb-105">
-        <div className="container">
-          <form onSubmit={handleSubmit}>
-            <div className="row g-4">
-              <div className="col-lg-7">
-                <div className="card mb-3">
-                  <div className="card-body">
-                    <h4 className="card-title">Контактные данные</h4>
-                    <div className="row g-3">
-                      <div className="col-md-6">
-                        <label className="form-label">Имя*</label>
-                        <input
-                          type="text"
-                          className="form-control"
-                          value={name}
-                          onChange={(e) => setName(e.target.value)}
-                        />
-                      </div>
-                      <div className="col-md-6">
-                        <label className="form-label">Телефон*</label>
-                        <input
-                          type="tel"
-                          className="form-control"
-                          value={phone}
-                          onChange={handlePhoneChange}
-                          placeholder="+7 (7XX) XXX-XX-XX"
-                        />
-                      </div>
-                      <div className="col-12">
-                        <label className="form-label">Email*</label>
-                        <input
-                          type="email"
-                          className="form-control"
-                          value={email}
-                          onChange={(e) => setEmail(e.target.value)}
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
+      <Container className="py-8 lg:py-10">
+        <form
+          onSubmit={handleSubmit}
+          noValidate
+          className="grid grid-cols-1 items-start gap-6 lg:grid-cols-[minmax(0,1fr)_24rem] lg:gap-8"
+        >
+          <div className="grid gap-6">
+            <Section step={1} title="Контактные данные">
+              <div className="grid gap-4 sm:grid-cols-2">
+                <Field label="Имя" htmlFor={`${id}-name`} required>
+                  <Input id={`${id}-name`} value={name} onChange={(evt) => setName(evt.target.value)} autoComplete="name" />
+                </Field>
+                <Field label="Телефон" htmlFor={`${id}-phone`} required>
+                  <Input
+                    id={`${id}-phone`}
+                    type="tel"
+                    value={phone}
+                    onChange={handlePhoneChange}
+                    placeholder="+7 (7XX) XXX-XX-XX"
+                    autoComplete="tel"
+                  />
+                </Field>
+                <Field label="Email" htmlFor={`${id}-email`} required className="sm:col-span-2">
+                  <Input
+                    id={`${id}-email`}
+                    type="email"
+                    value={email}
+                    onChange={(evt) => setEmail(evt.target.value)}
+                    autoComplete="email"
+                  />
+                </Field>
+              </div>
+            </Section>
 
-                <div className="card mb-3">
-                  <div className="card-body">
-                    <h4 className="card-title">Доставка</h4>
-                    <div className="row g-2 mb-3">
-                      {DELIVERY_OPTIONS.map((option) => (
-                        <div className="col-md-6" key={option.value}>
-                          <div className="form-check">
-                            <input
-                              type="radio"
-                              className="form-check-input"
-                              id={`delivery-${option.value}`}
-                              name="delivery"
-                              value={option.value}
-                              checked={deliveryType === option.value}
-                              onChange={() => setDeliveryType(option.value)}
-                            />
-                            <label className="form-check-label" htmlFor={`delivery-${option.value}`}>
-                              {option.label}{' '}
-                              <small className="text-muted">
-                                {option.cost > 0 ? `+${formatPrice(option.cost)}` : 'бесплатно'}
-                              </small>
-                            </label>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
+            <Section step={2} title="Доставка">
+              <div className="grid gap-3 sm:grid-cols-2">
+                {DELIVERY_OPTIONS.map((option) => (
+                  <OptionCard
+                    key={option.value}
+                    name="delivery"
+                    checked={deliveryType === option.value}
+                    onSelect={() => setDeliveryType(option.value)}
+                    title={option.label}
+                    hint={option.cost > 0 ? `+${formatPrice(option.cost)}` : 'бесплатно'}
+                  />
+                ))}
+              </div>
 
-                    {!isPickup && (
-                      <div className="row g-3">
-                        <div className="col-md-6">
-                          <label className="form-label">Область</label>
-                          <input
-                            type="text"
-                            className="form-control"
-                            value={region}
-                            onChange={(e) => setRegion(e.target.value)}
-                          />
-                        </div>
-                        <div className="col-md-6">
-                          <label className="form-label">Город*</label>
-                          <input
-                            type="text"
-                            className="form-control"
-                            value={city}
-                            onChange={(e) => setCity(e.target.value)}
-                          />
-                        </div>
-                        <div className="col-md-6">
-                          <label className="form-label">Улица*</label>
-                          <input
-                            type="text"
-                            className="form-control"
-                            value={street}
-                            onChange={(e) => setStreet(e.target.value)}
-                          />
-                        </div>
-                        <div className="col-md-3">
-                          <label className="form-label">Дом*</label>
-                          <input
-                            type="text"
-                            className="form-control"
-                            value={house}
-                            onChange={(e) => setHouse(e.target.value)}
-                          />
-                        </div>
-                        <div className="col-md-3">
-                          <label className="form-label">Кв./офис</label>
-                          <input
-                            type="text"
-                            className="form-control"
-                            value={apartment}
-                            onChange={(e) => setApartment(e.target.value)}
-                          />
-                        </div>
-                        <div className="col-md-6">
-                          <label className="form-label">Индекс</label>
-                          <input
-                            type="text"
-                            className="form-control"
-                            value={postalCode}
-                            onChange={(e) => setPostalCode(e.target.value)}
-                          />
-                        </div>
-                      </div>
-                    )}
-                  </div>
-                </div>
-
-                <div className="card mb-3">
-                  <div className="card-body">
-                    <h4 className="card-title">Оплата</h4>
-                    {PAYMENT_OPTIONS.map((option) => (
-                      <div className="form-check" key={option.value}>
-                        <input
-                          type="radio"
-                          className="form-check-input"
-                          id={`payment-${option.value}`}
-                          name="payment"
-                          value={option.value}
-                          checked={paymentMethod === option.value}
-                          onChange={() => setPaymentMethod(option.value)}
-                        />
-                        <label className="form-check-label" htmlFor={`payment-${option.value}`}>
-                          {option.label}
-                        </label>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="card mb-3">
-                  <div className="card-body">
-                    <h4 className="card-title">Комментарий</h4>
-                    <textarea
-                      rows={3}
-                      className="form-control"
-                      value={comment}
-                      onChange={(e) => setComment(e.target.value)}
-                      placeholder="Например, удобное время для звонка"
+              {!isPickup && (
+                <div className="mt-5 grid gap-4 sm:grid-cols-6">
+                  <Field label="Область" htmlFor={`${id}-region`} className="sm:col-span-3">
+                    <Input id={`${id}-region`} value={region} onChange={(evt) => setRegion(evt.target.value)} />
+                  </Field>
+                  <Field label="Город" htmlFor={`${id}-city`} required className="sm:col-span-3">
+                    <Input
+                      id={`${id}-city`}
+                      value={city}
+                      onChange={(evt) => setCity(evt.target.value)}
+                      autoComplete="address-level2"
                     />
-                  </div>
+                  </Field>
+                  <Field label="Улица" htmlFor={`${id}-street`} required className="sm:col-span-6">
+                    <Input
+                      id={`${id}-street`}
+                      value={street}
+                      onChange={(evt) => setStreet(evt.target.value)}
+                      autoComplete="address-line1"
+                    />
+                  </Field>
+                  <Field label="Дом" htmlFor={`${id}-house`} required className="sm:col-span-2">
+                    <Input id={`${id}-house`} value={house} onChange={(evt) => setHouse(evt.target.value)} />
+                  </Field>
+                  <Field label="Кв./офис" htmlFor={`${id}-apartment`} className="sm:col-span-2">
+                    <Input id={`${id}-apartment`} value={apartment} onChange={(evt) => setApartment(evt.target.value)} />
+                  </Field>
+                  <Field label="Индекс" htmlFor={`${id}-postal`} className="sm:col-span-2">
+                    <Input
+                      id={`${id}-postal`}
+                      value={postalCode}
+                      onChange={(evt) => setPostalCode(evt.target.value)}
+                      inputMode="numeric"
+                      autoComplete="postal-code"
+                    />
+                  </Field>
                 </div>
-              </div>
+              )}
+            </Section>
 
-              <div className="col-lg-5">
-                <div className="card sticky-top" style={{ top: 90 }}>
-                  <div className="card-body">
-                    <h4 className="card-title">Ваш заказ</h4>
-                    <table className="table">
-                      <thead>
-                        <tr>
-                          <th>Товар</th>
-                          <th className="text-end">Сумма</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        {cart.items.map((item) => (
-                          <tr key={item.productId}>
-                            <td>
-                              {item.title}{' '}
-                              <small className="text-muted">× {item.quantity}</small>
-                            </td>
-                            <td className="text-end">{formatPrice(item.price * item.quantity)}</td>
-                          </tr>
-                        ))}
-                        <tr>
-                          <td>Доставка</td>
-                          <td className="text-end">
-                            {deliveryCost > 0 ? formatPrice(deliveryCost) : 'Бесплатно'}
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            <strong>Итого</strong>
-                          </td>
-                          <td className="text-end">
-                            <strong>{formatPrice(totalPrice)}</strong>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-
-                    <button
-                      type="submit"
-                      className="btn btn-primary w-100"
-                      disabled={isCheckoutLoading}
-                    >
-                      {isCheckoutLoading ? 'Оформляем…' : 'Подтвердить заказ'}
-                    </button>
-                  </div>
-                </div>
+            <Section step={3} title="Оплата">
+              <div className="grid gap-3">
+                {PAYMENT_OPTIONS.map((option) => (
+                  <OptionCard
+                    key={option.value}
+                    name="payment"
+                    checked={paymentMethod === option.value}
+                    onSelect={() => setPaymentMethod(option.value)}
+                    title={option.label}
+                  />
+                ))}
               </div>
-            </div>
-          </form>
-        </div>
-      </div>
+            </Section>
+
+            <Section step={4} title="Комментарий">
+              <Textarea
+                rows={3}
+                value={comment}
+                onChange={(evt) => setComment(evt.target.value)}
+                placeholder="Например, удобное время для звонка"
+                aria-label="Комментарий к заказу"
+              />
+            </Section>
+          </div>
+
+          <Card className="p-5 sm:p-6 lg:sticky lg:top-24">
+            <h2 className="text-lg font-semibold">Ваш заказ</h2>
+            <ul className="mt-4 grid max-h-80 gap-3 overflow-y-auto pr-1">
+              {cart.items.map((item) => (
+                <li key={item.productId} className="flex items-center gap-3">
+                  <span className="grid size-12 shrink-0 place-items-center overflow-hidden rounded-lg border bg-white p-1">
+                    <img src={item.imageUrl || DEFAULT_PRODUCT_IMG} alt="" loading="lazy" className="size-full object-contain" />
+                  </span>
+                  <span className="min-w-0 flex-1">
+                    <span className="line-clamp-2 text-sm leading-snug">{item.title}</span>
+                    <span className="text-xs tabular-nums text-muted-foreground">× {item.quantity}</span>
+                  </span>
+                  <span className="shrink-0 text-sm font-medium tabular-nums">{formatPrice(item.price * item.quantity)}</span>
+                </li>
+              ))}
+            </ul>
+            <dl className="mt-5 grid gap-3 border-t pt-4 text-sm">
+              <div className="flex justify-between gap-4">
+                <dt className="text-muted-foreground">Товары</dt>
+                <dd className="tabular-nums">{formatPrice(cart.totalPrice)}</dd>
+              </div>
+              <div className="flex justify-between gap-4">
+                <dt className="text-muted-foreground">Доставка</dt>
+                <dd className="tabular-nums">{deliveryCost > 0 ? formatPrice(deliveryCost) : 'Бесплатно'}</dd>
+              </div>
+              <div className="flex items-baseline justify-between gap-4 border-t pt-3">
+                <dt className="font-medium">Итого</dt>
+                <dd className="text-2xl font-semibold tabular-nums">{formatPrice(totalPrice)}</dd>
+              </div>
+            </dl>
+            <Button type="submit" size="lg" className="mt-6 w-full" loading={isCheckoutLoading}>
+              {isCheckoutLoading ? 'Оформляем…' : 'Подтвердить заказ'}
+            </Button>
+          </Card>
+        </form>
+      </Container>
     </>
   );
 }

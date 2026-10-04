@@ -5,88 +5,70 @@
   "projectType": "application",
   "targets": {
     "build": {
-      "executor": "@nx/webpack:webpack",
-      "outputs": ["{options.outputPath}"],
+      "executor": "nx:run-commands",
+      "outputs": [
+        "{workspaceRoot}/dist/apps/frontend"
+      ],
       "defaultConfiguration": "production",
       "options": {
-        "compiler": "babel",
-        "outputPath": "dist/apps/frontend",
-        "index": "apps/frontend/src/index.html",
-        "baseHref": "/",
-        "main": "apps/frontend/src/main.tsx",
-        "tsConfig": "apps/frontend/tsconfig.app.json",
-        "assets": ["apps/frontend/src/favicon.ico", "apps/frontend/src/assets"],
-        "styles": ["apps/frontend/src/styles.css"],
-        "scripts": [],
-        "isolatedConfig": true,
-        "webpackConfig": "apps/frontend/webpack.config.js",
-        "generatePackageJson": true
+        "command": "vite build",
+        "cwd": "apps/frontend"
       },
       "configurations": {
+        "production": {},
         "development": {
-          "extractLicenses": false,
-          "optimization": false,
-          "sourceMap": true,
-          "vendorChunk": true
-        },
-        "production": {
-          "fileReplacements": [
-            {
-              "replace": "apps/frontend/src/environments/environment.ts",
-              "with": "apps/frontend/src/environments/environment.prod.ts"
-            }
-          ],
-          "optimization": true,
-          "outputHashing": "all",
-          "sourceMap": false,
-          "namedChunks": false,
-          "extractLicenses": true,
-          "vendorChunk": false
+          "command": "vite build --mode development"
         }
+      }
+    },
+    "typecheck": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          "tsc -p apps/frontend/tsconfig.app.json --noEmit",
+          "tsc -p apps/frontend/tsconfig.spec.json --noEmit"
+        ],
+        "parallel": false
       }
     },
     "serve": {
-      "executor": "@nx/webpack:dev-server",
-      "defaultConfiguration": "development",
+      "executor": "nx:run-commands",
       "options": {
-        "buildTarget": "frontend:build",
-        "hmr": true
-      },
-      "configurations": {
-        "development": {
-          "buildTarget": "frontend:build:development"
-        },
-        "production": {
-          "buildTarget": "frontend:build:production",
-          "hmr": false
-        }
+        "command": "vite",
+        "cwd": "apps/frontend"
       }
     },
-    "lint": {
-      "executor": "@nx/eslint:lint",
-      "outputs": ["{options.outputFile}"],
+    "preview": {
+      "executor": "nx:run-commands",
       "options": {
-        "lintFilePatterns": ["apps/frontend/**/*.{ts,tsx,js,jsx}"]
-      }
-    },
-    "serve-static": {
-      "executor": "@nx/web:file-server",
-      "options": {
-        "buildTarget": "frontend:build"
+        "command": "vite preview",
+        "cwd": "apps/frontend"
       }
     },
     "test": {
-      "executor": "@nx/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "executor": "nx:run-commands",
       "options": {
-        "jestConfig": "apps/frontend/jest.config.ts",
-        "passWithNoTests": true
+        "command": "vitest run",
+        "cwd": "apps/frontend"
+      }
+    },
+    "e2e": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "playwright test",
+        "cwd": "apps/frontend"
       },
-      "configurations": {
-        "ci": {
-          "ci": true,
-          "codeCoverage": true
-        }
+      "cache": false
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": [
+        "{options.outputFile}"
+      ],
+      "options": {
+        "lintFilePatterns": [
+          "apps/frontend/**/*.{ts,tsx,js,jsx}"
+        ]
       }
     },
     "createImage": {

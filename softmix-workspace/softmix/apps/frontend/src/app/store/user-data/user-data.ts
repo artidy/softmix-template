@@ -52,7 +52,7 @@ export const userData = createSlice({
     addUser: (state, action) => {
       state.users.push(action.payload);
     },
-    logout: (state, action) => {
+    logout: (state, _action) => {
       state.authorizationStatus = AuthorizationStatus.NoAuth;
       state.user = initialState.user;
       state.users = initialState.users;

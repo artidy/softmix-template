@@ -1,5 +1,7 @@
-import { Expose } from 'class-transformer';
+import { Expose, Type } from 'class-transformer';
 import { CategoryApi, ProductApi, ProductsPaginationApi } from '@project-lib/shared-types';
+
+import { CategoryRdo } from '../../categories/rdo/category.rdo';
 
 export class ProductRdo implements ProductApi {
   @Expose()
@@ -23,7 +25,9 @@ export class ProductRdo implements ProductApi {
   @Expose()
   public discount: number;
 
+  // Без @Type вложенная категория приходила пустым объектом: её поля отбрасывались как лишние.
   @Expose()
+  @Type(() => CategoryRdo)
   public category: CategoryApi;
 
   @Expose()

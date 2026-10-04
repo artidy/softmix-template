@@ -1,29 +1,34 @@
-import { ChangeEvent, ReactElement, useEffect, useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
-import { DeliveryType, OrderStatus } from '@project-lib/shared-types';
+import { useEffect, useId, useState } from 'react';
+import { Link, useParams } from 'react-router';
+import { ArrowLeft } from 'lucide-react';
+import { OrderStatus } from '@project-lib/shared-types';
 
 import { useAppDispatch, useAppSelector } from '../hooks';
-import { AppRoute, DEFAULT_PRODUCT_IMG } from '../const';
+import { AppRoute } from '../const';
+import { useDocumentTitle } from '../lib/use-document-title';
 import { fetchOrderById, updateOrderStatus } from '../store/orders-data/api-actions';
 import { getCurrentOrder, getOrdersLoading } from '../store/orders-data/selectors';
-import Loader from '../components/loader/loader.component';
-import { formatDate, formatPrice } from '../utils/format';
-import {
-  DELIVERY_LABEL,
-  ORDER_STATUS_BADGE,
-  ORDER_STATUS_LABEL,
-  PAYMENT_LABEL,
-  PAYMENT_STATUS_LABEL,
-} from '../utils/order-labels';
+import { formatDate } from '../utils/format';
+import { ORDER_STATUS_LABEL } from '../utils/order-labels';
+import { AdminPageHeader } from '../components/admin/admin-page-header';
+import { OrderItemsCard, OrderSideInfo, OrderStatusBadge, OrderTimeline } from '../components/order/order-parts';
+import { Button, buttonVariants } from '../ui/button';
+import { Card } from '../ui/card';
+import { PageLoader } from '../ui/feedback';
+import { Field, Select, Textarea } from '../ui/form';
 
-function AdminOrderDetailsPage(): ReactElement {
+function AdminOrderDetailsPage() {
   const dispatch = useAppDispatch();
   const { id } = useParams();
+  const formId = useId();
   const order = useAppSelector(getCurrentOrder);
   const isLoading = useAppSelector(getOrdersLoading);
 
   const [nextStatus, setNextStatus] = useState<OrderStatus | ''>('');
   const [comment, setComment] = useState('');
+  const [isSaving, setIsSaving] = useState(false);
+
+  useDocumentTitle(order && order.id === id ? `Заказ ${order.orderNumber} — панель управления` : 'Заказ');
 
   useEffect(() => {
     if (id) {
@@ -37,168 +42,80 @@ function AdminOrderDetailsPage(): ReactElement {
     }
   }, [order]);
 
-  if (isLoading || !order) {
-    return <Loader />;
+  // Пока идёт сохранение статуса, заказ остаётся на экране — без мигания загрузчиком.
+  if (!order || order.id !== id || (isLoading && !isSaving)) {
+    return <PageLoader />;
   }
 
-  const handleStatusChange = (evt: ChangeEvent<HTMLSelectElement>) => {
-    setNextStatus(evt.target.value as OrderStatus);
-  };
-
-  const handleSave = () => {
+  const handleSave = async () => {
     if (!nextStatus || nextStatus === order.status) {
       return;
     }
-    dispatch(updateOrderStatus({ id: order.id, dto: { status: nextStatus, comment: comment.trim() || undefined } }));
+    setIsSaving(true);
+    await dispatch(updateOrderStatus({ id: order.id, dto: { status: nextStatus, comment: comment.trim() || undefined } }));
+    setIsSaving(false);
     setComment('');
   };
 
-  const a = order.delivery.address;
-  const addressLine =
-    order.delivery.type === DeliveryType.Pickup
-      ? 'Самовывоз'
-      : a
-      ? [a.region, a.city, a.street, a.house, a.apartment, a.postalCode].filter(Boolean).join(', ')
-      : '';
-
   return (
-    <section>
-      <div className="d-flex flex-wrap align-items-center justify-content-between mb-3 gap-2">
-        <div>
-          <h1 className="mb-1">Заказ {order.orderNumber}</h1>
-          <div className="text-muted">от {formatDate(order.createdAt)}</div>
-        </div>
-        <span className={`badge ${ORDER_STATUS_BADGE[order.status]} fs-6`}>
-          {ORDER_STATUS_LABEL[order.status]}
-        </span>
-      </div>
-
-      <Link to={AppRoute.AdminOrders} className="btn btn-link p-0 mb-3">
-        ← К списку заказов
+    <>
+      <Link to={AppRoute.AdminOrders} className={buttonVariants({ variant: 'ghost', size: 'sm', className: '-ml-3 mb-3' })}>
+        <ArrowLeft />
+        К списку заказов
       </Link>
+      <AdminPageHeader
+        title={`Заказ ${order.orderNumber}`}
+        description={`от ${formatDate(order.createdAt)}`}
+        actions={<OrderStatusBadge order={order} className="px-3 py-1 text-sm" />}
+      />
 
-      <div className="row">
-        <div className="col-lg-8">
-          <h5>Состав заказа</h5>
-          <table className="styled-table">
-            <thead>
-              <tr>
-                <th></th>
-                <th>Товар</th>
-                <th>Цена</th>
-                <th>Кол-во</th>
-                <th>Сумма</th>
-              </tr>
-            </thead>
-            <tbody>
-              {order.items.map((item) => (
-                <tr key={item.productId}>
-                  <td style={{ width: 80 }}>
-                    <img
-                      src={item.imageUrl || DEFAULT_PRODUCT_IMG}
-                      alt={item.title}
-                      style={{ width: 60, height: 60, objectFit: 'cover' }}
-                    />
-                  </td>
-                  <td>{item.title}</td>
-                  <td>{formatPrice(item.price)}</td>
-                  <td>{item.quantity}</td>
-                  <td>{formatPrice(item.price * item.quantity)}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-
+      <div className="grid grid-cols-1 items-start gap-6 xl:grid-cols-[minmax(0,1fr)_22rem]">
+        <div className="grid gap-6">
+          <OrderItemsCard order={order} />
           {order.comment && (
-            <div className="border rounded p-3 mt-3">
-              <h6>Комментарий клиента</h6>
-              <p className="mb-0">{order.comment}</p>
-            </div>
+            <Card className="p-5">
+              <h2 className="font-semibold">Комментарий клиента</h2>
+              <p className="mt-2 whitespace-pre-line text-sm text-muted-foreground">{order.comment}</p>
+            </Card>
           )}
-
-          <h5 className="mt-4">История статусов</h5>
-          <ul className="list-group">
-            {order.statusHistory.map((entry, idx) => (
-              <li key={idx} className="list-group-item d-flex justify-content-between">
-                <span>
-                  <strong>{ORDER_STATUS_LABEL[entry.status]}</strong>
-                  {entry.comment && <span className="text-muted"> — {entry.comment}</span>}
-                </span>
-                <span className="text-muted">{formatDate(entry.changedAt)}</span>
-              </li>
-            ))}
-          </ul>
+          <OrderTimeline order={order} />
         </div>
 
-        <div className="col-lg-4">
-          <div className="border rounded p-3 mb-3">
-            <h6>Клиент</h6>
-            <div>{order.contact.name}</div>
-            <div>
-              <a href={`tel:${order.contact.phone}`}>{order.contact.phone}</a>
+        <div className="grid gap-4">
+          <Card className="p-5">
+            <h2 className="mb-4 font-semibold">Сменить статус</h2>
+            <div className="grid gap-3">
+              <Field label="Новый статус" htmlFor={`${formId}-status`}>
+                <Select
+                  id={`${formId}-status`}
+                  value={nextStatus}
+                  onChange={(evt) => setNextStatus(evt.target.value as OrderStatus)}
+                >
+                  {Object.values(OrderStatus).map((value) => (
+                    <option key={value} value={value}>
+                      {ORDER_STATUS_LABEL[value]}
+                    </option>
+                  ))}
+                </Select>
+              </Field>
+              <Field label="Комментарий" htmlFor={`${formId}-comment`} hint="Необязательно — попадёт в историю статусов">
+                <Textarea
+                  id={`${formId}-comment`}
+                  rows={2}
+                  className="min-h-16"
+                  value={comment}
+                  onChange={(evt) => setComment(evt.target.value)}
+                />
+              </Field>
+              <Button onClick={handleSave} loading={isSaving} disabled={!nextStatus || nextStatus === order.status}>
+                Сохранить
+              </Button>
             </div>
-            <div>
-              <a href={`mailto:${order.contact.email}`}>{order.contact.email}</a>
-            </div>
-          </div>
-
-          <div className="border rounded p-3 mb-3">
-            <h6>Доставка</h6>
-            <div>{DELIVERY_LABEL[order.delivery.type]}</div>
-            {addressLine && <div className="text-muted small">{addressLine}</div>}
-            {order.delivery.cost ? (
-              <div className="mt-1">Стоимость: {formatPrice(order.delivery.cost)}</div>
-            ) : null}
-            {order.delivery.trackingNumber && (
-              <div className="mt-1">Трек: {order.delivery.trackingNumber}</div>
-            )}
-          </div>
-
-          <div className="border rounded p-3 mb-3">
-            <h6>Оплата</h6>
-            <div>{PAYMENT_LABEL[order.payment.method]}</div>
-            <div className="text-muted small">{PAYMENT_STATUS_LABEL[order.payment.status]}</div>
-          </div>
-
-          <div className="border rounded p-3 mb-3">
-            <h6>Итого</h6>
-            <div className="fs-4">
-              <strong>{formatPrice(order.totalPrice)}</strong>
-            </div>
-          </div>
-
-          <div className="border rounded p-3">
-            <h6>Сменить статус</h6>
-            <div className="mb-2">
-              <select className="form-select" value={nextStatus} onChange={handleStatusChange}>
-                {Object.values(OrderStatus).map((s) => (
-                  <option key={s} value={s}>
-                    {ORDER_STATUS_LABEL[s]}
-                  </option>
-                ))}
-              </select>
-            </div>
-            <div className="mb-2">
-              <textarea
-                rows={2}
-                className="form-control"
-                placeholder="Комментарий (необязательно)"
-                value={comment}
-                onChange={(e) => setComment(e.target.value)}
-              />
-            </div>
-            <button
-              type="button"
-              className="btn btn-primary w-100"
-              onClick={handleSave}
-              disabled={!nextStatus || nextStatus === order.status}
-            >
-              Сохранить
-            </button>
-          </div>
+          </Card>
+          <OrderSideInfo order={order} linkContacts />
         </div>
       </div>
-    </section>
+    </>
   );
 }
 
