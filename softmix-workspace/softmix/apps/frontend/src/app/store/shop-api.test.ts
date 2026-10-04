@@ -18,7 +18,7 @@ describe('shopApi.getProducts', () => {
 
     expect(result.data?.total).toBe(1);
     // Пустая картинка заменяется заглушкой «нет фото».
-    expect(result.data?.products[0].imageUrl).toBe('/assets/img/no-photo.svg');
+    expect(result.data?.products[0].imageUrl).toBe('/no-photo.svg');
 
     const params = calls[0].params;
     expect(params.get('limit')).toBe('21');

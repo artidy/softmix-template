@@ -86,7 +86,8 @@ const TOKEN = 'token';
 const REFRESH_TOKEN = 'refresh-token';
 const EXPIRES_IN = 'expires-in';
 // Нейтральная картинка для товаров без фото (старая заглушка шаблона осталась для уже сохранённых корзин).
-const DEFAULT_PRODUCT_IMG = '/assets/img/no-photo.svg';
+// В корне сайта, а не в /assets: на сервере /assets/* отдаёт uploader, а этого файла у него нет.
+const DEFAULT_PRODUCT_IMG = '/no-photo.svg';
 
 export {
   AppRoute,
